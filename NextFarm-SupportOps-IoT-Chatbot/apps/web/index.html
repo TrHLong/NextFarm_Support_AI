@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextFarm SupportOps Chatbot</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="intake" class="card intake">
+      <div class="brand"><span>N</span><div><b>NextFarm SupportOps</b><small>Chatbot tÆ° váº¥n vÃ  há»— trá»£ ká»¹ thuáº­t</small></div></div>
+      <h1>Há»i tá»± nhiÃªn. Dá»¯ liá»‡u riÃªng xÃ¡c minh sau.</h1>
+      <p>KhÃ¡ch má»›i cÃ³ thá»ƒ há»i vá» NextFarm, vÆ°á»n muá»‘n lÃ m, tÆ°á»›i, NMC, Fertikit, GIS, QR. KhÃ¡ch Ä‘Ã£ cÃ³ DB sáº½ Ä‘Æ°á»£c Ä‘á»c dá»¯ liá»‡u vÆ°á»n Ä‘Ã£ phÃ¢n quyá»n.</p>
+      <form id="intakeForm">
+        <label>Há» tÃªn<input id="fullName" value="Anh Long" required /></label>
+        <label>Sá»‘ Ä‘iá»‡n thoáº¡i<input id="phone" value="0327555203" required /></label>
+        <label>Khu vá»±c<input id="region" value="LÃ¢m Äá»“ng" /></label>
+        <label>Ghi chÃº<textarea id="note" rows="3">TÃ´i muá»‘n há»i vá» vÆ°á»n cá»§a tÃ´i</textarea></label>
+        <button type="submit">Báº¯t Ä‘áº§u chat</button>
+      </form>
+      <button id="leadDemo" class="secondary">Demo khÃ¡ch má»›i: vÆ°á»n váº£i 50m2</button>
+      <div class="platforms"><span>GIS</span><span>TÆ°á»›i</span><span>NMC</span><span>Fertikit</span><span>Management</span><span>QR</span><span>Yield</span><span>AI sÃ¢u bá»‡nh</span><span>Weather</span></div>
+    </section>
+
+    <section id="chatApp" class="chat" hidden>
+      <header>
+        <div><small id="mode">Äang xÃ¡c minh</small><h2 id="title">NextFarm Chatbot</h2><p id="subtitle">-</p></div>
+        <button id="reset">Äá»•i ngÆ°á»i dÃ¹ng</button>
+      </header>
+      <section id="messages" class="messages"></section>
+      <section id="quick" class="quick"></section>
+      <form id="chatForm" class="send"><input id="message" placeholder="Nháº­p cÃ¢u há»i..." /><button>Gá»­i</button></form>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
+
