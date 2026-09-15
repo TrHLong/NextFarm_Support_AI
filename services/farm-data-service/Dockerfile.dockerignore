@@ -1,0 +1,24 @@
+.env
+.git/
+.agents/
+.codex/
+.secrets/
+apps/
+backups/
+docs/
+model-artifacts/
+research-data/
+scripts/
+**/__pycache__/
+**/*.pyc
+*.zip
+
+# Required read-only company reference and importer, without other scripts/docs.
+!scripts/
+scripts/*
+!scripts/import_device_reference.py
+!docs/
+docs/*
+!docs/references/
+docs/references/*
+!docs/references/Chat-thiet-bi-NextFarm-v0.1.html

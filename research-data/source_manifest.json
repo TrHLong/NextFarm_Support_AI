@@ -1,0 +1,113 @@
+{
+  "version": "9.0.1",
+  "policy": {
+    "uses_prior_project_data": false,
+    "static_reference_required_before_start": true,
+    "no_silent_fake_reference_fallback": true,
+    "initial_training": "reference_anchored_bootstrap_derived_from_downloaded_static_data",
+    "runtime_training": "v9_only_simulated_device_telemetry_after_threshold_plus_reference_anchor",
+    "production_claim": "research/PoC until separately validated on actual NextFarm hardware telemetry"
+  },
+  "sources": [
+    {
+      "id": "figshare_iot_28667981",
+      "title": "Datasets from IoT devices",
+      "repository": "Figshare",
+      "record": "28667981",
+      "license": "CC0",
+      "cadence": "5 seconds",
+      "variables": [
+        "temperature",
+        "air_humidity",
+        "light",
+        "ph",
+        "ec"
+      ],
+      "role": "mandatory empirical anchor for high-frequency sensor distributions, step sizes and cross-variable correlation",
+      "mandatory": true
+    },
+    {
+      "id": "karly_soil_moisture_1227837",
+      "title": "Hyperspectral benchmark dataset on soil moisture (KarLy)",
+      "repository": "GitHub / Zenodo",
+      "record": "10.5281/zenodo.1227837",
+      "license": "CC BY 4.0",
+      "cadence": "2 minutes in published CSV",
+      "variables": [
+        "soil_moisture",
+        "soil_temperature"
+      ],
+      "role": "mandatory compact empirical soil-moisture anchor; explicit soil_moisture percent column",
+      "mandatory": true
+    },
+    {
+      "id": "agridatavalue_iot_18954708",
+      "title": "AgriDataValue - IoT Environmental Data",
+      "repository": "Zenodo",
+      "record": "18954708",
+      "license": "CC BY 4.0",
+      "variables": [
+        "soil_moisture",
+        "soil_temperature",
+        "soil_water_tension",
+        "air_temperature",
+        "air_humidity",
+        "precipitation"
+      ],
+      "role": "optional large multi-pilot soil/environment anchor; opt-in because record is ~1.2 GB and schema varies by pilot",
+      "mandatory": false
+    },
+    {
+      "id": "parma_tomato_35wh56287y_2",
+      "title": "IoT-based Dataset of a Tomato Cultivation Under Different Irrigation Regimes",
+      "repository": "Mendeley Data",
+      "doi": "10.17632/35wh56287y.2",
+      "license": "CC BY 4.0",
+      "cadence": "10 minutes",
+      "variables": [
+        "air_temperature",
+        "air_humidity",
+        "soil_moisture",
+        "soil_temperature",
+        "ec",
+        "water_volume"
+      ],
+      "role": "supplemental tomato irrigation reference; raw download enabled when Mendeley API access token is provided",
+      "mandatory": false
+    },
+    {
+      "id": "parma_evolving_h8sfcf9487_1",
+      "title": "IoT Dataset from an Evolving Tomato Cultivation Testbed",
+      "repository": "Mendeley Data",
+      "doi": "10.17632/h8sfcf9487.1",
+      "license": "CC BY 4.0",
+      "cadence": "10 minutes",
+      "variables": [
+        "air_temperature",
+        "air_humidity",
+        "soil_moisture",
+        "ec",
+        "water_volume",
+        "valve_state",
+        "water_pressure"
+      ],
+      "role": "supplemental multi-season irrigation/actuator reference; raw download enabled when Mendeley API access token is provided",
+      "mandatory": false
+    },
+    {
+      "id": "nasa_power_2025",
+      "title": "NASA POWER Hourly Point API",
+      "repository": "NASA POWER",
+      "cadence": "hourly",
+      "variables": [
+        "T2M",
+        "RH2M",
+        "PRECTOTCORR",
+        "ALLSKY_SFC_SW_DWN",
+        "WS2M"
+      ],
+      "role": "Vietnam farm climate baseline",
+      "mandatory": true
+    }
+  ]
+}

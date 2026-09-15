@@ -1,0 +1,63 @@
+{
+  "project": "NextFarm AI Support – Data & Knowledge Studio",
+  "version": "9.0.0",
+  "architecture": "standalone_static_reference_then_calibrated_runtime",
+  "date": "2026-08-11",
+  "fresh_install": {
+    "uses_prior_project_data": false,
+    "compose_project": "nextfarm_v9_fresh",
+    "postgres_volume": "nextfarm_v9_fresh_pg"
+  },
+  "validation": {
+    "offline_contracts": {
+      "passed": 37,
+      "total": 37
+    },
+    "unit_tests": {
+      "identity": 4,
+      "data_simulator": 5,
+      "knowledge": 2,
+      "truth_guard": 6,
+      "ai_analytics": 5,
+      "total": 22
+    },
+    "javascript_syntax": {
+      "passed": 3,
+      "total": 3
+    },
+    "compose_yaml_services": 14,
+    "reference_pipeline_fixture": {
+      "normalized_rows": 12000,
+      "bootstrap_rows": 1710,
+      "purpose": "offline parser/calibration/bootstrap integrity test; not external research data"
+    },
+    "external_reference_runtime_download_executed_in_build_environment": false,
+    "reason": "artifact environment has no outbound DNS; repository/source details were independently verified via web sources",
+    "docker_runtime_executed_in_build_environment": false,
+    "docker_runtime_note": "Docker CLI/daemon is unavailable in the artifact environment; scripts/check_v9.cmd performs end-to-end validation on the target Windows machine."
+  },
+  "data_policy": {
+    "mandatory_sources": [
+      "Figshare 28667981",
+      "KarLy soil moisture 10.5281/zenodo.1227837",
+      "NASA POWER Hourly Point API"
+    ],
+    "climate_source": "NASA POWER Hourly Point API (mandatory)",
+    "optional_sources": [
+      "Zenodo AgriDataValue 18954708",
+      "Mendeley 35wh56287y.2",
+      "Mendeley h8sfcf9487.1"
+    ],
+    "bundled_reference_lock": {
+      "actual_sources": 3,
+      "normalized_rows": 147919,
+      "flow_rate_reference_rows": 0,
+      "note": "Flow-rate trong demo đến từ mô hình thiết bị; chưa có external reference và không được trình bày là đã kiểm chứng phần cứng."
+    },
+    "raw_external_data_bundled": false,
+    "runtime_origin": "simulated_device_calibrated_v9",
+    "runtime_retrain_threshold": 50000,
+    "reference_anchor_ratio": 0.25,
+    "production_ready_without_hardware_validation": false
+  }
+}

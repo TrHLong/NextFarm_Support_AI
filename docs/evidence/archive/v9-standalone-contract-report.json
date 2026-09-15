@@ -1,0 +1,243 @@
+{
+  "version": "9.0.1",
+  "architecture": "standalone_static_reference_then_v9_runtime",
+  "passed": 47,
+  "total": 47,
+  "checks": [
+    {
+      "name": "Version standalone",
+      "passed": true,
+      "detail": "VERSION=9.0.1"
+    },
+    {
+      "name": "Không dùng dữ liệu dự án trước",
+      "passed": true,
+      "detail": "policy uses_prior_project_data=false"
+    },
+    {
+      "name": "Static reference bắt buộc",
+      "passed": true,
+      "detail": "Thiếu reference thì dừng, không bịa fallback"
+    },
+    {
+      "name": "Catalog nguồn công khai có provenance",
+      "passed": true,
+      "detail": "declared_sources=6"
+    },
+    {
+      "name": "Ba reference bắt buộc",
+      "passed": true,
+      "detail": "Figshare + KarLy soil moisture + climate-by-location đều bắt buộc"
+    },
+    {
+      "name": "Nguồn đã tải thực tế khớp lock",
+      "passed": true,
+      "detail": "actual_sources=3, normalized_rows=147919"
+    },
+    {
+      "name": "Nguồn tùy chọn không bị gọi là bắt buộc",
+      "passed": true,
+      "detail": "Zenodo 18954708 là nguồn bổ sung tùy chọn; KarLy mới là soil-moisture anchor bắt buộc"
+    },
+    {
+      "name": "Downloader public reference",
+      "passed": true,
+      "detail": "Figshare + KarLy + Zenodo tùy chọn + NASA POWER + Mendeley tùy chọn"
+    },
+    {
+      "name": "NASA fail closed",
+      "passed": true,
+      "detail": "Không có climate reference theo vị trí thì V9 dừng"
+    },
+    {
+      "name": "Reference có SHA-256 lock",
+      "passed": true,
+      "detail": "Raw/normalized/calibration/bootstrap được khóa checksum"
+    },
+    {
+      "name": "Không silent random static fallback",
+      "passed": true,
+      "detail": "Fail closed nếu nguồn bắt buộc/coverage không đủ"
+    },
+    {
+      "name": "Coverage tối thiểu",
+      "passed": true,
+      "detail": "Static reference cần đủ mẫu khí hậu + soil moisture + EC/pH"
+    },
+    {
+      "name": "Bootstrap tách khỏi telemetry",
+      "passed": true,
+      "detail": "Static-derived bootstrap không insert sensor_readings"
+    },
+    {
+      "name": "Ba vườn có profile độc lập",
+      "passed": true,
+      "detail": "3 farm V9 fresh"
+    },
+    {
+      "name": "Cadence vật lý chậm hơn MQTT",
+      "passed": true,
+      "detail": "Publish nhanh nhưng trạng thái vật lý có quán tính"
+    },
+    {
+      "name": "Fault theo episode",
+      "passed": true,
+      "detail": "Offline/no-flow/leak/drift/stuck không random từng packet"
+    },
+    {
+      "name": "Simulator bắt buộc calibration",
+      "passed": true,
+      "detail": "Runtime cần calibration từ static reference"
+    },
+    {
+      "name": "Simulator dùng empirical step/correlation",
+      "passed": true,
+      "detail": "Noise/inertia bám thống kê reference"
+    },
+    {
+      "name": "Runtime provenance riêng",
+      "passed": true,
+      "detail": "Không gắn nhãn dữ liệu thiết bị thật"
+    },
+    {
+      "name": "Backfill cũng có provenance",
+      "passed": true,
+      "detail": "Lịch sử mô phỏng có checksum calibration"
+    },
+    {
+      "name": "Ingestion từ chối packet thiếu provenance",
+      "passed": true,
+      "detail": "MQTT demo chỉ nhận origin mô phỏng; API chỉ nhận origin NextFarm đã định nghĩa"
+    },
+    {
+      "name": "Schema provenance hữu hạn",
+      "passed": true,
+      "detail": "DB chỉ nhận các provenance đã định nghĩa; MQTT demo vẫn fail-closed"
+    },
+    {
+      "name": "Schema reference registry",
+      "passed": true,
+      "detail": "DB lưu reference lock + phase model"
+    },
+    {
+      "name": "Schema Data Operations",
+      "passed": true,
+      "detail": "Có nhóm dữ liệu, audit ingest/lệnh và backup registry"
+    },
+    {
+      "name": "Seed không nhét telemetry giả cũ",
+      "passed": true,
+      "detail": "Operational telemetry bắt đầu rỗng"
+    },
+    {
+      "name": "Seed không nhét alert/ticket runtime",
+      "passed": true,
+      "detail": "Ticket/cảnh báo phát sinh từ runtime/người dùng"
+    },
+    {
+      "name": "AI bootstrap từ locked reference",
+      "passed": true,
+      "detail": "Giai đoạn 1 không đọc sensor DB"
+    },
+    {
+      "name": "AI runtime chỉ V9",
+      "passed": true,
+      "detail": "Dataset runtime lọc provenance V9"
+    },
+    {
+      "name": "Retrain có reference anchor",
+      "passed": true,
+      "detail": "Runtime + static anchor chống drift"
+    },
+    {
+      "name": "Ngưỡng retrain 50k",
+      "passed": true,
+      "detail": "Không train lại theo từng packet"
+    },
+    {
+      "name": "Hai phase rõ ràng",
+      "passed": true,
+      "detail": "Static bootstrap -> runtime retrain"
+    },
+    {
+      "name": "Không synthetic fallback trong production",
+      "passed": true,
+      "detail": "Internal generator chỉ còn test_fixture"
+    },
+    {
+      "name": "Không tự nhận production",
+      "passed": true,
+      "detail": "Reference/simulator-only luôn production_ready=false"
+    },
+    {
+      "name": "Volume V9 riêng",
+      "passed": true,
+      "detail": "Không nối volume dự án khác"
+    },
+    {
+      "name": "Không fallback mật khẩu DB cố định",
+      "passed": true,
+      "detail": "DATABASE_URL bắt buộc từ Compose/.env; source chạy ngoài Compose fail closed"
+    },
+    {
+      "name": "AI bootstrap trước simulator trong start",
+      "passed": true,
+      "detail": "Static AI bootstrap hoàn tất trước runtime stream"
+    },
+    {
+      "name": "AI image có static reference",
+      "passed": true,
+      "detail": "Reference pack tải trước build được đóng vào image AI"
+    },
+    {
+      "name": "Simulator image có static reference",
+      "passed": true,
+      "detail": "Calibration tải trước build được đóng vào simulator"
+    },
+    {
+      "name": "UI nhận diện simulator V9",
+      "passed": true,
+      "detail": "Người dùng thấy provenance mô phỏng hiệu chỉnh"
+    },
+    {
+      "name": "Chat fail-safe và có history",
+      "passed": true,
+      "detail": "Không nuốt lỗi ghi chat; mở máy lại tải từ PostgreSQL"
+    },
+    {
+      "name": "Báo cáo nhóm dữ liệu realtime",
+      "passed": true,
+      "detail": "Data Studio có row count, freshness và báo cáo ngày"
+    },
+    {
+      "name": "Migration chạy với volume cũ",
+      "passed": true,
+      "detail": "Không phụ thuộc docker-entrypoint-initdb.d của volume mới"
+    },
+    {
+      "name": "Backup/restore có chốt an toàn",
+      "passed": true,
+      "detail": "Backup checksum/verify và restore bắt buộc xác nhận"
+    },
+    {
+      "name": "MQTT production không anonymous",
+      "passed": true,
+      "detail": "Production override bật password + ACL + persistence"
+    },
+    {
+      "name": "Ánh xạ danh tính ngoài có revoke/resolve",
+      "passed": true,
+      "detail": "Zalo OA/NextFarm chỉ resolve ánh xạ đã xác minh và chưa thu hồi"
+    },
+    {
+      "name": "NextFarm API ingest có idempotency/audit",
+      "passed": true,
+      "detail": "API read-only kiểm tra key, mapping tenant, packet_id và provenance"
+    },
+    {
+      "name": "Python syntax",
+      "passed": true,
+      "detail": "all parsed"
+    }
+  ]
+}

@@ -1,0 +1,711 @@
+{
+  "name": "sensor_fault_forecast",
+  "title": "Sự cố cảm biến trong 60 phút",
+  "task": "classification",
+  "features": [
+    "flow_rate",
+    "flow_rate_lag1",
+    "flow_rate_lag3",
+    "flow_rate_lag6",
+    "flow_rate_missing",
+    "flow_rate_mean3",
+    "flow_rate_slope3",
+    "pressure",
+    "pressure_lag1",
+    "pressure_lag3",
+    "pressure_lag6",
+    "pressure_missing",
+    "pressure_mean3",
+    "pressure_slope3",
+    "pump_current",
+    "pump_current_lag1",
+    "pump_current_lag3",
+    "pump_current_lag6",
+    "pump_current_missing",
+    "pump_current_mean3",
+    "pump_current_slope3",
+    "sensor_bus_errors",
+    "sensor_bus_errors_lag1",
+    "sensor_bus_errors_lag3",
+    "sensor_bus_errors_lag6",
+    "sensor_bus_errors_missing",
+    "sensor_bus_errors_mean3",
+    "sensor_bus_errors_slope3",
+    "supply_voltage",
+    "supply_voltage_lag1",
+    "supply_voltage_lag3",
+    "supply_voltage_lag6",
+    "supply_voltage_missing",
+    "supply_voltage_mean3",
+    "supply_voltage_slope3",
+    "rssi",
+    "rssi_lag1",
+    "rssi_lag3",
+    "rssi_lag6",
+    "rssi_missing",
+    "rssi_mean3",
+    "rssi_slope3",
+    "packet_loss_rate",
+    "packet_loss_rate_lag1",
+    "packet_loss_rate_lag3",
+    "packet_loss_rate_lag6",
+    "packet_loss_rate_missing",
+    "packet_loss_rate_mean3",
+    "packet_loss_rate_slope3",
+    "command_failure_rate",
+    "command_failure_rate_lag1",
+    "command_failure_rate_lag3",
+    "command_failure_rate_lag6",
+    "command_failure_rate_missing",
+    "command_failure_rate_mean3",
+    "command_failure_rate_slope3",
+    "history_gap_minutes",
+    "pump_running",
+    "valve_running",
+    "fertilizer_running"
+  ],
+  "target": "sensor_fault_future",
+  "horizon_minutes": 60,
+  "status": "EXPERIMENTAL",
+  "rows": {
+    "train": 34775,
+    "validation": 7430,
+    "test": 2481
+  },
+  "gate_reasons": [
+    "Synthetic experiment; no field acceptance"
+  ],
+  "class_coverage": {
+    "train": {
+      "0": 33619,
+      "1": 1156
+    },
+    "validation": {
+      "0": 7184,
+      "1": 246
+    },
+    "synthetic_customer_009": {
+      "0": 790,
+      "1": 36
+    },
+    "synthetic_customer_010": {
+      "0": 811,
+      "1": 23
+    },
+    "synthetic_customer_011": {
+      "0": 795,
+      "1": 26
+    }
+  },
+  "positive_episodes": {
+    "train": 204,
+    "validation": 41,
+    "synthetic_customer_009": 6,
+    "synthetic_customer_010": 4,
+    "synthetic_customer_011": 5
+  },
+  "algorithm": "HGB_detailed",
+  "validation_candidates": {
+    "HGB": {
+      "accuracy": 0.9962314939434724,
+      "f1_macro": 0.969859758924432,
+      "recall_risk": 0.9186991869918699,
+      "confusion_matrix": [
+        [
+          7176,
+          8
+        ],
+        [
+          20,
+          226
+        ]
+      ]
+    },
+    "HGB_detailed": {
+      "accuracy": 0.9963660834454913,
+      "f1_macro": 0.9708775453113951,
+      "recall_risk": 0.9186991869918699,
+      "confusion_matrix": [
+        [
+          7177,
+          7
+        ],
+        [
+          20,
+          226
+        ]
+      ]
+    },
+    "HGB_balanced": {
+      "accuracy": 0.9960969044414536,
+      "f1_macro": 0.9700480646062148,
+      "recall_risk": 0.959349593495935,
+      "confusion_matrix": [
+        [
+          7165,
+          19
+        ],
+        [
+          10,
+          236
+        ]
+      ]
+    }
+  },
+  "parameters": {
+    "memory": "None",
+    "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('variancethreshold', VarianceThreshold()), ('histgradientboostingclassifier', HistGradientBoostingClassifier(early_stopping=False, l2_regularization=2,\n                               max_iter=180, max_leaf_nodes=15,\n                               random_state=20260913))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+    "variancethreshold": "VarianceThreshold()",
+    "histgradientboostingclassifier": "HistGradientBoostingClassifier(early_stopping=False, l2_regularization=2,\n                               max_iter=180, max_leaf_nodes=15,\n                               random_state=20260913)",
+    "simpleimputer__add_indicator": "True",
+    "simpleimputer__copy": "True",
+    "simpleimputer__fill_value": "None",
+    "simpleimputer__keep_empty_features": "True",
+    "simpleimputer__missing_values": "nan",
+    "simpleimputer__strategy": "median",
+    "variancethreshold__threshold": "0.0",
+    "histgradientboostingclassifier__categorical_features": "from_dtype",
+    "histgradientboostingclassifier__class_weight": "None",
+    "histgradientboostingclassifier__early_stopping": "False",
+    "histgradientboostingclassifier__interaction_cst": "None",
+    "histgradientboostingclassifier__l2_regularization": "2",
+    "histgradientboostingclassifier__learning_rate": "0.1",
+    "histgradientboostingclassifier__loss": "log_loss",
+    "histgradientboostingclassifier__max_bins": "255",
+    "histgradientboostingclassifier__max_depth": "None",
+    "histgradientboostingclassifier__max_features": "1.0",
+    "histgradientboostingclassifier__max_iter": "180",
+    "histgradientboostingclassifier__max_leaf_nodes": "15",
+    "histgradientboostingclassifier__min_samples_leaf": "20",
+    "histgradientboostingclassifier__monotonic_cst": "None",
+    "histgradientboostingclassifier__n_iter_no_change": "10",
+    "histgradientboostingclassifier__random_state": "20260913",
+    "histgradientboostingclassifier__scoring": "loss",
+    "histgradientboostingclassifier__tol": "1e-07",
+    "histgradientboostingclassifier__validation_fraction": "0.1",
+    "histgradientboostingclassifier__verbose": "0",
+    "histgradientboostingclassifier__warm_start": "False"
+  },
+  "metrics": {
+    "train": {
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "recall_risk": 1.0,
+      "confusion_matrix": [
+        [
+          33619,
+          0
+        ],
+        [
+          0,
+          1156
+        ]
+      ]
+    },
+    "validation": {
+      "accuracy": 0.9963660834454913,
+      "f1_macro": 0.9708775453113951,
+      "recall_risk": 0.9186991869918699,
+      "confusion_matrix": [
+        [
+          7177,
+          7
+        ],
+        [
+          20,
+          226
+        ]
+      ]
+    },
+    "test": {
+      "accuracy": 0.9955663039097138,
+      "f1_macro": 0.9659188401091456,
+      "recall_risk": 0.9176470588235294,
+      "confusion_matrix": [
+        [
+          2392,
+          4
+        ],
+        [
+          7,
+          78
+        ]
+      ]
+    }
+  },
+  "baselines": {
+    "train": {
+      "majority": {
+        "accuracy": 0.9667577282530554,
+        "f1_macro": 0.4915489662835921,
+        "recall_risk": 0.0,
+        "confusion_matrix": [
+          [
+            33619,
+            0
+          ],
+          [
+            1156,
+            0
+          ]
+        ]
+      },
+      "current_threshold_rule": {
+        "accuracy": 0.986254493170381,
+        "f1_macro": 0.866154304851238,
+        "recall_risk": 0.5865051903114187,
+        "confusion_matrix": [
+          [
+            33619,
+            0
+          ],
+          [
+            478,
+            678
+          ]
+        ]
+      }
+    },
+    "validation": {
+      "majority": {
+        "accuracy": 0.9668909825033647,
+        "f1_macro": 0.4915834131654578,
+        "recall_risk": 0.0,
+        "confusion_matrix": [
+          [
+            7184,
+            0
+          ],
+          [
+            246,
+            0
+          ]
+        ]
+      },
+      "current_threshold_rule": {
+        "accuracy": 0.9853297442799461,
+        "f1_macro": 0.8539377577578264,
+        "recall_risk": 0.556910569105691,
+        "confusion_matrix": [
+          [
+            7184,
+            0
+          ],
+          [
+            109,
+            137
+          ]
+        ]
+      }
+    },
+    "test": {
+      "majority": {
+        "accuracy": 0.9657396211205159,
+        "f1_macro": 0.4912856264096781,
+        "recall_risk": 0.0,
+        "confusion_matrix": [
+          [
+            2396,
+            0
+          ],
+          [
+            85,
+            0
+          ]
+        ]
+      },
+      "current_threshold_rule": {
+        "accuracy": 0.9875050382910117,
+        "f1_macro": 0.8852754412683828,
+        "recall_risk": 0.6352941176470588,
+        "confusion_matrix": [
+          [
+            2396,
+            0
+          ],
+          [
+            31,
+            54
+          ]
+        ]
+      }
+    }
+  },
+  "per_customer": {
+    "train": {
+      "synthetic_customer_000": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3733,
+            0
+          ],
+          [
+            0,
+            124
+          ]
+        ]
+      },
+      "synthetic_customer_001": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3750,
+            0
+          ],
+          [
+            0,
+            135
+          ]
+        ]
+      },
+      "synthetic_customer_002": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3702,
+            0
+          ],
+          [
+            0,
+            140
+          ]
+        ]
+      },
+      "synthetic_customer_003": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3738,
+            0
+          ],
+          [
+            0,
+            131
+          ]
+        ]
+      },
+      "synthetic_customer_004": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3709,
+            0
+          ],
+          [
+            0,
+            128
+          ]
+        ]
+      },
+      "synthetic_customer_005": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3768,
+            0
+          ],
+          [
+            0,
+            123
+          ]
+        ]
+      },
+      "synthetic_customer_006": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3748,
+            0
+          ],
+          [
+            0,
+            129
+          ]
+        ]
+      },
+      "synthetic_customer_007": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3744,
+            0
+          ],
+          [
+            0,
+            118
+          ]
+        ]
+      },
+      "synthetic_customer_008": {
+        "accuracy": 1.0,
+        "f1_macro": 1.0,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            3727,
+            0
+          ],
+          [
+            0,
+            128
+          ]
+        ]
+      }
+    },
+    "validation": {
+      "synthetic_customer_000": {
+        "accuracy": 0.994061757719715,
+        "f1_macro": 0.9560886571056062,
+        "recall_risk": 0.9,
+        "confusion_matrix": [
+          [
+            810,
+            2
+          ],
+          [
+            3,
+            27
+          ]
+        ]
+      },
+      "synthetic_customer_001": {
+        "accuracy": 0.9963942307692307,
+        "f1_macro": 0.967157462598192,
+        "recall_risk": 0.9166666666666666,
+        "confusion_matrix": [
+          [
+            807,
+            1
+          ],
+          [
+            2,
+            22
+          ]
+        ]
+      },
+      "synthetic_customer_002": {
+        "accuracy": 0.9987966305655837,
+        "f1_macro": 0.9890521046044398,
+        "recall_risk": 0.9583333333333334,
+        "confusion_matrix": [
+          [
+            807,
+            0
+          ],
+          [
+            1,
+            23
+          ]
+        ]
+      },
+      "synthetic_customer_003": {
+        "accuracy": 0.9963054187192119,
+        "f1_macro": 0.9736178047327666,
+        "recall_risk": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            781,
+            1
+          ],
+          [
+            2,
+            28
+          ]
+        ]
+      },
+      "synthetic_customer_004": {
+        "accuracy": 0.9950124688279302,
+        "f1_macro": 0.9629937246216316,
+        "recall_risk": 0.8666666666666667,
+        "confusion_matrix": [
+          [
+            772,
+            0
+          ],
+          [
+            4,
+            26
+          ]
+        ]
+      },
+      "synthetic_customer_005": {
+        "accuracy": 0.9963459196102314,
+        "f1_macro": 0.9736287032774071,
+        "recall_risk": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            790,
+            1
+          ],
+          [
+            2,
+            28
+          ]
+        ]
+      },
+      "synthetic_customer_006": {
+        "accuracy": 0.9939246658566221,
+        "f1_macro": 0.9428829203969741,
+        "recall_risk": 0.8333333333333334,
+        "confusion_matrix": [
+          [
+            798,
+            1
+          ],
+          [
+            4,
+            20
+          ]
+        ]
+      },
+      "synthetic_customer_007": {
+        "accuracy": 0.9976442873969376,
+        "f1_macro": 0.978560606060606,
+        "recall_risk": 0.9583333333333334,
+        "confusion_matrix": [
+          [
+            824,
+            1
+          ],
+          [
+            1,
+            23
+          ]
+        ]
+      },
+      "synthetic_customer_008": {
+        "accuracy": 0.9987775061124694,
+        "f1_macro": 0.9912083660243114,
+        "recall_risk": 0.9666666666666667,
+        "confusion_matrix": [
+          [
+            788,
+            0
+          ],
+          [
+            1,
+            29
+          ]
+        ]
+      }
+    },
+    "test": {
+      "synthetic_customer_009": {
+        "accuracy": 0.9939467312348669,
+        "f1_macro": 0.9621888360936399,
+        "recall_risk": 0.8888888888888888,
+        "confusion_matrix": [
+          [
+            789,
+            1
+          ],
+          [
+            4,
+            32
+          ]
+        ]
+      },
+      "synthetic_customer_010": {
+        "accuracy": 0.9988009592326139,
+        "f1_macro": 0.9890532505545566,
+        "recall_risk": 1.0,
+        "confusion_matrix": [
+          [
+            810,
+            1
+          ],
+          [
+            0,
+            23
+          ]
+        ]
+      },
+      "synthetic_customer_011": {
+        "accuracy": 0.9939098660170523,
+        "f1_macro": 0.9494090533762216,
+        "recall_risk": 0.8846153846153846,
+        "confusion_matrix": [
+          [
+            793,
+            2
+          ],
+          [
+            3,
+            23
+          ]
+        ]
+      }
+    }
+  },
+  "validation_selected_baseline": "current_threshold_rule",
+  "baseline_gain": 0.08064339884076288,
+  "benchmark_passed": true,
+  "macro_across_test_customers": 0.9668837133414727,
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\benchmark-retrain\\benchmark-20260913T144936Z\\sensor_fault_forecast.joblib",
+  "artifact_sha256": "d658f5eceb4c88f420498d505331ccf2a250975e6e551e752d26bf51c88762dc",
+  "reload_max_difference": 0.0,
+  "reload_tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "source_csvs": [
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_000\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_000\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_000\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_001\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_001\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_001\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_002\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_002\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_002\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_003\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_003\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_003\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_004\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_004\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_004\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_005\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_005\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_005\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_006\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_006\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_006\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_007\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_007\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_007\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_008\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_008\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_008\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_009\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_009\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_009\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_010\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_010\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_010\\incident_ground_truth.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_011\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_011\\device_status.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\customers\\synthetic_customer_011\\incident_ground_truth.csv"
+  ],
+  "feature_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\features_with_split.csv",
+  "cleaning_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain\\benchmark-20260913T144936Z\\cleaning_report.json"
+}

@@ -1,0 +1,363 @@
+{
+  "tested_at": "2026-09-07T22:24:31.8541124Z",
+  "username": "nongdan.long",
+  "farm_scope": "farm_long",
+  "contains_credentials": false,
+  "results": [
+    {
+      "name": "grounded_metric",
+      "status_code": 200,
+      "response": {
+        "answer": "Khu a hiện có độ ẩm đất 55.832 %, đang trong ngưỡng mục tiêu 55.0–70.0 %. Dữ liệu ghi nhận lúc 05:24 ngày 08/09/2026.",
+        "intent": "read_metric",
+        "grounded": true,
+        "tool_name": "get_latest_metric",
+        "data": {
+          "available": true,
+          "farm_id": "farm_long",
+          "zone_id": "long_a",
+          "zone_code": "A",
+          "zone_name": "Khu cà chua A",
+          "metric": "soil_moisture",
+          "sensor_name": "Độ ẩm đất A",
+          "value": 55.832,
+          "unit": "%",
+          "quality": "good",
+          "observed_at": "2026-09-08T05:24:30.477652+07:00",
+          "measured_at": "2026-09-08T05:24:30.477652+07:00",
+          "received_at": "2026-09-08T05:24:30.520083+07:00",
+          "target_min": 55.0,
+          "target_max": 70.0,
+          "status": "normal",
+          "fresh": true,
+          "age_seconds": 0.8,
+          "freshness": "fresh",
+          "display_observed_at": "05:24 ngày 08/09/2026"
+        },
+        "verification": {
+          "allowed": true,
+          "final_answer": "Khu a hiện có độ ẩm đất 55.832 %, đang trong ngưỡng mục tiêu 55.0–70.0 %. Dữ liệu ghi nhận lúc 05:24 ngày 08/09/2026.",
+          "reasons": [],
+          "warnings": [],
+          "source_count": 0,
+          "unmatched_numbers": [],
+          "evidence_farm_ids": [
+            "farm_long"
+          ],
+          "checks": {
+            "numeric_grounding": true,
+            "tenant_grounding": true,
+            "freshness_guard": true,
+            "quality_guard": true,
+            "no_data_guard": true,
+            "model_status_guard": true
+          }
+        },
+        "llm": {
+          "text": "Khu a hiện có độ ẩm đất 55.832 %, đang trong ngưỡng mục tiêu 55.0–70.0 %. Dữ liệu ghi nhận lúc 05:24 ngày 08/09/2026.",
+          "provider": "deterministic",
+          "changed": false
+        },
+        "persistence": {
+          "saved": true,
+          "store": "postgresql",
+          "conversation_id": "conv_farmer_long_farm_long",
+          "message_id": 44,
+          "duplicate": false
+        }
+      }
+    },
+    {
+      "name": "unknown_yield",
+      "status_code": 200,
+      "response": {
+        "answer": "Theo NextFarm - Trang chủ nền tảng, Mục 1 — Nội dung đã kiểm duyệt: Khi trả lời câu hỏi về tính năng NextFarm, chatbot chỉ được nêu các module đã có nguồn chính thức: IoT và cảm biến, tưới thông minh, GIS lô thửa, quản lý mùa vụ, truy xuất QR, dự báo và báo cáo. Không tự bịa tên màn hình hoặc tính năng chưa được tài liệu xác nhận.",
+        "intent": "knowledge_answer",
+        "grounded": true,
+        "tool_name": "knowledge_query",
+        "data": {
+          "items": [
+            {
+              "chunk_id": "chunk_doc_nf_platform",
+              "document_id": "doc_nf_platform",
+              "title": "Hệ sinh thái nền tảng NextFarm",
+              "category": "NEXTFARM_PRODUCT",
+              "summary": "NextFarm tích hợp IoT, AI, GIS, truy xuất nguồn gốc, tưới và quản lý canh tác.",
+              "content": "Khi trả lời câu hỏi về tính năng NextFarm, chatbot chỉ được nêu các module đã có nguồn chính thức: IoT và cảm biến, tưới thông minh, GIS lô thửa, quản lý mùa vụ, truy xuất QR, dự báo và báo cáo. Không tự bịa tên màn hình hoặc tính năng chưa được tài liệu xác nhận.",
+              "heading": "Hệ sinh thái nền tảng NextFarm",
+              "section_path": "Mục 1 — Nội dung đã kiểm duyệt",
+              "source_locator": "https://nextfarm.vn/#muc-1",
+              "score": 0.339,
+              "source": {
+                "source_id": "src_nextfarm_home",
+                "source_name": "NextFarm - Trang chủ nền tảng",
+                "source_url": "https://nextfarm.vn/",
+                "domain": "nextfarm.vn",
+                "source_type": "nextfarm",
+                "trust_tier": 1
+              },
+              "citation": {
+                "title": "Hệ sinh thái nền tảng NextFarm",
+                "section": "Mục 1 — Nội dung đã kiểm duyệt",
+                "source_url": "https://nextfarm.vn/#muc-1"
+              }
+            },
+            {
+              "chunk_id": "chunk_doc_tomato_vn",
+              "document_id": "doc_tomato_vn",
+              "title": "Cà chua: đất, pH và thời vụ tham khảo tại Việt Nam",
+              "category": "CROP_GUIDE",
+              "summary": "Cà chua phù hợp đất thoát nước tốt, giàu hữu cơ; tài liệu Khuyến nông nêu pH đất phù hợp khoảng 6,0-6,5 và các vụ trồng tham khảo.",
+              "content": "Khi tư vấn cà chua, cần xem điều kiện địa phương, giống, nhà màng hay ngoài trời, lịch sử sâu bệnh và thị trường. Không suy ra năng suất chỉ từ nhiệt độ và độ ẩm. Nếu trồng liên tiếp cây cùng họ, cần đánh giá rủi ro luân canh và bệnh tồn lưu.",
+              "heading": "Cà chua: đất, pH và thời vụ tham khảo tại Việt Nam",
+              "section_path": "Mục 1 — Nội dung đã kiểm duyệt",
+              "source_locator": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-va-cham-soc-cay-ca-chua-3430.html#muc-1",
+              "score": 0.3076,
+              "source": {
+                "source_id": "src_khuyennong_tomato",
+                "source_name": "Khuyến nông Quốc gia - Cà chua",
+                "source_url": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-va-cham-soc-cay-ca-chua-3430.html",
+                "domain": "khuyennongvn.gov.vn",
+                "source_type": "government",
+                "trust_tier": 1
+              },
+              "citation": {
+                "title": "Cà chua: đất, pH và thời vụ tham khảo tại Việt Nam",
+                "section": "Mục 1 — Nội dung đã kiểm duyệt",
+                "source_url": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-va-cham-soc-cay-ca-chua-3430.html#muc-1"
+              }
+            },
+            {
+              "chunk_id": "chunk_doc_crop_suitability",
+              "document_id": "doc_crop_suitability",
+              "title": "Nguyên tắc sàng lọc cây trồng theo môi trường",
+              "category": "CROP_SELECTION",
+              "summary": "ECOCROP cho phép đối chiếu nhiệt độ, mưa, pH, đất, ánh sáng và các đặc tính khác để tìm cây phù hợp.",
+              "content": "Kết quả đối chiếu chỉ là mức phù hợp sinh thái sơ bộ. Để khuyến nghị mùa vụ cần bổ sung giống, sâu bệnh, nguồn nước, hệ thống canh tác, giá bán, chi phí, lao động, thị trường và dữ liệu năng suất địa phương. Bot phải gọi kết quả là mức phù hợp, không gọi là cây chắc chắn năng suất cao.",
+              "heading": "Nguyên tắc sàng lọc cây trồng theo môi trường",
+              "section_path": "Mục 1 — Nội dung đã kiểm duyệt",
+              "source_locator": "https://www.fao.org/geospatial/data-and-tools/data-portals/ecocrop/en#muc-1",
+              "score": 0.3061,
+              "source": {
+                "source_id": "src_fao_ecocrop",
+                "source_name": "FAO ECOCROP",
+                "source_url": "https://www.fao.org/geospatial/data-and-tools/data-portals/ecocrop/en",
+                "domain": "fao.org",
+                "source_type": "international",
+                "trust_tier": 1
+              },
+              "citation": {
+                "title": "Nguyên tắc sàng lọc cây trồng theo môi trường",
+                "section": "Mục 1 — Nội dung đã kiểm duyệt",
+                "source_url": "https://www.fao.org/geospatial/data-and-tools/data-portals/ecocrop/en#muc-1"
+              }
+            },
+            {
+              "chunk_id": "chunk_doc_nf_help_scope",
+              "document_id": "doc_nf_help_scope",
+              "title": "Phạm vi Trung tâm hỗ trợ NextFarm",
+              "category": "NEXTFARM_PRODUCT",
+              "summary": "Trung tâm hỗ trợ có các chủ đề cài đặt, IoT, GIS, trồng trọt, tưới, Fertikit, AI dự báo, báo cáo, mobile và bảo mật.",
+              "content": "Chatbot có thể dùng Trung tâm hỗ trợ làm nguồn ưu tiên khi người dùng hỏi cách cấu hình thiết bị, lịch tưới, cảm biến, phân quyền, ứng dụng và báo cáo. Nếu chưa tìm thấy bài phù hợp, bot phải nói chưa có tài liệu thay vì tự dựng quy trình.",
+              "heading": "Phạm vi Trung tâm hỗ trợ NextFarm",
+              "section_path": "Mục 1 — Nội dung đã kiểm duyệt",
+              "source_locator": "https://nextfarm.vn/help-center#muc-1",
+              "score": 0.2504,
+              "source": {
+                "source_id": "src_nextfarm_help",
+                "source_name": "NextFarm - Trung tâm hỗ trợ",
+                "source_url": "https://nextfarm.vn/help-center",
+                "domain": "nextfarm.vn",
+                "source_type": "nextfarm",
+                "trust_tier": 1
+              },
+              "citation": {
+                "title": "Phạm vi Trung tâm hỗ trợ NextFarm",
+                "section": "Mục 1 — Nội dung đã kiểm duyệt",
+                "source_url": "https://nextfarm.vn/help-center#muc-1"
+              }
+            },
+            {
+              "chunk_id": "chunk_doc_nf_irrigation",
+              "document_id": "doc_nf_irrigation",
+              "title": "Tưới thông minh theo lịch và cảm biến",
+              "category": "NEXTFARM_PRODUCT",
+              "summary": "Tưới thông minh kết hợp lịch, độ ẩm đất và dữ liệu thời tiết để điều chỉnh tưới theo lô.",
+              "content": "Chatbot có thể giải thích lịch tưới, dữ liệu độ ẩm và cảnh báo thiếu nước. Mọi đề xuất điều khiển vật lý phải được coi là khuyến nghị và phải qua xác nhận, phân quyền cùng quy tắc an toàn của hệ thống.",
+              "heading": "Tưới thông minh theo lịch và cảm biến",
+              "section_path": "Mục 1 — Nội dung đã kiểm duyệt",
+              "source_locator": "https://nextfarm.vn/nen-tang/tuoi-thong-minh#muc-1",
+              "score": 0.2355,
+              "source": {
+                "source_id": "src_nextfarm_irrigation",
+                "source_name": "NextFarm Irrigation",
+                "source_url": "https://nextfarm.vn/nen-tang/tuoi-thong-minh",
+                "domain": "nextfarm.vn",
+                "source_type": "nextfarm",
+                "trust_tier": 1
+              },
+              "citation": {
+                "title": "Tưới thông minh theo lịch và cảm biến",
+                "section": "Mục 1 — Nội dung đã kiểm duyệt",
+                "source_url": "https://nextfarm.vn/nen-tang/tuoi-thong-minh#muc-1"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "src_nextfarm_home",
+              "source_name": "NextFarm - Trang chủ nền tảng",
+              "source_url": "https://nextfarm.vn/",
+              "domain": "nextfarm.vn",
+              "source_type": "nextfarm",
+              "trust_tier": 1
+            },
+            {
+              "source_id": "src_khuyennong_tomato",
+              "source_name": "Khuyến nông Quốc gia - Cà chua",
+              "source_url": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-va-cham-soc-cay-ca-chua-3430.html",
+              "domain": "khuyennongvn.gov.vn",
+              "source_type": "government",
+              "trust_tier": 1
+            },
+            {
+              "source_id": "src_fao_ecocrop",
+              "source_name": "FAO ECOCROP",
+              "source_url": "https://www.fao.org/geospatial/data-and-tools/data-portals/ecocrop/en",
+              "domain": "fao.org",
+              "source_type": "international",
+              "trust_tier": 1
+            },
+            {
+              "source_id": "src_nextfarm_help",
+              "source_name": "NextFarm - Trung tâm hỗ trợ",
+              "source_url": "https://nextfarm.vn/help-center",
+              "domain": "nextfarm.vn",
+              "source_type": "nextfarm",
+              "trust_tier": 1
+            },
+            {
+              "source_id": "src_nextfarm_irrigation",
+              "source_name": "NextFarm Irrigation",
+              "source_url": "https://nextfarm.vn/nen-tang/tuoi-thong-minh",
+              "domain": "nextfarm.vn",
+              "source_type": "nextfarm",
+              "trust_tier": 1
+            }
+          ]
+        },
+        "source": {
+          "source_id": "src_nextfarm_home",
+          "source_name": "NextFarm - Trang chủ nền tảng",
+          "source_url": "https://nextfarm.vn/",
+          "domain": "nextfarm.vn",
+          "source_type": "nextfarm",
+          "trust_tier": 1
+        },
+        "verification": {
+          "allowed": true,
+          "final_answer": "Theo NextFarm - Trang chủ nền tảng, Mục 1 — Nội dung đã kiểm duyệt: Khi trả lời câu hỏi về tính năng NextFarm, chatbot chỉ được nêu các module đã có nguồn chính thức: IoT và cảm biến, tưới thông minh, GIS lô thửa, quản lý mùa vụ, truy xuất QR, dự báo và báo cáo. Không tự bịa tên màn hình hoặc tính năng chưa được tài liệu xác nhận.",
+          "reasons": [],
+          "warnings": [],
+          "source_count": 10,
+          "unmatched_numbers": [],
+          "evidence_farm_ids": [],
+          "checks": {
+            "numeric_grounding": true,
+            "tenant_grounding": true,
+            "freshness_guard": true,
+            "quality_guard": true,
+            "no_data_guard": true,
+            "model_status_guard": true
+          }
+        },
+        "llm": {
+          "text": "Theo NextFarm - Trang chủ nền tảng, Mục 1 — Nội dung đã kiểm duyệt: Khi trả lời câu hỏi về tính năng NextFarm, chatbot chỉ được nêu các module đã có nguồn chính thức: IoT và cảm biến, tưới thông minh, GIS lô thửa, quản lý mùa vụ, truy xuất QR, dự báo và báo cáo. Không tự bịa tên màn hình hoặc tính năng chưa được tài liệu xác nhận.",
+          "provider": "deterministic",
+          "changed": false
+        },
+        "persistence": {
+          "saved": true,
+          "store": "postgresql",
+          "conversation_id": "conv_farmer_long_farm_long",
+          "message_id": 46,
+          "duplicate": false
+        }
+      }
+    },
+    {
+      "name": "missing_zone",
+      "status_code": 200,
+      "response": {
+        "answer": "Hiện không có dữ liệu độ ẩm đất cho khu Z. Tôi sẽ không ước đoán giá trị. Có thể tạo ticket để kỹ thuật viên kiểm tra cấu hình và cảm biến.",
+        "intent": "metric_missing",
+        "grounded": true,
+        "tool_name": "get_latest_metric",
+        "data": {
+          "available": false,
+          "error_code": "NOT_FOUND",
+          "reason": "Không tìm thấy khu được yêu cầu.",
+          "farm_id": "farm_long",
+          "zone": "Z",
+          "metric": "soil_moisture"
+        },
+        "ticket_suggestion": {
+          "label": "Tạo ticket cho kỹ thuật viên",
+          "payload": {
+            "farm_id": "farm_long",
+            "zone_code": "Z",
+            "title": "Không có dữ liệu độ ẩm đất khu Z",
+            "description": "Chatbot không tìm thấy dữ liệu độ ẩm đất cho khu Z. Cần kiểm tra cấu hình hoặc cảm biến.",
+            "category": "SENSOR_STALE",
+            "priority": "high",
+            "source": "chatbot"
+          }
+        },
+        "verification": {
+          "allowed": true,
+          "final_answer": "Hiện không có dữ liệu độ ẩm đất cho khu Z. Tôi sẽ không ước đoán giá trị. Có thể tạo ticket để kỹ thuật viên kiểm tra cấu hình và cảm biến.",
+          "reasons": [],
+          "warnings": [
+            "Cần kỹ thuật viên hoặc chuyên gia xác nhận trước khi hành động thực tế."
+          ],
+          "source_count": 0,
+          "unmatched_numbers": [],
+          "evidence_farm_ids": [
+            "farm_long"
+          ],
+          "checks": {
+            "numeric_grounding": true,
+            "tenant_grounding": true,
+            "freshness_guard": true,
+            "quality_guard": true,
+            "no_data_guard": true,
+            "model_status_guard": true
+          }
+        },
+        "llm": {
+          "text": "Hiện không có dữ liệu độ ẩm đất cho khu Z. Tôi sẽ không ước đoán giá trị. Có thể tạo ticket để kỹ thuật viên kiểm tra cấu hình và cảm biến.",
+          "provider": "deterministic",
+          "changed": false
+        },
+        "persistence": {
+          "saved": true,
+          "store": "postgresql",
+          "conversation_id": "conv_farmer_long_farm_long",
+          "message_id": 48,
+          "duplicate": false
+        }
+      }
+    },
+    {
+      "name": "cross_farm",
+      "status_code": 403,
+      "response": {
+        "detail": {
+          "code": "FORBIDDEN",
+          "message": "Tài khoản không có quyền truy cập vườn được yêu cầu.",
+          "farm_id": "farm_lan"
+        }
+      }
+    }
+  ]
+}

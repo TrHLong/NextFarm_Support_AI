@@ -1,0 +1,1867 @@
+{
+  "created_at": "2026-09-14T15:46:54.018974+00:00",
+  "run_id": "residual-20260914T154653Z",
+  "source_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\historical-customer\\historical-20260913T144927Z\\training_report.json",
+  "source_feature_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\features_with_split.csv",
+  "source_feature_sha256": "789c2a7338500d4be123c0fee1f6ebf352f703e30a3e435ec253b4a71bfce140",
+  "source_cleaning": [
+    {
+      "customer_id": "customer_lan",
+      "manifest_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\snapshot_manifest.json",
+      "manifest_sha256": "adcc749716600f5b7e34823327c4f99f7ba02638304a888cb8b2df20459cb67d",
+      "snapshot_id": "runtime_20260910T211938Z",
+      "exported_at": "2026-09-10T21:19:38.350915+00:00",
+      "files": [
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\customer.csv",
+          "rows": 1,
+          "sha256": "52854b5a98dfa591f95ac67314cc0f7cbb906732a9906a71314da3a4da48c764",
+          "columns": [
+            "customer_id",
+            "customer_name",
+            "customer_type",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\farms.csv",
+          "rows": 1,
+          "sha256": "27e6ae6021d38d2938b882eebeaa6d67cf8b03734eed11754ad044130787c645",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "owner_user_id",
+            "farm_name",
+            "crop_name",
+            "region",
+            "address",
+            "area_ha",
+            "latitude",
+            "longitude",
+            "cultivation_type",
+            "soil_texture",
+            "drainage",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\zones.csv",
+          "rows": 2,
+          "sha256": "bc5bd52d3da47f5db2799ae08bbdc1700733daea8721d9519cd7a2c27aac8500",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "zone_name",
+            "crop_name",
+            "area_ha",
+            "moisture_min",
+            "moisture_max",
+            "ec_min",
+            "ec_max",
+            "ph_min",
+            "ph_max"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\farm_ai_profiles.csv",
+          "rows": 1,
+          "sha256": "cf67b365edf007a63074b78b7352fc0d6645c97dba554f1c9093dec86764f25b",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "crop_code",
+            "crop_variety",
+            "growth_stage",
+            "cultivation_type",
+            "climate_region",
+            "soil_type",
+            "target_moisture_min",
+            "target_moisture_max",
+            "target_ec_min",
+            "target_ec_max",
+            "target_ph_min",
+            "target_ph_max",
+            "active_model_scope",
+            "active_model_version",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\sensors.csv",
+          "rows": 7,
+          "sha256": "f262a9fe5031b10016a9aec3888dc235e35f8c2ca36f9678c5bf8b9a5418d5e9",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "sensor_id",
+            "sensor_name",
+            "metric_type",
+            "unit",
+            "active"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\sensor_readings.csv",
+          "rows": 549136,
+          "sha256": "da12fc0a61177cda540212701216027ec179a226c70eb7aaa6484dd9ccaaa5ec",
+          "columns": [
+            "customer_id",
+            "owner_user_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "device_id",
+            "sensor_id",
+            "reading_id",
+            "metric_type",
+            "value",
+            "unit",
+            "quality",
+            "observed_at",
+            "received_at",
+            "created_at",
+            "data_origin",
+            "source_dataset",
+            "simulation_profile_version"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\device_status.csv",
+          "rows": 232752,
+          "sha256": "0d3994a534020b72305dbbb3708cbc3e1dcc16f795cadd993c0763ebafb47263",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "status_id",
+            "online",
+            "running",
+            "last_seen_at",
+            "observed_at",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\irrigation_schedules.csv",
+          "rows": 1,
+          "sha256": "698597faa02ba043139f85a4186b56156a3ebb6a59fc11e2a0102eddc6ff4ea1",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "schedule_id",
+            "schedule_name",
+            "start_time",
+            "duration_minutes",
+            "days_of_week",
+            "enabled"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\irrigation_runs.csv",
+          "rows": 7,
+          "sha256": "2337c8d695494905c9073516281f8d3d48b58d01be95483b5d0135e1c344d57d",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "run_id",
+            "started_at",
+            "ended_at",
+            "duration_minutes",
+            "water_liters",
+            "result",
+            "source"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\telemetry_ingest_events.csv",
+          "rows": 232752,
+          "sha256": "6ed1d5c102cc3cdd6a925858ad2f389f6ac2909fa299e337517e039299c55a0a",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "event_id",
+            "packet_id",
+            "mqtt_topic",
+            "message_type",
+            "sent_at",
+            "received_at",
+            "inserted_readings",
+            "insert_latency_ms",
+            "status",
+            "error_message"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\alerts.csv",
+          "rows": 5,
+          "sha256": "79cff8d80e2a7c0afee01e43fe4c0cdc3a678eef036e851dbc547aa1af9490f6",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "alert_id",
+            "alert_type",
+            "severity",
+            "title",
+            "message",
+            "status",
+            "detected_at",
+            "resolved_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\control_commands.csv",
+          "rows": 0,
+          "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "command_id",
+            "requested_by",
+            "command_type",
+            "parameters",
+            "status",
+            "confirmation_required",
+            "requested_at",
+            "confirmed_at",
+            "executed_at",
+            "result",
+            "error_message"
+          ]
+        }
+      ],
+      "cleaning_version": "historical_customer_experiment_v1",
+      "input_rows": 549136,
+      "rejected_rows": 0,
+      "duplicate_reading_ids": 0,
+      "reason_counts": {
+        "wrong_customer": 0,
+        "missing_identity": 0,
+        "invalid_timestamp": 0,
+        "future_clock": 0,
+        "unknown_metric": 0,
+        "duplicate_reading_id": 0,
+        "invalid_or_missing_numeric": 0,
+        "invalid_range": 0,
+        "invalid_unit": 0,
+        "untrusted_quality": 0,
+        "not_available_at_boundary": 6057
+      },
+      "missing_input": {
+        "customer_id": 0,
+        "farm_id": 0,
+        "zone_id": 0,
+        "device_id": 0,
+        "sensor_id": 0,
+        "metric_type": 0,
+        "owner_user_id": 0,
+        "reading_id": 0,
+        "value": 0,
+        "unit": 0,
+        "quality": 0,
+        "observed_at": 0,
+        "received_at": 0,
+        "data_origin": 0
+      },
+      "origins": {
+        "simulated_device_calibrated_v9": 549136
+      },
+      "metrics": {
+        "soil_moisture": 156896,
+        "ec": 78448,
+        "flow_rate": 78448,
+        "air_humidity": 78448,
+        "ph": 78448,
+        "temperature": 78448
+      },
+      "units": {
+        "%": 156896,
+        "mS/cm": 78448,
+        "L/phút": 78448,
+        "%RH": 78448,
+        "pH": 78448,
+        "°C": 78448
+      },
+      "quality": {
+        "good": 549136
+      },
+      "policy": "Fixed units/ranges; missing values stay NaN. Last observation available by each 10-minute boundary. No future fill.",
+      "observed_min": "2026-09-04 11:23:00+00:00",
+      "observed_max": "2026-09-10 21:19:38.107447+00:00",
+      "span_hours": 153.94391873527778,
+      "boundary_rows_before_grid": 1925,
+      "grid_rows": 3444,
+      "empty_grid_rows": 1519,
+      "missing_value_after": 1519,
+      "series_count": 7,
+      "retained_rows_note": "Reduction is causal 10-minute sampling, not arbitrary row deletion; original raw CSV preserved.",
+      "cleaned_csv": {
+        "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_lan\\sensor_readings_10min.csv",
+        "sha256": "379efe39ad9801b68e2257643edff5e854ee07219f24c8c8709de4ba51f22f3c",
+        "rows": 3444
+      }
+    },
+    {
+      "customer_id": "customer_long",
+      "manifest_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\snapshot_manifest.json",
+      "manifest_sha256": "1e566c91bba95144e577de463fcae4dd1421b7d2d0e1b6cf3bf42c6b4fcb25fc",
+      "snapshot_id": "runtime_20260910T212011Z",
+      "exported_at": "2026-09-10T21:20:11.140781+00:00",
+      "files": [
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\customer.csv",
+          "rows": 1,
+          "sha256": "8f45dc75e87eb84cfdd8c5351ab5fd298d1d37fdcc5f5ee4c77e0711e2d69eb1",
+          "columns": [
+            "customer_id",
+            "customer_name",
+            "customer_type",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\farms.csv",
+          "rows": 1,
+          "sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "owner_user_id",
+            "farm_name",
+            "crop_name",
+            "region",
+            "address",
+            "area_ha",
+            "latitude",
+            "longitude",
+            "cultivation_type",
+            "soil_texture",
+            "drainage",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\zones.csv",
+          "rows": 3,
+          "sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "zone_name",
+            "crop_name",
+            "area_ha",
+            "moisture_min",
+            "moisture_max",
+            "ec_min",
+            "ec_max",
+            "ph_min",
+            "ph_max"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\farm_ai_profiles.csv",
+          "rows": 1,
+          "sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "crop_code",
+            "crop_variety",
+            "growth_stage",
+            "cultivation_type",
+            "climate_region",
+            "soil_type",
+            "target_moisture_min",
+            "target_moisture_max",
+            "target_ec_min",
+            "target_ec_max",
+            "target_ph_min",
+            "target_ph_max",
+            "active_model_scope",
+            "active_model_version",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\sensors.csv",
+          "rows": 12,
+          "sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "sensor_id",
+            "sensor_name",
+            "metric_type",
+            "unit",
+            "active"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\sensor_readings.csv",
+          "rows": 941568,
+          "sha256": "2e87cbfe637a23055dc261a7dfdd8c3c5990feb989fa2d8f3bb7cb384f78b0fe",
+          "columns": [
+            "customer_id",
+            "owner_user_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "device_id",
+            "sensor_id",
+            "reading_id",
+            "metric_type",
+            "value",
+            "unit",
+            "quality",
+            "observed_at",
+            "received_at",
+            "created_at",
+            "data_origin",
+            "source_dataset",
+            "simulation_profile_version"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\device_status.csv",
+          "rows": 388000,
+          "sha256": "c8ec7014dd20f82c7bb637b255aebe55ddc12eef9eefccbb74e8503182eb3b6a",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "status_id",
+            "online",
+            "running",
+            "last_seen_at",
+            "observed_at",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\irrigation_schedules.csv",
+          "rows": 2,
+          "sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "schedule_id",
+            "schedule_name",
+            "start_time",
+            "duration_minutes",
+            "days_of_week",
+            "enabled"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\irrigation_runs.csv",
+          "rows": 14,
+          "sha256": "a2b98b554a3c8b5ff5124c9bfdb12973188a52b75ea6197b21b08e1f1839f65c",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "run_id",
+            "started_at",
+            "ended_at",
+            "duration_minutes",
+            "water_liters",
+            "result",
+            "source"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\telemetry_ingest_events.csv",
+          "rows": 310400,
+          "sha256": "4d539bbbf0dd0c7549b5fb4a55cb992e457561754c89ab11c1dc7effa061c791",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "event_id",
+            "packet_id",
+            "mqtt_topic",
+            "message_type",
+            "sent_at",
+            "received_at",
+            "inserted_readings",
+            "insert_latency_ms",
+            "status",
+            "error_message"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\alerts.csv",
+          "rows": 10,
+          "sha256": "239f9de57dc72011c9665b19c71a6c1fabc209a9c7f3c7babc14b8b6ab5c56c9",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "alert_id",
+            "alert_type",
+            "severity",
+            "title",
+            "message",
+            "status",
+            "detected_at",
+            "resolved_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\control_commands.csv",
+          "rows": 0,
+          "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "command_id",
+            "requested_by",
+            "command_type",
+            "parameters",
+            "status",
+            "confirmation_required",
+            "requested_at",
+            "confirmed_at",
+            "executed_at",
+            "result",
+            "error_message"
+          ]
+        }
+      ],
+      "cleaning_version": "historical_customer_experiment_v1",
+      "input_rows": 941568,
+      "rejected_rows": 0,
+      "duplicate_reading_ids": 0,
+      "reason_counts": {
+        "wrong_customer": 0,
+        "missing_identity": 0,
+        "invalid_timestamp": 0,
+        "future_clock": 0,
+        "unknown_metric": 0,
+        "duplicate_reading_id": 0,
+        "invalid_or_missing_numeric": 0,
+        "invalid_range": 0,
+        "invalid_unit": 0,
+        "untrusted_quality": 7135,
+        "not_available_at_boundary": 10449
+      },
+      "missing_input": {
+        "customer_id": 0,
+        "farm_id": 0,
+        "zone_id": 0,
+        "device_id": 0,
+        "sensor_id": 0,
+        "metric_type": 0,
+        "owner_user_id": 0,
+        "reading_id": 0,
+        "value": 0,
+        "unit": 0,
+        "quality": 0,
+        "observed_at": 0,
+        "received_at": 0,
+        "data_origin": 0
+      },
+      "origins": {
+        "simulated_device_calibrated_v9": 941568
+      },
+      "metrics": {
+        "soil_moisture": 235392,
+        "ec": 156928,
+        "air_humidity": 156928,
+        "ph": 156928,
+        "temperature": 156928,
+        "flow_rate": 78464
+      },
+      "units": {
+        "%": 235392,
+        "mS/cm": 156928,
+        "%RH": 156928,
+        "pH": 156928,
+        "°C": 156928,
+        "L/phút": 78464
+      },
+      "quality": {
+        "good": 934433,
+        "suspect": 7135
+      },
+      "policy": "Fixed units/ranges; missing values stay NaN. Last observation available by each 10-minute boundary. No future fill.",
+      "observed_min": "2026-09-04 11:23:00+00:00",
+      "observed_max": "2026-09-10 21:20:10.387729+00:00",
+      "span_hours": 153.95288548027776,
+      "boundary_rows_before_grid": 3312,
+      "grid_rows": 5916,
+      "empty_grid_rows": 2604,
+      "missing_value_after": 2632,
+      "series_count": 12,
+      "retained_rows_note": "Reduction is causal 10-minute sampling, not arbitrary row deletion; original raw CSV preserved.",
+      "cleaned_csv": {
+        "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_long\\sensor_readings_10min.csv",
+        "sha256": "5b84657378c3970fcd45b0591a796a8306c9272275c7f0de9aec0b80b520c01a",
+        "rows": 5916
+      }
+    },
+    {
+      "customer_id": "customer_minh",
+      "manifest_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\snapshot_manifest.json",
+      "manifest_sha256": "16c3f90573ada6820f37a67672a899cc4fd519ddb067eb1c67ec9c8c6285901c",
+      "snapshot_id": "runtime_20260910T212115Z",
+      "exported_at": "2026-09-10T21:21:15.805685+00:00",
+      "files": [
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\customer.csv",
+          "rows": 1,
+          "sha256": "f9c3da4ccd7932a40c7c37a7eedabfc59484ceb01a559b6b4fe16fd4d9d43dc7",
+          "columns": [
+            "customer_id",
+            "customer_name",
+            "customer_type",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\farms.csv",
+          "rows": 1,
+          "sha256": "ee230ca916a88cb8ceeea947361bd735fff7540bcf8a4a10426d3cf1c6f1527a",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "owner_user_id",
+            "farm_name",
+            "crop_name",
+            "region",
+            "address",
+            "area_ha",
+            "latitude",
+            "longitude",
+            "cultivation_type",
+            "soil_texture",
+            "drainage",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\zones.csv",
+          "rows": 2,
+          "sha256": "37d6cc3e54b7ae40024919c7eede8a5bfacfe18e1773327515a330b273620c3c",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "zone_name",
+            "crop_name",
+            "area_ha",
+            "moisture_min",
+            "moisture_max",
+            "ec_min",
+            "ec_max",
+            "ph_min",
+            "ph_max"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\farm_ai_profiles.csv",
+          "rows": 1,
+          "sha256": "c2adc5d3b3d75551bc3b23c41642dda47636d7224cd21202659f64ee584c1add",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "crop_code",
+            "crop_variety",
+            "growth_stage",
+            "cultivation_type",
+            "climate_region",
+            "soil_type",
+            "target_moisture_min",
+            "target_moisture_max",
+            "target_ec_min",
+            "target_ec_max",
+            "target_ph_min",
+            "target_ph_max",
+            "active_model_scope",
+            "active_model_version",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\sensors.csv",
+          "rows": 8,
+          "sha256": "8e028ede417ee6955d063cc37786ca1287286bd617298c62e85e46b2aa2b3902",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "sensor_id",
+            "sensor_name",
+            "metric_type",
+            "unit",
+            "active"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\sensor_readings.csv",
+          "rows": 627928,
+          "sha256": "f59ec0d3f9343e1e2483c6e5ebdc5b73a8dd5c902ab2b1678fb58c5edff4daef",
+          "columns": [
+            "customer_id",
+            "owner_user_id",
+            "farm_id",
+            "zone_id",
+            "zone_code",
+            "device_id",
+            "sensor_id",
+            "reading_id",
+            "metric_type",
+            "value",
+            "unit",
+            "quality",
+            "observed_at",
+            "received_at",
+            "created_at",
+            "data_origin",
+            "source_dataset",
+            "simulation_profile_version"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\device_status.csv",
+          "rows": 310504,
+          "sha256": "12323d2436e2ce894c48c19956c40ac7f7c7cc267ec3755c01bac4b318f784fd",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "status_id",
+            "online",
+            "running",
+            "last_seen_at",
+            "observed_at",
+            "created_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\irrigation_schedules.csv",
+          "rows": 1,
+          "sha256": "0f6a6041e294611de0a2797a841006694af965801b017e9f2a544ad143c8d526",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "schedule_id",
+            "schedule_name",
+            "start_time",
+            "duration_minutes",
+            "days_of_week",
+            "enabled"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\irrigation_runs.csv",
+          "rows": 7,
+          "sha256": "c43ba27d76ba34a558e4ab40bcffab34491441ab4370675a4ef2e0cd22bdaaee",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "port_id",
+            "run_id",
+            "started_at",
+            "ended_at",
+            "duration_minutes",
+            "water_liters",
+            "result",
+            "source"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\telemetry_ingest_events.csv",
+          "rows": 232880,
+          "sha256": "cfba7ba4fbcdd58e586f2d77e72e03a45f20c3c775a301efb77d290d137e6d1e",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "event_id",
+            "packet_id",
+            "mqtt_topic",
+            "message_type",
+            "sent_at",
+            "received_at",
+            "inserted_readings",
+            "insert_latency_ms",
+            "status",
+            "error_message"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\alerts.csv",
+          "rows": 7,
+          "sha256": "382ac3a3d098fa09568f133366d6ba09cc8a39d61c074b81d6dd58031cdd8893",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "alert_id",
+            "alert_type",
+            "severity",
+            "title",
+            "message",
+            "status",
+            "detected_at",
+            "resolved_at"
+          ]
+        },
+        {
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\control_commands.csv",
+          "rows": 0,
+          "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "columns": [
+            "customer_id",
+            "farm_id",
+            "zone_id",
+            "device_id",
+            "port_id",
+            "command_id",
+            "requested_by",
+            "command_type",
+            "parameters",
+            "status",
+            "confirmation_required",
+            "requested_at",
+            "confirmed_at",
+            "executed_at",
+            "result",
+            "error_message"
+          ]
+        }
+      ],
+      "cleaning_version": "historical_customer_experiment_v1",
+      "input_rows": 627928,
+      "rejected_rows": 0,
+      "duplicate_reading_ids": 0,
+      "reason_counts": {
+        "wrong_customer": 0,
+        "missing_identity": 0,
+        "invalid_timestamp": 0,
+        "future_clock": 0,
+        "unknown_metric": 0,
+        "duplicate_reading_id": 0,
+        "invalid_or_missing_numeric": 0,
+        "invalid_range": 0,
+        "invalid_unit": 0,
+        "untrusted_quality": 0,
+        "not_available_at_boundary": 7042
+      },
+      "missing_input": {
+        "customer_id": 0,
+        "farm_id": 0,
+        "zone_id": 0,
+        "device_id": 0,
+        "sensor_id": 0,
+        "metric_type": 0,
+        "owner_user_id": 0,
+        "reading_id": 0,
+        "value": 0,
+        "unit": 0,
+        "quality": 0,
+        "observed_at": 0,
+        "received_at": 0,
+        "data_origin": 0
+      },
+      "origins": {
+        "simulated_device_calibrated_v9": 627928
+      },
+      "metrics": {
+        "flow_rate": 156982,
+        "soil_moisture": 156982,
+        "ec": 78491,
+        "air_humidity": 78491,
+        "ph": 78491,
+        "temperature": 78491
+      },
+      "units": {
+        "L/phút": 156982,
+        "%": 156982,
+        "mS/cm": 78491,
+        "%RH": 78491,
+        "pH": 78491,
+        "°C": 78491
+      },
+      "quality": {
+        "good": 627928
+      },
+      "policy": "Fixed units/ranges; missing values stay NaN. Last observation available by each 10-minute boundary. No future fill.",
+      "observed_min": "2026-09-04 11:23:00+00:00",
+      "observed_max": "2026-09-10 21:21:14.005754+00:00",
+      "span_hours": 153.9705571538889,
+      "boundary_rows_before_grid": 2208,
+      "grid_rows": 3944,
+      "empty_grid_rows": 1736,
+      "missing_value_after": 1736,
+      "series_count": 8,
+      "retained_rows_note": "Reduction is causal 10-minute sampling, not arbitrary row deletion; original raw CSV preserved.",
+      "cleaned_csv": {
+        "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_minh\\sensor_readings_10min.csv",
+        "sha256": "793fe2f7ba23405e3f9d4fc8eeda6f5caeea520d83bf070e6f63f5c10e60e131",
+        "rows": 3944
+      }
+    }
+  ],
+  "split": {
+    "start": "2026-09-07 11:30:00+00:00",
+    "end": "2026-09-10 21:20:00+00:00",
+    "common_span_hours": 81.83333333333333,
+    "train_end": "2026-09-09 12:30:00+00:00",
+    "validation_end": "2026-09-10 04:50:00+00:00",
+    "heldout_customer": "customer_minh",
+    "time_ratio": "60/20/20 with strict 30-minute label purge",
+    "policy": "Heldout customer excluded entirely from training/validation. Heldout earlier period excluded. No test selection or final refit."
+  },
+  "policy": {
+    "version": "farmer_acceptance_proposal_v1",
+    "requested_hit_rate": 0.8,
+    "regression": "Fraction of eligible 30-minute forecasts within the stated absolute error tolerance.",
+    "tolerance_units": {
+      "soil_moisture": "percentage_points",
+      "temperature": "degC",
+      "ec": "mS/cm",
+      "ph": "pH_units"
+    },
+    "tolerances": {
+      "soil_moisture": 5.0,
+      "temperature": 2.0,
+      "ec": 0.2,
+      "ph": 0.2
+    },
+    "business_tolerances_approved": false,
+    "classification": {
+      "min_balanced_accuracy": 0.8,
+      "min_f1_macro": 0.8,
+      "min_risk_recall": 0.8
+    },
+    "min_prediction_coverage": 0.8,
+    "min_test_rows": 50,
+    "query_acceptance": "Exact grounded facts and correct abstention on the declared test suite; no claim of universal 100% natural language understanding.",
+    "limits": [
+      "Tolerances are proposed engineering criteria, not confirmed sensor accuracy or agronomic recommendations.",
+      "Passing a simulated or reused historical test is not field acceptance."
+    ]
+  },
+  "models": [
+    {
+      "name": "moisture_forecast",
+      "title": "Độ ẩm đất sau 30 phút",
+      "metric": "soil_moisture",
+      "status": "EXPERIMENTAL",
+      "rows": {
+        "train": 790,
+        "validation": 90,
+        "test_unseen_customer": 130
+      },
+      "features": [
+        "value",
+        "lag1",
+        "lag3",
+        "lag6",
+        "mean3",
+        "slope3",
+        "history_missing",
+        "reading_age_minutes"
+      ],
+      "algorithm": "ridge_residual_a10",
+      "validation_candidates": {
+        "ridge_residual_a1": {
+          "mae": 0.3223858932914204,
+          "rmse": 0.3858959537414236,
+          "r2": 0.9746510535355858
+        },
+        "ridge_residual_a10": {
+          "mae": 0.3218704460513656,
+          "rmse": 0.38281770034157675,
+          "r2": 0.9750538525761873
+        },
+        "extra_trees_residual": {
+          "mae": 0.3270521346040643,
+          "rmse": 0.38680121290869707,
+          "r2": 0.9745319837104823
+        },
+        "hgb_residual": {
+          "mae": 0.3397263344837041,
+          "rmse": 0.4315587363931565,
+          "r2": 0.9682970781527922
+        }
+      },
+      "metrics": {
+        "train": {
+          "mae": 0.27700179320910695,
+          "rmse": 0.4907537669956804,
+          "r2": 0.9685076359133147
+        },
+        "validation": {
+          "mae": 0.3218704460513656,
+          "rmse": 0.38281770034157675,
+          "r2": 0.9750538525761873
+        },
+        "test_unseen_customer": {
+          "mae": 0.14318071946296665,
+          "rmse": 0.18600189152012764,
+          "r2": 0.9501024587923782
+        }
+      },
+      "acceptance": {
+        "train": {
+          "absolute_error_tolerance": 5.0,
+          "correct_within_tolerance": 790,
+          "predicted_rows": 790,
+          "total_labeled_rows": 845,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9349112426035503,
+          "success_on_all_labeled_rows": 0.9349112426035503,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "validation": {
+          "absolute_error_tolerance": 5.0,
+          "correct_within_tolerance": 90,
+          "predicted_rows": 90,
+          "total_labeled_rows": 120,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.75,
+          "success_on_all_labeled_rows": 0.75,
+          "numeric_gate_passed": false,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "test_unseen_customer": {
+          "absolute_error_tolerance": 5.0,
+          "correct_within_tolerance": 130,
+          "predicted_rows": 130,
+          "total_labeled_rows": 136,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9558823529411765,
+          "success_on_all_labeled_rows": 0.9558823529411765,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        }
+      },
+      "baselines": {
+        "train": {
+          "persistence": {
+            "mae": 0.2607924050632911,
+            "rmse": 0.49997431326424224,
+            "r2": 0.9673131278003242
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 5.0,
+            "correct_within_tolerance": 790,
+            "predicted_rows": 790,
+            "total_labeled_rows": 845,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9349112426035503,
+            "success_on_all_labeled_rows": 0.9349112426035503,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "validation": {
+          "persistence": {
+            "mae": 0.2842777777777777,
+            "rmse": 0.3637235671953815,
+            "r2": 0.9774803131041664
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 5.0,
+            "correct_within_tolerance": 90,
+            "predicted_rows": 90,
+            "total_labeled_rows": 120,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.75,
+            "success_on_all_labeled_rows": 0.75,
+            "numeric_gate_passed": false,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "test_unseen_customer": {
+          "persistence": {
+            "mae": 0.1475000000000002,
+            "rmse": 0.19021382704735257,
+            "r2": 0.9478170543064409
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 5.0,
+            "correct_within_tolerance": 130,
+            "predicted_rows": 130,
+            "total_labeled_rows": 136,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9558823529411765,
+            "success_on_all_labeled_rows": 0.9558823529411765,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        }
+      },
+      "parameters": {
+        "memory": "None",
+        "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('pipeline', Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=10))]))]",
+        "transform_input": "None",
+        "verbose": "False",
+        "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+        "pipeline": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=10))])",
+        "simpleimputer__add_indicator": "True",
+        "simpleimputer__copy": "True",
+        "simpleimputer__fill_value": "None",
+        "simpleimputer__keep_empty_features": "True",
+        "simpleimputer__missing_values": "nan",
+        "simpleimputer__strategy": "median",
+        "pipeline__memory": "None",
+        "pipeline__steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=10))]",
+        "pipeline__transform_input": "None",
+        "pipeline__verbose": "False",
+        "pipeline__standardscaler": "StandardScaler()",
+        "pipeline__ridge": "Ridge(alpha=10)",
+        "pipeline__standardscaler__copy": "True",
+        "pipeline__standardscaler__with_mean": "True",
+        "pipeline__standardscaler__with_std": "True",
+        "pipeline__ridge__alpha": "10",
+        "pipeline__ridge__copy_X": "True",
+        "pipeline__ridge__fit_intercept": "True",
+        "pipeline__ridge__max_iter": "None",
+        "pipeline__ridge__positive": "False",
+        "pipeline__ridge__random_state": "None",
+        "pipeline__ridge__solver": "auto",
+        "pipeline__ridge__tol": "0.0001"
+      },
+      "beats_persistence_mae": true,
+      "deployment_ready": false,
+      "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\moisture_forecast\\model.joblib",
+      "artifact_sha256": "07ebb6dee052691de540ab402608520a2c1569ba0d84fae15d185972d0b0eb68",
+      "reload_max_difference": 0.0
+    },
+    {
+      "name": "temperature_forecast",
+      "title": "Nhiệt độ sau 30 phút",
+      "metric": "temperature",
+      "status": "EXPERIMENTAL",
+      "rows": {
+        "train": 456,
+        "validation": 52,
+        "test_unseen_customer": 65
+      },
+      "features": [
+        "value",
+        "lag1",
+        "lag3",
+        "lag6",
+        "mean3",
+        "slope3",
+        "history_missing",
+        "reading_age_minutes"
+      ],
+      "algorithm": "hgb_residual",
+      "validation_candidates": {
+        "ridge_residual_a1": {
+          "mae": 0.5153504216954023,
+          "rmse": 0.6110511130074524,
+          "r2": 0.8570992598512814
+        },
+        "ridge_residual_a10": {
+          "mae": 0.5121837418310702,
+          "rmse": 0.6074283247272843,
+          "r2": 0.8587886912368266
+        },
+        "extra_trees_residual": {
+          "mae": 0.5328864987805321,
+          "rmse": 0.6334563092518605,
+          "r2": 0.8464277555805025
+        },
+        "hgb_residual": {
+          "mae": 0.44447082046059183,
+          "rmse": 0.541681125354892,
+          "r2": 0.8877033488066973
+        }
+      },
+      "metrics": {
+        "train": {
+          "mae": 0.1495679595843839,
+          "rmse": 0.19159467243897635,
+          "r2": 0.989292770677363
+        },
+        "validation": {
+          "mae": 0.44447082046059183,
+          "rmse": 0.541681125354892,
+          "r2": 0.8877033488066973
+        },
+        "test_unseen_customer": {
+          "mae": 0.23320892671362517,
+          "rmse": 0.2895519915415139,
+          "r2": 0.2627103604109319
+        }
+      },
+      "acceptance": {
+        "train": {
+          "absolute_error_tolerance": 2.0,
+          "correct_within_tolerance": 456,
+          "predicted_rows": 456,
+          "total_labeled_rows": 492,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.926829268292683,
+          "success_on_all_labeled_rows": 0.926829268292683,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "validation": {
+          "absolute_error_tolerance": 2.0,
+          "correct_within_tolerance": 52,
+          "predicted_rows": 52,
+          "total_labeled_rows": 70,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.7428571428571429,
+          "success_on_all_labeled_rows": 0.7428571428571429,
+          "numeric_gate_passed": false,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "test_unseen_customer": {
+          "absolute_error_tolerance": 2.0,
+          "correct_within_tolerance": 65,
+          "predicted_rows": 65,
+          "total_labeled_rows": 68,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9558823529411765,
+          "success_on_all_labeled_rows": 0.9558823529411765,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        }
+      },
+      "baselines": {
+        "train": {
+          "persistence": {
+            "mae": 0.24255482456140354,
+            "rmse": 0.31308900631800046,
+            "r2": 0.9714079112439357
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 2.0,
+            "correct_within_tolerance": 456,
+            "predicted_rows": 456,
+            "total_labeled_rows": 492,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.926829268292683,
+            "success_on_all_labeled_rows": 0.926829268292683,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "validation": {
+          "persistence": {
+            "mae": 0.4569807692307692,
+            "rmse": 0.5286030028437075,
+            "r2": 0.8930603764286225
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 2.0,
+            "correct_within_tolerance": 52,
+            "predicted_rows": 52,
+            "total_labeled_rows": 70,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.7428571428571429,
+            "success_on_all_labeled_rows": 0.7428571428571429,
+            "numeric_gate_passed": false,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "test_unseen_customer": {
+          "persistence": {
+            "mae": 0.20953846153846134,
+            "rmse": 0.28588437684329104,
+            "r2": 0.28126985004745897
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 2.0,
+            "correct_within_tolerance": 65,
+            "predicted_rows": 65,
+            "total_labeled_rows": 68,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9558823529411765,
+            "success_on_all_labeled_rows": 0.9558823529411765,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        }
+      },
+      "parameters": {
+        "memory": "None",
+        "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('histgradientboostingregressor', HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914))]",
+        "transform_input": "None",
+        "verbose": "False",
+        "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+        "histgradientboostingregressor": "HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914)",
+        "simpleimputer__add_indicator": "True",
+        "simpleimputer__copy": "True",
+        "simpleimputer__fill_value": "None",
+        "simpleimputer__keep_empty_features": "True",
+        "simpleimputer__missing_values": "nan",
+        "simpleimputer__strategy": "median",
+        "histgradientboostingregressor__categorical_features": "from_dtype",
+        "histgradientboostingregressor__early_stopping": "False",
+        "histgradientboostingregressor__interaction_cst": "None",
+        "histgradientboostingregressor__l2_regularization": "5",
+        "histgradientboostingregressor__learning_rate": "0.1",
+        "histgradientboostingregressor__loss": "squared_error",
+        "histgradientboostingregressor__max_bins": "255",
+        "histgradientboostingregressor__max_depth": "None",
+        "histgradientboostingregressor__max_features": "1.0",
+        "histgradientboostingregressor__max_iter": "120",
+        "histgradientboostingregressor__max_leaf_nodes": "7",
+        "histgradientboostingregressor__min_samples_leaf": "40",
+        "histgradientboostingregressor__monotonic_cst": "None",
+        "histgradientboostingregressor__n_iter_no_change": "10",
+        "histgradientboostingregressor__quantile": "None",
+        "histgradientboostingregressor__random_state": "20260914",
+        "histgradientboostingregressor__scoring": "loss",
+        "histgradientboostingregressor__tol": "1e-07",
+        "histgradientboostingregressor__validation_fraction": "0.1",
+        "histgradientboostingregressor__verbose": "0",
+        "histgradientboostingregressor__warm_start": "False"
+      },
+      "beats_persistence_mae": false,
+      "deployment_ready": false,
+      "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\temperature_forecast\\model.joblib",
+      "artifact_sha256": "9d081cc5103d668fa58bcca8b8fa68827bc4f4e42f9d3216c02bd2e4f9d3ca62",
+      "reload_max_difference": 0.0
+    },
+    {
+      "name": "ec_forecast",
+      "title": "EC sau 30 phút",
+      "metric": "ec",
+      "status": "EXPERIMENTAL",
+      "rows": {
+        "train": 462,
+        "validation": 48,
+        "test_unseen_customer": 65
+      },
+      "features": [
+        "value",
+        "lag1",
+        "lag3",
+        "lag6",
+        "mean3",
+        "slope3",
+        "history_missing",
+        "reading_age_minutes"
+      ],
+      "algorithm": "ridge_residual_a1",
+      "validation_candidates": {
+        "ridge_residual_a1": {
+          "mae": 0.02923008167826477,
+          "rmse": 0.03418951624611518,
+          "r2": 0.9569436243892023
+        },
+        "ridge_residual_a10": {
+          "mae": 0.029343318244687028,
+          "rmse": 0.034458689964571076,
+          "r2": 0.9562629907574789
+        },
+        "extra_trees_residual": {
+          "mae": 0.029544323473304424,
+          "rmse": 0.03473371344240429,
+          "r2": 0.9555620525347547
+        },
+        "hgb_residual": {
+          "mae": 0.031093889924472207,
+          "rmse": 0.03675318079203411,
+          "r2": 0.9502444628579853
+        }
+      },
+      "metrics": {
+        "train": {
+          "mae": 0.024769548686683705,
+          "rmse": 0.030886868639066728,
+          "r2": 0.9769747085193626
+        },
+        "validation": {
+          "mae": 0.02923008167826477,
+          "rmse": 0.03418951624611518,
+          "r2": 0.9569436243892023
+        },
+        "test_unseen_customer": {
+          "mae": 0.024543192172734197,
+          "rmse": 0.03133406115519993,
+          "r2": 0.4107333571151518
+        }
+      },
+      "acceptance": {
+        "train": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 462,
+          "predicted_rows": 462,
+          "total_labeled_rows": 501,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9221556886227545,
+          "success_on_all_labeled_rows": 0.9221556886227545,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "validation": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 48,
+          "predicted_rows": 48,
+          "total_labeled_rows": 69,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.6956521739130435,
+          "success_on_all_labeled_rows": 0.6956521739130435,
+          "numeric_gate_passed": false,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "test_unseen_customer": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 65,
+          "predicted_rows": 65,
+          "total_labeled_rows": 68,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9558823529411765,
+          "success_on_all_labeled_rows": 0.9558823529411765,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        }
+      },
+      "baselines": {
+        "train": {
+          "persistence": {
+            "mae": 0.025268398268398273,
+            "rmse": 0.031423858363652205,
+            "r2": 0.9761671273786041
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 462,
+            "predicted_rows": 462,
+            "total_labeled_rows": 501,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9221556886227545,
+            "success_on_all_labeled_rows": 0.9221556886227545,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "validation": {
+          "persistence": {
+            "mae": 0.03041666666666666,
+            "rmse": 0.03554457295659445,
+            "r2": 0.9534630240238294
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 48,
+            "predicted_rows": 48,
+            "total_labeled_rows": 69,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.6956521739130435,
+            "success_on_all_labeled_rows": 0.6956521739130435,
+            "numeric_gate_passed": false,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "test_unseen_customer": {
+          "persistence": {
+            "mae": 0.024646153846153835,
+            "rmse": 0.031160626042886476,
+            "r2": 0.41723852648529647
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 65,
+            "predicted_rows": 65,
+            "total_labeled_rows": 68,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9558823529411765,
+            "success_on_all_labeled_rows": 0.9558823529411765,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        }
+      },
+      "parameters": {
+        "memory": "None",
+        "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('pipeline', Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1))]))]",
+        "transform_input": "None",
+        "verbose": "False",
+        "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+        "pipeline": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1))])",
+        "simpleimputer__add_indicator": "True",
+        "simpleimputer__copy": "True",
+        "simpleimputer__fill_value": "None",
+        "simpleimputer__keep_empty_features": "True",
+        "simpleimputer__missing_values": "nan",
+        "simpleimputer__strategy": "median",
+        "pipeline__memory": "None",
+        "pipeline__steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=1))]",
+        "pipeline__transform_input": "None",
+        "pipeline__verbose": "False",
+        "pipeline__standardscaler": "StandardScaler()",
+        "pipeline__ridge": "Ridge(alpha=1)",
+        "pipeline__standardscaler__copy": "True",
+        "pipeline__standardscaler__with_mean": "True",
+        "pipeline__standardscaler__with_std": "True",
+        "pipeline__ridge__alpha": "1",
+        "pipeline__ridge__copy_X": "True",
+        "pipeline__ridge__fit_intercept": "True",
+        "pipeline__ridge__max_iter": "None",
+        "pipeline__ridge__positive": "False",
+        "pipeline__ridge__random_state": "None",
+        "pipeline__ridge__solver": "auto",
+        "pipeline__ridge__tol": "0.0001"
+      },
+      "beats_persistence_mae": true,
+      "deployment_ready": false,
+      "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\ec_forecast\\model.joblib",
+      "artifact_sha256": "60ae8d8fff9f21abdbc3320c06d2acff671f41887888dc14e07a5cb9cb5ea574",
+      "reload_max_difference": 0.0
+    },
+    {
+      "name": "ph_forecast",
+      "title": "pH sau 30 phút",
+      "metric": "ph",
+      "status": "EXPERIMENTAL",
+      "rows": {
+        "train": 474,
+        "validation": 54,
+        "test_unseen_customer": 65
+      },
+      "features": [
+        "value",
+        "lag1",
+        "lag3",
+        "lag6",
+        "mean3",
+        "slope3",
+        "history_missing",
+        "reading_age_minutes"
+      ],
+      "algorithm": "hgb_residual",
+      "validation_candidates": {
+        "ridge_residual_a1": {
+          "mae": 0.005292436329877612,
+          "rmse": 0.006028810185721912,
+          "r2": 0.998440515684269
+        },
+        "ridge_residual_a10": {
+          "mae": 0.005283612567986385,
+          "rmse": 0.00602965376027533,
+          "r2": 0.9984400792355228
+        },
+        "extra_trees_residual": {
+          "mae": 0.003908835938516471,
+          "rmse": 0.004707049613216346,
+          "r2": 0.9990493616244783
+        },
+        "hgb_residual": {
+          "mae": 0.003795877881756755,
+          "rmse": 0.004677418729156349,
+          "r2": 0.9990612924933627
+        }
+      },
+      "metrics": {
+        "train": {
+          "mae": 0.00332195355631209,
+          "rmse": 0.004128112194000331,
+          "r2": 0.9994757198067046
+        },
+        "validation": {
+          "mae": 0.003795877881756755,
+          "rmse": 0.004677418729156349,
+          "r2": 0.9990612924933627
+        },
+        "test_unseen_customer": {
+          "mae": 0.005626419802936137,
+          "rmse": 0.007050055442111086,
+          "r2": 0.679293998817719
+        }
+      },
+      "acceptance": {
+        "train": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 474,
+          "predicted_rows": 474,
+          "total_labeled_rows": 507,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9349112426035503,
+          "success_on_all_labeled_rows": 0.9349112426035503,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "validation": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 54,
+          "predicted_rows": 54,
+          "total_labeled_rows": 72,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.75,
+          "success_on_all_labeled_rows": 0.75,
+          "numeric_gate_passed": false,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        },
+        "test_unseen_customer": {
+          "absolute_error_tolerance": 0.2,
+          "correct_within_tolerance": 65,
+          "predicted_rows": 65,
+          "total_labeled_rows": 68,
+          "hit_rate": 1.0,
+          "prediction_coverage": 0.9558823529411765,
+          "success_on_all_labeled_rows": 0.9558823529411765,
+          "numeric_gate_passed": true,
+          "field_acceptance": false,
+          "tolerances_approved": false
+        }
+      },
+      "baselines": {
+        "train": {
+          "persistence": {
+            "mae": 0.005647679324894545,
+            "rmse": 0.006991103448395017,
+            "r2": 0.9984963321167226
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 474,
+            "predicted_rows": 474,
+            "total_labeled_rows": 507,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9349112426035503,
+            "success_on_all_labeled_rows": 0.9349112426035503,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "validation": {
+          "persistence": {
+            "mae": 0.006407407407407458,
+            "rmse": 0.007564537145273521,
+            "r2": 0.9975448246799414
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 54,
+            "predicted_rows": 54,
+            "total_labeled_rows": 72,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.75,
+            "success_on_all_labeled_rows": 0.75,
+            "numeric_gate_passed": false,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        },
+        "test_unseen_customer": {
+          "persistence": {
+            "mae": 0.0043692307692306705,
+            "rmse": 0.005716373245067356,
+            "r2": 0.7891550625082154
+          },
+          "persistence_acceptance": {
+            "absolute_error_tolerance": 0.2,
+            "correct_within_tolerance": 65,
+            "predicted_rows": 65,
+            "total_labeled_rows": 68,
+            "hit_rate": 1.0,
+            "prediction_coverage": 0.9558823529411765,
+            "success_on_all_labeled_rows": 0.9558823529411765,
+            "numeric_gate_passed": true,
+            "field_acceptance": false,
+            "tolerances_approved": false
+          }
+        }
+      },
+      "parameters": {
+        "memory": "None",
+        "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('histgradientboostingregressor', HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914))]",
+        "transform_input": "None",
+        "verbose": "False",
+        "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+        "histgradientboostingregressor": "HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914)",
+        "simpleimputer__add_indicator": "True",
+        "simpleimputer__copy": "True",
+        "simpleimputer__fill_value": "None",
+        "simpleimputer__keep_empty_features": "True",
+        "simpleimputer__missing_values": "nan",
+        "simpleimputer__strategy": "median",
+        "histgradientboostingregressor__categorical_features": "from_dtype",
+        "histgradientboostingregressor__early_stopping": "False",
+        "histgradientboostingregressor__interaction_cst": "None",
+        "histgradientboostingregressor__l2_regularization": "5",
+        "histgradientboostingregressor__learning_rate": "0.1",
+        "histgradientboostingregressor__loss": "squared_error",
+        "histgradientboostingregressor__max_bins": "255",
+        "histgradientboostingregressor__max_depth": "None",
+        "histgradientboostingregressor__max_features": "1.0",
+        "histgradientboostingregressor__max_iter": "120",
+        "histgradientboostingregressor__max_leaf_nodes": "7",
+        "histgradientboostingregressor__min_samples_leaf": "40",
+        "histgradientboostingregressor__monotonic_cst": "None",
+        "histgradientboostingregressor__n_iter_no_change": "10",
+        "histgradientboostingregressor__quantile": "None",
+        "histgradientboostingregressor__random_state": "20260914",
+        "histgradientboostingregressor__scoring": "loss",
+        "histgradientboostingregressor__tol": "1e-07",
+        "histgradientboostingregressor__validation_fraction": "0.1",
+        "histgradientboostingregressor__verbose": "0",
+        "histgradientboostingregressor__warm_start": "False"
+      },
+      "beats_persistence_mae": false,
+      "deployment_ready": false,
+      "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\ph_forecast\\model.joblib",
+      "artifact_sha256": "588e6f293ab3cf9ef407e6562e1d41c9cc28669e6414230667e4d1d9a6441018",
+      "reload_max_difference": 0.0
+    }
+  ],
+  "ready_count": 0,
+  "active_registry_modified": false,
+  "seed": 20260914,
+  "scope": "historical_simulated_customer_development_recheck",
+  "test_reused": true,
+  "disclosure": "The heldout historical period has been examined before. This improvement experiment is NOT a new blind test; future pilot needs a newly frozen test window.",
+  "training_change": "Learn y_future-current_value; add current measurement at prediction time. Input current value must be present; no fabricated prediction from a missing current reading.",
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "pandas": "2.2.3",
+    "numpy": "2.2.1"
+  },
+  "existing_classifier_source_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\benchmark-retrain\\benchmark-20260913T144936Z\\training_report.json",
+  "existing_classifier_acceptance": [
+    {
+      "name": "flow_fault_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9366732120711038,
+        "f1_macro": 0.9518952667723348,
+        "risk_recall": 0.875,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    },
+    {
+      "name": "leak_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9348118279569892,
+        "f1_macro": 0.9188791685278193,
+        "risk_recall": 0.875,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    },
+    {
+      "name": "irrigation_failure_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9927804293057509,
+        "f1_macro": 0.976935317794627,
+        "risk_recall": 0.9885057471264368,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    },
+    {
+      "name": "sensor_fault_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9579888048708631,
+        "f1_macro": 0.9659188401091456,
+        "risk_recall": 0.9176470588235294,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    },
+    {
+      "name": "power_loss_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9760566753878468,
+        "f1_macro": 0.9708963248494127,
+        "risk_recall": 0.9545454545454546,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    },
+    {
+      "name": "mqtt_loss_forecast",
+      "scope": "existing_synthetic_benchmark_only",
+      "acceptance": {
+        "balanced_accuracy": 0.9760566753878468,
+        "f1_macro": 0.9708963248494127,
+        "risk_recall": 0.9545454545454546,
+        "numeric_gate_passed": true,
+        "field_acceptance": false
+      }
+    }
+  ],
+  "code_sha256": {
+    "contracts.py": "255e9c04703d26d752deee784d89d8be016f33bf2d5eed20aaa2556ebcd84a29",
+    "forecast_acceptance.py": "451864e52f3b2adf726b15632c16a6d6a01e817d9ca0ceb541ecf7e40e407343",
+    "historical_training.py": "674346ab6e4dea7e84b2a9cb4422ff562fbdf354a2dd709993dc24f408b826e5",
+    "refine_forecasts.py": "bc5f358b3a95553586e59e271255fd810456f4786cf66bf9804ff7f254463fd9"
+  }
+}

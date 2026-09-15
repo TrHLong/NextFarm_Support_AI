@@ -1,0 +1,13 @@
+{
+  "version": "10.0.0",
+  "validation_scope": "pre-stabilization baseline; superseded by runtime validation after final changes",
+  "executed_in_packaging_environment": true,
+  "total_passed": 16,
+  "suites": [
+    {"service": "ai-analytics-service", "passed": 5, "failed": 0, "note": "Includes ML pipeline tests; one sklearn warning for single-label confusion-matrix coverage is preserved."},
+    {"service": "truth-guard-service", "passed": 6, "failed": 0},
+    {"service": "crop-router-service", "passed": 2, "failed": 0},
+    {"service": "llm-gateway-service", "passed": 3, "failed": 0}
+  ],
+  "scope_note": "Unit/offline tests do not replace Docker end-to-end or NextFarm real-data validation."
+}

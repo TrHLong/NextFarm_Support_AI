@@ -1,0 +1,188 @@
+{
+  "build_version": "10.1.1",
+  "benchmark_version": "v10.1.1-feedback-aligned",
+  "generated_at": "2026-09-05T10:46:36.087980+00:00",
+  "offline_passed": true,
+  "pass_count": 16,
+  "fail_count": 0,
+  "feedback_acceptance_ready": false,
+  "external_gates": {
+    "runtime_end_to_end": "pending",
+    "nextfarm_agronomist_review": "pending",
+    "agronomy_cases_pending": 50
+  },
+  "runtime": {
+    "status": "daemon_unavailable",
+    "docker_cli_available": true,
+    "daemon_available": false,
+    "certified": false,
+    "detail": "\"\"",
+    "required_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\check_v10_completion.ps1 -Runtime"
+  },
+  "results": [
+    {
+      "name": "python_syntax",
+      "passed": true,
+      "detail": {
+        "files": 52,
+        "errors": []
+      }
+    },
+    {
+      "name": "javascript_syntax",
+      "passed": true,
+      "detail": {
+        "files": 4,
+        "errors": []
+      }
+    },
+    {
+      "name": "package_completeness",
+      "passed": true,
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "name": "benchmark_feedback_taxonomy",
+      "passed": true,
+      "detail": {
+        "cases": 260,
+        "categories": {
+          "agricultural_factual_qa": 50,
+          "device_state": 20,
+          "irrigation_history": 20,
+          "irrigation_schedule": 20,
+          "latest_sensor": 30,
+          "missing_stale_data": 20,
+          "multi_turn_context": 20,
+          "no_answer_hallucination": 30,
+          "unauthorized_cross_farm": 20,
+          "vietnamese_robustness": 30
+        }
+      }
+    },
+    {
+      "name": "planner_tool_selection",
+      "passed": true,
+      "detail": {
+        "evaluated": 240,
+        "accuracy": 1.0,
+        "failures": []
+      }
+    },
+    {
+      "name": "planner_argument_resolution",
+      "passed": true,
+      "detail": {
+        "evaluated": 240,
+        "accuracy": 1.0,
+        "failures": []
+      }
+    },
+    {
+      "name": "multi_source_planning",
+      "passed": true,
+      "detail": {
+        "multi_source_cases": 23,
+        "minimum": 20
+      }
+    },
+    {
+      "name": "benchmark_oracle_integrity",
+      "passed": true,
+      "detail": {
+        "checked": 125,
+        "errors": []
+      }
+    },
+    {
+      "name": "agronomy_expert_review_tracking",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "pending_expert_review": 50
+      }
+    },
+    {
+      "name": "acl_cross_farm_denial",
+      "passed": true,
+      "detail": {
+        "attempts": 50,
+        "blocked": 50,
+        "leaks": 0
+      }
+    },
+    {
+      "name": "ambiguous_zone_fail_closed",
+      "passed": true,
+      "detail": {
+        "zone": null,
+        "source": "missing"
+      }
+    },
+    {
+      "name": "truth_guard_fail_closed",
+      "passed": true,
+      "detail": {
+        "blocked": 5,
+        "negative_cases": 5,
+        "valid_allowed": true
+      }
+    },
+    {
+      "name": "operational_parquet_contract",
+      "passed": true,
+      "detail": {
+        "counts": {
+          "alerts": 40,
+          "command_logs": 160,
+          "devices": 80,
+          "farms": 40,
+          "irrigation_events": 3360,
+          "irrigation_schedules": 120,
+          "sensor_readings": 725760,
+          "sensors": 360,
+          "user_farm_permissions": 160,
+          "users": 80,
+          "zones": 120
+        },
+        "alert_types": 8,
+        "offline_farms": 5,
+        "errors": []
+      }
+    },
+    {
+      "name": "model_artifacts",
+      "passed": true,
+      "detail": {
+        "count": 10,
+        "load_errors": []
+      }
+    },
+    {
+      "name": "single_model_evidence",
+      "passed": true,
+      "detail": {
+        "dataset_version": "nextfarm-v10.1-training-26d296902921",
+        "approved": 4,
+        "experimental": 6
+      }
+    },
+    {
+      "name": "static_security_contract",
+      "passed": true,
+      "detail": {
+        "parallel_tools_enabled": true,
+        "no_zone_first_fallback": true,
+        "planner_zone_not_trusted": true,
+        "planner_metric_not_trusted": true,
+        "truth_guard_outage_fails_closed": true,
+        "quality_rejected_before_claim": true,
+        "knowledge_reader_auth": true,
+        "structured_table_chunks": true,
+        "received_at_contract": true
+      }
+    }
+  ]
+}

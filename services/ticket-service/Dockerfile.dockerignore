@@ -1,0 +1,14 @@
+.env
+.git/
+.agents/
+.codex/
+.secrets/
+apps/
+backups/
+docs/
+model-artifacts/
+research-data/
+scripts/
+**/__pycache__/
+**/*.pyc
+*.zip

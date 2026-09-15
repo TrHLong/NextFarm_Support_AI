@@ -1,0 +1,4 @@
+
+/* V9 data lineage badge: avoid presenting calibrated simulation as physical sensor truth. */
+.data-origin-note{margin:12px 0 0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.88)}
+.data-origin-note b{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.15);color:#fff}

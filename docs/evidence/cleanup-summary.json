@@ -1,0 +1,33 @@
+{
+  "project_root": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1",
+  "created_at": "2026-09-08T08:51:34.3869180Z",
+  "total_bytes_removed": 474227608,
+  "total_mib_removed": 452.26,
+  "runs": [
+    {
+      "phase": "pretrain",
+      "bytes_removed": 280578638,
+      "evidence": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docs\\evidence\\cleanup-pretrain-latest.json"
+    },
+    {
+      "phase": "posttrain-large",
+      "bytes_removed": 193405751,
+      "note": "Removed obsolete per-customer model suites and duplicate raw snapshots"
+    },
+    {
+      "phase": "posttrain-final",
+      "bytes_removed": 243219,
+      "evidence": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docs\\evidence\\cleanup-posttrain-latest.json"
+    }
+  ],
+  "preserved": [
+    "latest immutable snapshot for each customer",
+    "latest per-customer processed CSV used by shared training",
+    "shared training CSV evidence",
+    "10 candidate model artifacts",
+    "human and machine-readable training reports"
+  ],
+  "pending": [
+    "Legacy fixed shared model directories are owned by the currently running old Docker container; the rebuilt AI service removes them automatically at startup"
+  ]
+}

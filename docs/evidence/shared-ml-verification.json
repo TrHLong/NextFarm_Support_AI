@@ -1,0 +1,774 @@
+{
+  "created_at": "2026-09-08T08:52:57.860916+00:00",
+  "dataset_version": "nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b",
+  "architecture": "shared_base_models_with_customer_calibration",
+  "customer_count": 3,
+  "source_snapshots_verified": true,
+  "source_checks": [
+    {
+      "customer_id": "customer_lan",
+      "snapshot_id": "runtime_20260907T220612Z",
+      "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\snapshot_manifest.json",
+      "manifest_customer_matches": true,
+      "files": [
+        {
+          "name": "customer",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\customer.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farms",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\farms.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "zones",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\zones.csv",
+          "exists": true,
+          "expected_rows": 2,
+          "actual_rows": 2,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\farm_ai_profiles.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensors",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\sensors.csv",
+          "exists": true,
+          "expected_rows": 7,
+          "actual_rows": 7,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensor_readings",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\sensor_readings.csv",
+          "exists": true,
+          "expected_rows": 127078,
+          "actual_rows": 127078,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "device_status",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\device_status.csv",
+          "exists": true,
+          "expected_rows": 51870,
+          "actual_rows": 51870,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\irrigation_schedules.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_runs",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\irrigation_runs.csv",
+          "exists": true,
+          "expected_rows": 7,
+          "actual_rows": 7,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\telemetry_ingest_events.csv",
+          "exists": true,
+          "expected_rows": 51870,
+          "actual_rows": 51870,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "alerts",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\alerts.csv",
+          "exists": true,
+          "expected_rows": 4,
+          "actual_rows": 4,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_lan"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "control_commands",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260907T220612Z\\raw\\control_commands.csv",
+          "exists": true,
+          "expected_rows": 0,
+          "actual_rows": 0,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [],
+          "customer_isolation_matches": true
+        }
+      ]
+    },
+    {
+      "customer_id": "customer_long",
+      "snapshot_id": "runtime_20260907T220635Z",
+      "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\snapshot_manifest.json",
+      "manifest_customer_matches": true,
+      "files": [
+        {
+          "name": "customer",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\customer.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farms",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\farms.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "zones",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\zones.csv",
+          "exists": true,
+          "expected_rows": 3,
+          "actual_rows": 3,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\farm_ai_profiles.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensors",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\sensors.csv",
+          "exists": true,
+          "expected_rows": 12,
+          "actual_rows": 12,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensor_readings",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\sensor_readings.csv",
+          "exists": true,
+          "expected_rows": 217980,
+          "actual_rows": 217980,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "device_status",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\device_status.csv",
+          "exists": true,
+          "expected_rows": 86505,
+          "actual_rows": 86505,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\irrigation_schedules.csv",
+          "exists": true,
+          "expected_rows": 2,
+          "actual_rows": 2,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_runs",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\irrigation_runs.csv",
+          "exists": true,
+          "expected_rows": 14,
+          "actual_rows": 14,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\telemetry_ingest_events.csv",
+          "exists": true,
+          "expected_rows": 69204,
+          "actual_rows": 69204,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "alerts",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\alerts.csv",
+          "exists": true,
+          "expected_rows": 3,
+          "actual_rows": 3,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_long"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "control_commands",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260907T220635Z\\raw\\control_commands.csv",
+          "exists": true,
+          "expected_rows": 0,
+          "actual_rows": 0,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [],
+          "customer_isolation_matches": true
+        }
+      ]
+    },
+    {
+      "customer_id": "customer_minh",
+      "snapshot_id": "runtime_20260907T220710Z",
+      "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\snapshot_manifest.json",
+      "manifest_customer_matches": true,
+      "files": [
+        {
+          "name": "customer",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\customer.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farms",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\farms.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "zones",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\zones.csv",
+          "exists": true,
+          "expected_rows": 2,
+          "actual_rows": 2,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\farm_ai_profiles.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensors",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\sensors.csv",
+          "exists": true,
+          "expected_rows": 8,
+          "actual_rows": 8,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "sensor_readings",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\sensor_readings.csv",
+          "exists": true,
+          "expected_rows": 145464,
+          "actual_rows": 145464,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "device_status",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\device_status.csv",
+          "exists": true,
+          "expected_rows": 69276,
+          "actual_rows": 69276,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\irrigation_schedules.csv",
+          "exists": true,
+          "expected_rows": 1,
+          "actual_rows": 1,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "irrigation_runs",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\irrigation_runs.csv",
+          "exists": true,
+          "expected_rows": 7,
+          "actual_rows": 7,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\telemetry_ingest_events.csv",
+          "exists": true,
+          "expected_rows": 51957,
+          "actual_rows": 51957,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "alerts",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\alerts.csv",
+          "exists": true,
+          "expected_rows": 3,
+          "actual_rows": 3,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [
+            "customer_minh"
+          ],
+          "customer_isolation_matches": true
+        },
+        {
+          "name": "control_commands",
+          "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260907T220710Z\\raw\\control_commands.csv",
+          "exists": true,
+          "expected_rows": 0,
+          "actual_rows": 0,
+          "row_count_matches": true,
+          "sha256_matches": true,
+          "customer_ids": [],
+          "customer_isolation_matches": true
+        }
+      ]
+    }
+  ],
+  "shared_csv_manifest_verified": true,
+  "shared_csv_checks": [
+    {
+      "relative_path": "00_dataset_summary.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "01_processed_features_targets.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "02_train.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "03_validation.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "04_test.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "05_feature_catalog.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "06_target_catalog.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "07_model_metrics.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "08_candidate_validation.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "09_generalization_holdout.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "10_class_distribution.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "11_regression_target_summary.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "12_feature_importance.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "13_model_inventory.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "14_data_provenance.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/anomaly_multisensor.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/device_health.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/ec_forecast.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/farm_health.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/flow_fault.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/irrigation_failure.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/irrigation_need.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/moisture_forecast.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/ph_forecast.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    },
+    {
+      "relative_path": "predictions/temperature_forecast.csv",
+      "exists": true,
+      "bytes_match": true,
+      "sha256_matches": true
+    }
+  ],
+  "split_ranges": {
+    "train": {
+      "minimum": "2026-09-04T11:15:00+00:00",
+      "maximum": "2026-09-06T20:00:00+00:00",
+      "rows": 684
+    },
+    "validation": {
+      "minimum": "2026-09-06T20:15:00+00:00",
+      "maximum": "2026-09-07T08:15:00+00:00",
+      "rows": 147
+    },
+    "test": {
+      "minimum": "2026-09-07T08:30:00+00:00",
+      "maximum": "2026-09-07T21:30:00+00:00",
+      "rows": 70
+    }
+  },
+  "no_temporal_overlap": true,
+  "customer_id_used_as_feature": false,
+  "candidate_model_count": 10,
+  "candidate_artifacts_all_exist": true,
+  "candidate_artifacts_all_load": true,
+  "model_bundle_checks": [
+    {
+      "model_name": "moisture_forecast",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\moisture_forecast\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "temperature_forecast",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\temperature_forecast\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "ec_forecast",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\ec_forecast\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "ph_forecast",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\ph_forecast\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "anomaly_multisensor",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\anomaly_multisensor\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "flow_fault",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\flow_fault\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "irrigation_failure",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\irrigation_failure\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "irrigation_need",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\irrigation_need\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "device_health",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\device_health\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    },
+    {
+      "model_name": "farm_health",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\candidates\\nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b\\shared\\farm_health\\v2.1.0\\model.joblib",
+      "load_ok": true,
+      "feature_count": 44,
+      "customer_id_is_feature": false,
+      "dataset_version_matches": true,
+      "deployment_status_matches": true
+    }
+  ],
+  "approved_candidate_count": 0,
+  "active_model_count": 0,
+  "production_ready": false,
+  "cleanup_bytes_removed": 474227608,
+  "cleanup_reports": [
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docs\\evidence\\cleanup-summary.json"
+  ],
+  "tests": {
+    "ai_dataset_pipeline_publish": "5 passed",
+    "chatbot_grounding_context": "15 passed"
+  },
+  "all_checks_passed": true
+}

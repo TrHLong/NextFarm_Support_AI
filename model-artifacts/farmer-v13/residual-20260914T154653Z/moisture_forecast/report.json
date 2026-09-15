@@ -1,0 +1,195 @@
+{
+  "name": "moisture_forecast",
+  "title": "Độ ẩm đất sau 30 phút",
+  "metric": "soil_moisture",
+  "status": "EXPERIMENTAL",
+  "rows": {
+    "train": 790,
+    "validation": 90,
+    "test_unseen_customer": 130
+  },
+  "features": [
+    "value",
+    "lag1",
+    "lag3",
+    "lag6",
+    "mean3",
+    "slope3",
+    "history_missing",
+    "reading_age_minutes"
+  ],
+  "algorithm": "ridge_residual_a10",
+  "validation_candidates": {
+    "ridge_residual_a1": {
+      "mae": 0.3223858932914204,
+      "rmse": 0.3858959537414236,
+      "r2": 0.9746510535355858
+    },
+    "ridge_residual_a10": {
+      "mae": 0.3218704460513656,
+      "rmse": 0.38281770034157675,
+      "r2": 0.9750538525761873
+    },
+    "extra_trees_residual": {
+      "mae": 0.3270521346040643,
+      "rmse": 0.38680121290869707,
+      "r2": 0.9745319837104823
+    },
+    "hgb_residual": {
+      "mae": 0.3397263344837041,
+      "rmse": 0.4315587363931565,
+      "r2": 0.9682970781527922
+    }
+  },
+  "metrics": {
+    "train": {
+      "mae": 0.27700179320910695,
+      "rmse": 0.4907537669956804,
+      "r2": 0.9685076359133147
+    },
+    "validation": {
+      "mae": 0.3218704460513656,
+      "rmse": 0.38281770034157675,
+      "r2": 0.9750538525761873
+    },
+    "test_unseen_customer": {
+      "mae": 0.14318071946296665,
+      "rmse": 0.18600189152012764,
+      "r2": 0.9501024587923782
+    }
+  },
+  "acceptance": {
+    "train": {
+      "absolute_error_tolerance": 5.0,
+      "correct_within_tolerance": 790,
+      "predicted_rows": 790,
+      "total_labeled_rows": 845,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.9349112426035503,
+      "success_on_all_labeled_rows": 0.9349112426035503,
+      "numeric_gate_passed": true,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    },
+    "validation": {
+      "absolute_error_tolerance": 5.0,
+      "correct_within_tolerance": 90,
+      "predicted_rows": 90,
+      "total_labeled_rows": 120,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.75,
+      "success_on_all_labeled_rows": 0.75,
+      "numeric_gate_passed": false,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    },
+    "test_unseen_customer": {
+      "absolute_error_tolerance": 5.0,
+      "correct_within_tolerance": 130,
+      "predicted_rows": 130,
+      "total_labeled_rows": 136,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.9558823529411765,
+      "success_on_all_labeled_rows": 0.9558823529411765,
+      "numeric_gate_passed": true,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    }
+  },
+  "baselines": {
+    "train": {
+      "persistence": {
+        "mae": 0.2607924050632911,
+        "rmse": 0.49997431326424224,
+        "r2": 0.9673131278003242
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 5.0,
+        "correct_within_tolerance": 790,
+        "predicted_rows": 790,
+        "total_labeled_rows": 845,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.9349112426035503,
+        "success_on_all_labeled_rows": 0.9349112426035503,
+        "numeric_gate_passed": true,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    },
+    "validation": {
+      "persistence": {
+        "mae": 0.2842777777777777,
+        "rmse": 0.3637235671953815,
+        "r2": 0.9774803131041664
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 5.0,
+        "correct_within_tolerance": 90,
+        "predicted_rows": 90,
+        "total_labeled_rows": 120,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.75,
+        "success_on_all_labeled_rows": 0.75,
+        "numeric_gate_passed": false,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    },
+    "test_unseen_customer": {
+      "persistence": {
+        "mae": 0.1475000000000002,
+        "rmse": 0.19021382704735257,
+        "r2": 0.9478170543064409
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 5.0,
+        "correct_within_tolerance": 130,
+        "predicted_rows": 130,
+        "total_labeled_rows": 136,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.9558823529411765,
+        "success_on_all_labeled_rows": 0.9558823529411765,
+        "numeric_gate_passed": true,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    }
+  },
+  "parameters": {
+    "memory": "None",
+    "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('pipeline', Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=10))]))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+    "pipeline": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=10))])",
+    "simpleimputer__add_indicator": "True",
+    "simpleimputer__copy": "True",
+    "simpleimputer__fill_value": "None",
+    "simpleimputer__keep_empty_features": "True",
+    "simpleimputer__missing_values": "nan",
+    "simpleimputer__strategy": "median",
+    "pipeline__memory": "None",
+    "pipeline__steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=10))]",
+    "pipeline__transform_input": "None",
+    "pipeline__verbose": "False",
+    "pipeline__standardscaler": "StandardScaler()",
+    "pipeline__ridge": "Ridge(alpha=10)",
+    "pipeline__standardscaler__copy": "True",
+    "pipeline__standardscaler__with_mean": "True",
+    "pipeline__standardscaler__with_std": "True",
+    "pipeline__ridge__alpha": "10",
+    "pipeline__ridge__copy_X": "True",
+    "pipeline__ridge__fit_intercept": "True",
+    "pipeline__ridge__max_iter": "None",
+    "pipeline__ridge__positive": "False",
+    "pipeline__ridge__random_state": "None",
+    "pipeline__ridge__solver": "auto",
+    "pipeline__ridge__tol": "0.0001"
+  },
+  "beats_persistence_mae": true,
+  "deployment_ready": false,
+  "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\moisture_forecast\\model.joblib",
+  "artifact_sha256": "07ebb6dee052691de540ab402608520a2c1569ba0d84fae15d185972d0b0eb68",
+  "reload_max_difference": 0.0
+}

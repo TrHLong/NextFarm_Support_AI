@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-09-12T21:36:04.524520+00:00",
+  "software_tests": 50,
+  "software_failures": 0,
+  "scope": "Offline fixtures and FastAPI TestClient; not live Docker, company API or model field accuracy",
+  "runtime_72h_verified": false,
+  "docker_build_verified": false,
+  "compose_config_validated": true,
+  "field_validation": false,
+  "zalo_live_verified": false,
+  "model_accuracy_claim": null,
+  "test_evidence": "unit-tests.xml"
+}

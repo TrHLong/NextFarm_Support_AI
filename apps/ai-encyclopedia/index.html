@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NextFarm AI Encyclopedia V10</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div>
+    <div class="eyebrow">NEXTFARM AI SUPPORT V10</div>
+    <h1>Bách khoa AI theo nông sản</h1>
+    <p>Ánh xạ khách hàng → vườn/thửa → nông sản → capability/model. Không biến model chung thành model “chuyên cây” nếu chưa được kiểm chứng.</p>
+  </div>
+  <nav>
+    <a href="http://localhost:8080">Chat</a>
+    <a href="http://localhost:8081">Data Studio</a>
+    <a href="http://localhost:8082">Knowledge Studio</a>
+  </nav>
+</header>
+
+<main>
+  <section id="loginCard" class="panel login-panel">
+    <h2>Đăng nhập</h2>
+    <p class="muted">Dùng tài khoản demo của NextFarm PoC. Mọi danh sách vườn được lấy theo quyền của tài khoản.</p>
+    <div class="form-grid">
+      <label>Tài khoản<input id="username" value="nongdan.long" autocomplete="username"></label>
+      <label>Mật khẩu<input id="password" type="password" value="" autocomplete="current-password"></label>
+      <button id="loginBtn">Đăng nhập</button>
+    </div>
+    <div id="loginError" class="error"></div>
+  </section>
+
+  <section id="app" hidden>
+    <div class="summary-grid">
+      <article class="panel"><span class="label">Người dùng</span><strong id="who">-</strong><small id="role">-</small></article>
+      <article class="panel"><span class="label">Nông sản duy nhất</span><strong id="cropCount">0</strong><small>crop_key được chuẩn hóa</small></article>
+      <article class="panel"><span class="label">LLM Gateway</span><strong id="llmProvider">-</strong><small id="llmModel">-</small></article>
+      <article class="panel"><span class="label">Policy</span><strong>Fail closed</strong><small>Không đủ dữ liệu → BLOCKED/EXPERIMENTAL</small></article>
+    </div>
+
+    <section class="panel">
+      <div class="section-head"><div><h2>Vườn/thửa và nông sản</h2><p class="muted">Một người có thể có nhiều vườn, nhiều khu và nhiều nông sản.</p></div><button id="refreshBtn" class="secondary">Làm mới</button></div>
+      <div id="farmGrid" class="farm-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div><h2>Capability được ánh xạ</h2><p id="selectionText" class="muted">Chọn một vườn hoặc khu để xem.</p></div>
+        <div class="filters">
+          <select id="statusFilter"><option value="all">Tất cả trạng thái</option><option value="ready">READY</option><option value="experimental">EXPERIMENTAL</option><option value="blocked">BLOCKED</option></select>
+          <input id="search" placeholder="Tìm model/capability…" />
+        </div>
+      </div>
+      <div id="statusCounts" class="chips"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Capability</th><th>Nhóm</th><th>Triển khai</th><th>Trạng thái</th><th>Model</th><th>Dữ liệu cần</th><th>Lý do / bằng chứng</th></tr></thead>
+          <tbody id="capTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+</main>
+<footer>V10 PoC · dữ liệu telemetry demo vẫn là simulated/calibrated reference, không phải dữ liệu production NextFarm.</footer>
+<script src="app.js"></script>
+</body>
+</html>

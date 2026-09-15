@@ -1,0 +1,171 @@
+{
+  "profile_version": "research-reference-anchored-v9.0.0",
+  "principles": {
+    "mqtt_publish_seconds": 2,
+    "physical_state_minimum_step_seconds": 30,
+    "backfill_step_minutes": 5,
+    "faults_are_episodes": true,
+    "missingness_is_block_based": true,
+    "no_future_backfill": true,
+    "reference_calibration_required": true
+  },
+  "farms": {
+    "farm_long": {
+      "name": "Vườn cà chua nhà màng Anh Long",
+      "crop": "tomato",
+      "cultivation": "greenhouse",
+      "latitude": 11.7356,
+      "longitude": 108.3733,
+      "climate": {
+        "temp_mean": 23.8,
+        "temp_amp": 4.2,
+        "rh_mean": 76.0,
+        "rh_amp": 14.0,
+        "weather_noise": 0.18,
+        "rain_sensitivity": 0.15
+      },
+      "soil": {
+        "moisture_target": 62.5,
+        "field_capacity": 78.0,
+        "dry_floor": 32.0,
+        "evap_per_hour": 0.75,
+        "irrigation_gain_per_min": 0.16,
+        "drain_per_hour": 0.28
+      },
+      "nutrition": {
+        "ec_target": 1.9,
+        "ec_min": 1.5,
+        "ec_max": 2.5,
+        "ec_moisture_coupling": 0.42,
+        "ph_target": 6.2,
+        "ph_drift_per_hour": 0.003
+      },
+      "irrigation": {
+        "hours": [
+          6,
+          11,
+          16
+        ],
+        "duration_minutes": 15,
+        "flow_lpm": 16.0,
+        "threshold_trigger": 56.0
+      },
+      "fault_rate_per_day": 0.1,
+      "area_ha": 1.2,
+      "climate_region": "highland",
+      "soil_type": "loam"
+    },
+    "farm_lan": {
+      "name": "Vườn sầu riêng Chị Lan",
+      "crop": "durian",
+      "cultivation": "open_field",
+      "latitude": 12.711,
+      "longitude": 108.302,
+      "climate": {
+        "temp_mean": 26.2,
+        "temp_amp": 5.2,
+        "rh_mean": 78.0,
+        "rh_amp": 16.0,
+        "weather_noise": 0.25,
+        "rain_sensitivity": 1.0
+      },
+      "soil": {
+        "moisture_target": 57.0,
+        "field_capacity": 72.0,
+        "dry_floor": 30.0,
+        "evap_per_hour": 0.58,
+        "irrigation_gain_per_min": 0.1,
+        "drain_per_hour": 0.18
+      },
+      "nutrition": {
+        "ec_target": 1.35,
+        "ec_min": 0.85,
+        "ec_max": 2.0,
+        "ec_moisture_coupling": 0.25,
+        "ph_target": 5.8,
+        "ph_drift_per_hour": 0.002
+      },
+      "irrigation": {
+        "hours": [
+          5,
+          17
+        ],
+        "duration_minutes": 24,
+        "flow_lpm": 20.0,
+        "threshold_trigger": 49.0
+      },
+      "fault_rate_per_day": 0.08,
+      "area_ha": 2.8,
+      "climate_region": "central_highlands",
+      "soil_type": "basalt"
+    },
+    "farm_minh": {
+      "name": "Vườn rau ăn lá Anh Minh",
+      "crop": "leafy_vegetable",
+      "cultivation": "net_house",
+      "latitude": 10.455,
+      "longitude": 105.634,
+      "climate": {
+        "temp_mean": 28.0,
+        "temp_amp": 4.6,
+        "rh_mean": 82.0,
+        "rh_amp": 12.0,
+        "weather_noise": 0.2,
+        "rain_sensitivity": 0.45
+      },
+      "soil": {
+        "moisture_target": 69.0,
+        "field_capacity": 83.0,
+        "dry_floor": 40.0,
+        "evap_per_hour": 0.92,
+        "irrigation_gain_per_min": 0.17,
+        "drain_per_hour": 0.34
+      },
+      "nutrition": {
+        "ec_target": 1.55,
+        "ec_min": 1.0,
+        "ec_max": 2.0,
+        "ec_moisture_coupling": 0.32,
+        "ph_target": 6.4,
+        "ph_drift_per_hour": 0.003
+      },
+      "irrigation": {
+        "hours": [
+          5,
+          10,
+          14,
+          17
+        ],
+        "duration_minutes": 10,
+        "flow_lpm": 13.5,
+        "threshold_trigger": 62.0
+      },
+      "fault_rate_per_day": 0.12,
+      "area_ha": 0.8,
+      "climate_region": "mekong_delta",
+      "soil_type": "alluvial"
+    }
+  },
+  "faults": {
+    "offline": {
+      "min_minutes": 5,
+      "max_minutes": 25
+    },
+    "no_flow": {
+      "min_minutes": 5,
+      "max_minutes": 18
+    },
+    "leak": {
+      "min_minutes": 8,
+      "max_minutes": 30
+    },
+    "sensor_drift": {
+      "min_minutes": 20,
+      "max_minutes": 120
+    },
+    "sensor_stuck": {
+      "min_minutes": 8,
+      "max_minutes": 35
+    }
+  }
+}

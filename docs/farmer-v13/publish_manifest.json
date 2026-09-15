@@ -1,0 +1,127 @@
+{
+  "published_at": "2026-09-14T15:46:33.489289+00:00",
+  "backup": "C:\\Users\\Long\\Documents\\Codex\\2026-09-04\\d-2026-2027-thuctap-nextfarm-ai\\work\\farmer-acceptance\\before_publish\\20260914T154633Z",
+  "files": [
+    {
+      "path": "nextfarm_device/api.py",
+      "before_sha256": "3e5a8911acfe6033b2993bcc8e019e7268aa538973f34cbd142012c7598c1331",
+      "published_sha256": "323ce20167284fe9bc97a34b50e323dd0ed481109aa412d2b344a2bf0270f17f"
+    },
+    {
+      "path": "nextfarm_device/answers.py",
+      "before_sha256": "ef23e36a89056a65d9ebafaac5d26a47b670cd1ee8419278939a6018400c9ef6",
+      "published_sha256": "28cf184a34ebd2016beec31e0f520b6be5a42d7de65617be1b3de07b387fb54a"
+    },
+    {
+      "path": "nextfarm_device/question_plan.py",
+      "before_sha256": null,
+      "published_sha256": "da0428de10ca83682b820eb12920e6d32d50ee84a62cbca291c9f9e65730ad05"
+    },
+    {
+      "path": "nextfarm_device/verified_answers.py",
+      "before_sha256": null,
+      "published_sha256": "49a35621172447166fe98b018b37956a1e80ec19bf8bc988dc123b0d572173a5"
+    },
+    {
+      "path": "nextfarm_device/store.py",
+      "before_sha256": "c87178ac0cad3b62d7cc9c19844559386576247e98cf5d30dd4c4176fe9b69fb",
+      "published_sha256": "caac12a29b0455cc8454e157ae76822e946594b020848d661d90d62a2ae8e477"
+    },
+    {
+      "path": "nextfarm_device/forecast_acceptance.py",
+      "before_sha256": null,
+      "published_sha256": "451864e52f3b2adf726b15632c16a6d6a01e817d9ca0ceb541ecf7e40e407343"
+    },
+    {
+      "path": "nextfarm_device/refine_forecasts.py",
+      "before_sha256": null,
+      "published_sha256": "bc5f358b3a95553586e59e271255fd810456f4786cf66bf9804ff7f254463fd9"
+    },
+    {
+      "path": "nextfarm_device/runtime_training.py",
+      "before_sha256": "5d219a17d30a9af3d726b6f59814b31f056a17b24af11a4c66446b137841c256",
+      "published_sha256": "ee266421d1e2bb05453e2a9942b45072e8ce47f0566838c46b7ea34e5382276a"
+    },
+    {
+      "path": "tests_device/test_contract.py",
+      "before_sha256": "d9c7948c18c069831a7fdcccbcef2b9f5dabef481acd7e9feba9aedf3a2bd29d",
+      "published_sha256": "547ac97852dfcf2828d340c141db4d5cb38b6a347f6892662d663525346ee7bc"
+    },
+    {
+      "path": "tests_device/test_farmer_acceptance.py",
+      "before_sha256": null,
+      "published_sha256": "ca190cf43f3f8e18f2c9d99fbe51d6c39b4d5e00d3687432561f6e51f288ec8a"
+    },
+    {
+      "path": "tests_device/test_forecast_acceptance.py",
+      "before_sha256": null,
+      "published_sha256": "990f4db9d87564b95a45f798b5f2a1cd4a5241fd943fdc0084c385514756f9a1"
+    },
+    {
+      "path": "scripts/evaluate_farmer_v13.py",
+      "before_sha256": null,
+      "published_sha256": "dad1487c059a101affdc9a77df3287176e49dde402f445763dd678566d0a3335"
+    },
+    {
+      "path": "scripts/report_farmer_v13.py",
+      "before_sha256": null,
+      "published_sha256": "d8314acf5a2e80d77f46458a955a60f594fe2df13585984edfb3e9cc812fbdf4"
+    },
+    {
+      "path": "benchmarks/farmer-v13/questions.csv",
+      "before_sha256": null,
+      "published_sha256": "ca79f48855e685433e141896f446f69610905ba6ea192dde1365eb1e68d6c15c"
+    },
+    {
+      "path": "benchmarks/farmer-v13/baseline_routing.json",
+      "before_sha256": null,
+      "published_sha256": "74704a74c314e2626b7f9e916e563f4a18e29533384bc0b4d24bc4a8cd991c48"
+    },
+    {
+      "path": "services/ai-analytics-service/Dockerfile",
+      "before_sha256": "ca81f525a5fa802c238de1da752917f18de17a4f876bb35764643fac09c1552a",
+      "published_sha256": "89f79fe03ddfdaee9da1ca84f20d6c071fc592169e6e75dc1fbddf56436eb12b"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "977bbb3b8c879651114f797970851c9176823db81c23e55f033ac1586ad306ed",
+      "published_sha256": "b3de8ab1beab3494bd222a70bebcfd14297b47bdfde4e604abdd4423cef16b19"
+    }
+  ],
+  "raw_data_deleted": false,
+  "field_registry_activated": false,
+  "final_verified_at": "2026-09-14T15:49:31.727000+00:00",
+  "forecast_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\training_report.json",
+  "verified_model_artifacts": 4,
+  "pdf_pages": 8,
+  "unit_tests_passed": 243,
+  "docker_build_verified": false,
+  "live_web_verified": false,
+  "docker_blocker": "Docker config access denied; docker_engine named pipe absent after attempting Docker Desktop start.",
+  "report_files": [
+    {
+      "path": "docs/farmer-v13/BAO-CAO-NONG-DAN-V13.html",
+      "sha256": "91645e1f8bc5b59891fa02c3ea852f19475f4f97f0760748639e618caf0a94f5"
+    },
+    {
+      "path": "docs/farmer-v13/BAO-CAO-NONG-DAN-V13.pdf",
+      "sha256": "2cfe81e52dd81aa8c6621062d4588ac4df36fb044013e04d1e36a46ddc40c5ee"
+    },
+    {
+      "path": "docs/farmer-v13/question_acceptance.json",
+      "sha256": "8395fc18b3be1036b59fa91f1c6800b23c2ca85b6bbfc9a6d4ed6d6c7fcfb47f"
+    },
+    {
+      "path": "docs/farmer-v13/question_answers.csv",
+      "sha256": "5c661e7a290c8e758938921475947de6e6db95085f0705026ea5dac449364bdc"
+    },
+    {
+      "path": "docs/farmer-v13/report_sources.json",
+      "sha256": "a015faaad3f47069d8fc854cfe6e27be2f185296a617a75624eaac7ec477a30a"
+    },
+    {
+      "path": "docs/farmer-v13/unit-tests.xml",
+      "sha256": "e79ec2e185241385c6a76d5009fb9accd50bc1db8e1b8c6de0486c8b360f45dc"
+    }
+  ]
+}

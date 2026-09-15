@@ -1,0 +1,176 @@
+{
+  "status": "BLOCKED",
+  "snapshot": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\device-runtime\\runtime-20260910T122635Z",
+  "csv_count": 24,
+  "all_passed": true,
+  "files": [
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_sensor_readings.csv",
+      "group": "sensor_readings",
+      "rows": 450,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_device_status.csv",
+      "group": "device_status",
+      "rows": 4343,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_irrigation_schedules.csv",
+      "group": "irrigation_schedules",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_irrigation_runs.csv",
+      "group": "irrigation_runs",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_control_commands.csv",
+      "group": "control_commands",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_alerts.csv",
+      "group": "alerts",
+      "rows": 6,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_incident_ground_truth.csv",
+      "group": "incident_ground_truth",
+      "rows": 469,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_lan\\cabinet_lan_device_profile.csv",
+      "group": "device_profile",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_sensor_readings.csv",
+      "group": "sensor_readings",
+      "rows": 440,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_device_status.csv",
+      "group": "device_status",
+      "rows": 4326,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_irrigation_schedules.csv",
+      "group": "irrigation_schedules",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_irrigation_runs.csv",
+      "group": "irrigation_runs",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_control_commands.csv",
+      "group": "control_commands",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_alerts.csv",
+      "group": "alerts",
+      "rows": 15,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_incident_ground_truth.csv",
+      "group": "incident_ground_truth",
+      "rows": 469,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_long\\cabinet_long_device_profile.csv",
+      "group": "device_profile",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_sensor_readings.csv",
+      "group": "sensor_readings",
+      "rows": 447,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_device_status.csv",
+      "group": "device_status",
+      "rows": 4340,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_irrigation_schedules.csv",
+      "group": "irrigation_schedules",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_irrigation_runs.csv",
+      "group": "irrigation_runs",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_control_commands.csv",
+      "group": "control_commands",
+      "rows": 13,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_alerts.csv",
+      "group": "alerts",
+      "rows": 6,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_incident_ground_truth.csv",
+      "group": "incident_ground_truth",
+      "rows": 469,
+      "owner_fields": true,
+      "hash_verified": true
+    },
+    {
+      "path": "customers\\customer_minh\\cabinet_minh_device_profile.csv",
+      "group": "device_profile",
+      "rows": 1,
+      "owner_fields": true,
+      "hash_verified": true
+    }
+  ]
+}

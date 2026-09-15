@@ -1,0 +1,5 @@
+user nextfarm_ingest
+topic read nextfarm/+/+/+
+
+user nextfarm_simulator
+topic write nextfarm/+/+/+

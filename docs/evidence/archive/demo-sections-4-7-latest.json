@@ -1,0 +1,144 @@
+﻿{
+    "generated_at":  "2026-08-18T06:06:44.3140766+00:00",
+    "started_at":  "2026-08-18T06:06:42.0860738+00:00",
+    "project":  "NextFarm AI Support Data/Knowledge Studio v9",
+    "scope":  "PDF sections 4, 5, 6, 7 demo verification",
+    "write_demo_messages":  true,
+    "restart_chatbot":  true,
+    "farm_id":  "farm_long",
+    "passed":  21,
+    "failed":  0,
+    "results":  [
+                    {
+                        "code":  "SVC-IDENTITY",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=identity-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-CHAT",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=chatbot-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-FARM",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=farm-data-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-KNOWLEDGE",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=knowledge-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-TELEMETRY",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=telemetry-ingestion-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-TRUTH",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=truth-guard-service, status=ok"
+                    },
+                    {
+                        "code":  "SVC-AI",
+                        "requirement":  "Microservice hoạt động",
+                        "passed":  true,
+                        "detail":  "service=ai-analytics-service, status=ok"
+                    },
+                    {
+                        "code":  "AUTH-01",
+                        "requirement":  "Đăng nhập và đúng vai trò",
+                        "passed":  true,
+                        "detail":  "farmer và technician được xác thực; không in mật khẩu/token"
+                    },
+                    {
+                        "code":  "AUTH-02",
+                        "requirement":  "Ngữ cảnh “vườn của tôi”",
+                        "passed":  true,
+                        "detail":  "default_farm_id=farm_long"
+                    },
+                    {
+                        "code":  "DATA-01",
+                        "requirement":  "Quản lý đủ nhóm dữ liệu vận hành",
+                        "passed":  true,
+                        "detail":  "9/9 nhóm; tổng 145343 dòng trong phạm vi vườn"
+                    },
+                    {
+                        "code":  "DATA-02",
+                        "requirement":  "Provenance và freshness",
+                        "passed":  true,
+                        "detail":  "1 nguồn cảm biến; mỗi nhóm có trạng thái fresh/stale/missing/available"
+                    },
+                    {
+                        "code":  "DATA-03",
+                        "requirement":  "Báo cáo chi tiết theo ngày",
+                        "passed":  true,
+                        "detail":  "49/49 dòng (7 ngày x 7 nhóm sự kiện)"
+                    },
+                    {
+                        "code":  "CHAT-01",
+                        "requirement":  "Hội thoại lưu trong PostgreSQL",
+                        "passed":  true,
+                        "detail":  "engine=postgresql, messages=18"
+                    },
+                    {
+                        "code":  "RAG-01",
+                        "requirement":  "Kho tri thức có duyệt và production gate",
+                        "passed":  true,
+                        "detail":  "sources=15, approved=13, gate=not-ready (đúng trạng thái PoC)"
+                    },
+                    {
+                        "code":  "AUTH-03",
+                        "requirement":  "Quản lý ánh xạ danh tính ngoài",
+                        "passed":  true,
+                        "detail":  "Có endpoint quản lý Zalo OA/NextFarm mapping; hiện có 0 ánh xạ"
+                    },
+                    {
+                        "code":  "TENANT-01",
+                        "requirement":  "Chặn truy cập chéo vườn",
+                        "passed":  true,
+                        "detail":  "HTTP 403 khi farmer gọi vườn không thuộc quyền"
+                    },
+                    {
+                        "code":  "SAFE-01",
+                        "requirement":  "Không tự ý điều khiển thiết bị",
+                        "passed":  true,
+                        "detail":  "intent=control_out_of_scope; PoC từ chối thực thi và yêu cầu xác nhận/quyền ở giai đoạn sau"
+                    },
+                    {
+                        "code":  "TRUTH-01",
+                        "requirement":  "Không bịa khi không có dữ liệu",
+                        "passed":  true,
+                        "detail":  "intent=metric_missing, grounded=True, elapsed_ms=111"
+                    },
+                    {
+                        "code":  "CHAT-02",
+                        "requirement":  "Tin nhắn demo được ghi bền vững",
+                        "passed":  true,
+                        "detail":  "client_message_id=demo47-control-20260818060642703"
+                    },
+                    {
+                        "code":  "CHAT-03",
+                        "requirement":  "Chatbot khởi động lại thành công",
+                        "passed":  true,
+                        "detail":  "restart riêng service, không xóa volume PostgreSQL"
+                    },
+                    {
+                        "code":  "CHAT-04",
+                        "requirement":  "Hội thoại còn sau restart",
+                        "passed":  true,
+                        "detail":  "Đối chiếu lại client_message_id=demo47-control-20260818060642703 trong PostgreSQL"
+                    }
+                ],
+    "limitations":  [
+                        "Telemetry hiện là simulated_device_calibrated_v9, chưa phải API/phần cứng NextFarm.",
+                        "Không chạy restore trên database demo đang hoạt động; restore phải thực hiện trong môi trường sạch.",
+                        "production_ready vẫn false cho đến khi có API sandbox, load test, security review và chuyên gia nông học chấm."
+                    ]
+}

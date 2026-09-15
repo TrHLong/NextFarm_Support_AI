@@ -1,0 +1,14 @@
+.env
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+model-artifacts/*
+!model-artifacts/README.txt
+research-data/reference/raw/**
+!research-data/reference/raw/nasa_power/
+!research-data/reference/raw/nasa_power/**
+*.zip
+
+.git/
+.secrets/
+.github-local-inputs/

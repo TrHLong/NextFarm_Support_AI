@@ -1,0 +1,18 @@
+{
+  "files": 574,
+  "bytes": 80701285,
+  "largest_file": {
+    "path": "data/operational/sensor_readings.parquet",
+    "bytes": 4043967
+  },
+  "model_binaries": 10,
+  "docker_copy_missing": [],
+  "high_confidence_secret_findings": [],
+  "env_excluded": true,
+  "all_files_under_25_MiB": true,
+  "source_code_and_model_bytes": "Verified against originals during copy; package-only .gitignore/.gitattributes/README/.dockerignore added or adjusted",
+  "limitations": [
+    "Secret pattern scan is not a proof that all contextual confidential content is absent. No external upload performed.",
+    "Docker build not executed for this packaging task."
+  ]
+}

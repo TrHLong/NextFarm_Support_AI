@@ -1,0 +1,117 @@
+{
+  "version": "9.0.1",
+  "created_at": "2026-08-11T07:21:44.942874+00:00",
+  "normalized_reference_rows": 147919,
+  "reference_source_counts": {
+    "figshare_iot_28667981": 120960,
+    "karly_soil_moisture_1227837": 679,
+    "nasa_power": 26280
+  },
+  "metric_counts": {
+    "temperature": 147919,
+    "air_humidity": 147240,
+    "soil_moisture": 679,
+    "ec": 120960,
+    "ph": 120960,
+    "flow_rate": 0,
+    "rainfall": 26280,
+    "light": 147240
+  },
+  "bootstrap_training_rows": 12078,
+  "normalized_sha256": "ee5cc7944df003ab86a22d407c45b73a17bc34a239e2a6446ff7036b33b21cc4",
+  "calibration_sha256": "2d93b790896770a896fbfd7068d54a7fe16592b9832368e792edd047298bd4bf",
+  "bootstrap_sha256": "ec0eb236c815cd167227b001dca8b645124d1fe9e00331bed8d9c371a3a2f8cf",
+  "policy": {
+    "uses_prior_project_data": false,
+    "uses_external_project_database": false,
+    "reference_role": "downloaded_static_reference",
+    "bootstrap_role": "derived_reference_training_not_device_telemetry",
+    "runtime_role": "simulated_device_calibrated_v9_after_bootstrap"
+  },
+  "sources": [
+    {
+      "id": "figshare_iot_28667981",
+      "repository": "Figshare",
+      "record": "28667981",
+      "license": "CC0",
+      "files": [
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-01.csv",
+          "sha256": "9d4e9eae6e98372386613f768d00722593d9b353673532d62653cb6f15d8afce",
+          "bytes": 872287
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-02.csv",
+          "sha256": "b46e976c17b9d4315fbddce496d2a895c0da94699043719c97c0bf5f4e52d030",
+          "bytes": 872429
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-03.csv",
+          "sha256": "38eaffa112aa44ce89178ab07bb4109731305cccc5c972922c268dd53785b5ad",
+          "bytes": 872474
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-04.csv",
+          "sha256": "7bfb6cefbd9517eaca0ada046d6e48451da0efd9cef43a97a2f968043241304f",
+          "bytes": 872505
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-05.csv",
+          "sha256": "825ba5cc017e1f1d7bbea8c9982efcec8836407d00bf3064660d2433c6a9c998",
+          "bytes": 872570
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-06.csv",
+          "sha256": "fb0bd9d7826f53b2cbf046f211ac78e82bfe1b10eefc72316c05003b00b00298",
+          "bytes": 872433
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-07.csv",
+          "sha256": "1d6aa89373fcdc868dfc113a7aed03e922114e4bac4daed1ca0441bbd9cf98cf",
+          "bytes": 872477
+        }
+      ]
+    },
+    {
+      "id": "karly_soil_moisture_1227837",
+      "repository": "GitHub/Zenodo",
+      "record": "10.5281/zenodo.1227837",
+      "license": "CC BY 4.0",
+      "files": [
+        {
+          "path": "research-data/reference/raw/karly_soil_moisture_1227837/soilmoisture_dataset.csv",
+          "sha256": "ca62b37cc0c7549fdf966382cffac7b0fd701ee9b6d8cbf04f806da96dd1f42f",
+          "bytes": 1696782
+        }
+      ]
+    },
+    {
+      "id": "nasa_power_2025",
+      "repository": "NASA POWER",
+      "record": "hourly point API",
+      "files": [
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_long_2025.csv",
+          "sha256": "c4695cdf5cdcb3570bec030d988a4a492194eda8d3045a225d8b14145b528005",
+          "bytes": 339078,
+          "farm_id": "farm_long"
+        },
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_lan_2025.csv",
+          "sha256": "afe85deddc59d8ac1f2e1526638c218439cdd61de981e107147300b6ec3502dd",
+          "bytes": 338464,
+          "farm_id": "farm_lan"
+        },
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_minh_2025.csv",
+          "sha256": "a1ea8083f43c16ce65cf05baa4e56c1df6f612d988f30cd9ad8684ec34c97fdc",
+          "bytes": 337877,
+          "farm_id": "farm_minh"
+        }
+      ]
+    }
+  ],
+  "source_csv_normalized_sha256": "befeb56a55c4aaebe1beebe006d2ea176e86f24ecda98d035b364e150e41b1c3",
+  "source_csv_bootstrap_sha256": "7b002dce96014b837a6711a861d7e49ab243173bbe165ee89ade9e0ead3916ba",
+  "packaged_data_format": "parquet_gzip"
+}

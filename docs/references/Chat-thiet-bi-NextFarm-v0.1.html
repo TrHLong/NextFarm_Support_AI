@@ -1,0 +1,753 @@
+<title>Trợ lý chat thiết bị</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#f7faf9; --paper:#ffffff; --panel:#eef4f2; --panel2:#e4ecea;
+  --ink:#141a1b; --ink2:#455457; --ink3:#74868a;
+  --line:#ccd8d5; --line2:#e2eae8;
+  --acc:#0d7a68; --acc-soft:#e3f1ee;
+  --dc:#1a6fb0; --dc-soft:#e3eef7;
+  --warn:#a2560f; --warn-soft:#fbf0e2;
+  --ok:#2f7d32;
+  --f-disp:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1112; --paper:#121a1b; --panel:#182122; --panel2:#1e292a;
+    --ink:#e8efee; --ink2:#a7b8b9; --ink3:#7d9092;
+    --line:#2b3839; --line2:#212d2e;
+    --acc:#3fb39c; --acc-soft:#12312c;
+    --dc:#5aa6e0; --dc-soft:#12293a;
+    --warn:#d9964e; --warn-soft:#332411;
+    --ok:#6cbf70;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1112; --paper:#121a1b; --panel:#182122; --panel2:#1e292a;
+  --ink:#e8efee; --ink2:#a7b8b9; --ink3:#7d9092;
+  --line:#2b3839; --line2:#212d2e;
+  --acc:#3fb39c; --acc-soft:#12312c;
+  --dc:#5aa6e0; --dc-soft:#12293a;
+  --warn:#d9964e; --warn-soft:#332411;
+  --ok:#6cbf70;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--f-body);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.sheet{max-width:1010px;margin:0 auto;background:var(--paper);
+  border-left:1px solid var(--line2);border-right:1px solid var(--line2);
+  padding:0 clamp(18px,4.4vw,64px) 96px}
+
+.mast{padding:56px 0 0;border-bottom:3px solid var(--ink)}
+.crumb{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+h1{font-family:var(--f-disp);font-weight:700;font-size:clamp(40px,7vw,68px);
+  line-height:.94;letter-spacing:-.005em;margin:0 0 12px;text-wrap:balance}
+h1 .thin{font-weight:500;color:var(--ink3)}
+.dek{font-size:17px;color:var(--ink2);max-width:63ch;margin:0 0 22px}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 26px;font-family:var(--f-mono);
+  font-size:11.5px;color:var(--ink3);padding-bottom:22px}
+.metaline b{color:var(--ink2);font-weight:600}
+
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
+  gap:1px;background:var(--line);border-bottom:1px solid var(--line);margin-bottom:52px}
+.strip>div{background:var(--panel);padding:15px 17px 16px}
+.strip .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:5px}
+.strip .v{font-family:var(--f-disp);font-size:23px;font-weight:600;line-height:1.15;display:block}
+.strip .n{font-size:12.5px;color:var(--ink2);line-height:1.45;display:block;margin-top:3px}
+
+section{margin:0 0 60px}
+h2{display:flex;align-items:baseline;gap:14px;font-family:var(--f-disp);
+  font-weight:700;font-size:31px;line-height:1.1;letter-spacing:-.005em;
+  margin:0 0 6px;padding-top:22px;border-top:2px solid var(--ink);text-wrap:balance}
+h2 .num{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--acc);
+  flex:0 0 auto;transform:translateY(-2px)}
+.sub{color:var(--ink3);font-size:14px;margin:0 0 22px;max-width:66ch}
+h3{font-family:var(--f-disp);font-weight:600;font-size:21px;margin:34px 0 8px;letter-spacing:.005em}
+h4{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink3);margin:26px 0 8px}
+p{margin:12px 0;max-width:68ch}
+ul,ol{margin:12px 0;padding-left:20px;max-width:68ch}
+li{margin:6px 0}
+strong{font-weight:600}
+code,.mono{font-family:var(--f-mono);font-size:.88em}
+code{background:var(--panel);padding:2px 6px;border-radius:3px;color:var(--ink)}
+
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{padding:9px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line2)}
+thead th{background:var(--panel);font-family:var(--f-mono);font-size:10.5px;
+  font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1px solid var(--line);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.req td{background:var(--acc-soft)}
+td.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--acc);
+  background:var(--panel);padding:14px 18px;border-radius:0 4px 4px 0;margin:22px 0;font-size:14.5px}
+.note>*{max-width:none}
+.note .t{font-family:var(--f-disp);font-weight:600;font-size:17px;display:block;margin-bottom:4px}
+.note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.note.warn .t{color:var(--warn)}
+.note.dc{border-left-color:var(--dc);background:var(--dc-soft)}
+.note.dc .t{color:var(--dc)}
+
+figure{margin:28px 0;border:1px solid var(--line);border-radius:4px;background:var(--paper);overflow:hidden}
+figure .fbody{padding:10px 12px;overflow-x:auto;background:var(--paper)}
+figure svg{display:block;width:100%;min-width:660px;height:auto;color:var(--ink2)}
+figcaption{font-size:13px;color:var(--ink3);padding:10px 15px;
+  border-top:1px solid var(--line2);background:var(--panel)}
+figcaption b{color:var(--ink2);font-family:var(--f-disp);font-size:15px;font-weight:600}
+.svg-t{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--ink2)}
+.svg-tb{font-family:"Barlow Condensed",sans-serif;font-size:15.5px;font-weight:600;fill:var(--ink)}
+.svg-ts{font-family:"IBM Plex Mono",monospace;font-size:9.5px;fill:var(--ink3)}
+.st{stroke:currentColor;fill:none}
+
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px;margin:22px 0}
+.card{border:1px solid var(--line);border-radius:4px;padding:16px 18px;background:var(--panel)}
+.card h4{margin-top:0}
+.card ul{margin:0;padding-left:17px;font-size:14px}
+.card p{font-size:14px;margin:8px 0 0}
+
+.chain{font-family:var(--f-mono);font-size:12.5px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:4px;padding:13px 16px;margin:18px 0;
+  overflow-x:auto;white-space:pre;line-height:1.65;color:var(--ink)}
+
+.foot{margin-top:56px;padding-top:20px;border-top:2px solid var(--ink);
+  font-size:13px;color:var(--ink3);max-width:70ch}
+</style>
+
+<div class="sheet">
+
+<header class="mast">
+  <p class="crumb">NextFarm · Bản gợi ý · Tài liệu 1/2 · v0.1</p>
+  <h1>Trợ lý <span class="thin">chat thiết bị</span></h1>
+  <p class="dek">Trợ lý chạy <b>theo từng thiết bị</b>: khách chọn một tủ, rồi hỏi về đúng tủ đó. Tài liệu này nói thiết bị có những gì, gửi về dữ liệu nào, và trợ lý dùng dữ liệu đó trò chuyện ra sao. Phần trò chuyện bằng <b>giọng nói</b> nằm ở tài liệu riêng.</p>
+  <div class="metaline">
+    <span><b>Ngày</b> 09/09/2026</span>
+    <span><b>Tính chất</b> gợi ý để trao đổi</span>
+    <span><b>Phạm vi</b> Trong một thiết bị · Tưới &amp; châm phân · Chat bằng tin nhắn</span>
+    <span><b>Tài liệu kèm</b> Trợ lý giọng nói</span>
+  </div>
+</header>
+
+<div class="strip">
+  <div><span class="k">Luồng thiết bị gửi về</span><span class="v">7</span><span class="n">số đo · trạng thái · nhật ký tưới · cảnh báo · cấu hình</span></div>
+  <div><span class="k">Nhóm chỉ số</span><span class="v">3 ngành</span><span class="n">Nhà kính · Chăn nuôi · Thuỷ sản</span></div>
+  <div><span class="k">Phạm vi hội thoại</span><span class="v">1 thiết bị</span><span class="n">khách chọn tủ nào thì trợ lý chỉ nói về tủ đó</span></div>
+  <div><span class="k">Sơ đồ trực quan</span><span class="v">5 hình</span><span class="n">kiến trúc · tủ điều khiển · châm phân · trình tự · đường trích dữ liệu</span></div>
+</div>
+
+<!-- ══════════════ 01 ══════════════ -->
+<section>
+<h2><span class="num">01</span>Bức tranh chung</h2>
+<p class="sub">Dữ liệu đi một chiều từ ngoài đồng vào kho, rồi trợ lý AI đọc kho đó để trò chuyện với khách.</p>
+
+<figure>
+<div class="fbody">
+<svg viewBox="0 0 1000 400" role="img" aria-label="Sơ đồ luồng dữ liệu từ ngoài đồng tới trợ lý AI">
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,1 L8,4.5 L0,8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="60" width="150" height="180" rx="4" class="st" stroke-width="1.2"/>
+  <text x="20" y="82" class="svg-tb">Ngoài đồng</text>
+  <text x="20" y="104" class="svg-t">Cảm biến</text>
+  <text x="20" y="122" class="svg-t">Đồng hồ nước</text>
+  <text x="20" y="140" class="svg-t">Bơm · Van vùng</text>
+  <text x="20" y="158" class="svg-t">Bộ châm phân</text>
+  <text x="20" y="176" class="svg-t">Tời · Màn · Quạt</text>
+  <text x="20" y="204" class="svg-ts">nơi sinh ra mọi con số</text>
+
+  <rect x="188" y="60" width="150" height="180" rx="4" class="st" stroke-width="1.6"/>
+  <text x="200" y="82" class="svg-tb">Tủ điều khiển</text>
+  <text x="200" y="104" class="svg-t">Bo ESP32-S3</text>
+  <text x="200" y="122" class="svg-t">8 vào / 8 ra</text>
+  <text x="200" y="140" class="svg-t">+ module mở rộng</text>
+  <text x="200" y="168" class="svg-ts">giữ lịch tưới tại chỗ,</text>
+  <text x="200" y="183" class="svg-ts">chạy cả khi mạng chập chờn</text>
+  <text x="200" y="212" class="svg-ts">Ethernet · WiFi · 4G</text>
+
+  <rect x="368" y="90" width="118" height="120" rx="4" class="st" stroke-width="1.2"/>
+  <text x="380" y="112" class="svg-tb">Broker</text>
+  <text x="380" y="134" class="svg-t">MQTT</text>
+  <text x="380" y="158" class="svg-ts">7 luồng lên</text>
+  <text x="380" y="174" class="svg-ts">1 luồng lệnh xuống</text>
+
+  <rect x="516" y="40" width="230" height="230" rx="4" class="st" stroke-width="1.6"/>
+  <text x="528" y="62" class="svg-tb">Kho dữ liệu của thiết bị</text>
+  <rect x="528" y="74" width="206" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="538" y="91" class="svg-t">Số đo cảm biến</text>
+  <text x="538" y="106" class="svg-ts">chuỗi theo thời gian</text>
+  <rect x="528" y="122" width="206" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="538" y="139" class="svg-t">Trạng thái vận hành</text>
+  <text x="538" y="154" class="svg-ts">bơm · van · lưu lượng · kết nối</text>
+  <rect x="528" y="170" width="206" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="538" y="187" class="svg-t">Nhật ký tưới &amp; châm phân</text>
+  <text x="538" y="202" class="svg-ts">từng chu kỳ · số lít · số mL</text>
+  <rect x="528" y="218" width="206" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="538" y="235" class="svg-t">Lịch tưới &amp; cảnh báo</text>
+  <text x="538" y="250" class="svg-ts">lịch đang bật · ngưỡng đã đặt</text>
+
+  <rect x="776" y="90" width="150" height="120" rx="4" class="st" stroke-width="1.6"/>
+  <text x="788" y="112" class="svg-tb">Trợ lý AI</text>
+  <text x="788" y="134" class="svg-t">Bộ công cụ đọc</text>
+  <text x="788" y="152" class="svg-t">Từ điển chỉ số</text>
+  <text x="788" y="170" class="svg-t">Hàng rào quyền</text>
+  <text x="788" y="194" class="svg-ts">gắn với ĐÚNG MỘT thiết bị</text>
+
+  <rect x="516" y="322" width="410" height="58" rx="4" class="st" stroke-width="1.2"/>
+  <text x="528" y="344" class="svg-tb">Khách hàng</text>
+  <text x="528" y="364" class="svg-t">Web · App di động · Zalo · chat ngay trong phần mềm</text>
+
+  <g class="st" stroke-width="1.3" marker-end="url(#ah)">
+    <path d="M158 150 H186"/>
+    <path d="M338 150 H366"/>
+    <path d="M486 150 H514"/>
+    <path d="M746 150 H774"/>
+    <path d="M851 210 V300 H721 V320"/>
+  </g>
+  <g class="st" stroke-width="1.1" stroke-dasharray="4 3" marker-end="url(#ah)">
+    <path d="M600 270 V292 H427 V212"/>
+    <path d="M368 265 H340"/>
+  </g>
+  <text x="440" y="286" class="svg-ts">lệnh điều khiển đi ngược lại</text>
+  <text x="163" y="142" class="svg-ts">đo</text>
+  <text x="343" y="142" class="svg-ts">gửi</text>
+  <text x="489" y="142" class="svg-ts">lưu</text>
+  <text x="744" y="142" class="svg-ts">trích</text>
+  <text x="860" y="252" class="svg-ts">trả lời</text>
+</svg>
+</div>
+<figcaption><b>Hình 1 · Năm chặng.</b> Trợ lý AI đứng ở chặng cuối — nó nói được đúng những gì bốn chặng trước đã ghi lại.</figcaption>
+</figure>
+
+<div class="note warn">
+<span class="t">Phạm vi: trợ lý chạy theo thiết bị</span>
+Khách mở một tủ trong app rồi mới trò chuyện — mọi câu hỏi và mọi câu trả lời đều nằm trong đúng tủ đó. Trợ lý <b>không gộp nhiều tủ</b>, không trả lời theo vùng, theo thửa hay theo mùa vụ. Muốn hỏi tủ khác thì thoát ra chọn tủ khác.
+<p style="margin:8px 0 0">Làm vậy vì ba lẽ: khách vốn nghĩ theo <b>cái tủ ngoài kia</b> chứ không nghĩ theo cấp quản lý; câu trả lời không bao giờ lẫn số của tủ này sang tủ khác; và bật cho một khách dùng thử chỉ cần bật trên một thiết bị.</p>
+</div>
+
+<div class="note">
+<span class="t">Một lựa chọn nên chốt sớm</span>
+Nên để trợ lý AI <b>đọc kho dữ liệu</b> thay vì hỏi thẳng thiết bị. Bo ngoài đồng có thể đang bận hoặc đang chuyển mạng; đọc kho thì lúc nào cũng có câu trả lời kèm mốc thời gian — <i>“lúc 14 h 10 nhiệt độ là 31 °C”</i> vẫn hữu ích hơn một ô trống.
+</div>
+</section>
+
+<!-- ══════════════ 02 ══════════════ -->
+<section>
+<h2><span class="num">02</span>Trong tủ điều khiển có gì</h2>
+<p class="sub">Phần sinh ra dữ liệu. Cột trái đo, cột phải làm, cả hai đều được ghi lại.</p>
+
+<figure>
+<div class="fbody">
+<svg viewBox="0 0 1000 420" role="img" aria-label="Sơ đồ bên trong tủ điều khiển">
+  <rect x="240" y="20" width="330" height="380" rx="5" class="st" stroke-width="1.6"/>
+  <text x="254" y="42" class="svg-tb">Tủ điều khiển</text>
+  <text x="254" y="58" class="svg-ts">vỏ chống nước · ray DIN · nguồn 24 V</text>
+
+  <rect x="256" y="72" width="298" height="86" rx="4" class="st" stroke-width="1.3"/>
+  <text x="268" y="92" class="svg-tb">Bo chính — ESP32-S3</text>
+  <text x="268" y="110" class="svg-t">8 đầu vào số · 8 đầu ra số</text>
+  <text x="268" y="128" class="svg-t">RS485 · Ethernet · WiFi</text>
+  <text x="268" y="147" class="svg-ts">giữ lịch tưới, khoá an toàn, đếm nước</text>
+
+  <rect x="256" y="172" width="142" height="70" rx="4" class="st" stroke-width="1"/>
+  <text x="268" y="192" class="svg-t">Module relay #1</text>
+  <text x="268" y="210" class="svg-ts">ngõ ra 9–16</text>
+  <text x="268" y="228" class="svg-ts">mở rộng theo</text>
+  <rect x="412" y="172" width="142" height="70" rx="4" class="st" stroke-width="1"/>
+  <text x="424" y="192" class="svg-t">Module relay #2</text>
+  <text x="424" y="210" class="svg-ts">ngõ ra 17–24</text>
+  <text x="424" y="228" class="svg-ts">số van của vườn</text>
+
+  <rect x="256" y="256" width="298" height="66" rx="4" class="st" stroke-width="1"/>
+  <text x="268" y="276" class="svg-t">Bo phụ — đếm xung đồng hồ</text>
+  <text x="268" y="294" class="svg-ts">8 đầu vào, đếm từng xung, trả số cộng dồn</text>
+  <text x="268" y="310" class="svg-ts">dùng cho đồng hồ nước và đồng hồ từng van phân</text>
+
+  <rect x="256" y="336" width="298" height="50" rx="4" class="st" stroke-width="1"/>
+  <text x="268" y="356" class="svg-t">Nguồn &amp; bảo vệ</text>
+  <text x="268" y="373" class="svg-ts">24 V · aptomat · chống sét đường tín hiệu</text>
+
+  <text x="14" y="42" class="svg-tb">Vào — cảm biến</text>
+  <g class="st" stroke-width="1">
+    <rect x="14" y="56" width="196" height="40" rx="3"/>
+    <rect x="14" y="104" width="196" height="40" rx="3"/>
+    <rect x="14" y="152" width="196" height="40" rx="3"/>
+    <rect x="14" y="200" width="196" height="40" rx="3"/>
+    <rect x="14" y="248" width="196" height="40" rx="3"/>
+  </g>
+  <text x="26" y="74" class="svg-t">Nhiệt độ · Ẩm không khí</text><text x="26" y="89" class="svg-ts">đấu vào cầu RS485</text>
+  <text x="26" y="122" class="svg-t">Ẩm đất · Nhiệt đất · EC</text><text x="26" y="137" class="svg-ts">tới 5 điểm ẩm</text>
+  <text x="26" y="170" class="svg-t">Ánh sáng · CO₂</text><text x="26" y="185" class="svg-ts">theo nhu cầu từng vườn</text>
+  <text x="26" y="218" class="svg-t">EC / pH dung dịch phân</text><text x="26" y="233" class="svg-ts">cho hệ châm phân</text>
+  <text x="26" y="266" class="svg-t">Đồng hồ nước</text><text x="26" y="281" class="svg-ts">đếm xung</text>
+
+  <text x="600" y="42" class="svg-tb">Ra — chấp hành</text>
+  <g class="st" stroke-width="1">
+    <rect x="600" y="56" width="196" height="40" rx="3"/>
+    <rect x="600" y="104" width="196" height="40" rx="3"/>
+    <rect x="600" y="152" width="196" height="40" rx="3"/>
+    <rect x="600" y="200" width="196" height="40" rx="3"/>
+    <rect x="600" y="248" width="196" height="40" rx="3"/>
+  </g>
+  <text x="612" y="74" class="svg-t">Bơm nước</text><text x="612" y="89" class="svg-ts">tắt trước van 3 giây</text>
+  <text x="612" y="122" class="svg-t">Van vùng — tới 12 khu</text><text x="612" y="137" class="svg-ts">tưới luân phiên từng khu</text>
+  <text x="612" y="170" class="svg-t">Van phân — tới 12 kênh</text><text x="612" y="185" class="svg-ts">định lượng theo mL</text>
+  <text x="612" y="218" class="svg-t">Bơm phân</text><text x="612" y="233" class="svg-ts">có khoá an toàn riêng</text>
+  <text x="612" y="266" class="svg-t">Tời · Màn · Quạt</text><text x="612" y="281" class="svg-ts">gán vai trò trên phần mềm</text>
+
+  <rect x="600" y="312" width="196" height="74" rx="3" class="st" stroke-width="1"/>
+  <text x="612" y="332" class="svg-t">Đường mạng</text>
+  <text x="612" y="349" class="svg-ts">Ethernet — ưu tiên</text>
+  <text x="612" y="364" class="svg-ts">WiFi — dự phòng</text>
+  <text x="612" y="379" class="svg-ts">Router 4G khi ở xa</text>
+
+  <g class="st" stroke-width="1.2" marker-end="url(#ah)">
+    <path d="M210 76 H238"/><path d="M210 124 H238"/><path d="M210 172 H238"/>
+    <path d="M210 220 H238"/><path d="M210 268 H238"/>
+    <path d="M570 76 H598"/><path d="M570 124 H598"/><path d="M570 172 H598"/>
+    <path d="M570 220 H598"/><path d="M570 268 H598"/><path d="M570 349 H598"/>
+  </g>
+</svg>
+</div>
+<figcaption><b>Hình 2 · Một tủ điều khiển.</b> Mỗi tủ là một “thiết bị” trên phần mềm, có mã riêng và gắn vào một vùng canh tác. Cảm biến lắp theo nhu cầu từng vườn — cầu đấu RS485 chờ sẵn trên bo.</figcaption>
+</figure>
+</section>
+
+<!-- ══════════════ 03 ══════════════ -->
+<section>
+<h2><span class="num">03</span>Bộ châm phân chạy thế nào</h2>
+<p class="sub">Phần đáng nói nhất trong tủ: phân đậm đặc được bơm vào đường ống đang có áp. Dưới đây là đường ống, thứ tự chạy và các điều kiện an toàn.</p>
+
+<figure>
+<div class="fbody">
+<svg viewBox="0 0 1000 470" role="img" aria-label="Sơ đồ đường ống và điện của bộ châm phân">
+  <rect x="140" y="24" width="112" height="54" rx="4" class="st" stroke-width="1.2"/>
+  <text x="152" y="45" class="svg-tb">Bồn phân A</text>
+  <text x="152" y="64" class="svg-ts">ví dụ: đạm</text>
+  <rect x="282" y="24" width="112" height="54" rx="4" class="st" stroke-width="1.2"/>
+  <text x="294" y="45" class="svg-tb">Bồn phân B</text>
+  <text x="294" y="64" class="svg-ts">lân · kali</text>
+  <rect x="424" y="24" width="112" height="54" rx="4" class="st" stroke-width="1.2"/>
+  <text x="436" y="45" class="svg-tb">Bồn phân C</text>
+  <text x="436" y="64" class="svg-ts">vi lượng · axit</text>
+  <text x="558" y="45" class="svg-t">… mở rộng tới 12 kênh</text>
+  <text x="558" y="64" class="svg-ts">mỗi kênh một bồn, một van</text>
+
+  <rect x="140" y="98" width="112" height="34" rx="3" class="st" stroke-width="1"/>
+  <text x="152" y="119" class="svg-t">Van phân · kênh 0</text>
+  <rect x="282" y="98" width="112" height="34" rx="3" class="st" stroke-width="1"/>
+  <text x="294" y="119" class="svg-t">Van phân · kênh 1</text>
+  <rect x="424" y="98" width="112" height="34" rx="3" class="st" stroke-width="1"/>
+  <text x="436" y="119" class="svg-t">Van phân · kênh 2</text>
+
+  <rect x="140" y="148" width="112" height="34" rx="3" class="st" stroke-width="1.4"/>
+  <text x="152" y="169" class="svg-t">Đồng hồ ĐH#2</text>
+  <rect x="282" y="148" width="112" height="34" rx="3" class="st" stroke-width="1.4"/>
+  <text x="294" y="169" class="svg-t">Đồng hồ ĐH#3</text>
+  <rect x="424" y="148" width="112" height="34" rx="3" class="st" stroke-width="1.4"/>
+  <text x="436" y="169" class="svg-t">Đồng hồ ĐH#4</text>
+  <text x="558" y="169" class="svg-ts">mỗi van một đồng hồ — đo thật</text>
+
+  <path d="M196 182 V204 M338 182 V204 M480 182 V204 M196 204 H480" class="st" stroke-width="1.4"/>
+  <text x="492" y="208" class="svg-ts">ống gom</text>
+
+  <rect x="256" y="222" width="164" height="46" rx="4" class="st" stroke-width="1.8"/>
+  <text x="268" y="243" class="svg-tb">BƠM PHÂN</text>
+  <text x="268" y="261" class="svg-ts">chạy khi đủ bốn điều kiện</text>
+  <path d="M338 204 V220" class="st" stroke-width="1.4" marker-end="url(#ah)"/>
+  <path d="M420 245 H492 V300" class="st" stroke-width="1.4" marker-end="url(#ah)"/>
+  <text x="426" y="238" class="svg-ts">châm vào ống chính</text>
+
+  <rect x="20" y="304" width="104" height="48" rx="4" class="st" stroke-width="1.2"/>
+  <text x="32" y="325" class="svg-tb">Nguồn nước</text>
+  <text x="32" y="343" class="svg-ts">bể · giếng</text>
+  <rect x="156" y="304" width="120" height="48" rx="4" class="st" stroke-width="1.8"/>
+  <text x="168" y="325" class="svg-tb">BƠM NƯỚC</text>
+  <text x="168" y="343" class="svg-ts">chạy trước</text>
+  <rect x="308" y="304" width="112" height="48" rx="4" class="st" stroke-width="1.4"/>
+  <text x="320" y="325" class="svg-t">Đồng hồ ĐH#1</text>
+  <text x="320" y="343" class="svg-ts">tổng nước tưới</text>
+
+  <circle cx="492" cy="328" r="14" class="st" stroke-width="1.6"/>
+  <path d="M485 328 H499 M492 321 V335" class="st" stroke-width="1.2"/>
+  <text x="464" y="362" class="svg-ts">điểm châm</text>
+
+  <rect x="546" y="304" width="140" height="48" rx="4" class="st" stroke-width="1.2"/>
+  <text x="558" y="325" class="svg-tb">Van vùng</text>
+  <text x="558" y="343" class="svg-ts">mở khu nào tưới khu đó</text>
+  <rect x="718" y="304" width="150" height="48" rx="4" class="st" stroke-width="1.2"/>
+  <text x="730" y="325" class="svg-tb">Ra vườn</text>
+  <text x="730" y="343" class="svg-ts">từng khu tưới</text>
+
+  <g class="st" stroke-width="1.6" marker-end="url(#ah)">
+    <path d="M124 328 H154"/><path d="M276 328 H306"/><path d="M420 328 H476"/>
+    <path d="M508 328 H544"/><path d="M686 328 H716"/>
+  </g>
+
+  <rect x="828" y="148" width="150" height="46" rx="4" class="st" stroke-width="1.4"/>
+  <text x="840" y="169" class="svg-tb">Nút dừng khẩn</text>
+  <text x="840" y="187" class="svg-ts">tắt bơm phân, chốt cứng</text>
+
+  <rect x="20" y="398" width="958" height="56" rx="4" class="st" stroke-width="1.6"/>
+  <text x="34" y="420" class="svg-tb">BO ĐIỀU KHIỂN — kiểm điều kiện liên tục, không chỉ lúc bắt đầu</text>
+  <text x="34" y="440" class="svg-t">đọc: relay bơm nước · van vùng · van phân · xung đồng hồ · nút dừng khẩn &nbsp;&nbsp;·&nbsp;&nbsp; ra lệnh: bơm nước · bơm phân · các van</text>
+
+  <g class="st" stroke-width="1" stroke-dasharray="4 3">
+    <path d="M196 132 V148"/><path d="M338 132 V148"/><path d="M480 132 V148"/>
+    <path d="M216 352 V398"/><path d="M364 352 V398"/><path d="M616 352 V398"/>
+    <path d="M300 268 V398"/><path d="M903 194 V398"/>
+    <path d="M120 190 H196 M120 190 V398 M196 182 V190"/>
+  </g>
+</svg>
+</div>
+<figcaption><b>Hình 3 · Đường ống và đường điện.</b> Nét liền là nước và phân chảy, nét đứt là dây tín hiệu. Điểm châm nằm <b>sau</b> bơm nước — không có nước chảy thì phân đọng lại trong ống. Đó là lý do của bốn điều kiện dưới đây.</figcaption>
+</figure>
+
+<h3>Bốn điều kiện để bơm phân được phép chạy</h3>
+<div class="g2">
+  <div class="card">
+    <h4>① Có van vùng đang mở</h4>
+    <p>Phải có một khu tưới đang mở van. Có đường ra thì phân mới đi tới cây, không đọng lại trong ống.</p>
+  </div>
+  <div class="card">
+    <h4>② Bơm nước đang chạy</h4>
+    <p>Đọc <b>tiếp điểm relay thật</b> chứ không đọc lệnh đã gửi. Có dòng nước mang đi thì phân mới được pha loãng đúng tỷ lệ.</p>
+  </div>
+  <div class="card">
+    <h4>③ Có kênh phân được gọi</h4>
+    <p>Do người bấm tay, hoặc do lịch tưới có khai phân. Không ai gọi thì bơm phân đứng yên.</p>
+  </div>
+  <div class="card">
+    <h4>④ Có định lượng rõ ràng</h4>
+    <p>Kênh đó có đồng hồ đo, hoặc đã hiệu chỉnh sẵn số mL mỗi phút. Biết được sẽ bón bao nhiêu thì mới bón — bằng không vẫn tưới nước bình thường và báo lên app.</p>
+  </div>
+</div>
+
+<div class="note warn">
+<span class="t">Mất một điều kiện là dừng ngay, và không tự chạy lại</span>
+Đang châm mà van vùng đóng, bơm nước tắt, hoặc ai đó bấm nút dừng khẩn — bơm phân dừng tức thì và bị chốt. Thả nút dừng khẩn ra, nó <b>không tự chạy tiếp</b>: phải có một lệnh mở phân mới, do người bấm hoặc do lịch. Đây là chủ ý.
+</div>
+
+<h3>Một mẻ tưới có phân đi theo thứ tự nào</h3>
+
+<figure>
+<div class="fbody">
+<svg viewBox="0 0 1000 310" role="img" aria-label="Trình tự thời gian một mẻ tưới có châm phân">
+  <text x="14" y="62" class="svg-t">Van vùng</text>
+  <text x="14" y="102" class="svg-t">Bơm nước</text>
+  <text x="14" y="142" class="svg-t">Van phân</text>
+  <text x="14" y="182" class="svg-t">Bơm phân</text>
+  <text x="14" y="222" class="svg-t">Đồng hồ đếm</text>
+
+  <g class="st" stroke-width=".8" stroke-dasharray="2 3">
+    <path d="M120 58 H950"/><path d="M120 98 H950"/><path d="M120 138 H950"/>
+    <path d="M120 178 H950"/><path d="M120 218 H950"/>
+  </g>
+
+  <rect x="150" y="44" width="700" height="20" rx="3" class="st" stroke-width="1.4" fill="currentColor" fill-opacity=".10"/>
+  <rect x="210" y="84" width="600" height="20" rx="3" class="st" stroke-width="1.4" fill="currentColor" fill-opacity=".10"/>
+  <rect x="300" y="124" width="330" height="20" rx="3" class="st" stroke-width="1.4" fill="currentColor" fill-opacity=".10"/>
+  <rect x="330" y="164" width="300" height="20" rx="3" class="st" stroke-width="1.8" fill="currentColor" fill-opacity=".18"/>
+  <rect x="330" y="204" width="300" height="20" rx="3" class="st" stroke-width="1.4" fill="currentColor" fill-opacity=".10"/>
+
+  <path d="M630 40 V236" class="st" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="642" y="252" class="svg-ts">rửa ống — chỉ còn nước sạch chảy qua</text>
+
+  <g class="st" stroke-width=".9" stroke-dasharray="3 3">
+    <path d="M150 26 V44"/><path d="M210 26 V84"/><path d="M300 26 V124"/>
+    <path d="M330 26 V164"/><path d="M630 26 V124"/><path d="M810 26 V84"/><path d="M850 26 V44"/>
+  </g>
+  <g class="svg-ts">
+    <text x="146" y="20">1</text><text x="206" y="20">2</text><text x="296" y="20">3</text>
+    <text x="326" y="20">4</text><text x="626" y="20">5</text><text x="806" y="20">6</text><text x="846" y="20">7</text>
+  </g>
+
+  <text x="120" y="282" class="svg-t">1 mở van vùng · 2 bật bơm nước · 3 mở van phân · 4 bật bơm phân, bắt đầu đếm mL</text>
+  <text x="120" y="299" class="svg-t">5 đủ số mL đặt trước → đóng van phân, tắt bơm phân · 6 tắt bơm nước · 7 chờ 3 giây rồi đóng van vùng</text>
+</svg>
+</div>
+<figcaption><b>Hình 4 · Bật và tắt không đối xứng.</b> Bật thì van trước bơm sau; tắt thì <b>bơm trước, van sau, cách nhau 3 giây</b> — tránh thuỷ kích làm vỡ khớp nối. Khoảng giữa bước 5 và 6 là lúc rửa ống: phân đã ngừng, nước vẫn chảy để đẩy hết phần còn đọng.</figcaption>
+</figure>
+
+<h3>Đo thật thay cho ước tính</h3>
+<p>Lượng phân có thể tính bằng thời gian mở van nhân một hệ số hiệu chỉnh, nhưng cách chắc chắn hơn là <b>gắn cho mỗi van phân một đồng hồ riêng</b>. Vài điểm đáng lưu khi triển khai:</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>Hạng mục</th><th>Gợi ý cách làm</th></tr></thead>
+<tbody>
+<tr><td>Đánh số đồng hồ</td><td>ĐH#1 dành cho đồng hồ <b>nước</b>; van phân kênh <i>i</i> dùng ĐH#<i>(i+2)</i>. Số hiệu đồng hồ nên tách rời khỏi chỗ cắm dây, vì một vài đầu vào đã dành cho chức năng khác như nút dừng khẩn.</td></tr>
+<tr><td>Chỗ cắm</td><td>8 đầu vào trên bo chính; hết chỗ thì mở rộng sang bo phụ, dùng cùng cách đánh số như các ngõ ra — ai quen “ngõ ra số 14” là hiểu ngay “đầu vào số 14”.</td></tr>
+<tr><td>Cách đếm</td><td>Đếm <b>từng xung</b> ngay tại chỗ và trả về <b>số cộng dồn</b>, bo chính lấy hiệu giữa hai lần đọc. Hỏi thưa hay hỏi mau đều ra đúng lượng.</td></tr>
+<tr><td>Kênh chưa gắn đồng hồ</td><td>Vẫn chạy theo hệ số hiệu chỉnh như cũ. Hai đường nên cùng chạy được, vì kênh không đo được mới là kênh cần dè chừng nhất.</td></tr>
+<tr><td>Khi số đo bất thường</td><td>Nếu bộ đếm bị đặt lại giữa chừng, nên <b>bỏ mẻ đo đó và báo lên</b> thay vì đoán bù — tránh ghi một con số vô lý vào nhật ký của khách.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Bộ châm phân kể lại được những gì</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Dữ liệu</th><th>Nhịp</th><th>Khách hỏi được</th></tr></thead>
+<tbody>
+<tr><td>Bơm phân đang chạy hay không</td><td>vài giây một lần</td><td>“Có đang bón phân không?”</td></tr>
+<tr><td><b>Lý do bơm phân chưa chạy</b></td><td>vài giây một lần</td><td>“Sao đặt lịch bón mà chưa thấy bón?” — trả lời đích danh: chưa mở van vùng, bơm nước chưa chạy, chưa gọi kênh nào, chưa đặt định lượng, hay đang bấm dừng khẩn</td></tr>
+<tr><td>Kênh phân nào đang mở</td><td>vài giây một lần</td><td>“Đang bón loại nào?”</td></tr>
+<tr><td>Số mL từng kênh mỗi mẻ</td><td>mỗi chu kỳ tưới</td><td>“Tháng này bón hết bao nhiêu đạm?”</td></tr>
+<tr><td>Thời gian châm mỗi mẻ</td><td>mỗi chu kỳ tưới</td><td>“Mỗi lần bón kéo dài bao lâu?”</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note dc">
+<span class="t">Vì sao “lý do chưa chạy” là dòng đáng giá nhất</span>
+Nếu chỉ trả lời “bơm phân không chạy” thì đúng mà vô dụng — khách vẫn phải gọi kỹ thuật. Nếu trả lời được <i>“bơm phân đang chờ vì bơm nước chưa chạy, anh kiểm tra lại aptomat bơm”</i> thì đó là khác biệt giữa một cái chatbot và một cái đỡ được một cuộc gọi.
+</div>
+</section>
+
+<!-- ══════════════ 04 ══════════════ -->
+<section>
+<h2><span class="num">04</span>Dữ liệu thiết bị gửi về</h2>
+<p class="sub">Bảy luồng, mỗi luồng phục vụ một nhóm câu hỏi khác nhau.</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>Luồng</th><th>Nội dung</th><th>Nhịp</th><th>Trả lời cho</th></tr></thead>
+<tbody>
+<tr><td>Số đo cảm biến</td><td>Các chỉ số môi trường, phiên bản firmware, cường độ sóng</td><td>~30–60 giây</td><td>“Vườn tôi đang bao nhiêu độ?”</td></tr>
+<tr><td>Trạng thái vận hành</td><td>Bơm và van nào đang mở, lưu lượng, tổng nước, module nào đang kết nối</td><td>~5 giây</td><td>“Bơm có đang chạy không?”</td></tr>
+<tr><td>Nhật ký tưới</td><td>Từng chu kỳ: giờ, thời lượng, số lít, phân đã bón</td><td>mỗi lần tưới xong</td><td>“Hôm nay tưới mấy lần?”</td></tr>
+<tr><td>Cảnh báo</td><td>Chỉ số vượt ngưỡng, sự cố thiết bị</td><td>khi phát sinh</td><td>“Có gì bất thường không?”</td></tr>
+<tr><td>Cấu hình ngõ ra</td><td>Bo báo lại nó đang giữ cấu hình nào</td><td>khi được hỏi</td><td>“Van số 5 là van khu nào?”</td></tr>
+<tr><td>Nhật ký kỹ thuật</td><td>Log của bo, dành cho đội kỹ thuật</td><td>liên tục</td><td>chẩn đoán khi cần</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Chiều ngược lại là lệnh điều khiển gửi xuống, và mỗi lần gửi đều vào sổ kèm người bấm và thời điểm — nên trợ lý AI trả lời được cả câu <i>“ai vừa bật bơm lúc nãy?”</i></p>
+
+<h3>Các nhóm chỉ số theo ngành</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Ngành</th><th>Chỉ số thường dùng</th><th>Câu chuyện với khách</th></tr></thead>
+<tbody>
+<tr><td><b>Nhà kính · trồng trọt</b></td><td>Nhiệt độ, ẩm không khí, CO₂, ánh sáng, ẩm đất nhiều điểm, nhiệt độ đất, EC đất, EC/pH dung dịch phân, lưu lượng nước</td><td>Có cần tưới chưa · nguy cơ nấm bệnh · pha phân đúng nồng độ chưa</td></tr>
+<tr><td><b>Chăn nuôi</b></td><td>Nhiệt độ và độ ẩm nhiều điểm trong chuồng, khí NH₃, mức cám và khối lượng cám trong silo</td><td>Chuồng có nóng, có bí · bao giờ phải nhập cám</td></tr>
+<tr><td><b>Thuỷ sản</b></td><td>Ôxy hoà tan, pH, EC, độ mặn, ORP, độ đục, nhiệt độ nước nhiều tầng, mực nước</td><td>Ôxy có đủ · nước có cần thay · ao có cạn</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note dc">
+<span class="t">Nhịp lưu: một điểm mỗi 10 phút</span>
+Bo gửi liên tục, nhưng lưu lại một điểm mỗi 10 phút căn theo đồng hồ — đủ để vẽ biểu đồ ngày, tuần, tháng và đủ để trợ lý AI nói xu hướng. Riêng trạng thái bơm và van thì cập nhật tức thời.
+</div>
+</section>
+
+<!-- ══════════════ 05 ══════════════ -->
+<section>
+<h2><span class="num">05</span>Trợ lý trò chuyện được những gì</h2>
+<p class="sub">Bốn nhóm dưới đây đều nằm gọn trong một thiết bị — không câu nào cần tới dữ liệu ngoài tủ đó.</p>
+
+<div class="g2">
+  <div class="card">
+    <h4>Ngay lúc này</h4>
+    <ul>
+      <li>“Tủ này còn kết nối không?”</li>
+      <li>“Bơm có đang chạy không?”</li>
+      <li>“Van nào đang mở?”</li>
+      <li>“Đang bón phân kênh nào?”</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Số đo cảm biến</h4>
+    <ul>
+      <li>“Giờ bao nhiêu độ, ẩm bao nhiêu?”</li>
+      <li>“Đất khô chưa?”</li>
+      <li>“Tuần này ẩm đất có xu hướng khô đi không?”</li>
+      <li>“Hôm qua lúc trưa nóng nhất bao nhiêu?”</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Tưới và châm phân</h4>
+    <ul>
+      <li>“Hôm nay tưới mấy lần, hết bao nhiêu nước?”</li>
+      <li>“Tháng này bón hết bao nhiêu phân?”</li>
+      <li>“Mai mấy giờ tưới?”</li>
+      <li>“Sao đặt lịch bón mà chưa thấy bón?”</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Máy móc và sự cố</h4>
+    <ul>
+      <li>“Có cảnh báo gì không?”</li>
+      <li>“Ai vừa bật bơm lúc nãy?”</li>
+      <li>“Sao tôi bấm mà không chạy?”</li>
+      <li>“Tủ này mất kết nối từ lúc nào?”</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Một đoạn hội thoại mẫu</h3>
+<div class="chain">Khách  — Sao hôm nay chưa thấy bón phân?
+Trợ lý — Lịch bón 6 h sáng của khu 3 đã tới giờ, van khu 3 đang mở và
+         bơm nước đang chạy, nhưng kênh phân số 1 chưa đặt định lượng
+         nên máy chưa châm. Anh đặt số lít cho kênh này giúp em nhé.
+
+Khách  — Tuần này tưới nhiều hơn tuần trước không?
+Trợ lý — Tuần này 14 lần, tổng 8,2 m³. Tuần trước 11 lần, 6,4 m³.
+         Độ ẩm đất trung bình tuần này 62 %, thấp hơn tuần trước 6 điểm.</div>
+</section>
+
+<!-- ══════════════ 06 ══════════════ -->
+<section>
+<h2><span class="num">06</span>Trợ lý trích dữ liệu từ backend bằng cách nào</h2>
+<p class="sub">Trợ lý không đọc thẳng cơ sở dữ liệu. Nó đi qua đúng lớp dịch vụ mà app đang dùng, dưới tài khoản của khách, và <b>luôn kèm mã của tủ đang mở</b>.</p>
+
+<figure>
+<div class="fbody">
+<svg viewBox="0 0 1000 300" role="img" aria-label="Đường trợ lý trích dữ liệu của một thiết bị">
+  <rect x="12" y="112" width="146" height="76" rx="4" class="st" stroke-width="1.2"/>
+  <text x="24" y="138" class="svg-tb">Khách hỏi</text>
+  <text x="24" y="158" class="svg-ts">đang mở tủ “Vườn 1”</text>
+  <text x="24" y="173" class="svg-ts">“hôm nay tưới mấy lần?”</text>
+
+  <rect x="190" y="58" width="196" height="184" rx="4" class="st" stroke-width="1.6"/>
+  <text x="202" y="84" class="svg-tb">Dịch vụ Trợ lý</text>
+  <rect x="202" y="96" width="172" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="212" y="112" class="svg-t">1 · Hiểu câu hỏi</text>
+  <text x="212" y="127" class="svg-ts">cần số liệu gì, khoảng nào</text>
+  <rect x="202" y="144" width="172" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="212" y="160" class="svg-t">2 · Chọn công cụ</text>
+  <text x="212" y="175" class="svg-ts">luôn kèm mã tủ đang mở</text>
+  <rect x="202" y="192" width="172" height="42" rx="3" class="st" stroke-width=".9"/>
+  <text x="212" y="208" class="svg-t">4 · Diễn giải</text>
+  <text x="212" y="223" class="svg-ts">viết câu trả lời kèm mốc giờ</text>
+
+  <rect x="426" y="112" width="176" height="76" rx="4" class="st" stroke-width="1.8"/>
+  <text x="438" y="138" class="svg-tb">Chốt phạm vi</text>
+  <text x="438" y="158" class="svg-t">đúng một mã thiết bị</text>
+  <text x="438" y="174" class="svg-ts">khách này có quyền mở tủ này không</text>
+
+  <rect x="642" y="112" width="196" height="76" rx="4" class="st" stroke-width="1.4"/>
+  <text x="654" y="138" class="svg-tb">Lớp dịch vụ thiết bị</text>
+  <text x="654" y="158" class="svg-t">chỉ đọc</text>
+  <text x="654" y="174" class="svg-ts">số đo · trạng thái · tưới · lịch · cảnh báo</text>
+
+  <rect x="874" y="112" width="114" height="76" rx="4" class="st" stroke-width="1.2"/>
+  <text x="886" y="138" class="svg-tb">Kho dữ liệu</text>
+  <text x="886" y="160" class="svg-ts">của riêng</text>
+  <text x="886" y="175" class="svg-ts">tủ đó</text>
+
+  <g class="st" stroke-width="1.3" marker-end="url(#ah)">
+    <path d="M158 150 H188"/><path d="M386 150 H424"/>
+    <path d="M602 150 H640"/><path d="M838 150 H872"/>
+  </g>
+  <text x="390" y="144" class="svg-ts">3 · gọi</text>
+
+  <g class="st" stroke-width="1.1" stroke-dasharray="4 3" marker-end="url(#ah)">
+    <path d="M426 188 V262 H384 V244"/>
+    <path d="M190 212 H164 V190"/>
+  </g>
+  <text x="200" y="278" class="svg-ts">số liệu trả về đi ngược lại — trợ lý dựa vào đó viết câu trả lời</text>
+</svg>
+</div>
+<figcaption><b>Hình 5 · Bốn nhịp, và một cái chốt ở giữa.</b> Mã thiết bị đang mở được ghim vào mọi lần trích — trợ lý không có cách nào hỏi sang tủ khác, kể cả khi khách gọi tên tủ đó trong câu hỏi.</figcaption>
+</figure>
+
+<h3>Bộ công cụ đọc — tất cả đều nhận mã thiết bị</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Công cụ</th><th>Trả về</th></tr></thead>
+<tbody>
+<tr><td>Thông tin tủ</td><td>Tên, vị trí lắp, phiên bản, tình trạng kết nối, lần báo cáo cuối</td></tr>
+<tr><td>Trạng thái vận hành</td><td>Bơm và van nào đang mở, lưu lượng, tổng nước, module nào đang kết nối</td></tr>
+<tr><td>Số đo mới nhất</td><td>Các chỉ số hiện tại kèm mốc giờ</td></tr>
+<tr><td>Số đo theo khoảng</td><td>Chuỗi số liệu trong ngày, tuần, tháng để nói xu hướng</td></tr>
+<tr><td>Nhật ký tưới</td><td>Từng chu kỳ: giờ, thời lượng, số lít, phân đã bón từng kênh</td></tr>
+<tr><td>Tổng hợp tưới</td><td>Cộng theo ngày, tuần, tháng</td></tr>
+<tr><td>Lịch tưới</td><td>Các lịch đang bật của tủ đó</td></tr>
+<tr><td>Cảnh báo</td><td>Cảnh báo đang mở và ngưỡng đã đặt</td></tr>
+<tr><td>Sổ lệnh</td><td>Ai bấm gì, lúc nào, tủ đã nhận chưa</td></tr>
+<tr><td>Cấu hình ngõ ra</td><td>Ngõ nào là bơm, van vùng nào là khu nào, kênh phân nào là bồn nào</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note dc">
+<span class="t">Vì sao đi qua lớp dịch vụ sẵn có</span>
+Trợ lý dùng lại nguyên vẹn phân quyền và các phép tính đã có — nghĩa là <b>con số trợ lý nói khớp đúng con số khách đang nhìn trên màn hình tủ đó</b>. Và vì mã thiết bị là tham số bắt buộc của mọi công cụ, phạm vi một tủ được giữ ở tầng dưới cùng chứ không phải trông vào việc trợ lý tự nhớ.
+</div>
+
+<h3>Bốn nguyên tắc nên đặt ra từ đầu</h3>
+<div class="g2">
+  <div class="card">
+    <h4>1 · Một cuộc trò chuyện, một thiết bị</h4>
+    <p>Mã tủ đang mở được ghim vào mọi lần trích, và mỗi lần đều đứng tên người đang trò chuyện. Hỏi sang tủ khác thì trợ lý mời thoát ra chọn tủ đó.</p>
+  </div>
+  <div class="card">
+    <h4>2 · Chỉ đọc, và có ghi nhật ký</h4>
+    <p>Danh sách công cụ chỉ gồm phép đọc. Mỗi lần trích ghi lại đã gọi gì, cho ai, lúc nào — vừa để rà soát, vừa để biết trợ lý đang được dùng vào việc gì.</p>
+  </div>
+  <div class="card">
+    <h4>3 · Số nào cũng đi kèm giờ</h4>
+    <p>“31 °C lúc 14 h 10 hôm nay” chứ không phải “31 °C”. Nếu số liệu đã cũ thì nói rõ là số cũ.</p>
+  </div>
+  <div class="card">
+    <h4>4 · Không suy đoán</h4>
+    <p>Chỉ số nào vườn chưa lắp cảm biến thì nói thẳng là chưa theo dõi chỉ số đó và gợi ý lắp thêm — thay vì đoán ra một con số.</p>
+  </div>
+</div>
+
+<h3>Một thứ nên chuẩn bị kèm: từ điển chỉ số</h3>
+<p>Để trợ lý nói được “hơi cao” chứ không chỉ đọc lại con số, cần một bảng tra ngắn cho mỗi chỉ số:</p>
+<div class="chain">chỉ số               đơn vị   dải hợp lý      gợi ý khi vượt
+─────────────────────────────────────────────────────────────────────────
+Nhiệt độ không khí    °C      18 – 32         "nên mở màn hoặc bật quạt"
+Độ ẩm đất             %       60 – 80         "đất đang khô, cân nhắc tưới"
+Ôxy hoà tan           mg/L    trên 4          "nên bật quạt nước ngay"
+Khí NH₃ trong chuồng  ppm     dưới 25         "cần tăng thông gió"</div>
+<p class="sub" style="margin-top:-6px">Dải hợp lý nên đặt theo từng loại cây và vật nuôi. Đây là phần cần khách và kỹ sư nông nghiệp cùng ngồi — không phải phần lập trình.</p>
+</section>
+
+<!-- ══════════════ 07 ══════════════ -->
+<section>
+<h2><span class="num">07</span>Gợi ý các bước tiếp theo</h2>
+<p class="sub">Xếp theo “làm xong thì mở ra được bao nhiêu câu chuyện với khách”, và không bước nào cần đụng tới cấp nào ngoài thiết bị.</p>
+
+<div class="tw">
+<table>
+<thead><tr><th class="n">#</th><th>Bước</th><th>Mở ra điều gì</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Ghim mã thiết bị vào mọi lần trích, và bộ công cụ chỉ đọc</td><td>Phần lõi — và là thứ giữ cho trợ lý không bao giờ nói lẫn số của tủ khác</td></tr>
+<tr><td class="n">2</td><td>Đặt tên dễ hiểu cho từng ngõ ra: van 1 là khu nào, kênh phân 2 là bồn gì</td><td>Trợ lý nói “khu sau nhà” thay vì “van số 5” — khách hiểu ngay</td></tr>
+<tr><td class="n">3</td><td>Lập từ điển chỉ số và dải hợp lý cho từng loại vườn</td><td>Chuyển từ đọc số sang nhận xét: “hơi cao”, “đất đang khô”</td></tr>
+<tr><td class="n">4</td><td>Đưa lý do bơm phân chưa chạy lên thành câu trả lời</td><td>Đỡ hẳn nhóm cuộc gọi “đặt lịch rồi mà sao không bón”</td></tr>
+<tr><td class="n">5</td><td>Gắn đồng hồ cho từng van phân</td><td>Con số phân bón thành số đo thật chứ không phải ước theo giờ mở van</td></tr>
+<tr><td class="n">6</td><td>Ghi lại hội thoại và cho khách đánh giá câu trả lời</td><td>Biết trợ lý đang giúp được ở đâu để cải thiện tiếp</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="t">Bật thử trên đúng một tủ</span>
+Vì trợ lý chạy theo thiết bị nên có thể bật cho một khách, một tủ, xem chạy thế nào rồi mới mở rộng — không phải bật cả hệ thống mới thử được.
+</div>
+</section>
+
+<p class="foot">
+NextFarm · Trợ lý chat thiết bị · Tài liệu 1/2 · v0.1 · 09/09/2026 — bản gợi ý để cùng trao đổi. Trợ lý ở tài liệu này chạy trong phạm vi một thiết bị.
+</p>
+
+</div>

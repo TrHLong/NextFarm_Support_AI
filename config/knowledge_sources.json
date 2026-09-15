@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://nextfarm.vn/",
+    "source_name": "NextFarm - Trang chủ nền tảng",
+    "category": "NEXTFARM_PRODUCT",
+    "product_tags": ["IoT", "AI", "GIS", "Irrigation"],
+    "approved": false
+  },
+  {
+    "url": "https://nextfarm.vn/help-center",
+    "source_name": "NextFarm - Trung tâm hỗ trợ",
+    "category": "NEXTFARM_PRODUCT",
+    "product_tags": ["HelpCenter", "IoT", "Irrigation", "Security"],
+    "approved": false
+  },
+  {
+    "url": "https://nextfarm.vn/en/help-center/iot/dang-ky-quan-ly-thiet-bi-iot",
+    "source_name": "NextFarm - Quản lý thiết bị IoT",
+    "category": "NEXTFARM_PRODUCT",
+    "product_tags": ["IoT", "Sensor", "MQTT", "Chart"],
+    "approved": false
+  },
+  {
+    "url": "https://nextfarm.vn/blog",
+    "source_name": "NextFarm Blog",
+    "category": "NEXTFARM_BLOG",
+    "product_tags": ["Blog", "Cultivation", "Irrigation"],
+    "approved": false
+  },
+  {
+    "url": "https://www.fao.org/geospatial/data-and-tools/data-portals/ecocrop/en",
+    "source_name": "FAO ECOCROP",
+    "category": "CROP_SELECTION",
+    "crop_tags": ["Crop suitability", "Climate", "Soil"],
+    "approved": false
+  },
+  {
+    "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=817",
+    "source_name": "FAO ECOCROP - Dưa leo",
+    "category": "CROP_PROFILE",
+    "crop_tags": ["Dưa leo"],
+    "approved": false
+  },
+  {
+    "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=618",
+    "source_name": "FAO ECOCROP - Ớt",
+    "category": "CROP_PROFILE",
+    "crop_tags": ["Ớt"],
+    "approved": false
+  },
+  {
+    "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=708",
+    "source_name": "FAO ECOCROP - Dưa hấu",
+    "category": "CROP_PROFILE",
+    "crop_tags": ["Dưa hấu"],
+    "approved": false
+  },
+  {
+    "url": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-va-cham-soc-cay-ca-chua-3430.html",
+    "source_name": "Khuyến nông Quốc gia - Cà chua",
+    "category": "CROP_GUIDE",
+    "crop_tags": ["Cà chua"],
+    "approved": false
+  },
+  {
+    "url": "https://khuyennongvn.gov.vn/khoa-hoc-cong-nghe/khcn-trong-nuoc/ky-thuat-trong-dua-luoi-tren-gia-the-trong-nha-mang-19550.html",
+    "source_name": "Khuyến nông Quốc gia - Dưa lưới nhà màng",
+    "category": "CROP_GUIDE",
+    "crop_tags": ["Dưa lưới"],
+    "approved": false
+  }
+]

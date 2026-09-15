@@ -1,0 +1,155 @@
+﻿{
+    "version":  "10.0.0",
+    "validation_scope":  "v10_crop_router_llm_truth_guard_runtime",
+    "started_at":  "2026-08-28T08:30:30.3620957Z",
+    "passed":  true,
+    "checks":  [
+                   {
+                       "name":  "identity",
+                       "url":  "http://127.0.0.1:18100/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "knowledge",
+                       "url":  "http://127.0.0.1:18200/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "farm_data",
+                       "url":  "http://127.0.0.1:18300/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "simulator",
+                       "url":  "http://127.0.0.1:18400/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "tickets",
+                       "url":  "http://127.0.0.1:18500/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "analytics",
+                       "url":  "http://127.0.0.1:18600/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "truth_guard",
+                       "url":  "http://127.0.0.1:18700/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "telemetry",
+                       "url":  "http://127.0.0.1:18800/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "crop_router",
+                       "url":  "http://127.0.0.1:18900/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "llm_gateway",
+                       "url":  "http://127.0.0.1:18950/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "chatbot",
+                       "url":  "http://127.0.0.1:18000/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "chat_ui",
+                       "url":  "http://127.0.0.1:18080",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "data_studio_ui",
+                       "url":  "http://127.0.0.1:18081",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "knowledge_studio_ui",
+                       "url":  "http://127.0.0.1:18082",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "ai_encyclopedia_ui",
+                       "url":  "http://127.0.0.1:18084",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "farmer_login",
+                       "passed":  true,
+                       "user_id":  "farmer_long"
+                   },
+                   {
+                       "name":  "tenant_cross_farm_denied",
+                       "passed":  true,
+                       "status":  403
+                   },
+                   {
+                       "name":  "crop_router_me",
+                       "passed":  true,
+                       "crop_count":  1,
+                       "farm_id":  "farm_long",
+                       "crop_key":  "tomato"
+                   },
+                   {
+                       "name":  "crop_capability_readiness",
+                       "passed":  true,
+                       "capability_count":  32,
+                       "ready":  2,
+                       "experimental":  5,
+                       "blocked":  25,
+                       "origin_kind":  "demo",
+                       "production_candidate":  false,
+                       "production_ready":  false
+                   },
+                   {
+                       "name":  "llm_internal_key_required",
+                       "passed":  true,
+                       "status":  401
+                   },
+                   {
+                       "name":  "truth_guard_internal_key_required",
+                       "passed":  true,
+                       "status":  401
+                   },
+                   {
+                       "name":  "encyclopedia_does_not_proxy_llm_plan",
+                       "passed":  true,
+                       "status":  405
+                   },
+                   {
+                       "name":  "llm_tool_plan",
+                       "passed":  true,
+                       "provider":  "deterministic",
+                       "tool_name":  "get_latest_metric"
+                   },
+                   {
+                       "name":  "truth_guard_grounding",
+                       "passed":  true,
+                       "source_count":  0
+                   }
+               ],
+    "failure":  null,
+    "production_ready":  false,
+    "completed_at":  "2026-08-28T08:30:31.1595686Z"
+}

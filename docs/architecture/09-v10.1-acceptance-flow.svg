@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .title{font:700 30px 'DejaVu Sans';fill:#16342b}.sub{font:16px 'DejaVu Sans';fill:#49645b}
+      .box{fill:#f7fbf9;stroke:#24745b;stroke-width:2;rx:16}.guard{fill:#fff7e8;stroke:#c47a12;stroke-width:2;rx:16}
+      .error{fill:#fff0f0;stroke:#b73a3a;stroke-width:2;rx:16}.t{font:700 17px 'DejaVu Sans';fill:#17352c}.d{font:14px 'DejaVu Sans';fill:#36534a}
+      .arrow{stroke:#46675d;stroke-width:2.5;fill:none;marker-end:url(#m)}.bad{stroke:#b73a3a;stroke-width:2.5;fill:none;marker-end:url(#r)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#46675d"/></marker>
+    <marker id="r" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#b73a3a"/></marker>
+  </defs>
+  <rect width="1400" height="900" fill="#eef6f2"/>
+  <text x="70" y="58" class="title">NextFarm V10.1 — Luồng trả lời đạt yêu cầu nghiệm thu</text>
+  <text x="70" y="88" class="sub">Không tự chọn farm/zone · đa nguồn · kiểm tra freshness/quality · fail-closed</text>
+
+  <rect x="70" y="135" width="250" height="105" class="box"/><text x="195" y="175" text-anchor="middle" class="t">1. Câu hỏi</text><text x="195" y="205" text-anchor="middle" class="d">Token + farm đã chọn</text>
+  <rect x="410" y="135" width="300" height="105" class="box"/><text x="560" y="175" text-anchor="middle" class="t">2. Identity &amp; Context</text><text x="560" y="202" text-anchor="middle" class="d">ACL farm · xác nhận zone</text><text x="560" y="222" text-anchor="middle" class="d">không dùng giá trị mặc định</text>
+  <rect x="800" y="135" width="300" height="105" class="box"/><text x="950" y="175" text-anchor="middle" class="t">3. Multi-tool Planner</text><text x="950" y="202" text-anchor="middle" class="d">1–4 bước trong allow-list</text><text x="950" y="222" text-anchor="middle" class="d">LLM không được chọn farm_id</text>
+  <path d="M320 188 H410" class="arrow"/><path d="M710 188 H800" class="arrow"/>
+
+  <rect x="90" y="340" width="330" height="145" class="box"/><text x="255" y="378" text-anchor="middle" class="t">Operational Tools</text><text x="255" y="408" text-anchor="middle" class="d">Sensor · device · port</text><text x="255" y="430" text-anchor="middle" class="d">irrigation · alerts · commands</text><text x="255" y="456" text-anchor="middle" class="d">measured_at + received_at</text>
+  <rect x="535" y="340" width="330" height="145" class="box"/><text x="700" y="378" text-anchor="middle" class="t">Structured Facts</text><text x="700" y="408" text-anchor="middle" class="d">Farm · zone · crop · thresholds</text><text x="700" y="430" text-anchor="middle" class="d">season · soil · growth stage</text><text x="700" y="456" text-anchor="middle" class="d">provenance + schema version</text>
+  <rect x="980" y="340" width="330" height="145" class="box"/><text x="1145" y="378" text-anchor="middle" class="t">Knowledge / RAG</text><text x="1145" y="408" text-anchor="middle" class="d">Approved documents only</text><text x="1145" y="430" text-anchor="middle" class="d">structure-aware chunks</text><text x="1145" y="456" text-anchor="middle" class="d">citation + calibrated threshold</text>
+  <path d="M950 240 C950 290 255 285 255 340" class="arrow"/><path d="M950 240 C950 290 700 285 700 340" class="arrow"/><path d="M950 240 C950 290 1145 285 1145 340" class="arrow"/>
+
+  <rect x="410" y="570" width="580" height="110" class="box"/><text x="700" y="610" text-anchor="middle" class="t">4. Evidence Merge</text><text x="700" y="638" text-anchor="middle" class="d">Giữ nguồn riêng · kiểm tra tenant · không để dữ liệu cũ thành dữ liệu hiện tại</text><text x="700" y="660" text-anchor="middle" class="d">Không sinh số liệu mới ngoài evidence</text>
+  <path d="M255 485 C255 540 560 530 560 570" class="arrow"/><path d="M700 485 V570" class="arrow"/><path d="M1145 485 C1145 540 840 530 840 570" class="arrow"/>
+
+  <rect x="410" y="735" width="300" height="105" class="guard"/><text x="560" y="775" text-anchor="middle" class="t">5. Truth &amp; Safety Guard</text><text x="560" y="802" text-anchor="middle" class="d">numeric · source · freshness</text><text x="560" y="824" text-anchor="middle" class="d">quality · tenant · high-risk</text>
+  <rect x="800" y="735" width="300" height="105" class="box"/><text x="950" y="775" text-anchor="middle" class="t">6. Grounded Response</text><text x="950" y="802" text-anchor="middle" class="d">Dữ liệu + thời điểm + nguồn</text><text x="950" y="824" text-anchor="middle" class="d">hoặc từ chối rõ lý do</text>
+  <path d="M700 680 C700 712 560 702 560 735" class="arrow"/><path d="M710 788 H800" class="arrow"/>
+
+  <rect x="1130" y="620" width="220" height="155" class="error"/><text x="1240" y="660" text-anchor="middle" class="t">Safe Error</text><text x="1240" y="690" text-anchor="middle" class="d">FORBIDDEN</text><text x="1240" y="712" text-anchor="middle" class="d">STALE_DATA / NO_DATA</text><text x="1240" y="734" text-anchor="middle" class="d">DEVICE_OFFLINE</text><text x="1240" y="756" text-anchor="middle" class="d">TIMEOUT / CONTEXT</text>
+  <path d="M560 240 C560 300 1240 300 1240 620" class="bad"/><path d="M420 412 C450 520 1180 520 1200 620" class="bad"/>
+</svg>

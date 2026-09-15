@@ -1,0 +1,330 @@
+{
+  "executed_at": "2026-09-10T01:29:21.978194+00:00",
+  "base": "http://127.0.0.1:19080",
+  "suite": "device_v11_acceptance",
+  "passed": 50,
+  "total": 50,
+  "results": [
+    {
+      "case": "login_long",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "case": "device_scope_long",
+      "passed": true,
+      "devices": [
+        "cabinet_long"
+      ]
+    },
+    {
+      "case": "long_sensor_readings",
+      "passed": true,
+      "count": 410
+    },
+    {
+      "case": "long_device_status",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "long_irrigation_schedules",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "long_irrigation_runs",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "long_control_commands",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "long_alerts",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "long_device_profile",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "login_lan",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "case": "device_scope_lan",
+      "passed": true,
+      "devices": [
+        "cabinet_lan"
+      ]
+    },
+    {
+      "case": "lan_sensor_readings",
+      "passed": true,
+      "count": 420
+    },
+    {
+      "case": "lan_device_status",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "lan_irrigation_schedules",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "lan_irrigation_runs",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "lan_control_commands",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "lan_alerts",
+      "passed": true,
+      "count": 4
+    },
+    {
+      "case": "lan_device_profile",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "login_minh",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "case": "device_scope_minh",
+      "passed": true,
+      "devices": [
+        "cabinet_minh"
+      ]
+    },
+    {
+      "case": "minh_sensor_readings",
+      "passed": true,
+      "count": 417
+    },
+    {
+      "case": "minh_device_status",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "minh_irrigation_schedules",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "minh_irrigation_runs",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "minh_control_commands",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "case": "minh_alerts",
+      "passed": true,
+      "count": 4
+    },
+    {
+      "case": "minh_device_profile",
+      "passed": true,
+      "count": 1
+    },
+    {
+      "case": "login_tech",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "case": "device_scope_tech",
+      "passed": true,
+      "devices": [
+        "cabinet_lan",
+        "cabinet_long",
+        "cabinet_minh"
+      ]
+    },
+    {
+      "case": "deny_other_customer_farm_data",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "case": "deny_other_customer_farm_export.csv",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "case": "deny_other_customer_analytics_predict",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "case": "deny_other_customer_router_capabilities",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "case": "require_selected_device",
+      "passed": true
+    },
+    {
+      "case": "tech_cannot_reply_chat",
+      "passed": true
+    },
+    {
+      "case": "ticket_retired",
+      "passed": true
+    },
+    {
+      "case": "chat_soil",
+      "passed": true,
+      "question": "Độ ẩm 62% có cao không?",
+      "answer": "Độ ẩm đất đo được 72.804 % lúc 08:20 10/09/2026. Với giá trị bạn nhập 62 % (chưa xác minh bằng cảm biến): Giá trị ở trong ngưỡng đã cấu hình 55–75 % cho tủ này. Đây là ngưỡng cấu hình mô phỏng, chưa phải khuyến nghị nông học thực địa.",
+      "status": 200,
+      "intents": [
+        "sensor"
+      ],
+      "evidence_groups": [
+        "sensor_readings"
+      ]
+    },
+    {
+      "case": "chat_status",
+      "passed": true,
+      "question": "Bơm có đang chạy không?",
+      "answer": "Bơm nước đang dừng/đóng; van vùng đang dừng/đóng; bơm phân đang dừng/đóng, lúc 08:29 10/09/2026. Bơm phân chưa được phép chạy vì: chưa có van vùng mở; relay bơm nước chưa chạy; chưa có kênh phân được gọi. Sau dừng khẩn không tự chạy lại; không bỏ qua khóa an toàn.",
+      "status": 200,
+      "intents": [
+        "operation"
+      ],
+      "evidence_groups": [
+        "device_status",
+        "connection_observer"
+      ]
+    },
+    {
+      "case": "chat_irrigation",
+      "passed": true,
+      "question": "Tuần này tưới mấy lần hết bao nhiêu nước?",
+      "answer": "Trong kỳ week ghi nhận 12 ca tưới; cộng phần có số đo hợp lệ: nước 4359.15 L; phân 3487.34 mL. Dữ liệu cuối lúc 02:08 10/09/2026. Theo kênh phân: 1: 3487.34 mL. Thời lượng ghi nhận trung bình 30.0 phút trên 12 ca có đủ mốc giờ. Kết quả ca: completed: 12.",
+      "status": 200,
+      "intents": [
+        "irrigation"
+      ],
+      "evidence_groups": [
+        "irrigation_runs"
+      ]
+    },
+    {
+      "case": "chat_commands",
+      "passed": true,
+      "question": "Ai đã bật bơm hôm qua?",
+      "answer": "Bơm nước đang dừng/đóng; van vùng đang dừng/đóng; bơm phân đang dừng/đóng, lúc 08:29 10/09/2026. Bơm phân chưa được phép chạy vì: chưa có van vùng mở; relay bơm nước chưa chạy; chưa có kênh phân được gọi. Sau dừng khẩn không tự chạy lại; không bỏ qua khóa an toàn.\n\nGhi nhận 4 lệnh, 0 lệnh báo thất bại. Nhật ký gần nhất: local_schedule gửi start_irrigation lúc 01:38 09/09/2026: acknowledged; local_schedule gửi start_irrigation lúc 07:38 09/09/2026: acknowledged; local_schedule gửi start_irrigation lúc 13:38 09/09/2026: acknowledged; local_schedule gửi start_irrigation lúc 19:38 09/09/2026: acknowledged. Lệnh đã gửi không chứng minh relay đã chạy.",
+      "status": 200,
+      "intents": [
+        "operation",
+        "commands"
+      ],
+      "evidence_groups": [
+        "device_status",
+        "connection_observer",
+        "control_commands"
+      ]
+    },
+    {
+      "case": "chat_no_external_llm",
+      "passed": true,
+      "question": "Đang dùng ChatGPT hay Gemini?",
+      "answer": "Chat đang dùng bộ định tuyến quy tắc và công cụ đọc dữ liệu. Không gọi OpenAI hay Gemini. Các model dự báo riêng chỉ dùng khi vượt kiểm định trong phạm vi đã công bố.",
+      "status": 200,
+      "intents": [
+        "identity"
+      ],
+      "evidence_groups": []
+    },
+    {
+      "case": "chat_unsupported_forecast",
+      "passed": true,
+      "question": "Dự báo độ ẩm không khí sau 30 phút",
+      "answer": "Chưa phát hành dự báo cho unsupported: model chưa đạt kiểm định hoặc dữ liệu hiện tại chưa đủ. Xem bảng 10 model để biết lý do; không thay bằng dự báo của model khác.\n\nChưa có kết quả model đủ điều kiện cho dữ liệu hiện tại. \n\nĐộ ẩm không khí đo được 74.147 %RH lúc 08:20 10/09/2026. Tủ chưa có ngưỡng được cấu hình cho chỉ số này, nên chưa xếp cao/thấp.",
+      "status": 200,
+      "intents": [
+        "models",
+        "sensor"
+      ],
+      "evidence_groups": [
+        "sensor_readings"
+      ]
+    },
+    {
+      "case": "chat_unknown",
+      "passed": true,
+      "question": "Giá vàng ngày mai thế nào?",
+      "answer": "Chưa có dữ liệu hoặc hướng dẫn đã duyệt phù hợp. Hãy cho biết chỉ số, tên ngõ ra và khoảng thời gian. Trợ lý hỗ trợ dữ liệu thiết bị, tưới và châm phân của tủ đang chọn.",
+      "status": 200,
+      "intents": [
+        "knowledge"
+      ],
+      "evidence_groups": []
+    },
+    {
+      "case": "chat_scope_hint",
+      "passed": true,
+      "question": "Đọc cabinet_lan giúp tôi",
+      "answer": "Cuộc chat đang gắn với tủ đã chọn. Hãy đổi tủ trong danh sách để hỏi tủ khác.",
+      "status": 200,
+      "intents": [],
+      "evidence_groups": []
+    },
+    {
+      "case": "ten_model_reports",
+      "passed": true,
+      "ready_count": 10
+    },
+    {
+      "case": "32_support_functions",
+      "passed": true,
+      "ready_count": 32
+    },
+    {
+      "case": "actual_artifact_inference",
+      "passed": true,
+      "prediction_count": 10,
+      "reason": null
+    },
+    {
+      "case": "csv_has_owner_and_device",
+      "passed": true,
+      "bytes": 92891
+    },
+    {
+      "case": "scenario_power_loss",
+      "passed": true,
+      "answer": "Bằng chứng giám sát nguồn xác nhận tủ mất nguồn. Tủ ngừng gửi dữ liệu; trạng thái bơm/van cuối cùng không thể coi là hiện tại. Chỉ kiểm tra đèn nguồn từ vị trí an toàn, không mở tủ điện."
+    },
+    {
+      "case": "scenario_mqtt_loss",
+      "passed": true,
+      "answer": "Nguồn tủ vẫn được xác nhận nhưng kết nối MQTT bị gián đoạn. Có thể xem lại mạng Ethernet/WiFi/4G và trạng thái broker. Lịch giữ tại bo có thể vẫn chạy; không kết luận bơm đã dừng."
+    }
+  ],
+  "simulation": true,
+  "docker_build_verified": false
+}

@@ -1,0 +1,7 @@
+{
+  "test_rows": 2555,
+  "equal_timestamp_order": true,
+  "different_labels": 164,
+  "different_predictions": 166,
+  "explanation": "Same confusion counts, different labeled events and predictions; metrics equality is not proof the tasks/data are identical."
+}

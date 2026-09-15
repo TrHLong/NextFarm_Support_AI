@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NextFarm AI Support</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="toast" class="toast" hidden></div>
+
+  <main id="loginView" class="login-page">
+    <section class="login-hero">
+      <div class="login-brand"><div class="logo-mark">NF</div><div><b>NextFarm</b><span>AI Support Platform</span></div></div>
+      <div class="hero-copy">
+        <p class="eyebrow light">NÔNG NGHIỆP THÔNG MINH • IOT • AI • HỖ TRỢ KỸ THUẬT</p>
+        <h1>Một màn hình để hiểu vườn và nhận hỗ trợ đúng lúc.</h1>
+        <p class="hero-lead">Theo dõi dữ liệu cảm biến theo thời gian, nhận phân tích AI có kiểm chứng và kết nối kỹ thuật viên khi thật sự cần.</p>
+        <div class="hero-points">
+          <div><b>Realtime</b><span>Dữ liệu cảm biến cập nhật liên tục</span></div>
+          <div><b>Đúng quyền</b><span>Mỗi nông dân chỉ thấy vườn của mình</span></div>
+          <div><b>Có căn cứ</b><span>AI dùng dữ liệu thật và tài liệu đã duyệt</span></div>
+        </div>
+      </div>
+      <div class="hero-foot">NextFarm AI Support • Bản trình diễn nội bộ</div>
+    </section>
+
+    <section class="login-panel">
+      <form id="loginForm" class="login-card">
+        <div class="mobile-brand"><div class="logo-mark small">NF</div><b>NextFarm AI Support</b></div>
+        <p class="eyebrow">ĐĂNG NHẬP HỆ THỐNG</p>
+        <h2>Chào mừng trở lại</h2>
+        <p class="muted login-help">Sử dụng tài khoản đã được cấp. Sau khi xác thực thành công hệ thống sẽ chuyển thẳng vào màn hình phù hợp với vai trò.</p>
+        <label>Tài khoản
+          <input id="username" autocomplete="username" placeholder="Ví dụ: nongdan.long" required />
+        </label>
+        <label>Mật khẩu
+          <input id="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required />
+        </label>
+        <button id="loginBtn" class="primary login-submit" type="submit"><span>Đăng nhập</span></button>
+        <p id="loginError" class="error" role="alert"></p>
+        <div class="login-note"><span class="status-dot"></span><span>Identity API được kiểm tra trước khi vào hệ thống.</span></div>
+        <div id="demoAccounts" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <main id="appView" class="app" hidden>
+    <aside class="sidebar">
+      <div class="brand"><div class="logo-mark small">NF</div><div><b>NextFarm</b><small>AI Support</small></div></div>
+      <nav id="nav"></nav>
+      <div class="sidebar-bottom">
+        <div id="userCard" class="user-card"></div>
+        <button id="logoutBtn" class="ghost">Đăng xuất</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div class="page-heading"><p id="pageEyebrow" class="eyebrow"></p><h2 id="pageTitle"></h2></div>
+        <div class="topbar-actions">
+          <div id="liveIndicator" class="live-indicator"><span></span><b>Hệ thống hoạt động</b></div>
+          <div id="farmPickerWrap"><label>Vườn<select id="farmPicker"></select></label></div>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

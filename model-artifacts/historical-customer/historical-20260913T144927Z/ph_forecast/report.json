@@ -1,0 +1,247 @@
+{
+  "name": "ph_forecast",
+  "title": "pH sau 30 phút",
+  "task": "regression",
+  "target": "ph_future",
+  "status": "EXPERIMENTAL",
+  "source": "customer_exports",
+  "scope": "historical_simulated_customer_experiment",
+  "horizon_minutes": 30,
+  "rows": {
+    "train": 507,
+    "validation": 72,
+    "test_seen_customers": 204,
+    "test_unseen_customer": 68
+  },
+  "missing_targets_excluded": 927,
+  "algorithm": "ExtraTrees",
+  "validation_candidates": {
+    "Ridge": {
+      "mae": 0.045331350825512415,
+      "rmse": 0.07733064302834071,
+      "r2": 0.7396714614948168
+    },
+    "HistGradientBoosting": {
+      "mae": 0.043237103567865955,
+      "rmse": 0.07763751568138391,
+      "r2": 0.7376012286325788
+    },
+    "ExtraTrees": {
+      "mae": 0.0413936703384146,
+      "rmse": 0.07702366619472206,
+      "r2": 0.7417341939312773
+    }
+  },
+  "features": [
+    "value",
+    "lag1",
+    "lag3",
+    "lag6",
+    "mean3",
+    "slope3",
+    "history_missing",
+    "reading_age_minutes"
+  ],
+  "parameters": {
+    "memory": "None",
+    "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('extratreesregressor', ExtraTreesRegressor(max_depth=12, min_samples_leaf=8, n_estimators=160,\n                    n_jobs=2, random_state=20260913))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+    "extratreesregressor": "ExtraTreesRegressor(max_depth=12, min_samples_leaf=8, n_estimators=160,\n                    n_jobs=2, random_state=20260913)",
+    "simpleimputer__add_indicator": "True",
+    "simpleimputer__copy": "True",
+    "simpleimputer__fill_value": "None",
+    "simpleimputer__keep_empty_features": "True",
+    "simpleimputer__missing_values": "nan",
+    "simpleimputer__strategy": "median",
+    "extratreesregressor__bootstrap": "False",
+    "extratreesregressor__ccp_alpha": "0.0",
+    "extratreesregressor__criterion": "squared_error",
+    "extratreesregressor__max_depth": "12",
+    "extratreesregressor__max_features": "1.0",
+    "extratreesregressor__max_leaf_nodes": "None",
+    "extratreesregressor__max_samples": "None",
+    "extratreesregressor__min_impurity_decrease": "0.0",
+    "extratreesregressor__min_samples_leaf": "8",
+    "extratreesregressor__min_samples_split": "2",
+    "extratreesregressor__min_weight_fraction_leaf": "0.0",
+    "extratreesregressor__monotonic_cst": "None",
+    "extratreesregressor__n_estimators": "160",
+    "extratreesregressor__n_jobs": "2",
+    "extratreesregressor__oob_score": "False",
+    "extratreesregressor__random_state": "20260913",
+    "extratreesregressor__verbose": "0",
+    "extratreesregressor__warm_start": "False"
+  },
+  "test_metrics": {
+    "train": {
+      "mae": 0.012288553987800951,
+      "rmse": 0.0374030945059822,
+      "r2": 0.9566376486802934
+    },
+    "validation": {
+      "mae": 0.0413936703384146,
+      "rmse": 0.07702366619472206,
+      "r2": 0.7417341939312773
+    },
+    "test_seen_customers": {
+      "mae": 0.010270497292937223,
+      "rmse": 0.03386457169988559,
+      "r2": 0.959541331980161
+    },
+    "test_unseen_customer": {
+      "mae": 0.10546809127603762,
+      "rmse": 0.11176014142802991,
+      "r2": -73.23100152734742
+    }
+  },
+  "baselines": {
+    "train": {
+      "persistence": {
+        "mae": 0.014824457593688396,
+        "rmse": 0.04133878884910451,
+        "r2": 0.9470320394443547
+      },
+      "moving_average": {
+        "mae": 0.0142195923734385,
+        "rmse": 0.040180526224844984,
+        "r2": 0.9499586525902627
+      },
+      "linear_trend": {
+        "mae": 0.030936883629191374,
+        "rmse": 0.07484675995221947,
+        "r2": 0.8263624040433026
+      }
+    },
+    "validation": {
+      "persistence": {
+        "mae": 0.04288888888888899,
+        "rmse": 0.07682953714410751,
+        "r2": 0.7430344102453283
+      },
+      "moving_average": {
+        "mae": 0.043826388888888984,
+        "rmse": 0.07692281334534627,
+        "r2": 0.742410084633044
+      },
+      "linear_trend": {
+        "mae": 0.061569444444444676,
+        "rmse": 0.0940454234222309,
+        "r2": 0.6149706204355219
+      }
+    },
+    "test_seen_customers": {
+      "persistence": {
+        "mae": 0.011495098039215673,
+        "rmse": 0.034137337962079795,
+        "r2": 0.9588869487401518
+      },
+      "moving_average": {
+        "mae": 0.011462418300653615,
+        "rmse": 0.03411139719068471,
+        "r2": 0.9589494081533592
+      },
+      "linear_trend": {
+        "mae": 0.019867647058823528,
+        "rmse": 0.048297434267906454,
+        "r2": 0.917705932876546
+      }
+    },
+    "test_unseen_customer": {
+      "persistence": {
+        "mae": 0.015897058823529327,
+        "rmse": 0.05608095513997393,
+        "r2": -17.69141749609292
+      },
+      "moving_average": {
+        "mae": 0.01634558823529407,
+        "rmse": 0.056097505711562856,
+        "r2": -17.702451519700716
+      },
+      "linear_trend": {
+        "mae": 0.02976470588235285,
+        "rmse": 0.0796106333423901,
+        "r2": -36.66635477502698
+      }
+    }
+  },
+  "per_customer": {
+    "train": {
+      "customer_lan": {
+        "mae": 0.017169678236971284,
+        "rmse": 0.0523860468708527,
+        "r2": 0.6079196786151787
+      },
+      "customer_long": {
+        "mae": 0.009847991863215784,
+        "rmse": 0.026950663527222578,
+        "r2": 0.7605875466155756
+      }
+    },
+    "validation": {
+      "customer_lan": {
+        "mae": 0.04344968733778043,
+        "rmse": 0.08119542831991652,
+        "r2": -20.728198561015283
+      },
+      "customer_long": {
+        "mae": 0.04036566183873169,
+        "rmse": 0.07485064422626304,
+        "r2": -18.51860471204451
+      }
+    },
+    "test_seen_customers": {
+      "customer_lan": {
+        "mae": 0.013728967939965319,
+        "rmse": 0.0497592849785435,
+        "r2": -2.6940200507810728
+      },
+      "customer_long": {
+        "mae": 0.008541261969423175,
+        "rmse": 0.02195952194008525,
+        "r2": -0.6579635054558566
+      }
+    },
+    "test_unseen_customer": {
+      "customer_minh": {
+        "mae": 0.10546809127603762,
+        "rmse": 0.11176014142802991,
+        "r2": -73.23100152734742
+      }
+    }
+  },
+  "reason": "Measured on historical simulated exports; not field validation and not automatically activated.",
+  "validation_selected_baseline": "persistence",
+  "mae_gain_vs_validation_selected_baseline": -5.634440524302125,
+  "better_than_baseline_on_unseen_customer": false,
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\historical-customer\\historical-20260913T144927Z\\ph_forecast\\model.joblib",
+  "artifact_reload_max_difference": 0.0,
+  "artifact_reload_tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "artifact_sha256": "b93ddca19ac8e18c4e74aaf21866dbb9068bfc614412cbc4cd5717722d2c4ae8",
+  "data_files": [
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_lan\\sensor_readings_10min.csv",
+      "sha256": "379efe39ad9801b68e2257643edff5e854ee07219f24c8c8709de4ba51f22f3c",
+      "rows": 3444
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_long\\sensor_readings_10min.csv",
+      "sha256": "5b84657378c3970fcd45b0591a796a8306c9272275c7f0de9aec0b80b520c01a",
+      "rows": 5916
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_minh\\sensor_readings_10min.csv",
+      "sha256": "793fe2f7ba23405e3f9d4fc8eeda6f5caeea520d83bf070e6f63f5c10e60e131",
+      "rows": 3944
+    }
+  ],
+  "feature_csv": {
+    "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\features_with_split.csv",
+    "sha256": "789c2a7338500d4be123c0fee1f6ebf352f703e30a3e435ec253b4a71bfce140",
+    "rows": 13304
+  }
+}

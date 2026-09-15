@@ -1,0 +1,8 @@
+{
+  "created_at": "22:47 14/09/2026",
+  "forecast_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\training_report.json",
+  "question_evidence": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docs\\farmer-v13\\question_acceptance.json",
+  "unit_tests": "D:/2026-2027/THUCTAP/NextFarm-AI-Support-v10.1/docs/farmer-v13/unit-tests.xml",
+  "test_total": 243,
+  "test_failures": 0
+}

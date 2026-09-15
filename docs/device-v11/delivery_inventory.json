@@ -1,0 +1,229 @@
+{
+  "files": [
+    {
+      "path": "apps\\device-ai-encyclopedia\\app.js",
+      "bytes": 7241,
+      "sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps\\device-ai-encyclopedia\\index.html",
+      "bytes": 3127,
+      "sha256": "384e67e48a6636a675008c8df9037468203fabee4e4c58ed08c316d58ffb4831"
+    },
+    {
+      "path": "apps\\device-ai-encyclopedia\\styles.css",
+      "bytes": 2617,
+      "sha256": "e266948b395b9038d1ba51448b4e290d56a9ad6c9572085bcf63beb45ebd1170"
+    },
+    {
+      "path": "apps\\device-data-studio\\app.js",
+      "bytes": 7241,
+      "sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps\\device-data-studio\\index.html",
+      "bytes": 3125,
+      "sha256": "3049d2100db47b454e90fafb3881bbf07bdffe7fba9bade66b3618f5dbcd0eee"
+    },
+    {
+      "path": "apps\\device-data-studio\\styles.css",
+      "bytes": 2617,
+      "sha256": "e266948b395b9038d1ba51448b4e290d56a9ad6c9572085bcf63beb45ebd1170"
+    },
+    {
+      "path": "apps\\device-web\\app.js",
+      "bytes": 7241,
+      "sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps\\device-web\\index.html",
+      "bytes": 3093,
+      "sha256": "de571c5854693361e0886e997c11ddd8b1841d0d1db3704d59d4e8b3bb466297"
+    },
+    {
+      "path": "apps\\device-web\\styles.css",
+      "bytes": 2616,
+      "sha256": "80e5262ab5c86c7ebda86a04cf709d19ab4cce4f551404bcad357a0e8ccb69d6"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 18830,
+      "sha256": "908558a71f8bd217a93802c53c5e1d9377ccd64e65b74afeddff093f08809336"
+    },
+    {
+      "path": "docs\\device-v11\\acceptance.json",
+      "bytes": 9960,
+      "sha256": "4535b3d8ef419207b39057b33b5e9f88e50de411edc3a2b66e79142bdce5048c"
+    },
+    {
+      "path": "docs\\device-v11\\automation_checked.json",
+      "bytes": 2767,
+      "sha256": "f64a7f3df4478acf7b8552d0cbb91d1c40d7631a64cf101cadbdb5deaa28d72f"
+    },
+    {
+      "path": "docs\\device-v11\\BAO-CAO-KIEM-CHUNG-THIET-BI-V11.docx",
+      "bytes": 53838,
+      "sha256": "570839aea91d0c7688f8013c088997ef7bc730c98a2d2cc6d919ae2a0ec482f3"
+    },
+    {
+      "path": "docs\\device-v11\\BAO-CAO-KIEM-CHUNG-THIET-BI-V11.html",
+      "bytes": 33123,
+      "sha256": "85b3837a72d25214c180f28c74ea2d816f7db008cc1967b42323146938a85031"
+    },
+    {
+      "path": "docs\\device-v11\\delivery_status.json",
+      "bytes": 759,
+      "sha256": "f88c1e3bec01b9a589b7c2a0ac2a7b4e08f28ac3a7eb05618db044c168038661"
+    },
+    {
+      "path": "docs\\device-v11\\environment_and_limitations.json",
+      "bytes": 383,
+      "sha256": "54fc390cce0b2c9c4da3c653c60519af5ee57752922d6845c5e4062126dabec3"
+    },
+    {
+      "path": "docs\\device-v11\\experiment_plan.json",
+      "bytes": 302,
+      "sha256": "11f7ecfbc8d14d31075a04cd278e6e07ac60db152e5b72573c6d00f184f63fc3"
+    },
+    {
+      "path": "docs\\device-v11\\export_snapshot_verification.json",
+      "bytes": 5106,
+      "sha256": "99d833f8810f372f75780b89c80e1d8d27e75735278056cd7a87efdd75c668af"
+    },
+    {
+      "path": "docs\\device-v11\\export_verification.json",
+      "bytes": 2571,
+      "sha256": "4a4b3db87ed38b4976bae7808f5ce66d74603d91165f621d63dc6488d307dbdb"
+    },
+    {
+      "path": "docs\\device-v11\\release_manifest.json",
+      "bytes": 14165,
+      "sha256": "41e354090a9154c56b7781e76e5f9263a3a68c7eb5cadf30fdaaaf961cdd15e5"
+    },
+    {
+      "path": "docs\\device-v11\\synthetic_backfill_correction.json",
+      "bytes": 2812638,
+      "sha256": "a511ad70d85a7c24b39b7894d0f088c61b06db70cdd597e87a0d626e1dbb1c32"
+    },
+    {
+      "path": "docs\\device-v11\\unit-tests.xml",
+      "bytes": 2773,
+      "sha256": "78da99f7d4e5e6838a2ef497c2e2143d903749978a5c9418a40a17623e1b547a"
+    },
+    {
+      "path": "docs\\DEVICE-V11-REPORT.md",
+      "bytes": 28679,
+      "sha256": "6469d8fc7e43ff61011c8569ea5d91380aa7ff53ece8edab125d312af905afde"
+    },
+    {
+      "path": "nextfarm_device\\__init__.py",
+      "bytes": 101,
+      "sha256": "fe3e830831b8f00cf51f24c425d3be380f9d598b6803d86578eacfb4f0c4975a"
+    },
+    {
+      "path": "nextfarm_device\\answers.py",
+      "bytes": 14668,
+      "sha256": "256cb26fcc4a9bc624054843f7aa0f3acd5b5c321d864f2f7eab642496e9f610"
+    },
+    {
+      "path": "nextfarm_device\\api.py",
+      "bytes": 15308,
+      "sha256": "436c35c368903653bc787d03e5ccb4ef7aa93865d013bcd0853cf36480d24f22"
+    },
+    {
+      "path": "nextfarm_device\\automation.py",
+      "bytes": 7661,
+      "sha256": "45009d97481bfa0452834291e05e544cab0ef01975b00c6309c6c1febaf90e5b"
+    },
+    {
+      "path": "nextfarm_device\\contracts.py",
+      "bytes": 5139,
+      "sha256": "31b863499d9d17605c5fa692242c79bc7357847296488e7831e77aa0e92adc71"
+    },
+    {
+      "path": "nextfarm_device\\knowledge.py",
+      "bytes": 1617,
+      "sha256": "a993673d3aacab1f15468453b6bcc84a5ec681ad1b4b8ae198eeea1185fe8644"
+    },
+    {
+      "path": "nextfarm_device\\ml.py",
+      "bytes": 19625,
+      "sha256": "af2592a51d4280f9036867ea717f9820fdb000d9762ef8d095c77f2cd9182bf1"
+    },
+    {
+      "path": "nextfarm_device\\runtime.py",
+      "bytes": 11754,
+      "sha256": "9916c9b80c342073ba30875707e13f363496b75e44ad88b215a594500ef08b6f"
+    },
+    {
+      "path": "nextfarm_device\\simulation.py",
+      "bytes": 7780,
+      "sha256": "70953faaf66399473f7ea05265c4a4c76c5ed8b297f33c40a788cbebb2843460"
+    },
+    {
+      "path": "nextfarm_device\\store.py",
+      "bytes": 6365,
+      "sha256": "ac534c99fbbcb78ab4398e8fe6ec0ac82f73d7dad5528d49ccb9641eb332acd1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4330,
+      "sha256": "f62d30199242831676a3224b7e4baac484f772e45662a285ed08fb49f58d691b"
+    },
+    {
+      "path": "scripts\\build_device_report.py",
+      "bytes": 33512,
+      "sha256": "19f66b9e8dc82c9971b8bd1d73049e82ed84be3f681e782a8c370a5533fac7ac"
+    },
+    {
+      "path": "scripts\\check_device_acceptance.py",
+      "bytes": 6771,
+      "sha256": "5cf508cbff34f0db39f0f29c1d632b7fa43088645f19f28fc5c8fb26e34dc44f"
+    },
+    {
+      "path": "scripts\\import_device_reference.py",
+      "bytes": 2959,
+      "sha256": "8bd1306c21bc2eacde90642416bbe707c87d9cfa5d926c6f650874145875872e"
+    },
+    {
+      "path": "scripts\\repair_device_demo_backfill.py",
+      "bytes": 2672,
+      "sha256": "735ea6e07faee2c2e556f31d5f2b92a61c7b123be65bd744fc18cbe89b30728f"
+    },
+    {
+      "path": "scripts\\run_device_local.py",
+      "bytes": 3559,
+      "sha256": "e6f4fa2f029b0109e157deb71a6a81aa4a94c928f4c680bc9a0c4e74f61d72ab"
+    },
+    {
+      "path": "scripts\\start_v10.cmd",
+      "bytes": 63,
+      "sha256": "3e88c6e83d43ff89fdf4bc774fbd26a62857f3de1b88226559a5ffa571e22eb5"
+    },
+    {
+      "path": "scripts\\start_v11.cmd",
+      "bytes": 557,
+      "sha256": "81804328fd2d03db74d04642f9416b2620625cfa0889b08ebf0fde90b65a5579"
+    },
+    {
+      "path": "scripts\\train_device_models.py",
+      "bytes": 909,
+      "sha256": "83a81fe30b89ae1f959f4eb8b88d101905c4f9193ca8e13bdf5fd7a2a84651a1"
+    },
+    {
+      "path": "tests_device\\test_access.py",
+      "bytes": 1103,
+      "sha256": "e67620e7344328860c9f913e388fa206eb547e716192947cbec436a3e768ca2d"
+    },
+    {
+      "path": "tests_device\\test_contract.py",
+      "bytes": 6014,
+      "sha256": "6d7856c14c9da1a52a06c78a4671d5d3c2b28d1bfabfca85182cccef68de1bb9"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 8,
+      "sha256": "a7222afe7a169f0f8868b67adfbd7d905515daf21c71f7f2b94298ad1a0ed1d6"
+    }
+  ]
+}

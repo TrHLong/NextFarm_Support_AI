@@ -1,0 +1,204 @@
+{
+  "version": "v9-reference-calibration-1",
+  "created_at": "2026-08-11T07:21:43.702815+00:00",
+  "normalized_rows": 147919,
+  "metrics": {
+    "temperature": {
+      "n": 147919,
+      "p01": 18.32,
+      "p05": 20.17,
+      "p25": 21.31,
+      "median": 22.67,
+      "p75": 24.08,
+      "p95": 26.97,
+      "p99": 32.74,
+      "std": 2.5509436527730416,
+      "median_abs_step": 1.2100000000000009,
+      "step_p90": 3.25,
+      "step_p99": 4.43,
+      "ar1": 0.7271135065449328
+    },
+    "air_humidity": {
+      "n": 147240,
+      "p01": 40.14,
+      "p05": 41.1,
+      "p25": 45.98,
+      "median": 51.94,
+      "p75": 57.87,
+      "p95": 95.68,
+      "p99": 98.85,
+      "std": 15.248512407535122,
+      "median_abs_step": 5.039999999999999,
+      "step_p90": 13.080000000000005,
+      "step_p99": 17.810000000000002,
+      "ar1": 0.8748983958631775
+    },
+    "soil_moisture": {
+      "n": 679,
+      "p01": 25.6056,
+      "p05": 25.878,
+      "p25": 28.255,
+      "median": 31.77,
+      "p75": 34.19,
+      "p95": 37.535000000000004,
+      "p99": 39.258800000000015,
+      "std": 3.6426688373197598,
+      "median_abs_step": 0.07000000000000028,
+      "step_p90": 0.21999999999999886,
+      "step_p99": 0.9448000000000165,
+      "ar1": 0.9697663737042197
+    },
+    "ec": {
+      "n": 120960,
+      "p01": 0.515,
+      "p05": 0.573,
+      "p25": 0.875,
+      "median": 1.249,
+      "p75": 1.625,
+      "p95": 1.925,
+      "p99": 1.9849999999999999,
+      "std": 0.4334034166098988,
+      "median_abs_step": 0.43800000000000006,
+      "step_p90": 1.0250000000000001,
+      "step_p99": 1.351,
+      "ar1": 0.003222447390150254
+    },
+    "ph": {
+      "n": 120960,
+      "p01": 6.02,
+      "p05": 6.1,
+      "p25": 6.5,
+      "median": 7.0,
+      "p75": 7.5,
+      "p95": 7.9,
+      "p99": 7.98,
+      "std": 0.576863546178972,
+      "median_abs_step": 0.5899999999999999,
+      "step_p90": 1.3699999999999992,
+      "step_p99": 1.7999999999999998,
+      "ar1": 9.992587835944153e-05
+    },
+    "rainfall": {
+      "n": 26280,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p25": 0.01,
+      "median": 0.71,
+      "p75": 4.89,
+      "p95": 22.93,
+      "p99": 61.129399999999876,
+      "std": 13.12186029697131,
+      "median_abs_step": 0.10999999999999988,
+      "step_p90": 2.9400000000000013,
+      "step_p99": 19.48919999999984,
+      "ar1": 0.9242020295657724
+    },
+    "light": {
+      "n": 147240,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p25": 177.04,
+      "median": 451.25,
+      "p75": 725.0425,
+      "p95": 944.4804999999999,
+      "p99": 989.18,
+      "std": 315.4543280349805,
+      "median_abs_step": 196.99,
+      "step_p90": 588.1600000000001,
+      "step_p99": 801.41,
+      "ar1": 0.44137859141886276
+    }
+  },
+  "correlations": {
+    "temperature__air_humidity": 0.03040378881189615,
+    "ec__ph": 0.0013219264750297113
+  },
+  "sources": [
+    {
+      "id": "figshare_iot_28667981",
+      "repository": "Figshare",
+      "record": "28667981",
+      "license": "CC0",
+      "files": [
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-01.csv",
+          "sha256": "9d4e9eae6e98372386613f768d00722593d9b353673532d62653cb6f15d8afce",
+          "bytes": 872287
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-02.csv",
+          "sha256": "b46e976c17b9d4315fbddce496d2a895c0da94699043719c97c0bf5f4e52d030",
+          "bytes": 872429
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-03.csv",
+          "sha256": "38eaffa112aa44ce89178ab07bb4109731305cccc5c972922c268dd53785b5ad",
+          "bytes": 872474
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-04.csv",
+          "sha256": "7bfb6cefbd9517eaca0ada046d6e48451da0efd9cef43a97a2f968043241304f",
+          "bytes": 872505
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-05.csv",
+          "sha256": "825ba5cc017e1f1d7bbea8c9982efcec8836407d00bf3064660d2433c6a9c998",
+          "bytes": 872570
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-06.csv",
+          "sha256": "fb0bd9d7826f53b2cbf046f211ac78e82bfe1b10eefc72316c05003b00b00298",
+          "bytes": 872433
+        },
+        {
+          "path": "research-data/reference/raw/figshare_iot_28667981/sensor_data_2025-03-07.csv",
+          "sha256": "1d6aa89373fcdc868dfc113a7aed03e922114e4bac4daed1ca0441bbd9cf98cf",
+          "bytes": 872477
+        }
+      ]
+    },
+    {
+      "id": "karly_soil_moisture_1227837",
+      "repository": "GitHub/Zenodo",
+      "record": "10.5281/zenodo.1227837",
+      "license": "CC BY 4.0",
+      "files": [
+        {
+          "path": "research-data/reference/raw/karly_soil_moisture_1227837/soilmoisture_dataset.csv",
+          "sha256": "ca62b37cc0c7549fdf966382cffac7b0fd701ee9b6d8cbf04f806da96dd1f42f",
+          "bytes": 1696782
+        }
+      ]
+    },
+    {
+      "id": "nasa_power_2025",
+      "repository": "NASA POWER",
+      "record": "hourly point API",
+      "files": [
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_long_2025.csv",
+          "sha256": "c4695cdf5cdcb3570bec030d988a4a492194eda8d3045a225d8b14145b528005",
+          "bytes": 339078,
+          "farm_id": "farm_long"
+        },
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_lan_2025.csv",
+          "sha256": "afe85deddc59d8ac1f2e1526638c218439cdd61de981e107147300b6ec3502dd",
+          "bytes": 338464,
+          "farm_id": "farm_lan"
+        },
+        {
+          "path": "research-data/reference/raw/nasa_power/farm_minh_2025.csv",
+          "sha256": "a1ea8083f43c16ce65cf05baa4e56c1df6f612d988f30cd9ad8684ec34c97fdc",
+          "bytes": 337877,
+          "farm_id": "farm_minh"
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "raw_reference_is_not_nextfarm_telemetry": true,
+    "simulation_must_be_anchored_to_reference_quantiles": true,
+    "no_silent_synthetic_fallback": true
+  }
+}

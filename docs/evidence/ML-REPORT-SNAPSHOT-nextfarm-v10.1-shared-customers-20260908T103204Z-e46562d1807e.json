@@ -1,0 +1,4941 @@
+{
+  "architecture": "shared_base_models_with_customer_calibration",
+  "scope_type": "global",
+  "scope_key": "all_customers",
+  "model_version": "2.1.0",
+  "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+  "dataset_source": "v10_per_customer_csv_pool",
+  "dataset_metadata": {
+    "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+    "dataset_source": "v10_per_customer_csv_pool",
+    "architecture": "shared_base_models_with_customer_calibration",
+    "training_phase": "runtime_retrain",
+    "customer_count": 3,
+    "customer_ids": [
+      "customer_lan",
+      "customer_long",
+      "customer_minh"
+    ],
+    "customer_sources": [
+      {
+        "customer_id": "customer_lan",
+        "snapshot_id": "runtime_20260908T103128Z",
+        "snapshot_manifest": "/models/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/snapshot_manifest.json",
+        "snapshot_raw_directory": null,
+        "processed_csv": "/models/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e/01_processed_features_targets.csv",
+        "dataset_parquet": "/models/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e.parquet",
+        "dataset_version": "nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e",
+        "raw_group_counts": {
+          "alerts": 4,
+          "control_commands": 0,
+          "device_status": 79197,
+          "irrigation_runs": 7,
+          "sensor_readings": 190848,
+          "telemetry_ingest_events": 79199
+        },
+        "raw_sensor_reading_count": 6048,
+        "processed_rows_before_cap": 287,
+        "processed_rows_used": 287,
+        "farm_count": 1,
+        "zone_count": 1,
+        "checksum_sha256": "3188289fa77eb4a7bba3117ac237ada38eeb67c35b218ed703a3080223dba715",
+        "customer_id_used_as_feature": false,
+        "source_manifest": "/models/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e/source_manifest.json"
+      },
+      {
+        "customer_id": "customer_long",
+        "snapshot_id": "runtime_20260908T103137Z",
+        "snapshot_manifest": "/models/data/customers/customer_long/snapshots/runtime_20260908T103137Z/snapshot_manifest.json",
+        "snapshot_raw_directory": null,
+        "processed_csv": "/models/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade/01_processed_features_targets.csv",
+        "dataset_parquet": "/models/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade.parquet",
+        "dataset_version": "nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade",
+        "raw_group_counts": {
+          "alerts": 9,
+          "control_commands": 0,
+          "device_status": 131995,
+          "irrigation_runs": 14,
+          "sensor_readings": 327168,
+          "telemetry_ingest_events": 105599
+        },
+        "raw_sensor_reading_count": 10368,
+        "processed_rows_before_cap": 574,
+        "processed_rows_used": 574,
+        "farm_count": 1,
+        "zone_count": 2,
+        "checksum_sha256": "d34e957dbadedfb71aa4cf469413c51fc850ff7efbcc653f2b2e6943bddba939",
+        "customer_id_used_as_feature": false,
+        "source_manifest": "/models/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade/source_manifest.json"
+      },
+      {
+        "customer_id": "customer_minh",
+        "snapshot_id": "runtime_20260908T103153Z",
+        "snapshot_manifest": "/models/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/snapshot_manifest.json",
+        "snapshot_raw_directory": null,
+        "processed_csv": "/models/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f/01_processed_features_targets.csv",
+        "dataset_parquet": "/models/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f.parquet",
+        "dataset_version": "nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f",
+        "raw_group_counts": {
+          "alerts": 6,
+          "control_commands": 0,
+          "device_status": 105596,
+          "irrigation_runs": 7,
+          "sensor_readings": 218112,
+          "telemetry_ingest_events": 79199
+        },
+        "raw_sensor_reading_count": 211296,
+        "processed_rows_before_cap": 64,
+        "processed_rows_used": 64,
+        "farm_count": 1,
+        "zone_count": 1,
+        "checksum_sha256": "1d378fc2ea3f1efc7e164a410e7a99741073683d544c455c10daaf14cba116da",
+        "customer_id_used_as_feature": false,
+        "source_manifest": "/models/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f/source_manifest.json"
+      }
+    ],
+    "skipped_customers": [],
+    "row_count": 925,
+    "raw_reading_count": 227712,
+    "farm_count": 3,
+    "zone_count": 4,
+    "source_tables": [
+      "user_db.customers",
+      "farm_db.farms",
+      "farm_db.zones",
+      "farm_db.sensor_readings",
+      "farm_db.device_status",
+      "farm_db.irrigation_runs",
+      "farm_db.telemetry_ingest_events"
+    ],
+    "origin_mix": {
+      "simulated_device_calibrated_v9": {
+        "count": 227712,
+        "ratio": 1.0
+      }
+    },
+    "label_method": "weak_labels_from_observable_rules",
+    "customer_id_used_as_feature": false,
+    "chat_messages_used_for_training": false,
+    "balancing_policy": "latest_at_most_5000_processed_rows_per_customer",
+    "created_at": "2026-09-08T10:32:04.918067+00:00"
+  },
+  "farm_count": 3,
+  "farm_ids": [
+    "farm_lan",
+    "farm_long",
+    "farm_minh"
+  ],
+  "generated_rows": 925,
+  "train_count": 735,
+  "validation_count": 137,
+  "test_count": 53,
+  "model_count": 10,
+  "approved_model_count": 0,
+  "experimental_model_count": 10,
+  "total_model_artifacts": 10,
+  "split_strategy": "chronological_70_15_15",
+  "generalization_test": "leave_one_customer_id_out",
+  "trained_at": "2026-09-08T10:32:16.505708+00:00",
+  "models": [
+    {
+      "model_id": "global_all_customers_moisture_forecast_v2.1.0",
+      "model_name": "moisture_forecast",
+      "display_name": "Dự báo độ ẩm đất",
+      "task": "regression",
+      "target": "target_moisture_30m",
+      "description": "Dự báo độ ẩm sau 30 phút.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "mae": 0.91403,
+            "rmse": 2.30601,
+            "r2": 0.68451
+          },
+          "selection_score": 0.68451
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "mae": 0.99474,
+            "rmse": 2.51542,
+            "r2": 0.62461
+          },
+          "selection_score": 0.62461
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "mae": 0.91403,
+        "rmse": 2.30601,
+        "r2": 0.68451
+      },
+      "test_metrics": {
+        "mae": 2.25761,
+        "rmse": 3.61791,
+        "r2": -0.15224
+      },
+      "metrics": {
+        "mae": 2.25761,
+        "rmse": 3.61791,
+        "r2": -0.15224
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "mae": 2.25761,
+          "rmse": 3.61791,
+          "r2": -0.15224
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 8.79766,
+            "rmse": 8.88336,
+            "r2": -56.24225
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.76576,
+            "rmse": 1.00641,
+            "r2": -0.54573
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 13.11708,
+            "rmse": 13.52971,
+            "r2": -15.97279
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 8.79766,
+            "rmse": 8.88336,
+            "r2": -56.24225
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.76576,
+            "rmse": 1.00641,
+            "r2": -0.54573
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 13.11708,
+            "rmse": 13.52971,
+            "r2": -15.97279
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {
+        "farm_lan": {
+          "bias": -0.239052,
+          "mae_before": 0.293064,
+          "sample_count": 42
+        },
+        "farm_long": {
+          "bias": -0.039934,
+          "mae_before": 0.296173,
+          "sample_count": 84
+        },
+        "farm_minh": {
+          "bias": 8.003225,
+          "mae_before": 8.003225,
+          "sample_count": 11
+        }
+      },
+      "feature_importance": [
+        {
+          "feature": "device_online",
+          "importance": 0.001807
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.001983
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.002127
+        },
+        {
+          "feature": "minute_sin",
+          "importance": 0.003194
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.005563
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.006676
+        },
+        {
+          "feature": "ec",
+          "importance": 0.084414
+        },
+        {
+          "feature": "ph",
+          "importance": 0.089339
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.090498
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.099427
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.111128
+        },
+        {
+          "feature": "moisture_target_width",
+          "importance": 0.118591
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.165969
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.208892
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/moisture_forecast.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test R² -0.152 < 0.20 hoặc không hữu hạn",
+          "holdout khách hàng R² thấp nhất -56.242 < 0 hoặc không hữu hạn"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_temperature_forecast_v2.1.0",
+      "model_name": "temperature_forecast",
+      "display_name": "Dự báo nhiệt độ",
+      "task": "regression",
+      "target": "target_temperature_30m",
+      "description": "Dự báo nhiệt độ sau 30 phút.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "mae": 0.17901,
+            "rmse": 0.22322,
+            "r2": 0.98252
+          },
+          "selection_score": 0.98252
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "mae": 0.20443,
+            "rmse": 0.29858,
+            "r2": 0.96873
+          },
+          "selection_score": 0.96873
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "mae": 0.17901,
+        "rmse": 0.22322,
+        "r2": 0.98252
+      },
+      "test_metrics": {
+        "mae": 0.54493,
+        "rmse": 1.00636,
+        "r2": 0.35125
+      },
+      "metrics": {
+        "mae": 0.54493,
+        "rmse": 1.00636,
+        "r2": 0.35125
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "mae": 0.54493,
+          "rmse": 1.00636,
+          "r2": 0.35125
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 1.3757,
+            "rmse": 1.74884,
+            "r2": 0.21635
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 1.27054,
+            "rmse": 1.44033,
+            "r2": 0.12048
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 1.43397,
+            "rmse": 1.92676,
+            "r2": -5.48886
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 1.3757,
+            "rmse": 1.74884,
+            "r2": 0.21635
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 1.27054,
+            "rmse": 1.44033,
+            "r2": 0.12048
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 1.43397,
+            "rmse": 1.92676,
+            "r2": -5.48886
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {
+        "farm_lan": {
+          "bias": 0.081898,
+          "mae_before": 0.209671,
+          "sample_count": 42
+        },
+        "farm_long": {
+          "bias": 0.079755,
+          "mae_before": 0.144049,
+          "sample_count": 84
+        },
+        "farm_minh": {
+          "bias": 0.324063,
+          "mae_before": 0.32894,
+          "sample_count": 11
+        }
+      },
+      "feature_importance": [
+        {
+          "feature": "flow_roll_std",
+          "importance": 0.001396
+        },
+        {
+          "feature": "ec",
+          "importance": 0.002106
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.002777
+        },
+        {
+          "feature": "temperature_delta",
+          "importance": 0.003204
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.00345
+        },
+        {
+          "feature": "moisture_target_width",
+          "importance": 0.003488
+        },
+        {
+          "feature": "moisture_roll_std",
+          "importance": 0.003599
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.003663
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.008245
+        },
+        {
+          "feature": "ph",
+          "importance": 0.010671
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.014272
+        },
+        {
+          "feature": "minute_sin",
+          "importance": 0.014881
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.100272
+        },
+        {
+          "feature": "temperature",
+          "importance": 0.821569
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/temperature_forecast.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "holdout khách hàng R² thấp nhất -5.489 < 0 hoặc không hữu hạn"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_ec_forecast_v2.1.0",
+      "model_name": "ec_forecast",
+      "display_name": "Dự báo EC",
+      "task": "regression",
+      "target": "target_ec_30m",
+      "description": "Dự báo EC sau 30 phút.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "mae": 0.01069,
+            "rmse": 0.0142,
+            "r2": 0.99659
+          },
+          "selection_score": 0.99659
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "mae": 0.01144,
+            "rmse": 0.01587,
+            "r2": 0.99574
+          },
+          "selection_score": 0.99574
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "mae": 0.01069,
+        "rmse": 0.0142,
+        "r2": 0.99659
+      },
+      "test_metrics": {
+        "mae": 0.03051,
+        "rmse": 0.03506,
+        "r2": 0.15987
+      },
+      "metrics": {
+        "mae": 0.03051,
+        "rmse": 0.03506,
+        "r2": 0.15987
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "mae": 0.03051,
+          "rmse": 0.03506,
+          "r2": 0.15987
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 0.3858,
+            "rmse": 0.3868,
+            "r2": -209.99849
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.38698,
+            "rmse": 0.38748,
+            "r2": -313.82336
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 0.0173,
+            "rmse": 0.01943,
+            "r2": -0.40034
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 0.3858,
+            "rmse": 0.3868,
+            "r2": -209.99849
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.38698,
+            "rmse": 0.38748,
+            "r2": -313.82336
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 0.0173,
+            "rmse": 0.01943,
+            "r2": -0.40034
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {
+        "farm_lan": {
+          "bias": -0.004718,
+          "mae_before": 0.010507,
+          "sample_count": 42
+        },
+        "farm_long": {
+          "bias": -0.001966,
+          "mae_before": 0.008891,
+          "sample_count": 84
+        },
+        "farm_minh": {
+          "bias": 0.018727,
+          "mae_before": 0.025109,
+          "sample_count": 11
+        }
+      },
+      "feature_importance": [
+        {
+          "feature": "minute_cos",
+          "importance": 0.000178
+        },
+        {
+          "feature": "device_online",
+          "importance": 0.000247
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.000393
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.00047
+        },
+        {
+          "feature": "ph",
+          "importance": 0.000805
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.000983
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.001138
+        },
+        {
+          "feature": "ec",
+          "importance": 0.113794
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.115049
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.115117
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.139945
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.155908
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.172775
+        },
+        {
+          "feature": "moisture_target_width",
+          "importance": 0.182171
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/ec_forecast.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test R² 0.160 < 0.20 hoặc không hữu hạn",
+          "holdout khách hàng R² thấp nhất -313.823 < 0 hoặc không hữu hạn"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_ph_forecast_v2.1.0",
+      "model_name": "ph_forecast",
+      "display_name": "Dự báo pH",
+      "task": "regression",
+      "target": "target_ph_30m",
+      "description": "Dự báo pH sau 30 phút.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "mae": 0.02556,
+            "rmse": 0.07444,
+            "r2": 0.85939
+          },
+          "selection_score": 0.85939
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "mae": 0.03468,
+            "rmse": 0.07735,
+            "r2": 0.84817
+          },
+          "selection_score": 0.84817
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "mae": 0.02556,
+        "rmse": 0.07444,
+        "r2": 0.85939
+      },
+      "test_metrics": {
+        "mae": 0.05533,
+        "rmse": 0.07023,
+        "r2": -1.85606
+      },
+      "metrics": {
+        "mae": 0.05533,
+        "rmse": 0.07023,
+        "r2": -1.85606
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "mae": 0.05533,
+          "rmse": 0.07023,
+          "r2": -1.85606
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 0.39407,
+            "rmse": 0.39408,
+            "r2": -14661.77765
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.05199,
+            "rmse": 0.06765,
+            "r2": -142.79683
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 0.28185,
+            "rmse": 0.2822,
+            "r2": -1222.0726
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "mae": 0.39407,
+            "rmse": 0.39408,
+            "r2": -14661.77765
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "mae": 0.05199,
+            "rmse": 0.06765,
+            "r2": -142.79683
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "mae": 0.28185,
+            "rmse": 0.2822,
+            "r2": -1222.0726
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {
+        "farm_lan": {
+          "bias": -0.008004,
+          "mae_before": 0.008004,
+          "sample_count": 42
+        },
+        "farm_long": {
+          "bias": -0.000204,
+          "mae_before": 0.003395,
+          "sample_count": 84
+        },
+        "farm_minh": {
+          "bias": 0.261858,
+          "mae_before": 0.261858,
+          "sample_count": 11
+        }
+      },
+      "feature_importance": [
+        {
+          "feature": "device_online",
+          "importance": 0.000297
+        },
+        {
+          "feature": "temperature",
+          "importance": 0.000393
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.000528
+        },
+        {
+          "feature": "day_sin",
+          "importance": 0.000568
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.00283
+        },
+        {
+          "feature": "day_cos",
+          "importance": 0.007203
+        },
+        {
+          "feature": "ec",
+          "importance": 0.078614
+        },
+        {
+          "feature": "moisture_target_width",
+          "importance": 0.09312
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.100702
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.100962
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.108436
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.132397
+        },
+        {
+          "feature": "ph",
+          "importance": 0.179012
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.193977
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/ph_forecast.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test R² -1.856 < 0.20 hoặc không hữu hạn",
+          "holdout khách hàng R² thấp nhất -14661.778 < 0 hoặc không hữu hạn"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_anomaly_multisensor_v2.1.0",
+      "model_name": "anomaly_multisensor",
+      "display_name": "Bất thường đa cảm biến",
+      "task": "classification",
+      "target": "anomaly_label",
+      "description": "Phát hiện dữ liệu hoặc trạng thái bất thường.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "1": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "1": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 0.91971,
+        "precision_macro": 0.45985,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47909,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          1
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "1": {
+            "precision": 0.91971,
+            "recall": 1.0,
+            "f1": 0.95817,
+            "support": 126
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            126
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.58491,
+        "precision_macro": 0.29245,
+        "recall_macro": 0.5,
+        "f1_macro": 0.36905,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.58491,
+            "recall": 1.0,
+            "f1": 0.7381,
+            "support": 31
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 22
+          }
+        },
+        "confusion_matrix": [
+          [
+            31,
+            0
+          ],
+          [
+            22,
+            0
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.58491,
+        "precision_macro": 0.29245,
+        "recall_macro": 0.5,
+        "f1_macro": 0.36905,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.58491,
+            "recall": 1.0,
+            "f1": 0.7381,
+            "support": 31
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 22
+          }
+        },
+        "confusion_matrix": [
+          [
+            31,
+            0
+          ],
+          [
+            22,
+            0
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.58491,
+          "precision_macro": 0.29245,
+          "recall_macro": 0.5,
+          "f1_macro": 0.36905,
+          "labels": [
+            0,
+            1
+          ],
+          "true_labels": [
+            0,
+            1
+          ],
+          "predicted_labels": [
+            0
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.58491,
+              "recall": 1.0,
+              "f1": 0.7381,
+              "support": 31
+            },
+            "1": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 22
+            }
+          },
+          "confusion_matrix": [
+            [
+              31,
+              0
+            ],
+            [
+              22,
+              0
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              },
+              "1": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                12
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              },
+              "1": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                12
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "minute_cos",
+          "importance": 0.0
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.0
+        },
+        {
+          "feature": "flow_roll_std",
+          "importance": 0.0
+        },
+        {
+          "feature": "zone_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "device_online",
+          "importance": 0.033333
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.033333
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.033333
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.041667
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.05
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.058333
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.066667
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.175
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.216667
+        },
+        {
+          "feature": "ph",
+          "importance": 0.291667
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/anomaly_multisensor.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test F1 0.369 < 0.65",
+          "holdout khách hàng F1 thấp nhất 0.480 < 0.55",
+          "holdout khách hàng customer_lan thiếu lớp thật: 0",
+          "holdout khách hàng customer_long thiếu lớp thật: 0",
+          "recall lớp rủi ro 1 trên test 0.000 < 0.50"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_flow_fault_v2.1.0",
+      "model_name": "flow_fault",
+      "display_name": "Chẩn đoán lưu lượng",
+      "task": "classification",
+      "target": "flow_fault_label",
+      "description": "Phân loại bình thường, thiếu lưu lượng hoặc rò rỉ.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 130
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 7
+              }
+            },
+            "confusion_matrix": [
+              [
+                130,
+                0
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 130
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 7
+              }
+            },
+            "confusion_matrix": [
+              [
+                130,
+                0
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 130
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "confusion_matrix": [
+          [
+            130,
+            0
+          ],
+          [
+            0,
+            7
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.98113,
+        "precision_macro": 0.66,
+        "recall_macro": 0.66667,
+        "f1_macro": 0.6633,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.98,
+            "recall": 1.0,
+            "f1": 0.9899,
+            "support": 49
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": [
+          [
+            49,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.98113,
+        "precision_macro": 0.66,
+        "recall_macro": 0.66667,
+        "f1_macro": 0.6633,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.98,
+            "recall": 1.0,
+            "f1": 0.9899,
+            "support": 49
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": [
+          [
+            49,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.98113,
+          "precision_macro": 0.66,
+          "recall_macro": 0.66667,
+          "f1_macro": 0.6633,
+          "labels": [
+            0,
+            1,
+            2
+          ],
+          "true_labels": [
+            0,
+            1,
+            2
+          ],
+          "predicted_labels": [
+            0,
+            2
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.98,
+              "recall": 1.0,
+              "f1": 0.9899,
+              "support": 49
+            },
+            "1": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "2": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 3
+            }
+          },
+          "confusion_matrix": [
+            [
+              49,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 0.96552,
+            "precision_macro": 0.98148,
+            "recall_macro": 0.83333,
+            "f1_macro": 0.89057,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.96296,
+                "recall": 1.0,
+                "f1": 0.98113,
+                "support": 52
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 0.66667,
+                "f1": 0.8,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                52,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 112
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              }
+            },
+            "confusion_matrix": [
+              [
+                112,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.63636,
+            "recall_macro": 0.66667,
+            "f1_macro": 0.65079,
+            "labels": [
+              0,
+              1,
+              2
+            ],
+            "true_labels": [
+              0,
+              1,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.90909,
+                "recall": 1.0,
+                "f1": 0.95238,
+                "support": 10
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                10,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 0.96552,
+            "precision_macro": 0.98148,
+            "recall_macro": 0.83333,
+            "f1_macro": 0.89057,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.96296,
+                "recall": 1.0,
+                "f1": 0.98113,
+                "support": 52
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 0.66667,
+                "f1": 0.8,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                52,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 112
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              }
+            },
+            "confusion_matrix": [
+              [
+                112,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.63636,
+            "recall_macro": 0.66667,
+            "f1_macro": 0.65079,
+            "labels": [
+              0,
+              1,
+              2
+            ],
+            "true_labels": [
+              0,
+              1,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.90909,
+                "recall": 1.0,
+                "f1": 0.95238,
+                "support": 10
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                10,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "sensor_age_seconds",
+          "importance": 0.0
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.0
+        },
+        {
+          "feature": "moisture_roll_std",
+          "importance": 0.0
+        },
+        {
+          "feature": "zone_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.0
+        },
+        {
+          "feature": "ph_delta",
+          "importance": 0.0
+        },
+        {
+          "feature": "ph",
+          "importance": 0.0
+        },
+        {
+          "feature": "flow_roll_mean",
+          "importance": 0.000577
+        },
+        {
+          "feature": "flow_roll_std",
+          "importance": 0.011991
+        },
+        {
+          "feature": "moisture_delta",
+          "importance": 0.131062
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 0.856371
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/flow_fault.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "holdout khách hàng customer_lan thiếu lớp thật: 1",
+          "holdout khách hàng customer_long thiếu lớp thật: 1",
+          "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+          "không đủ recall holdout khách hàng cho lớp rủi ro 1"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_irrigation_failure_v2.1.0",
+      "model_name": "irrigation_failure",
+      "display_name": "Ca tưới thất bại",
+      "task": "classification",
+      "target": "irrigation_failure_label",
+      "description": "Phát hiện ca tưới không tạo được kết quả mong đợi.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 137
+              }
+            },
+            "confusion_matrix": [
+              [
+                137
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 137
+              }
+            },
+            "confusion_matrix": [
+              [
+                137
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "labels": [
+          0
+        ],
+        "true_labels": [
+          0
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 137
+          }
+        },
+        "confusion_matrix": [
+          [
+            137
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.98113,
+        "precision_macro": 0.49057,
+        "recall_macro": 0.5,
+        "f1_macro": 0.49524,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.98113,
+            "recall": 1.0,
+            "f1": 0.99048,
+            "support": 52
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            52,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.98113,
+        "precision_macro": 0.49057,
+        "recall_macro": 0.5,
+        "f1_macro": 0.49524,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.98113,
+            "recall": 1.0,
+            "f1": 0.99048,
+            "support": 52
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            52,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.98113,
+          "precision_macro": 0.49057,
+          "recall_macro": 0.5,
+          "f1_macro": 0.49524,
+          "labels": [
+            0,
+            1
+          ],
+          "true_labels": [
+            0,
+            1
+          ],
+          "predicted_labels": [
+            0
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.98113,
+              "recall": 1.0,
+              "f1": 0.99048,
+              "support": 52
+            },
+            "1": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            }
+          },
+          "confusion_matrix": [
+            [
+              52,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              }
+            },
+            "confusion_matrix": [
+              [
+                12,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              }
+            },
+            "confusion_matrix": [
+              [
+                12,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "day_cos",
+          "importance": 0.0
+        },
+        {
+          "feature": "day_sin",
+          "importance": 0.0
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.0
+        },
+        {
+          "feature": "minute_sin",
+          "importance": 0.0
+        },
+        {
+          "feature": "zone_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.0
+        },
+        {
+          "feature": "ec_target_mid",
+          "importance": 0.0
+        },
+        {
+          "feature": "moisture_target_width",
+          "importance": 0.0
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.0
+        },
+        {
+          "feature": "area_ha",
+          "importance": 0.0
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.0
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.0
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/irrigation_failure.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test F1 0.495 < 0.65",
+          "holdout khách hàng F1 thấp nhất 0.480 < 0.55",
+          "holdout khách hàng customer_lan thiếu lớp thật: 1",
+          "holdout khách hàng customer_long thiếu lớp thật: 1",
+          "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+          "không đủ recall holdout khách hàng cho lớp rủi ro 1"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_irrigation_need_v2.1.0",
+      "model_name": "irrigation_need",
+      "display_name": "Nhu cầu tưới",
+      "task": "classification",
+      "target": "irrigation_need_label",
+      "description": "Ước lượng khu có cần tưới hoặc theo dõi sát.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0,
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 117
+              },
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 20
+              }
+            },
+            "confusion_matrix": [
+              [
+                117,
+                0
+              ],
+              [
+                0,
+                20
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0,
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 117
+              },
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 20
+              }
+            },
+            "confusion_matrix": [
+              [
+                117,
+                0
+              ],
+              [
+                0,
+                20
+              ]
+            ]
+          },
+          "selection_score": 1.0
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0,
+          1
+        ],
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 117
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 20
+          }
+        },
+        "confusion_matrix": [
+          [
+            117,
+            0
+          ],
+          [
+            0,
+            20
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.90566,
+        "precision_macro": 0.45283,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47525,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.90566,
+            "recall": 1.0,
+            "f1": 0.9505,
+            "support": 48
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            48,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.90566,
+        "precision_macro": 0.45283,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47525,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.90566,
+            "recall": 1.0,
+            "f1": 0.9505,
+            "support": 48
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            48,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.90566,
+          "precision_macro": 0.45283,
+          "recall_macro": 0.5,
+          "f1_macro": 0.47525,
+          "labels": [
+            0,
+            1
+          ],
+          "true_labels": [
+            0,
+            1
+          ],
+          "predicted_labels": [
+            0
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.90566,
+              "recall": 1.0,
+              "f1": 0.9505,
+              "support": 48
+            },
+            "1": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              48,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 0.58621,
+            "precision_macro": 0.2931,
+            "recall_macro": 0.5,
+            "f1_macro": 0.36957,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.58621,
+                "recall": 1.0,
+                "f1": 0.73913,
+                "support": 34
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 24
+              }
+            },
+            "confusion_matrix": [
+              [
+                34,
+                0
+              ],
+              [
+                24,
+                0
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              }
+            },
+            "confusion_matrix": [
+              [
+                12,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 0.58621,
+            "precision_macro": 0.2931,
+            "recall_macro": 0.5,
+            "f1_macro": 0.36957,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.58621,
+                "recall": 1.0,
+                "f1": 0.73913,
+                "support": 34
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 24
+              }
+            },
+            "confusion_matrix": [
+              [
+                34,
+                0
+              ],
+              [
+                24,
+                0
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.92308,
+            "precision_macro": 0.46154,
+            "recall_macro": 0.5,
+            "f1_macro": 0.48,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.92308,
+                "recall": 1.0,
+                "f1": 0.96,
+                "support": 12
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              }
+            },
+            "confusion_matrix": [
+              [
+                12,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "flow_rate",
+          "importance": 0.000369
+        },
+        {
+          "feature": "minute_cos",
+          "importance": 0.000429
+        },
+        {
+          "feature": "ec",
+          "importance": 0.000434
+        },
+        {
+          "feature": "flow_roll_std",
+          "importance": 0.000504
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.000738
+        },
+        {
+          "feature": "zone_index",
+          "importance": 0.001141
+        },
+        {
+          "feature": "flow_rate_missing",
+          "importance": 0.001718
+        },
+        {
+          "feature": "sensor_age_seconds",
+          "importance": 0.001908
+        },
+        {
+          "feature": "humidity_delta",
+          "importance": 0.00457
+        },
+        {
+          "feature": "moisture_roll_std",
+          "importance": 0.006725
+        },
+        {
+          "feature": "temperature_delta",
+          "importance": 0.026226
+        },
+        {
+          "feature": "ph",
+          "importance": 0.059294
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.138745
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.755855
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/irrigation_need.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test F1 0.475 < 0.65",
+          "holdout khách hàng F1 thấp nhất 0.370 < 0.55",
+          "holdout khách hàng customer_long thiếu lớp thật: 1",
+          "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+          "không đủ recall holdout khách hàng cho lớp rủi ro 1"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_device_health_v2.1.0",
+      "model_name": "device_health",
+      "display_name": "Sức khỏe thiết bị",
+      "task": "classification",
+      "target": "device_health_label",
+      "description": "Đánh giá trạng thái tốt, cần theo dõi hoặc cần kiểm tra.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "2": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "2": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 0.91971,
+        "precision_macro": 0.45985,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47909,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "2": {
+            "precision": 0.91971,
+            "recall": 1.0,
+            "f1": 0.95817,
+            "support": 126
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            126
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.90566,
+        "precision_macro": 0.45283,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47525,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.90566,
+            "recall": 1.0,
+            "f1": 0.9505,
+            "support": 48
+          },
+          "2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            48,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.90566,
+        "precision_macro": 0.45283,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47525,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.90566,
+            "recall": 1.0,
+            "f1": 0.9505,
+            "support": 48
+          },
+          "2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            48,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.90566,
+          "precision_macro": 0.45283,
+          "recall_macro": 0.5,
+          "f1_macro": 0.47525,
+          "labels": [
+            0,
+            2
+          ],
+          "true_labels": [
+            0,
+            2
+          ],
+          "predicted_labels": [
+            0
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.90566,
+              "recall": 1.0,
+              "f1": 0.9505,
+              "support": 48
+            },
+            "2": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              48,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.23077,
+            "precision_macro": 0.11538,
+            "recall_macro": 0.5,
+            "f1_macro": 0.1875,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 10
+              },
+              "2": {
+                "precision": 0.23077,
+                "recall": 1.0,
+                "f1": 0.375,
+                "support": 3
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                10
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.23077,
+            "precision_macro": 0.11538,
+            "recall_macro": 0.5,
+            "f1_macro": 0.1875,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 10
+              },
+              "2": {
+                "precision": 0.23077,
+                "recall": 1.0,
+                "f1": 0.375,
+                "support": 3
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                10
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "ec",
+          "importance": 0.0
+        },
+        {
+          "feature": "moisture_delta",
+          "importance": 0.0
+        },
+        {
+          "feature": "moisture_roll_std",
+          "importance": 0.0
+        },
+        {
+          "feature": "flow_roll_mean",
+          "importance": 0.0
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.033333
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.041667
+        },
+        {
+          "feature": "device_online",
+          "importance": 0.041667
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.041667
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.041667
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.058333
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.066667
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.2
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.225
+        },
+        {
+          "feature": "ph",
+          "importance": 0.25
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/device_health.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test F1 0.475 < 0.65",
+          "holdout khách hàng F1 thấp nhất 0.188 < 0.55",
+          "holdout khách hàng customer_lan thiếu lớp thật: 0",
+          "holdout khách hàng customer_long thiếu lớp thật: 0",
+          "recall lớp rủi ro 2 trên test 0.000 < 0.50"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    },
+    {
+      "model_id": "global_all_customers_farm_health_v2.1.0",
+      "model_name": "farm_health",
+      "display_name": "Sức khỏe tổng thể vườn",
+      "task": "classification",
+      "target": "farm_health_label",
+      "description": "Tổng hợp rủi ro của vườn từ cảm biến, tưới và thiết bị.",
+      "scope_type": "global",
+      "scope_key": "all_customers",
+      "model_version": "2.1.0",
+      "algorithm": "random_forest",
+      "candidate_validation": {
+        "random_forest": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "2": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        },
+        "extra_trees": {
+          "validation_metrics": {
+            "accuracy": 0.91971,
+            "precision_macro": 0.45985,
+            "recall_macro": 0.5,
+            "f1_macro": 0.47909,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 11
+              },
+              "2": {
+                "precision": 0.91971,
+                "recall": 1.0,
+                "f1": 0.95817,
+                "support": 126
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                11
+              ],
+              [
+                0,
+                126
+              ]
+            ]
+          },
+          "selection_score": 0.47909
+        }
+      },
+      "dataset_version": "nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+      "farm_count": 3,
+      "train_count": 735,
+      "validation_count": 137,
+      "test_count": 53,
+      "split_strategy": "chronological_70_15_15",
+      "train_end": "2026-09-07T00:30:00+00:00",
+      "validation_end": "2026-09-07T14:00:00+00:00",
+      "validation_metrics": {
+        "accuracy": 0.91971,
+        "precision_macro": 0.45985,
+        "recall_macro": 0.5,
+        "f1_macro": 0.47909,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "2": {
+            "precision": 0.91971,
+            "recall": 1.0,
+            "f1": 0.95817,
+            "support": 126
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            126
+          ]
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.49057,
+        "precision_macro": 0.16352,
+        "recall_macro": 0.33333,
+        "f1_macro": 0.21941,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.49057,
+            "recall": 1.0,
+            "f1": 0.65823,
+            "support": 26
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18
+          },
+          "2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9
+          }
+        },
+        "confusion_matrix": [
+          [
+            26,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0
+          ],
+          [
+            9,
+            0,
+            0
+          ]
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.49057,
+        "precision_macro": 0.16352,
+        "recall_macro": 0.33333,
+        "f1_macro": 0.21941,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.49057,
+            "recall": 1.0,
+            "f1": 0.65823,
+            "support": 26
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18
+          },
+          "2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9
+          }
+        },
+        "confusion_matrix": [
+          [
+            26,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0
+          ],
+          [
+            9,
+            0,
+            0
+          ]
+        ]
+      },
+      "per_farm_metrics": {
+        "farm_minh": {
+          "accuracy": 0.49057,
+          "precision_macro": 0.16352,
+          "recall_macro": 0.33333,
+          "f1_macro": 0.21941,
+          "labels": [
+            0,
+            1,
+            2
+          ],
+          "true_labels": [
+            0,
+            1,
+            2
+          ],
+          "predicted_labels": [
+            0
+          ],
+          "per_class": {
+            "0": {
+              "precision": 0.49057,
+              "recall": 1.0,
+              "f1": 0.65823,
+              "support": 26
+            },
+            "1": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 18
+            },
+            "2": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 9
+            }
+          },
+          "confusion_matrix": [
+            [
+              26,
+              0,
+              0
+            ],
+            [
+              18,
+              0,
+              0
+            ],
+            [
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "leave_one_farm_out": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.46154,
+            "precision_macro": 0.23077,
+            "recall_macro": 0.5,
+            "f1_macro": 0.31579,
+            "labels": [
+              1,
+              2
+            ],
+            "true_labels": [
+              1,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 7
+              },
+              "2": {
+                "precision": 0.46154,
+                "recall": 1.0,
+                "f1": 0.63158,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                7
+              ],
+              [
+                0,
+                6
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_holdout": {
+        "customer_lan": {
+          "group_column": "customer_id",
+          "group_name": "customer_lan",
+          "train_groups": [
+            "customer_long",
+            "customer_minh"
+          ],
+          "test_count": 58,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 58
+              }
+            },
+            "confusion_matrix": [
+              [
+                58
+              ]
+            ]
+          }
+        },
+        "customer_long": {
+          "group_column": "customer_id",
+          "group_name": "customer_long",
+          "train_groups": [
+            "customer_lan",
+            "customer_minh"
+          ],
+          "test_count": 116,
+          "metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 116
+              }
+            },
+            "confusion_matrix": [
+              [
+                116
+              ]
+            ]
+          }
+        },
+        "customer_minh": {
+          "group_column": "customer_id",
+          "group_name": "customer_minh",
+          "train_groups": [
+            "customer_lan",
+            "customer_long"
+          ],
+          "test_count": 13,
+          "metrics": {
+            "accuracy": 0.46154,
+            "precision_macro": 0.23077,
+            "recall_macro": 0.5,
+            "f1_macro": 0.31579,
+            "labels": [
+              1,
+              2
+            ],
+            "true_labels": [
+              1,
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 7
+              },
+              "2": {
+                "precision": 0.46154,
+                "recall": 1.0,
+                "f1": 0.63158,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                0,
+                7
+              ],
+              [
+                0,
+                6
+              ]
+            ]
+          }
+        }
+      },
+      "generalization_column": "customer_id",
+      "farm_calibrations": {},
+      "feature_importance": [
+        {
+          "feature": "temperature",
+          "importance": 0.0
+        },
+        {
+          "feature": "flow_delta",
+          "importance": 0.0
+        },
+        {
+          "feature": "ec_delta",
+          "importance": 0.0
+        },
+        {
+          "feature": "temperature_delta",
+          "importance": 0.0
+        },
+        {
+          "feature": "crop_index",
+          "importance": 0.016667
+        },
+        {
+          "feature": "climate_index",
+          "importance": 0.033333
+        },
+        {
+          "feature": "cultivation_index",
+          "importance": 0.033333
+        },
+        {
+          "feature": "ph_target_mid",
+          "importance": 0.05
+        },
+        {
+          "feature": "device_online",
+          "importance": 0.058333
+        },
+        {
+          "feature": "soil_index",
+          "importance": 0.066667
+        },
+        {
+          "feature": "moisture_target_mid",
+          "importance": 0.075
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.175
+        },
+        {
+          "feature": "moisture_roll_mean",
+          "importance": 0.208333
+        },
+        {
+          "feature": "ph",
+          "importance": 0.283333
+        }
+      ],
+      "artifact_path": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/model.joblib",
+      "evaluation_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/evaluation.png",
+      "importance_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/feature_importance.png",
+      "per_farm_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/per_farm_evaluation.png",
+      "prediction_csv": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/farm_health.csv",
+      "status": "experimental",
+      "deployment_status": "experimental",
+      "quality_gate": {
+        "passed": false,
+        "deployment_status": "experimental",
+        "reasons": [
+          "test F1 0.219 < 0.65",
+          "holdout khách hàng F1 thấp nhất 0.316 < 0.55",
+          "holdout khách hàng customer_lan thiếu lớp thật: 0, 1",
+          "holdout khách hàng customer_long thiếu lớp thật: 0, 1",
+          "holdout khách hàng customer_minh thiếu lớp thật: 0",
+          "recall lớp rủi ro 2 trên test 0.000 < 0.50"
+        ],
+        "policy": "cần >=3 khách hàng và đủ holdout; regression: test R²>=0.20, min holdout R²>=0; classification: test F1>=0.65, min holdout F1>=0.55, đủ lớp test/holdout, recall lớp rủi ro test>=0.50 và min holdout>=0.35"
+      },
+      "dataset_source": "v10_per_customer_csv_pool"
+    }
+  ],
+  "csv_evidence": {
+    "directory": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+    "manifest": "/models/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/evidence_manifest.json",
+    "file_count": 25,
+    "chat_messages_used_for_training": false
+  },
+  "training_phase": "runtime_retrain",
+  "production_ready": false,
+  "active_manifest": "/models/shared/active_models.json",
+  "activated_model_count": 0,
+  "total_active_model_count": 0,
+  "retained_previous_approved": [],
+  "candidate_directory": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e",
+  "suite_summary_chart": "/models/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/suite_summary.png"
+}

@@ -1,0 +1,494 @@
+{
+  "architecture": "shared_base_models_with_customer_calibration",
+  "dataset_version": "nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2",
+  "customer_count": 3,
+  "processed_rows": 268,
+  "train_count": 184,
+  "validation_count": 40,
+  "test_count": 44,
+  "candidate_model_count": 10,
+  "approved_candidate_count": 2,
+  "active_model_count": 2,
+  "production_ready": false,
+  "human_report": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\reports\\LATEST_TRAINING_REPORT.md",
+  "active_manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared\\active_models.json",
+  "csv_evidence": {
+    "directory": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\shared\\processed\\nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2",
+    "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\shared\\processed\\nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2\\evidence_manifest.json",
+    "file_count": 15,
+    "chat_messages_used_for_training": false
+  },
+  "customer_sources": [
+    {
+      "customer_id": "customer_lan",
+      "snapshot_id": "runtime_20260908T141537Z",
+      "snapshot_manifest": "/models/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/snapshot_manifest.json",
+      "snapshot_raw_directory": null,
+      "processed_csv": "/models/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c/01_processed_features_targets.csv",
+      "dataset_parquet": "/models/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c.parquet",
+      "dataset_version": "nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c",
+      "raw_group_counts": {
+        "alerts": 4,
+        "control_commands": 0,
+        "device_status": 80922,
+        "irrigation_runs": 7,
+        "sensor_readings": 194866,
+        "telemetry_ingest_events": 80922
+      },
+      "raw_sensor_reading_count": 188818,
+      "processed_rows_before_cap": 67,
+      "processed_rows_used": 67,
+      "farm_count": 1,
+      "zone_count": 1,
+      "checksum_sha256": "8a4b1f09c07caa5f1d1fb28e38d2a60e7a17a083ce0c84c708e5f7adb44b26fc",
+      "customer_id_used_as_feature": false,
+      "source_manifest": "/models/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c/source_manifest.json"
+    },
+    {
+      "customer_id": "customer_long",
+      "snapshot_id": "runtime_20260908T141547Z",
+      "snapshot_manifest": "/models/data/customers/customer_long/snapshots/runtime_20260908T141547Z/snapshot_manifest.json",
+      "snapshot_raw_directory": null,
+      "processed_csv": "/models/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663/01_processed_features_targets.csv",
+      "dataset_parquet": "/models/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663.parquet",
+      "dataset_version": "nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663",
+      "raw_group_counts": {
+        "alerts": 9,
+        "control_commands": 0,
+        "device_status": 134870,
+        "irrigation_runs": 14,
+        "sensor_readings": 334056,
+        "telemetry_ingest_events": 107896
+      },
+      "raw_sensor_reading_count": 323760,
+      "processed_rows_before_cap": 134,
+      "processed_rows_used": 134,
+      "farm_count": 1,
+      "zone_count": 2,
+      "checksum_sha256": "68fbb7257663a19f2d66c45b97cb0a2468616125f8ab476b4fb848e239a0f5e3",
+      "customer_id_used_as_feature": false,
+      "source_manifest": "/models/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663/source_manifest.json"
+    },
+    {
+      "customer_id": "customer_minh",
+      "snapshot_id": "runtime_20260908T141605Z",
+      "snapshot_manifest": "/models/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/snapshot_manifest.json",
+      "snapshot_raw_directory": null,
+      "processed_csv": "/models/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c/01_processed_features_targets.csv",
+      "dataset_parquet": "/models/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c.parquet",
+      "dataset_version": "nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c",
+      "raw_group_counts": {
+        "alerts": 6,
+        "control_commands": 0,
+        "device_status": 107896,
+        "irrigation_runs": 7,
+        "sensor_readings": 222704,
+        "telemetry_ingest_events": 80922
+      },
+      "raw_sensor_reading_count": 215904,
+      "processed_rows_before_cap": 67,
+      "processed_rows_used": 67,
+      "farm_count": 1,
+      "zone_count": 1,
+      "checksum_sha256": "67656e20d30c05d76d9a1a74afc3d936828d8ab4617e7d2a71d550002263ae57",
+      "customer_id_used_as_feature": false,
+      "source_manifest": "/models/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c/source_manifest.json"
+    }
+  ],
+  "models": [
+    {
+      "model_name": "moisture_forecast",
+      "task": "regression",
+      "algorithm": "extra_trees",
+      "test_metrics": {
+        "mae": 1.32782,
+        "rmse": 1.97508,
+        "r2": 0.89217
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "holdout khách hàng R² thấp nhất -164.363 < 0 hoặc không hữu hạn"
+      ]
+    },
+    {
+      "model_name": "temperature_forecast",
+      "task": "regression",
+      "algorithm": "extra_trees",
+      "test_metrics": {
+        "mae": 1.10116,
+        "rmse": 1.4364,
+        "r2": 0.43786
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "holdout khách hàng R² thấp nhất -14.828 < 0 hoặc không hữu hạn"
+      ]
+    },
+    {
+      "model_name": "ec_forecast",
+      "task": "regression",
+      "algorithm": "random_forest",
+      "test_metrics": {
+        "mae": 0.03334,
+        "rmse": 0.0402,
+        "r2": 0.9499
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "holdout khách hàng R² thấp nhất -111.780 < 0 hoặc không hữu hạn"
+      ]
+    },
+    {
+      "model_name": "ph_forecast",
+      "task": "regression",
+      "algorithm": "extra_trees",
+      "test_metrics": {
+        "mae": 0.01562,
+        "rmse": 0.02699,
+        "r2": 0.97845
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "holdout khách hàng R² thấp nhất -259.887 < 0 hoặc không hữu hạn"
+      ]
+    },
+    {
+      "model_name": "anomaly_multisensor",
+      "task": "classification",
+      "algorithm": "extra_trees",
+      "test_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0,
+          1
+        ],
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 22
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 22
+          }
+        },
+        "confusion_matrix": [
+          [
+            22,
+            0
+          ],
+          [
+            0,
+            22
+          ]
+        ]
+      },
+      "deployment_status": "approved",
+      "quality_gate_reasons": []
+    },
+    {
+      "model_name": "flow_fault",
+      "task": "classification",
+      "algorithm": "random_forest",
+      "test_metrics": {
+        "accuracy": 0.88636,
+        "precision_macro": 0.62602,
+        "recall_macro": 0.66667,
+        "f1_macro": 0.64502,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.87805,
+            "recall": 1.0,
+            "f1": 0.93506,
+            "support": 36
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "test F1 0.645 < 0.65",
+        "recall lớp rủi ro 1 trên test 0.000 < 0.50"
+      ]
+    },
+    {
+      "model_name": "irrigation_failure",
+      "task": "classification",
+      "algorithm": "random_forest",
+      "test_metrics": {
+        "accuracy": 0.88636,
+        "precision_macro": 0.44318,
+        "recall_macro": 0.5,
+        "f1_macro": 0.46988,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.88636,
+            "recall": 1.0,
+            "f1": 0.93976,
+            "support": 39
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            39,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "test F1 0.470 < 0.65",
+        "recall lớp rủi ro 1 trên test 0.000 < 0.50"
+      ]
+    },
+    {
+      "model_name": "irrigation_need",
+      "task": "classification",
+      "algorithm": "random_forest",
+      "test_metrics": {
+        "accuracy": 0.95455,
+        "precision_macro": 0.47727,
+        "recall_macro": 0.5,
+        "f1_macro": 0.48837,
+        "labels": [
+          0,
+          1
+        ],
+        "true_labels": [
+          0,
+          1
+        ],
+        "predicted_labels": [
+          0
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.95455,
+            "recall": 1.0,
+            "f1": 0.97674,
+            "support": 42
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "confusion_matrix": [
+          [
+            42,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "test F1 0.488 < 0.65",
+        "holdout khách hàng F1 thấp nhất 0.481 < 0.55",
+        "holdout khách hàng customer_lan thiếu lớp thật: 1",
+        "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+        "không đủ recall holdout khách hàng cho lớp rủi ro 1"
+      ]
+    },
+    {
+      "model_name": "device_health",
+      "task": "classification",
+      "algorithm": "random_forest",
+      "test_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "labels": [
+          0,
+          2
+        ],
+        "true_labels": [
+          0,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 36
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            0
+          ],
+          [
+            0,
+            8
+          ]
+        ]
+      },
+      "deployment_status": "approved",
+      "quality_gate_reasons": []
+    },
+    {
+      "model_name": "farm_health",
+      "task": "classification",
+      "algorithm": "extra_trees",
+      "test_metrics": {
+        "accuracy": 0.88636,
+        "precision_macro": 0.93056,
+        "recall_macro": 0.86966,
+        "f1_macro": 0.88614,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "true_labels": [
+          0,
+          1,
+          2
+        ],
+        "predicted_labels": [
+          0,
+          1,
+          2
+        ],
+        "per_class": {
+          "0": {
+            "precision": 0.79167,
+            "recall": 1.0,
+            "f1": 0.88372,
+            "support": 19
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 0.69231,
+            "f1": 0.81818,
+            "support": 13
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 0.91667,
+            "f1": 0.95652,
+            "support": 12
+          }
+        },
+        "confusion_matrix": [
+          [
+            19,
+            0,
+            0
+          ],
+          [
+            4,
+            9,
+            0
+          ],
+          [
+            1,
+            0,
+            11
+          ]
+        ]
+      },
+      "deployment_status": "experimental",
+      "quality_gate_reasons": [
+        "holdout khách hàng customer_lan thiếu lớp thật: 1",
+        "holdout khách hàng customer_minh thiếu lớp thật: 0"
+      ]
+    }
+  ]
+}

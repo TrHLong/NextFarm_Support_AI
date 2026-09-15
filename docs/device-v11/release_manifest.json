@@ -1,0 +1,327 @@
+{
+  "published_at": "2026-09-10T12:26:01.873433+00:00",
+  "backup_directory": "C:\\Users\\Long\\Documents\\Codex\\2026-09-04\\d-2026-2027-thuctap-nextfarm-ai\\work\\device-v11\\before",
+  "files": [
+    {
+      "path": "docker-compose.yml",
+      "before_sha256": "009b5b5b09ff409e905decc358131dcb3a3b572d4ee43fe8c54b7bccfd2453d1",
+      "after_sha256": "908558a71f8bd217a93802c53c5e1d9377ccd64e65b74afeddff093f08809336"
+    },
+    {
+      "path": "VERSION",
+      "before_sha256": "0bc23630256f9d80581f933b0b538600a6c156033cfb644f0982d026d7116045",
+      "after_sha256": "a7222afe7a169f0f8868b67adfbd7d905515daf21c71f7f2b94298ad1a0ed1d6"
+    },
+    {
+      "path": "infra/ai-encyclopedia-nginx.conf",
+      "before_sha256": "80c3c6007b976b89d8b90058f468e01fa65b740a57ad180b7f006c57bf32b7bd",
+      "after_sha256": "5c34099db52b8de2c1a59ab3f0e30e9514b9d478b2814489727c5b6379ac3455"
+    },
+    {
+      "path": "infra/data-studio-nginx.conf",
+      "before_sha256": "bb777b59499b049ee703e240c5697aee8872e2d004adfd936b8a228d5fc74632",
+      "after_sha256": "5c34099db52b8de2c1a59ab3f0e30e9514b9d478b2814489727c5b6379ac3455"
+    },
+    {
+      "path": "infra/nginx.conf",
+      "before_sha256": "cf91d125b7101e2a14bacc8379d5f16fa7a69a50efa79a535833258fad983b47",
+      "after_sha256": "bb5fe01d9f8fa1b4e2e75a32947888356f5307bc0425ddb2b58ca21465227bd1"
+    },
+    {
+      "path": "nextfarm_device/answers.py",
+      "before_sha256": null,
+      "after_sha256": "256cb26fcc4a9bc624054843f7aa0f3acd5b5c321d864f2f7eab642496e9f610"
+    },
+    {
+      "path": "nextfarm_device/api.py",
+      "before_sha256": null,
+      "after_sha256": "436c35c368903653bc787d03e5ccb4ef7aa93865d013bcd0853cf36480d24f22"
+    },
+    {
+      "path": "nextfarm_device/automation.py",
+      "before_sha256": null,
+      "after_sha256": "45009d97481bfa0452834291e05e544cab0ef01975b00c6309c6c1febaf90e5b"
+    },
+    {
+      "path": "nextfarm_device/contracts.py",
+      "before_sha256": null,
+      "after_sha256": "31b863499d9d17605c5fa692242c79bc7357847296488e7831e77aa0e92adc71"
+    },
+    {
+      "path": "nextfarm_device/knowledge.py",
+      "before_sha256": null,
+      "after_sha256": "a993673d3aacab1f15468453b6bcc84a5ec681ad1b4b8ae198eeea1185fe8644"
+    },
+    {
+      "path": "nextfarm_device/ml.py",
+      "before_sha256": null,
+      "after_sha256": "af2592a51d4280f9036867ea717f9820fdb000d9762ef8d095c77f2cd9182bf1"
+    },
+    {
+      "path": "nextfarm_device/runtime.py",
+      "before_sha256": null,
+      "after_sha256": "9916c9b80c342073ba30875707e13f363496b75e44ad88b215a594500ef08b6f"
+    },
+    {
+      "path": "nextfarm_device/simulation.py",
+      "before_sha256": null,
+      "after_sha256": "70953faaf66399473f7ea05265c4a4c76c5ed8b297f33c40a788cbebb2843460"
+    },
+    {
+      "path": "nextfarm_device/store.py",
+      "before_sha256": null,
+      "after_sha256": "ac534c99fbbcb78ab4398e8fe6ec0ac82f73d7dad5528d49ccb9641eb332acd1"
+    },
+    {
+      "path": "nextfarm_device/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "fe3e830831b8f00cf51f24c425d3be380f9d598b6803d86578eacfb4f0c4975a"
+    },
+    {
+      "path": "scripts/check_device_acceptance.py",
+      "before_sha256": null,
+      "after_sha256": "5cf508cbff34f0db39f0f29c1d632b7fa43088645f19f28fc5c8fb26e34dc44f"
+    },
+    {
+      "path": "scripts/check_v10_unit_tests.ps1",
+      "before_sha256": "3e1121f64bf0f917904587a7335ba90e98e82660aea9e911623c93032a873dbb",
+      "after_sha256": "136b4ff3db5ff0e4b4e766ea2860d09af57583ffdfb31583acf57583ce410abe"
+    },
+    {
+      "path": "scripts/import_device_reference.py",
+      "before_sha256": null,
+      "after_sha256": "8bd1306c21bc2eacde90642416bbe707c87d9cfa5d926c6f650874145875872e"
+    },
+    {
+      "path": "scripts/run_device_local.py",
+      "before_sha256": null,
+      "after_sha256": "e6f4fa2f029b0109e157deb71a6a81aa4a94c928f4c680bc9a0c4e74f61d72ab"
+    },
+    {
+      "path": "scripts/start_v10.cmd",
+      "before_sha256": "2e214e1e48b480c3ad12daef95d004d8c254becb43fa6a4a0ef1dd4b9567c2a7",
+      "after_sha256": "3e88c6e83d43ff89fdf4bc774fbd26a62857f3de1b88226559a5ffa571e22eb5"
+    },
+    {
+      "path": "scripts/start_v11.cmd",
+      "before_sha256": null,
+      "after_sha256": "81804328fd2d03db74d04642f9416b2620625cfa0889b08ebf0fde90b65a5579"
+    },
+    {
+      "path": "scripts/train_device_models.py",
+      "before_sha256": null,
+      "after_sha256": "83a81fe30b89ae1f959f4eb8b88d101905c4f9193ca8e13bdf5fd7a2a84651a1"
+    },
+    {
+      "path": "tests_device/test_access.py",
+      "before_sha256": null,
+      "after_sha256": "e67620e7344328860c9f913e388fa206eb547e716192947cbec436a3e768ca2d"
+    },
+    {
+      "path": "tests_device/test_contract.py",
+      "before_sha256": null,
+      "after_sha256": "6d7856c14c9da1a52a06c78a4671d5d3c2b28d1bfabfca85182cccef68de1bb9"
+    },
+    {
+      "path": "apps/device-ai-encyclopedia/app.js",
+      "before_sha256": null,
+      "after_sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps/device-ai-encyclopedia/index.html",
+      "before_sha256": null,
+      "after_sha256": "384e67e48a6636a675008c8df9037468203fabee4e4c58ed08c316d58ffb4831"
+    },
+    {
+      "path": "apps/device-ai-encyclopedia/styles.css",
+      "before_sha256": null,
+      "after_sha256": "e266948b395b9038d1ba51448b4e290d56a9ad6c9572085bcf63beb45ebd1170"
+    },
+    {
+      "path": "apps/device-data-studio/app.js",
+      "before_sha256": null,
+      "after_sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps/device-data-studio/index.html",
+      "before_sha256": null,
+      "after_sha256": "3049d2100db47b454e90fafb3881bbf07bdffe7fba9bade66b3618f5dbcd0eee"
+    },
+    {
+      "path": "apps/device-data-studio/styles.css",
+      "before_sha256": null,
+      "after_sha256": "e266948b395b9038d1ba51448b4e290d56a9ad6c9572085bcf63beb45ebd1170"
+    },
+    {
+      "path": "apps/device-web/app.js",
+      "before_sha256": null,
+      "after_sha256": "b75e04d54c4347a30453719e91678032cfbc0e1f8e044f63b4ac030aa5be6f4e"
+    },
+    {
+      "path": "apps/device-web/index.html",
+      "before_sha256": null,
+      "after_sha256": "de571c5854693361e0886e997c11ddd8b1841d0d1db3704d59d4e8b3bb466297"
+    },
+    {
+      "path": "apps/device-web/styles.css",
+      "before_sha256": null,
+      "after_sha256": "80e5262ab5c86c7ebda86a04cf709d19ab4cce4f551404bcad357a0e8ccb69d6"
+    },
+    {
+      "path": "docs/references/Chat-thiet-bi-NextFarm-v0.1.html",
+      "before_sha256": null,
+      "after_sha256": "8f59eb97fa9b7f3bd9cff14c89febddacb6489d9ecbe62857f4a4f261e8e2fd9"
+    },
+    {
+      "path": "services/ai-analytics-service/Dockerfile",
+      "before_sha256": "052290e8a9e00f402e971e79a020422e6daee645d436a85774a2983e7784d193",
+      "after_sha256": "80594c3b8c2507bfcd2ecf08672d2fffde7129b62a44e7ff7dc14ae99a0e6b79"
+    },
+    {
+      "path": "services/ai-analytics-service/requirements.txt",
+      "before_sha256": "4db7787910d29f0a44b6fe6ca99dbaf39556022bb2a3c4850feee1e9f8a826e0",
+      "after_sha256": "dcc1a2dae3346b1cdeb753bff98ae53660be27723f070d837838d6af41be3a98"
+    },
+    {
+      "path": "services/chatbot-service/Dockerfile",
+      "before_sha256": "fdf469ca5debbb621c6b47d8570a53e4a6aa38a243d0b4e8ec7bc16a90067ec6",
+      "after_sha256": "b70a246d68ee82c1b1a36841e556db056aa390d1b1411653f40301ee44cd8b79"
+    },
+    {
+      "path": "services/chatbot-service/requirements.txt",
+      "before_sha256": "8d762faf705537b47d32f9a7cc1ef9e3f03d4a74cc40d18195c2e06559e70a04",
+      "after_sha256": "c278a81a94feca455e79567222bb0665297532fb8d181d1e91f755fe54feaeb1"
+    },
+    {
+      "path": "services/crop-router-service/Dockerfile",
+      "before_sha256": "90431c17e9b8c818f4661952e6a56358d6a1d92d36ab5fd07a7cf42f23492803",
+      "after_sha256": "948d1929ac35c1812974ce400f0147afd4172578dce473a88558b7c9d59e33c3"
+    },
+    {
+      "path": "services/crop-router-service/requirements.txt",
+      "before_sha256": "1f8af3c8b612c70c7f26bb60a869588f55d90cd22c89a6d0e2f8c23a8816cbd6",
+      "after_sha256": "3a2788e562437ec903abf7cde20d13a33f96f9cdd61660e82fcf86c4c1d7119b"
+    },
+    {
+      "path": "services/data-simulator-service/Dockerfile",
+      "before_sha256": "b25e940cf121d8fade8fbb242b87a87314fe3655c0c2495acd79bf80bd279727",
+      "after_sha256": "134c91a0bf23e942b31b5b1b7e1afc7836b5199e2c78fd0dfb7ff08353cc0497"
+    },
+    {
+      "path": "services/data-simulator-service/requirements.txt",
+      "before_sha256": "cbd46cb8edf54cdd5508ca6d17d65daf5bbde32427aed7a834255d099dbad59f",
+      "after_sha256": "86dcdb83db2681164ced82e9125b876bbfcdb5cff49d7cbbf3faf64ba4617bb6"
+    },
+    {
+      "path": "services/farm-data-service/Dockerfile",
+      "before_sha256": "aab47b30c1b6c4b1b10bb5a88edd984d35b687171454a629d6f302b9da0bf51c",
+      "after_sha256": "3e0bc6c38b9640273f6729941903de89d9f3ae34de2ca63271d3916d3bf7a373"
+    },
+    {
+      "path": "services/farm-data-service/requirements.txt",
+      "before_sha256": "90e27fe2cf505eac4139961be38538d48b96dfc881b7d2ea45906e7e660dcb59",
+      "after_sha256": "7b1a478fec0659702c18bfa5569618e3127a1650a0c76bb0e3773060f09f7a95"
+    },
+    {
+      "path": "services/llm-gateway-service/Dockerfile",
+      "before_sha256": "b0b3641fc6dce1ac847402b50fdb3f1256df98b3c7c2878486b254d296d945fa",
+      "after_sha256": "a38273909cc15d8495d5dc94096e6ab7dfd6826576d7c3c54ad5369616529e24"
+    },
+    {
+      "path": "services/llm-gateway-service/requirements.txt",
+      "before_sha256": "d33f50f0f74f6d3fae44af32e82bfd1492ab02af15f0b3567b7027bd33a51143",
+      "after_sha256": "400d6410cd18fc37839da70ed561c5134efa40b52809dee02083f480f65ccaf5"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/Dockerfile",
+      "before_sha256": "fd73f42f49975ed16eb8df3467e1ff5d7c36adfd19e5ee4fa87b2dc2c69b3a95",
+      "after_sha256": "3f39d551cbe66bb68f9645a56817290e7f2ef22f5a5885d6517f123d75166e9c"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/requirements.txt",
+      "before_sha256": "68ec49905027f406e3719fb7483d01507fd0252a64da94e993fd7674c0901bf2",
+      "after_sha256": "0abf47b237baa732423730ac7869f3ac5684da62aca8cbbc9b80a684e7d07c44"
+    },
+    {
+      "path": "services/ai-analytics-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "e056c05b1777296ba789415a513635a48244041b8cdcb5d5fa716c67ea68d0ce"
+    },
+    {
+      "path": "services/ai-analytics-service/app/main.py",
+      "before_sha256": "353b4fde1c6575450e8ff351ee2dec8ab4e5082ae7eb264fa672adfec25897c3",
+      "after_sha256": "5f3cb52b69c3bdb06bacca057a4fe7058cc8a01904218eddfc1426a44b7fbadc"
+    },
+    {
+      "path": "services/chatbot-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "80cbd710d3e5ffe502a4d5384c97396edc220bbf4349d008c3ae7c9eddef29e4"
+    },
+    {
+      "path": "services/chatbot-service/app/main.py",
+      "before_sha256": "ccf0709b00f91f67ddb6489e4967aa44ed5bec86a8d218e65ef73cdbb4d8cf81",
+      "after_sha256": "44d68d2565421f4c2994830b08ef6a0c2994095a9e42f624b8486399056546c4"
+    },
+    {
+      "path": "services/crop-router-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "9f0a497d369daddd7c74350f1c685df296c22929b586f3969f29f981c84dba13"
+    },
+    {
+      "path": "services/crop-router-service/app/main.py",
+      "before_sha256": "6c3e22ca421d5f9b2c0da7a72fee1411cef98faf6339ec6726aefc08b6d28d41",
+      "after_sha256": "f0c567002923ab37130b6f35f1ba4f098a06aec9fd278bf962271054579cccf8"
+    },
+    {
+      "path": "services/data-simulator-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "05c941ae2d73faebde927bbb6f981b358e96a7d05ec9d2bd63f427dd0233a197"
+    },
+    {
+      "path": "services/data-simulator-service/app/main.py",
+      "before_sha256": "51925d9bf577e05a3f46a265a7b38b93ceb62e25825eacf7d1174fb3fc55b82f",
+      "after_sha256": "81ec9f81f2ca458b58a013046ca4f89764db2c5613bb609a8a185099d7502250"
+    },
+    {
+      "path": "services/farm-data-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "4a8615ef0b0ac9052666fd25ed3f435a79962dfecb198b563bb63f94879b1d73"
+    },
+    {
+      "path": "services/farm-data-service/app/main.py",
+      "before_sha256": "a8c6243bbc869d4c7b6ff9386f341da415943b4e73d2426853e8ef507f7ba972",
+      "after_sha256": "60e1cf977151869d36e688f133ad6485663031ea616b1d397e44bf002100dbc1"
+    },
+    {
+      "path": "services/llm-gateway-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "fae5f4693001498d41a64ed0b30a6e7eb5e88871780584a00ff3a560158d3ae7"
+    },
+    {
+      "path": "services/llm-gateway-service/app/main.py",
+      "before_sha256": "7bc2aab2aff490287d93ed4b128cefa9bb9e9db13d723a2957fbc0cdfb71509d",
+      "after_sha256": "80d379c77134059e057d7dc9b4eeeec7d7a42528a975a955a1abab8c807ec86d"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/app/legacy_main_v10.py",
+      "before_sha256": null,
+      "after_sha256": "939acf06d54fc9ee42a6fe74d38eb3e3238c3051c29d696b8a0f38da1241e9f1"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/app/main.py",
+      "before_sha256": "ebfd371ae93ab313d7fc02ca4da823d7bdcd366b5c6d31806d898c7adfeacc3e",
+      "after_sha256": "063f629d86f9150bd717a0ba51e5c99dc8b6de479ba798e9cd5d63a8b112dd39"
+    },
+    {
+      "path": "services/ticket-service/app/main.py",
+      "before_sha256": "6d8f517dcac5fc39fa85ec7f2f878a6a725d3e363b0366fac61efe1f83b2aff7",
+      "after_sha256": "e81f4429c6232b646a0afd90e2a343edf8f5b88cf1ba279b36702b2ae9a633e9"
+    },
+    {
+      "path": "scripts/repair_device_demo_backfill.py",
+      "before_sha256": null,
+      "after_sha256": "735ea6e07faee2c2e556f31d5f2b92a61c7b123be65bd744fc18cbe89b30728f"
+    }
+  ],
+  "docker_build_verified": false
+}

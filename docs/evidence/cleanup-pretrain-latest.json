@@ -1,0 +1,82 @@
+{
+  "project_root": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1",
+  "phase": "pretrain",
+  "applied": true,
+  "created_at": "2026-09-07T22:59:16.755567+00:00",
+  "targets": [
+    {
+      "relative_path": "model-artifacts/.training",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\.training",
+      "existed": true,
+      "bytes": 14493
+    },
+    {
+      "relative_path": "model-artifacts/datasets",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\datasets",
+      "existed": true,
+      "bytes": 10720930
+    },
+    {
+      "relative_path": "model-artifacts/shared",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared",
+      "existed": true,
+      "bytes": 29616932
+    },
+    {
+      "relative_path": "model-artifacts/shared_models_report.json",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared_models_report.json",
+      "existed": true,
+      "bytes": 108589
+    },
+    {
+      "relative_path": "model-artifacts/README.txt",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\README.txt",
+      "existed": true,
+      "bytes": 596
+    },
+    {
+      "relative_path": "data/ml",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\ml",
+      "existed": true,
+      "bytes": 7210622
+    },
+    {
+      "relative_path": "data/runtime_csv",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\runtime_csv",
+      "existed": true,
+      "bytes": 232531228
+    },
+    {
+      "relative_path": "services/ai-analytics-service/app/__pycache__",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\__pycache__",
+      "existed": true,
+      "bytes": 268959
+    },
+    {
+      "relative_path": "services/chatbot-service/app/__pycache__",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\chatbot-service\\app\\__pycache__",
+      "existed": true,
+      "bytes": 84889
+    },
+    {
+      "relative_path": "services/chatbot-service/tests/__pycache__",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\chatbot-service\\tests\\__pycache__",
+      "existed": true,
+      "bytes": 18633
+    },
+    {
+      "relative_path": "scripts/export_train_runtime_ml.ps1",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\scripts\\export_train_runtime_ml.ps1",
+      "existed": true,
+      "bytes": 2609
+    },
+    {
+      "relative_path": "scripts/export_train_runtime_ml.cmd",
+      "absolute_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\scripts\\export_train_runtime_ml.cmd",
+      "existed": true,
+      "bytes": 158
+    }
+  ],
+  "total_bytes_selected": 280578638,
+  "all_absent_after_run": true
+}

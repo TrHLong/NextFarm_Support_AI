@@ -1,0 +1,28 @@
+{
+  "completed_at": "2026-09-10T12:29:20.907859+00:00",
+  "model_ready": 10,
+  "trained_model_count": 10,
+  "model_scope": "simulation_only",
+  "production_ready": false,
+  "support_capabilities": 32,
+  "support_methods": "queries_rules_validation",
+  "api_tests": {
+    "passed": 50,
+    "total": 50
+  },
+  "unit_tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "21",
+    "time": "7.004",
+    "timestamp": "2026-09-10T19:26:25.392915+07:00",
+    "hostname": "WIN-R0SOLLE9FVU"
+  },
+  "csv_files_verified": 24,
+  "native_preview": "http://127.0.0.1:19080/",
+  "docker_build_verified": false,
+  "docx_visual_qa": "pending",
+  "active_run": "device-20260910T012458Z-3f9c7ab697"
+}

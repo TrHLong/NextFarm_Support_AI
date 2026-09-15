@@ -1,0 +1,41 @@
+{
+  "package": "NextFarm-AI-Support-v10.1-COMPLETE",
+  "version": "10.1.1",
+  "baseline": "V10 code-text-only newer snapshot plus restored web UI",
+  "secrets_included": false,
+  "runtime_data_classification": "synthetic_acceptance_not_production",
+  "canonical_training_dataset": "nextfarm-v10.1-training-26d296902921",
+  "model_artifacts": {
+    "version": "2.1.0",
+    "count": 10,
+    "approved": 4,
+    "experimental": 6
+  },
+  "operational_dataset": {
+    "dataset_id": "nextfarm-v10.1-operational-acceptance",
+    "schema_version": "10.1.1",
+    "generator_version": "v10.1.1",
+    "farms": 40,
+    "zones": 120,
+    "users": 80,
+    "sensor_readings": 725760,
+    "period_days": 14,
+    "parquet_tables": 11
+  },
+  "acceptance": {
+    "benchmark_questions": 260,
+    "static_checks_passed": 45,
+    "offline_acceptance_checks_passed": 16,
+    "unit_tests_passed": 57,
+    "planner_cases_evaluated": 240,
+    "planner_tool_accuracy": 1.0,
+    "agronomy_cases_pending_expert_review": 50,
+    "docker_runtime_status": "must_run_on_target_host"
+  },
+  "entrypoints": {
+    "setup": "scripts/setup_v10_env.cmd",
+    "start": "scripts/start_v10.cmd",
+    "offline_acceptance": "python scripts/run_v10_1_acceptance.py",
+    "runtime_acceptance": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check_v10_completion.ps1 -Runtime"
+  }
+}

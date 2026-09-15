@@ -1,0 +1,90 @@
+# Production hardening override. Run with:
+# docker compose -f docker-compose.yml -f docker-compose.production.yml up -d
+services:
+  postgres:
+    ports: !reset []
+
+  mosquitto:
+    ports: !reset []
+    volumes: !override
+      - ./infra/mosquitto/mosquitto.prod.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./infra/mosquitto/acl.prod:/mosquitto/config/acl.prod:ro
+      - ./.secrets/mosquitto.passwords:/mosquitto/secrets/passwords:ro
+      - nextfarm_mqtt:/mosquitto/data
+
+  identity-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  farm-data-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  knowledge-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  ticket-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  telemetry-ingestion-service:
+    ports: !reset []
+    environment:
+      MQTT_USERNAME: nextfarm_ingest
+      MQTT_PASSWORD: ${MQTT_INGEST_PASSWORD:?Set MQTT_INGEST_PASSWORD}
+      INGEST_API_KEY: ${NEXTFARM_INGEST_KEY:?Set NEXTFARM_INGEST_KEY}
+
+  data-simulator-service:
+    ports: !reset []
+    environment:
+      MQTT_USERNAME: nextfarm_simulator
+      MQTT_PASSWORD: ${MQTT_SIMULATOR_PASSWORD:?Set MQTT_SIMULATOR_PASSWORD}
+
+  ai-analytics-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  truth-guard-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  chatbot-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  crop-router-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  llm-gateway-service:
+    ports: !reset []
+    environment:
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:?Set the production HTTPS origin}
+
+  frontend:
+    ports: !override
+      - "${NEXTFARM_HTTP_BIND:-127.0.0.1:18080}:80"
+
+  data-studio:
+    ports: !override
+      - "${NEXTFARM_DATA_STUDIO_BIND:-127.0.0.1:18081}:80"
+
+  knowledge-studio:
+    ports: !override
+      - "${NEXTFARM_KNOWLEDGE_STUDIO_BIND:-127.0.0.1:18082}:80"
+
+  ai-encyclopedia:
+    ports: !override
+      - "${NEXTFARM_AI_ENCYCLOPEDIA_BIND:-127.0.0.1:18084}:80"
+
+volumes:
+  nextfarm_mqtt:

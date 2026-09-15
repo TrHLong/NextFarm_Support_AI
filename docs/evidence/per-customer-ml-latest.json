@@ -1,0 +1,1345 @@
+{
+  "architecture": "per_customer_automatic_ml_pipeline",
+  "model_data_root": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers",
+  "customer_count": 3,
+  "results": [
+    {
+      "customer_id": "customer_lan",
+      "group_counts": {
+        "alerts": 4,
+        "control_commands": 0,
+        "device_status": 51870,
+        "irrigation_runs": 7,
+        "sensor_readings": 127078,
+        "telemetry_ingest_events": 51870
+      },
+      "decision": {
+        "eligible": false,
+        "first_run": false,
+        "counts": {
+          "alerts": 4,
+          "control_commands": 0,
+          "device_status": 51870,
+          "irrigation_runs": 7,
+          "sensor_readings": 127078,
+          "telemetry_ingest_events": 51870
+        },
+        "previous_counts": {
+          "control_commands": 0,
+          "alerts": 4,
+          "device_status": 51570,
+          "irrigation_runs": 7,
+          "sensor_readings": 126378,
+          "telemetry_ingest_events": 51570
+        },
+        "new_rows": {
+          "sensor_readings": 700,
+          "device_status": 300,
+          "telemetry_ingest_events": 300,
+          "irrigation_runs": 0,
+          "alerts": 0,
+          "control_commands": 0
+        },
+        "missing_minimum": {},
+        "reached_retrain_threshold": {},
+        "policy": {
+          "sensor_readings": {
+            "minimum_rows": 20000,
+            "new_rows": 5000,
+            "required": true
+          },
+          "device_status": {
+            "minimum_rows": 5000,
+            "new_rows": 2000,
+            "required": true
+          },
+          "telemetry_ingest_events": {
+            "minimum_rows": 2000,
+            "new_rows": 1000,
+            "required": true
+          },
+          "irrigation_runs": {
+            "minimum_rows": 3,
+            "new_rows": 2,
+            "required": true
+          },
+          "alerts": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          },
+          "control_commands": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          }
+        }
+      },
+      "status": "trained",
+      "snapshot_id": "runtime_20260907T220612Z",
+      "dataset_version": "nextfarm-v10.1-customer_lan-20260907T220622Z-b5349e76d1aa",
+      "processed_rows": 287,
+      "train_count": 200,
+      "validation_count": 43,
+      "test_count": 44,
+      "candidate_model_count": 10,
+      "approved_candidate_count": 0,
+      "active_model_count": 0,
+      "csv_evidence": {
+        "directory": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\processed\\nextfarm-v10.1-customer_lan-20260907T220622Z-b5349e76d1aa",
+        "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_lan\\processed\\nextfarm-v10.1-customer_lan-20260907T220622Z-b5349e76d1aa\\evidence_manifest.json",
+        "file_count": 25,
+        "chat_messages_used_for_training": false
+      },
+      "models": [
+        {
+          "model_name": "moisture_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.26397,
+            "rmse": 0.33053,
+            "r2": 0.90304
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold"
+          ]
+        },
+        {
+          "model_name": "temperature_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.18198,
+            "rmse": 0.22102,
+            "r2": 0.97515
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold"
+          ]
+        },
+        {
+          "model_name": "ec_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.01061,
+            "rmse": 0.01343,
+            "r2": 0.75153
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold"
+          ]
+        },
+        {
+          "model_name": "ph_forecast",
+          "task": "regression",
+          "algorithm": "extra_trees",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.04995,
+            "rmse": 0.05058,
+            "r2": -219.7061
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test R² -219.706 < 0.20 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "anomaly_multisensor",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 44
+              }
+            },
+            "confusion_matrix": [
+              [
+                44
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "flow_fault",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.97727,
+            "precision_macro": 0.65833,
+            "recall_macro": 0.66667,
+            "f1_macro": 0.66245,
+            "labels": [
+              0,
+              1,
+              2
+            ],
+            "true_labels": [
+              0,
+              1,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.975,
+                "recall": 1.0,
+                "f1": 0.98734,
+                "support": 39
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              }
+            },
+            "confusion_matrix": [
+              [
+                39,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        },
+        {
+          "model_name": "irrigation_failure",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.97727,
+            "precision_macro": 0.48864,
+            "recall_macro": 0.5,
+            "f1_macro": 0.49425,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.97727,
+                "recall": 1.0,
+                "f1": 0.98851,
+                "support": 43
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1
+              }
+            },
+            "confusion_matrix": [
+              [
+                43,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test F1 0.494 < 0.65",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "irrigation_need",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0,
+              1
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 24
+              },
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 20
+              }
+            },
+            "confusion_matrix": [
+              [
+                24,
+                0
+              ],
+              [
+                0,
+                20
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "device_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 44
+              }
+            },
+            "confusion_matrix": [
+              [
+                44
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        },
+        {
+          "model_name": "farm_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 44
+              }
+            },
+            "confusion_matrix": [
+              [
+                44
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        }
+      ]
+    },
+    {
+      "customer_id": "customer_long",
+      "group_counts": {
+        "alerts": 3,
+        "control_commands": 0,
+        "device_status": 86450,
+        "irrigation_runs": 14,
+        "sensor_readings": 217848,
+        "telemetry_ingest_events": 69160
+      },
+      "decision": {
+        "eligible": true,
+        "first_run": true,
+        "counts": {
+          "alerts": 3,
+          "control_commands": 0,
+          "device_status": 86450,
+          "irrigation_runs": 14,
+          "sensor_readings": 217848,
+          "telemetry_ingest_events": 69160
+        },
+        "previous_counts": {},
+        "new_rows": {
+          "sensor_readings": 217848,
+          "device_status": 86450,
+          "telemetry_ingest_events": 69160,
+          "irrigation_runs": 14,
+          "alerts": 3,
+          "control_commands": 0
+        },
+        "missing_minimum": {},
+        "reached_retrain_threshold": {
+          "sensor_readings": {
+            "new_rows": 217848,
+            "threshold": 5000
+          },
+          "device_status": {
+            "new_rows": 86450,
+            "threshold": 2000
+          },
+          "telemetry_ingest_events": {
+            "new_rows": 69160,
+            "threshold": 1000
+          },
+          "irrigation_runs": {
+            "new_rows": 14,
+            "threshold": 2
+          }
+        },
+        "policy": {
+          "sensor_readings": {
+            "minimum_rows": 20000,
+            "new_rows": 5000,
+            "required": true
+          },
+          "device_status": {
+            "minimum_rows": 5000,
+            "new_rows": 2000,
+            "required": true
+          },
+          "telemetry_ingest_events": {
+            "minimum_rows": 2000,
+            "new_rows": 1000,
+            "required": true
+          },
+          "irrigation_runs": {
+            "minimum_rows": 3,
+            "new_rows": 2,
+            "required": true
+          },
+          "alerts": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          },
+          "control_commands": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          }
+        }
+      },
+      "status": "trained",
+      "snapshot_id": "runtime_20260907T220635Z",
+      "dataset_version": "nextfarm-v10.1-customer_long-20260907T220655Z-2222bb001505",
+      "processed_rows": 574,
+      "train_count": 400,
+      "validation_count": 86,
+      "test_count": 88,
+      "candidate_model_count": 10,
+      "approved_candidate_count": 6,
+      "active_model_count": 6,
+      "csv_evidence": {
+        "directory": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\processed\\nextfarm-v10.1-customer_long-20260907T220655Z-2222bb001505",
+        "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\processed\\nextfarm-v10.1-customer_long-20260907T220655Z-2222bb001505\\evidence_manifest.json",
+        "file_count": 25,
+        "chat_messages_used_for_training": false
+      },
+      "models": [
+        {
+          "model_name": "moisture_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "mae": 0.29737,
+            "rmse": 0.48245,
+            "r2": 0.54692
+          },
+          "quality_gate_reasons": []
+        },
+        {
+          "model_name": "temperature_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "mae": 0.21469,
+            "rmse": 0.26591,
+            "r2": 0.93935
+          },
+          "quality_gate_reasons": []
+        },
+        {
+          "model_name": "ec_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "mae": 0.00897,
+            "rmse": 0.01106,
+            "r2": 0.67125
+          },
+          "quality_gate_reasons": []
+        },
+        {
+          "model_name": "ph_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.00466,
+            "rmse": 0.00591,
+            "r2": -0.45859
+          },
+          "quality_gate_reasons": [
+            "test R² -0.459 < 0.20 hoặc không hữu hạn",
+            "holdout khu canh tác R² thấp nhất -2.572 < 0 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "anomaly_multisensor",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              1
+            ],
+            "true_labels": [
+              1
+            ],
+            "predicted_labels": [
+              1
+            ],
+            "per_class": {
+              "1": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 88
+              }
+            },
+            "confusion_matrix": [
+              [
+                88
+              ]
+            ]
+          },
+          "quality_gate_reasons": []
+        },
+        {
+          "model_name": "flow_fault",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.97727,
+            "precision_macro": 0.65882,
+            "recall_macro": 0.66667,
+            "f1_macro": 0.6627,
+            "labels": [
+              0,
+              1,
+              2
+            ],
+            "true_labels": [
+              0,
+              1,
+              2
+            ],
+            "predicted_labels": [
+              0,
+              2
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.97647,
+                "recall": 1.0,
+                "f1": 0.9881,
+                "support": 83
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              },
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 3
+              }
+            },
+            "confusion_matrix": [
+              [
+                83,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                3
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "holdout khu canh tác long_b thiếu lớp thật: 2",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        },
+        {
+          "model_name": "irrigation_failure",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.97727,
+            "precision_macro": 0.48864,
+            "recall_macro": 0.5,
+            "f1_macro": 0.49425,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.97727,
+                "recall": 1.0,
+                "f1": 0.98851,
+                "support": 86
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                86,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "test F1 0.494 < 0.65",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50"
+          ]
+        },
+        {
+          "model_name": "irrigation_need",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 88
+              }
+            },
+            "confusion_matrix": [
+              [
+                88
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "tập test thiếu lớp thật: 1",
+            "holdout khu canh tác long_a thiếu lớp thật: 1",
+            "holdout khu canh tác long_b thiếu lớp thật: 1",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "device_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 88
+              }
+            },
+            "confusion_matrix": [
+              [
+                88
+              ]
+            ]
+          },
+          "quality_gate_reasons": []
+        },
+        {
+          "model_name": "farm_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "approved",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              2
+            ],
+            "true_labels": [
+              2
+            ],
+            "predicted_labels": [
+              2
+            ],
+            "per_class": {
+              "2": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 88
+              }
+            },
+            "confusion_matrix": [
+              [
+                88
+              ]
+            ]
+          },
+          "quality_gate_reasons": []
+        }
+      ]
+    },
+    {
+      "customer_id": "customer_minh",
+      "group_counts": {
+        "alerts": 3,
+        "control_commands": 0,
+        "device_status": 69160,
+        "irrigation_runs": 7,
+        "sensor_readings": 145232,
+        "telemetry_ingest_events": 51870
+      },
+      "decision": {
+        "eligible": true,
+        "first_run": true,
+        "counts": {
+          "alerts": 3,
+          "control_commands": 0,
+          "device_status": 69160,
+          "irrigation_runs": 7,
+          "sensor_readings": 145232,
+          "telemetry_ingest_events": 51870
+        },
+        "previous_counts": {},
+        "new_rows": {
+          "sensor_readings": 145232,
+          "device_status": 69160,
+          "telemetry_ingest_events": 51870,
+          "irrigation_runs": 7,
+          "alerts": 3,
+          "control_commands": 0
+        },
+        "missing_minimum": {},
+        "reached_retrain_threshold": {
+          "sensor_readings": {
+            "new_rows": 145232,
+            "threshold": 5000
+          },
+          "device_status": {
+            "new_rows": 69160,
+            "threshold": 2000
+          },
+          "telemetry_ingest_events": {
+            "new_rows": 51870,
+            "threshold": 1000
+          },
+          "irrigation_runs": {
+            "new_rows": 7,
+            "threshold": 2
+          }
+        },
+        "policy": {
+          "sensor_readings": {
+            "minimum_rows": 20000,
+            "new_rows": 5000,
+            "required": true
+          },
+          "device_status": {
+            "minimum_rows": 5000,
+            "new_rows": 2000,
+            "required": true
+          },
+          "telemetry_ingest_events": {
+            "minimum_rows": 2000,
+            "new_rows": 1000,
+            "required": true
+          },
+          "irrigation_runs": {
+            "minimum_rows": 3,
+            "new_rows": 2,
+            "required": true
+          },
+          "alerts": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          },
+          "control_commands": {
+            "minimum_rows": 0,
+            "new_rows": 5,
+            "required": false
+          }
+        }
+      },
+      "status": "trained",
+      "snapshot_id": "runtime_20260907T220710Z",
+      "dataset_version": "nextfarm-v10.1-customer_minh-20260907T220725Z-9049e5fe7761",
+      "processed_rows": 40,
+      "train_count": 28,
+      "validation_count": 6,
+      "test_count": 6,
+      "candidate_model_count": 10,
+      "approved_candidate_count": 0,
+      "active_model_count": 0,
+      "csv_evidence": {
+        "directory": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\processed\\nextfarm-v10.1-customer_minh-20260907T220725Z-9049e5fe7761",
+        "manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_minh\\processed\\nextfarm-v10.1-customer_minh-20260907T220725Z-9049e5fe7761\\evidence_manifest.json",
+        "file_count": 25,
+        "chat_messages_used_for_training": false
+      },
+      "models": [
+        {
+          "model_name": "moisture_forecast",
+          "task": "regression",
+          "algorithm": "extra_trees",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.98133,
+            "rmse": 1.16442,
+            "r2": -3.41661
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test R² -3.417 < 0.20 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "temperature_forecast",
+          "task": "regression",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.12738,
+            "rmse": 0.14849,
+            "r2": -3.70861
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test R² -3.709 < 0.20 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "ec_forecast",
+          "task": "regression",
+          "algorithm": "extra_trees",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.07686,
+            "rmse": 0.08958,
+            "r2": -2.58464
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test R² -2.585 < 0.20 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "ph_forecast",
+          "task": "regression",
+          "algorithm": "extra_trees",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "mae": 0.06974,
+            "rmse": 0.08512,
+            "r2": -1.93219
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test R² -1.932 < 0.20 hoặc không hữu hạn"
+          ]
+        },
+        {
+          "model_name": "anomaly_multisensor",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.66667,
+            "precision_macro": 0.33333,
+            "recall_macro": 0.5,
+            "f1_macro": 0.4,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.66667,
+                "recall": 1.0,
+                "f1": 0.8,
+                "support": 4
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                4,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test F1 0.400 < 0.65",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "flow_fault",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                6
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "dataset không có lớp rủi ro 1",
+            "dataset không có lớp rủi ro 2"
+          ]
+        },
+        {
+          "model_name": "irrigation_failure",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0,
+            "labels": [
+              0
+            ],
+            "true_labels": [
+              0
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                6
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "dataset không có lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "irrigation_need",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.66667,
+            "precision_macro": 0.33333,
+            "recall_macro": 0.5,
+            "f1_macro": 0.4,
+            "labels": [
+              0,
+              1
+            ],
+            "true_labels": [
+              0,
+              1
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.66667,
+                "recall": 1.0,
+                "f1": 0.8,
+                "support": 4
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                4,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test F1 0.400 < 0.65",
+            "recall lớp rủi ro 1 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 1"
+          ]
+        },
+        {
+          "model_name": "device_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.66667,
+            "precision_macro": 0.33333,
+            "recall_macro": 0.5,
+            "f1_macro": 0.4,
+            "labels": [
+              0,
+              2
+            ],
+            "true_labels": [
+              0,
+              2
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.66667,
+                "recall": 1.0,
+                "f1": 0.8,
+                "support": 4
+              },
+              "2": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                4,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test F1 0.400 < 0.65",
+            "recall lớp rủi ro 2 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        },
+        {
+          "model_name": "farm_health",
+          "task": "classification",
+          "algorithm": "random_forest",
+          "deployment_status": "experimental",
+          "test_metrics": {
+            "accuracy": 0.33333,
+            "precision_macro": 0.11111,
+            "recall_macro": 0.33333,
+            "f1_macro": 0.16667,
+            "labels": [
+              0,
+              1,
+              2
+            ],
+            "true_labels": [
+              0,
+              1,
+              2
+            ],
+            "predicted_labels": [
+              0
+            ],
+            "per_class": {
+              "0": {
+                "precision": 0.33333,
+                "recall": 1.0,
+                "f1": 0.5,
+                "support": 2
+              },
+              "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              },
+              "2": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2
+              }
+            },
+            "confusion_matrix": [
+              [
+                2,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0
+              ]
+            ]
+          },
+          "quality_gate_reasons": [
+            "chỉ có 1 khu canh tác; cần ít nhất 2 để kiểm định tổng quát hóa",
+            "holdout theo khu canh tác chỉ hoàn thành 0/1 fold",
+            "test F1 0.167 < 0.65",
+            "recall lớp rủi ro 2 trên test 0.000 < 0.50",
+            "không đủ recall holdout khu canh tác cho lớp rủi ro 2"
+          ]
+        }
+      ]
+    }
+  ]
+}

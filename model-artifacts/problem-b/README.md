@@ -1,0 +1,1 @@
+Runtime collection state and new 72-hour snapshots are generated locally when Docker runs. Historical experiment evidence is stored separately. No operational state is preloaded by this GitHub package.

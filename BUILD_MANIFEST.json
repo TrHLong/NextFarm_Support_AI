@@ -1,0 +1,3429 @@
+{
+  "package": "NextFarm-AI-Support-v10.1.1-COMPLETE",
+  "version": "10.1.1",
+  "generated_at": "2026-09-08T14:21:16.635501+00:00",
+  "source_tree_sha256": "fa8a513bd56bbed71a4f68b5bf7a244ccf72cecf4520055a9c46207101b585ea",
+  "file_count": 682,
+  "total_bytes": 1057440881,
+  "canonical_dataset_version": "nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2",
+  "model_artifact_count": 10,
+  "model_approved_count": 2,
+  "model_experimental_count": 8,
+  "model_active_count": 2,
+  "model_artifacts_exist": true,
+  "offline_acceptance_passed": true,
+  "runtime_certified": false,
+  "runtime_note": "Must be generated on the target Docker host; no runtime claim is bundled.",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 212,
+      "sha256": "0a4063a6c4f653b6e6559d795865f67f6dcd71d0a27f323820aef28caa0195aa"
+    },
+    {
+      "path": ".env",
+      "bytes": 2484,
+      "sha256": "f5bd2f2c4be02d2e9aeb50572db1f7448705edf73882dfeefa5859359d079307"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 1578,
+      "sha256": "31bc180f1cecb3ca04e751fe65abd590d7a10edd9e93770045ac060453a88885"
+    },
+    {
+      "path": ".env.OMITTED.txt",
+      "bytes": 178,
+      "sha256": "ff19ca0893d7774851e63ddac5754ce6f8687e2f834f2a21761a84800ffbc026"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 502,
+      "sha256": "e7e7d24a57439da2b71518a11375e92c66a2bdd41d3091e9942fbe9a6305ae75"
+    },
+    {
+      "path": "apps/ai-encyclopedia/app.js",
+      "bytes": 4892,
+      "sha256": "540598d8f2eaf0bdd61c86eb8b548a8bbd2e9d0674edd7226f778015701e2ef1"
+    },
+    {
+      "path": "apps/ai-encyclopedia/index.html",
+      "bytes": 3488,
+      "sha256": "e938ff4fbe03f5f66ec33a0c68ad9321c96a8454ad04d370a438175952010220"
+    },
+    {
+      "path": "apps/ai-encyclopedia/style.css",
+      "bytes": 3424,
+      "sha256": "71f0827aedf7b18d4e93215ef0a835e2b0d01c77f62e8bbed26c3a097e6bf013"
+    },
+    {
+      "path": "apps/data-studio/app.js",
+      "bytes": 13586,
+      "sha256": "b7eabf078a05b45f889c4adbad39c16ea95eabe066275f5ed5fbcbde8ea29eb3"
+    },
+    {
+      "path": "apps/data-studio/index.html",
+      "bytes": 7554,
+      "sha256": "43dd30931202c2eed8a8e3c3533feaa81fd91c1b5523ad323f1e2d70d21cb8d1"
+    },
+    {
+      "path": "apps/data-studio/style.css",
+      "bytes": 7534,
+      "sha256": "d54b924fc3c9b0c32a6d7c97d4bea9818a1b7194e38b2bf167da04031a9aad75"
+    },
+    {
+      "path": "apps/knowledge-studio/app.js",
+      "bytes": 6360,
+      "sha256": "02c4601edebff8a80b671c7f808b8f8ebc775baab01d87337d266457d08550bf"
+    },
+    {
+      "path": "apps/knowledge-studio/index.html",
+      "bytes": 4704,
+      "sha256": "4d027cafed6810d73495fdd48e4473ddf3bcad1fc298451e069dd21cffdc306b"
+    },
+    {
+      "path": "apps/knowledge-studio/style.css",
+      "bytes": 7590,
+      "sha256": "0804620c953bb1d49122d217697dd94eff0e1664c99ede0522f4e7f53d9d7015"
+    },
+    {
+      "path": "apps/web/app.js",
+      "bytes": 58657,
+      "sha256": "aa1356b129f65a9d349d0fff65b3c01163df7ea565d2a6ecd97f1cb93e2bf1f5"
+    },
+    {
+      "path": "apps/web/index.html",
+      "bytes": 3558,
+      "sha256": "ded0b6f994b4933949076662edd27cfa34692bb631c3ba8cbb1e7b0c2525ee94"
+    },
+    {
+      "path": "apps/web/style.css",
+      "bytes": 18573,
+      "sha256": "0910236345288cfcc14f1bd9e410c9f470e9fe551ebf7089f3ac5ea3690dbc45"
+    },
+    {
+      "path": "apps/web/styles.css",
+      "bytes": 329,
+      "sha256": "109ad62c990decfe1cd674d59b87779ee88094ce64db7768f3719012009a5bef"
+    },
+    {
+      "path": "benchmarks/v10.1/acceptance_260.jsonl",
+      "bytes": 156296,
+      "sha256": "92e6e0e46d107f38816e62a9239dc5e5b262785ac1ce9f97a4ca17fff4d6d386"
+    },
+    {
+      "path": "benchmarks/v10.1/README.md",
+      "bytes": 1604,
+      "sha256": "f7e9faf996878ce9758483fc0b1a182dbb4b143d945ccd3fbe9b64857bc35bc3"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 6407,
+      "sha256": "1642ede0517d07e8ae72d6241fa5df572ba430b7c0ae3c7ba547eafe6f98f706"
+    },
+    {
+      "path": "config/knowledge_sources.json",
+      "bytes": 2386,
+      "sha256": "f59ae856857398f6e349ceba8acb5bfef55c104a8aabd9cab9be17b5ca221fdd"
+    },
+    {
+      "path": "data/operational/alerts.parquet",
+      "bytes": 4814,
+      "sha256": "32848f96372c7b2b9e7ac04b6663776de504380e008a36fec4ae59a8d5c1df5f"
+    },
+    {
+      "path": "data/operational/command_logs.parquet",
+      "bytes": 6679,
+      "sha256": "4089be6bf0ccd4b08651b69c4bbea75fc7ac133791f3af98fa0f07c782eb2579"
+    },
+    {
+      "path": "data/operational/devices.parquet",
+      "bytes": 4665,
+      "sha256": "510ac8998e3ac5c1855205b4c09fcdcf8b58721f3df1e674ed60c4e56ac19cbe"
+    },
+    {
+      "path": "data/operational/farms.parquet",
+      "bytes": 6044,
+      "sha256": "bbf0210e785487f1630dd7befcca1ea02b374003770e64165eaec25ea82f0b14"
+    },
+    {
+      "path": "data/operational/irrigation_events.parquet",
+      "bytes": 13864,
+      "sha256": "5310c1180cbfd14f6105215b51dc114dc783845c1321e5afa6b637547bd9e404"
+    },
+    {
+      "path": "data/operational/irrigation_schedules.parquet",
+      "bytes": 4847,
+      "sha256": "b92854a1185ff67db67a2571fb7f299f961bf63b801af4c09a86a34ac465d0ee"
+    },
+    {
+      "path": "data/operational/sensor_readings.parquet",
+      "bytes": 4043967,
+      "sha256": "2760a163d613197aa0164c353ee9585a92b2a9384e85b605603e7e48436635b5"
+    },
+    {
+      "path": "data/operational/sensors.parquet",
+      "bytes": 5595,
+      "sha256": "5214402b6110c4e7db31a3b39a23b97f4ec9aa5921de859292f191b3cef8c055"
+    },
+    {
+      "path": "data/operational/user_farm_permissions.parquet",
+      "bytes": 4057,
+      "sha256": "366c1468b5ed7ffdddfc5ae16e917017ff2c1fdb00d4be928cd98a16a59889c1"
+    },
+    {
+      "path": "data/operational/users.parquet",
+      "bytes": 3782,
+      "sha256": "07b9514c736d8796c550b8e96e6be6dbc95d57023be1fd470cf0cc71cba59980"
+    },
+    {
+      "path": "data/operational/zones.parquet",
+      "bytes": 7109,
+      "sha256": "61938922e9031a34eac656e4d463aa0bedb4ebbe4d73f0718c192cf781c19f26"
+    },
+    {
+      "path": "docker-compose.production.yml",
+      "bytes": 2599,
+      "sha256": "72e8e7e8a0b39139df3e3e27d5197b7ecdf802f3e4e21b04064786d5807a8b60"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 19835,
+      "sha256": "009b5b5b09ff409e905decc358131dcb3a3b572d4ee43fe8c54b7bccfd2453d1"
+    },
+    {
+      "path": "docs/09-v9-standalone-two-stage-data-ai.md",
+      "bytes": 921,
+      "sha256": "4330c5a05d9aef1b5c6937e9ae40126214b9c0b816f4855aea24088fdc300283"
+    },
+    {
+      "path": "docs/11-company-proposal-sections-4-7.md",
+      "bytes": 16025,
+      "sha256": "fdbe15fa6b89269cc900810b3adafa7df8fbf3b691b806d6751046c96bea7012"
+    },
+    {
+      "path": "docs/12-nextfarm-integration-contract.md",
+      "bytes": 3002,
+      "sha256": "c6cc438a5974c735060bd7845ad1bd6595a3e6326937b5312f640db73d10cc72"
+    },
+    {
+      "path": "docs/13-demo-guide-sections-4-7.md",
+      "bytes": 18088,
+      "sha256": "a1304c6ebdb69fef45f4bc510b74aad69409adc3d495f12f431278371fff4e0c"
+    },
+    {
+      "path": "docs/14-v10-crop-aware-ai-encyclopedia.md",
+      "bytes": 3291,
+      "sha256": "b0f42459a7b529266d49a43ff6c82f437732f943036fd8b3b29fd28be69bbfd2"
+    },
+    {
+      "path": "docs/15-v10-install-run.md",
+      "bytes": 3178,
+      "sha256": "25dcbfd8d373a17bcb70b71a2a20d44c2a68b569012cdbaddd7754b1a3efc450"
+    },
+    {
+      "path": "docs/16-v10-research-model-catalog.md",
+      "bytes": 3209,
+      "sha256": "3e7efe40fee9f4655c8a76c65ecc14343f8decbe2bee18fed647bad97018c950"
+    },
+    {
+      "path": "docs/architecture/00-overall-architecture.dot",
+      "bytes": 1944,
+      "sha256": "7431dac3c2d702f271ca703b104812e5f092d141d6deffedff4a590d2bc268eb"
+    },
+    {
+      "path": "docs/architecture/00-overall-architecture.png",
+      "bytes": 483406,
+      "sha256": "8d5da1e1acf865655aa1e3ed9110e3c3a031a30cdacb34a0c17c4a957539be7f"
+    },
+    {
+      "path": "docs/architecture/00-overall-architecture.svg",
+      "bytes": 27879,
+      "sha256": "3d39948ef02c1a99681ca370fa4419c4e8b211acb56f6ce6dd905a9c6ada19c7"
+    },
+    {
+      "path": "docs/architecture/01-auth-ui-flow.dot",
+      "bytes": 851,
+      "sha256": "3879f69eae74a8c8a4505989e27fc9070d98899e370d2511c4c8307b4dae4c44"
+    },
+    {
+      "path": "docs/architecture/01-auth-ui-flow.png",
+      "bytes": 62342,
+      "sha256": "534bb2f2b226112ffa5a3ebbcae33e3d7db557b326271f666341750e0f65ae5d"
+    },
+    {
+      "path": "docs/architecture/01-auth-ui-flow.svg",
+      "bytes": 8868,
+      "sha256": "7d0f205149dd5efe47da06eecdaa024de69fa538f08299cb9bb40b716a0eb138"
+    },
+    {
+      "path": "docs/architecture/02-telemetry-flow.dot",
+      "bytes": 868,
+      "sha256": "d026085d8329c2f301914b0b9eea17ee62d3b0c377f53f4830751a7dc45a56be"
+    },
+    {
+      "path": "docs/architecture/02-telemetry-flow.png",
+      "bytes": 92574,
+      "sha256": "0988a98bb1b1cafe6f6aa409ca8c01d5d39d0557a18986747a6bc5ccdbeb11e7"
+    },
+    {
+      "path": "docs/architecture/02-telemetry-flow.svg",
+      "bytes": 7234,
+      "sha256": "d4aca8fef02f8269127ffaac5ad05f5ed8c9c548c76d32f6cb1a997692e9cc8b"
+    },
+    {
+      "path": "docs/architecture/03-farm-data-flow.dot",
+      "bytes": 715,
+      "sha256": "64cc2385a568c1e9ec3864c19de58d54ac36158f6a1723a7f9d2118abddebe95"
+    },
+    {
+      "path": "docs/architecture/03-farm-data-flow.png",
+      "bytes": 90659,
+      "sha256": "16c23ab085dc566a314fa0caa46a29c42ff91509c056f795c0a98e633b18e9ff"
+    },
+    {
+      "path": "docs/architecture/03-farm-data-flow.svg",
+      "bytes": 6191,
+      "sha256": "4f785bf67862ae417e89502ca535bdc57a5208b61141beea9dd0c33db3837b9e"
+    },
+    {
+      "path": "docs/architecture/04-ai-ml-flow.dot",
+      "bytes": 1074,
+      "sha256": "bd6e1ad64c9608ca251e314a12328a51c88fbaa695249a59d02c47f2e7fa2de2"
+    },
+    {
+      "path": "docs/architecture/04-ai-ml-flow.png",
+      "bytes": 73803,
+      "sha256": "314494e7ffdcfb62548023f0e2a411d40960b9f2e05f32e6a1076e325b9cc73d"
+    },
+    {
+      "path": "docs/architecture/04-ai-ml-flow.svg",
+      "bytes": 9926,
+      "sha256": "0b5d258c1028afac62d202866398c7c81509d9719be5e79c49418fbdaf06683f"
+    },
+    {
+      "path": "docs/architecture/05-chat-rag-truth-flow.dot",
+      "bytes": 1226,
+      "sha256": "e5c0236a07bde124545c2f4eff89b82f43457daaafc7ec5bc66c03f83ac1c089"
+    },
+    {
+      "path": "docs/architecture/05-chat-rag-truth-flow.png",
+      "bytes": 122465,
+      "sha256": "e9f980b0898e56ef2ff26a3e9a267a5973aeb488c976256cf9e39cd6297a0757"
+    },
+    {
+      "path": "docs/architecture/05-chat-rag-truth-flow.svg",
+      "bytes": 12679,
+      "sha256": "69992ea96ee1b61514c4dfd5e5bdfaa504d85dfd2248babe2f9b339e2790a5fe"
+    },
+    {
+      "path": "docs/architecture/06-crop-router-encyclopedia-flow.dot",
+      "bytes": 817,
+      "sha256": "f575fe48a7138e3b0dfb6c8e68ab900c775cfc299dbeadc511f65e558bfc438f"
+    },
+    {
+      "path": "docs/architecture/06-crop-router-encyclopedia-flow.png",
+      "bytes": 206742,
+      "sha256": "6a0de0dd45de2a5bda16b10dc9b0a1825773fd0801005a61578cfef8b34c2f33"
+    },
+    {
+      "path": "docs/architecture/06-crop-router-encyclopedia-flow.svg",
+      "bytes": 8481,
+      "sha256": "ab222f76481ca3f1cb1ed78a95d89b5ca79896302cd23ee29373931787208379"
+    },
+    {
+      "path": "docs/architecture/07-knowledge-flow.dot",
+      "bytes": 886,
+      "sha256": "c4dfe7a74047286c92a00e1b6a56befebe174fecc8dff4ac7cad7964f52a017e"
+    },
+    {
+      "path": "docs/architecture/07-knowledge-flow.png",
+      "bytes": 129249,
+      "sha256": "a7b459dd94881deae09ac1f61652c2c7b5d0998301aab8e719d9ef6cb6d6b021"
+    },
+    {
+      "path": "docs/architecture/07-knowledge-flow.svg",
+      "bytes": 7859,
+      "sha256": "c68dc91ff4f5a81148f4ec310c1b5dc0c0c9d62e6ffe10b07e10889bf9b170df"
+    },
+    {
+      "path": "docs/architecture/08-ticket-support-flow.dot",
+      "bytes": 892,
+      "sha256": "ea796df10d5268ccbdce3b7ded3924608ce84fe9781405657e258acf5f4c8fa7"
+    },
+    {
+      "path": "docs/architecture/08-ticket-support-flow.png",
+      "bytes": 105826,
+      "sha256": "80bfee1a70720ab30b0e7966b2b06630bc044fd706d4c9c5b2fdfae6f14ab672"
+    },
+    {
+      "path": "docs/architecture/08-ticket-support-flow.svg",
+      "bytes": 8700,
+      "sha256": "3c16de20e18261297c8b900a305281a72773246d204b4c6c00ea55bd99c8d21b"
+    },
+    {
+      "path": "docs/architecture/09-v10.1-acceptance-flow.png",
+      "bytes": 141245,
+      "sha256": "eb92c7db677b4cfd7ffe5ae8ba4369d30ed24f63468904f2287818701bdc23bc"
+    },
+    {
+      "path": "docs/architecture/09-v10.1-acceptance-flow.svg",
+      "bytes": 5470,
+      "sha256": "f4e78c048a91a6f891077e97f8e67e613add4712038e59bd760873b3623ca5d8"
+    },
+    {
+      "path": "docs/architecture/README.md",
+      "bytes": 1798,
+      "sha256": "3a1768778b029645a142e11369687961c6a559d0fbcd9e5ad500c30e26085c83"
+    },
+    {
+      "path": "docs/architecture/README.txt",
+      "bytes": 303,
+      "sha256": "202606a7f32fac4feedf940dcd03d1330939ed9adcfbaefcd793042d225e7b45"
+    },
+    {
+      "path": "docs/BAO-CAO-KIEN-TRUC-LLM-VA-LUONG-XU-LY-CAU-HOI.docx",
+      "bytes": 43989,
+      "sha256": "dcb7e30774b7c29e7ab9c7c9a4a944504f82b349a10566fadc06894e66ad6dd5"
+    },
+    {
+      "path": "docs/BAO-CAO-THUC-NGHIEM-10-MODEL-VA-32-NANG-LUC.docx",
+      "bytes": 46404,
+      "sha256": "3b40e55809c0a6587772bb67f5579413016c696fb2e62408ae7c39c9b5227f15"
+    },
+    {
+      "path": "docs/CAU-TRUC-THU-MUC-VA-DAN-CHUNG.md",
+      "bytes": 9664,
+      "sha256": "352c794f955836dd0416cdcfe37737e2dd9bc7abd3a9de0966e9acb6f7acece8"
+    },
+    {
+      "path": "docs/evidence/ai-capabilities-32.csv",
+      "bytes": 11366,
+      "sha256": "b9e60cf3a83c3ed6023237ed3feb56ffe1af28124343a4e311c8d9fb5541df3c"
+    },
+    {
+      "path": "docs/evidence/archive/demo-sections-4-7-full-20260818.json",
+      "bytes": 7315,
+      "sha256": "0a47eb25f85cb0ee97cdf496c4b98c2c1a955bb25ee1403e22e3f66539c87d51"
+    },
+    {
+      "path": "docs/evidence/archive/demo-sections-4-7-latest.json",
+      "bytes": 7315,
+      "sha256": "0a47eb25f85cb0ee97cdf496c4b98c2c1a955bb25ee1403e22e3f66539c87d51"
+    },
+    {
+      "path": "docs/evidence/archive/v10-package-manifest-pre-stabilization.json",
+      "bytes": 984,
+      "sha256": "49ffdcaa6473c4aca9f71c1854082397109501cf5d0f5a7f5d01abea97c15ede"
+    },
+    {
+      "path": "docs/evidence/archive/v10-runtime-validation-latest.json",
+      "bytes": 5992,
+      "sha256": "52a914455c89094237175eab85626e3af2164d7d8211b3bd910d7700c81a394a"
+    },
+    {
+      "path": "docs/evidence/archive/v10-static-validation-v10.0.json",
+      "bytes": 2466,
+      "sha256": "80764f4042c75215125bf08e334a6b3f042b293f1627a20d5c3e6befe034410e"
+    },
+    {
+      "path": "docs/evidence/archive/v10-unit-test-summary-pre-stabilization.json",
+      "bytes": 703,
+      "sha256": "f1dea9b126f2b285bacfd4493595db40577e662effdf16b1f361da2476647961"
+    },
+    {
+      "path": "docs/evidence/archive/v10-unit-test-summary.json",
+      "bytes": 1862,
+      "sha256": "1e8d790c1f5e90aa5ddda3bad97f84b617cdd7f2c60efc201121d95110ac105f"
+    },
+    {
+      "path": "docs/evidence/archive/v9-build-validation.json",
+      "bytes": 2258,
+      "sha256": "e08ce4ca7723948ed7ac713639a625181f3ddd5d5212e7b341d5e718edd15d90"
+    },
+    {
+      "path": "docs/evidence/archive/v9-completion-runtime-validation-20260815.json",
+      "bytes": 1933,
+      "sha256": "231775fa871ab12aa0806389e604be91ebfc2f51d265f990499bf2fb9ffc3c47"
+    },
+    {
+      "path": "docs/evidence/archive/v9-standalone-contract-report.json",
+      "bytes": 7734,
+      "sha256": "67d8ea412ef8f0e044148718be6e5ad768d2104f013c924e2f451c8ffd892cf2"
+    },
+    {
+      "path": "docs/evidence/chatbot-grounding-probe-latest.json",
+      "bytes": 18585,
+      "sha256": "b73acb21d7a22d48fc77e691e99064f515b4f39987d7b2e4dfc5a0cd3820a32d"
+    },
+    {
+      "path": "docs/evidence/cleanup-posttrain-latest.json",
+      "bytes": 5109,
+      "sha256": "d4be444ce9fada6b27dcf7d672ebcc6909d1d5dc8947f03cbb2d3390de6f5f65"
+    },
+    {
+      "path": "docs/evidence/cleanup-pretrain-latest.json",
+      "bytes": 3023,
+      "sha256": "ae16778dd30de44c8f1e2f9cbe4b5b3690301fb063496c3b6992a41964fccf9c"
+    },
+    {
+      "path": "docs/evidence/cleanup-summary.json",
+      "bytes": 1233,
+      "sha256": "0b9cd49f6b36ae5ed03e7dbe0952ed457c8a21b790a7ce0e1f92954ed59d94fa"
+    },
+    {
+      "path": "docs/evidence/ML-REPORT-SNAPSHOT-nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e.json",
+      "bytes": 134844,
+      "sha256": "09e1178d856ac69796cf56fceb06e4a3ca210dd40a6bf87861a28108a555f2b9"
+    },
+    {
+      "path": "docs/evidence/per-customer-ml-implementation-validation.json",
+      "bytes": 3094,
+      "sha256": "96804d320e057ad8c8068f043a94ceddbeb81f24d24e400f8a80283920f201c7"
+    },
+    {
+      "path": "docs/evidence/per-customer-ml-latest.json",
+      "bytes": 40433,
+      "sha256": "e9a62601f65f0a57c7c5ac7f84b37d75877322eada9db08de054096f9443e54a"
+    },
+    {
+      "path": "docs/evidence/per-customer-ml-verification.json",
+      "bytes": 26952,
+      "sha256": "0628808e5797620ce95da40faae69da1a79ebac9bf2223e0bcd6e264ee23a02d"
+    },
+    {
+      "path": "docs/evidence/shared-ml-latest.json",
+      "bytes": 14284,
+      "sha256": "ae8023520955c7a26cd0517bc3b95c55946fc2e3cace05c525eb5f0801fc6c05"
+    },
+    {
+      "path": "docs/evidence/shared-ml-verification.json",
+      "bytes": 29325,
+      "sha256": "60f8c103388fcd482706a1921b0f16f2f79f57ee4c5d72b6c0f39f8dd928e6b3"
+    },
+    {
+      "path": "docs/evidence/v10.1-acceptance-offline.json",
+      "bytes": 4508,
+      "sha256": "115c25d5118f0b0d51e8a9fa9d459e898be1ea1f6a9d8ec5e5c3fbea91ab79c3"
+    },
+    {
+      "path": "docs/evidence/v10.1-manual-feedback-probe.json",
+      "bytes": 12282,
+      "sha256": "f5aeafa761c08e5d4bfdec7c723db6d656b34688d8f17da9942c5d8c27664635"
+    },
+    {
+      "path": "docs/evidence/v10.1-runtime-validation-latest.json",
+      "bytes": 9470,
+      "sha256": "f4996fba6e0f917f7a245272c96e48fe195795f19d7ad5050f70afd84e7f2140"
+    },
+    {
+      "path": "docs/evidence/v10.1-static-validation.json",
+      "bytes": 2573,
+      "sha256": "8416a091ab709f84b73c2b3e6de457a9d1bc2f063b090bf3f36d65ca24f899b3"
+    },
+    {
+      "path": "docs/evidence/v10.1-unit-test-summary.json",
+      "bytes": 2343,
+      "sha256": "53f930205f0ced86638c2d211a6e5fca5d14a96ba17697962701340f57d8aad6"
+    },
+    {
+      "path": "docs/HUONG-DAN-ML-THEO-KHACH-HANG.md",
+      "bytes": 12049,
+      "sha256": "b74177b31869ff9f34752ce1901f638e857b2f290a7d36bedf5a1154f6f6ab18"
+    },
+    {
+      "path": "docs/V10.1-AI-MODEL-EVIDENCE-GUIDE.md",
+      "bytes": 1235,
+      "sha256": "4711c0e5784fcc224f6aa314ce0443b646862cf2f8718d41031957c2d0589153"
+    },
+    {
+      "path": "docs/V10.1-COMPANY-REMEDIATION.md",
+      "bytes": 3162,
+      "sha256": "fa0118d9ce15c947edd279888717a0976f62103375efef264b06545d0f3f18c9"
+    },
+    {
+      "path": "docs/V10.1-FEEDBACK-AUDIT.md",
+      "bytes": 8404,
+      "sha256": "fdfa90bee744dd1c39f0f07117e3cd67d08ef38bb1c43ba8c6223be6ced6e2e8"
+    },
+    {
+      "path": "docs/V10.1-FEEDBACK-MANUAL-TEST-GUIDE.md",
+      "bytes": 19935,
+      "sha256": "05c677f066fde50e5f5825210521b5a7ca8541810a79442c8f889ad7c014a476"
+    },
+    {
+      "path": "docs/V10.1-FEEDBACK-REPORT-TEMPLATE.md",
+      "bytes": 7872,
+      "sha256": "a005bc60bac818ce05ff09d939f33e1355210d707898538123d2737c25b418d5"
+    },
+    {
+      "path": "HUONG-DAN-TEST-V10.md",
+      "bytes": 7078,
+      "sha256": "ae29c4f4ca76f13dda246c286c4632e8e60c716158b893ca560fc364980e5449"
+    },
+    {
+      "path": "infra/ai-encyclopedia-nginx.conf",
+      "bytes": 489,
+      "sha256": "80c3c6007b976b89d8b90058f468e01fa65b740a57ad180b7f006c57bf32b7bd"
+    },
+    {
+      "path": "infra/data-studio-nginx.conf",
+      "bytes": 536,
+      "sha256": "bb777b59499b049ee703e240c5697aee8872e2d004adfd936b8a228d5fc74632"
+    },
+    {
+      "path": "infra/database/01_schema.sql",
+      "bytes": 39798,
+      "sha256": "d2471ec8f2b180d0a9c6534dfd98c79e50532961f5dad379ebda6edd08548ff1"
+    },
+    {
+      "path": "infra/database/02_seed_demo.sql",
+      "bytes": 39236,
+      "sha256": "ffdcdcf977c0dfad762da5ee789d992dab8868c75d1fe93afcd3bf6e2dcef0d1"
+    },
+    {
+      "path": "infra/database/03_v10_ops_migration.sql",
+      "bytes": 5780,
+      "sha256": "d217df4c80deaecdae688803a8adcf5f448850a36aa8afb283a3b43c72c1b5ec"
+    },
+    {
+      "path": "infra/database/04_v10_ai_encyclopedia.sql",
+      "bytes": 22762,
+      "sha256": "edb11bbf328086cf8c6b3c61c4fb3ce2fa1f58ef3439dd9a9dfe1b2f570b3765"
+    },
+    {
+      "path": "infra/database/05_v10_demo_runtime_seed.sql",
+      "bytes": 1713,
+      "sha256": "9d65d42e71774ea27f5261e55bd0531c5b95d944539a842c52d005e8dbfb920b"
+    },
+    {
+      "path": "infra/database/06_v10_1_acceptance.sql",
+      "bytes": 1193,
+      "sha256": "56df9be8153db44b44a833176fa51479aca8403948d01d88ebff492b09707103"
+    },
+    {
+      "path": "infra/database/07_v10_1_customer_ml_evidence.sql",
+      "bytes": 5607,
+      "sha256": "4e475607602e8c097c587165210319b0ccebb1046a14516dbbe048db31639b93"
+    },
+    {
+      "path": "infra/knowledge-studio-nginx.conf",
+      "bytes": 372,
+      "sha256": "45e8ccff9ca4563dbf174c93764a0b7032bd2216b4c8fe9baebdfaa53f3a5946"
+    },
+    {
+      "path": "infra/mosquitto/acl.prod",
+      "bytes": 99,
+      "sha256": "eb44ec44ea92d84db9395112041ed72c3d362fcbbee4dc9601045b132bbdfd8a"
+    },
+    {
+      "path": "infra/mosquitto/mosquitto.conf",
+      "bytes": 134,
+      "sha256": "e43382218c39184b35e1e9d87e020073a1b972a7da86c38309a9e7138e9e2a7f"
+    },
+    {
+      "path": "infra/mosquitto/mosquitto.prod.conf",
+      "bytes": 296,
+      "sha256": "8bd365747714c0c7b1e5b3b1dab592d08dd276995fcdba63a6da5d8985c6d3d9"
+    },
+    {
+      "path": "infra/nginx-global.conf",
+      "bytes": 458,
+      "sha256": "4b8743862ab2cc2d139a6ca282078226ebba12b842657767f642c1ff334f2907"
+    },
+    {
+      "path": "infra/nginx.conf",
+      "bytes": 1959,
+      "sha256": "cf91d125b7101e2a14bacc8379d5f16fa7a69a50efa79a535833258fad983b47"
+    },
+    {
+      "path": "infra/postgres/Dockerfile",
+      "bytes": 262,
+      "sha256": "08428518fec61cab01510fbe5ebec4b3928538097e142f6077917aec793a6e8f"
+    },
+    {
+      "path": "infra/postgres/nextfarm-postgres-entrypoint.sh",
+      "bytes": 958,
+      "sha256": "b92baed3c2fb440b983733ba4f218a41d81c87d1496be5fcbae481d75db9ee3e"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/CURRENT_SNAPSHOT.txt",
+      "bytes": 25,
+      "sha256": "f9b8d5cda355df3c000a25bab5f117dbd9bb86e59825737231cc68afb7df7cb5"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e.json",
+      "bytes": 1819,
+      "sha256": "a2e4f67e3de87c39118eab61abed0e9fca00411de1d63b4d30a9bfb9a6558abd"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e.parquet",
+      "bytes": 77691,
+      "sha256": "3188289fa77eb4a7bba3117ac237ada38eeb67c35b218ed703a3080223dba715"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T140655Z-6a2bb71407a7.json",
+      "bytes": 1831,
+      "sha256": "f38a078bf96cf97266bb344a17016b1ffac7f1721216bcac6b79a07042ce762c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T140655Z-6a2bb71407a7.parquet",
+      "bytes": 50014,
+      "sha256": "6a2bb71407a7752d9bede4e8de7b6241e7626f2014739e1d79734099072514fa"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c.json",
+      "bytes": 1831,
+      "sha256": "0d237f251e25bf6cc8d4a04a2769d170372dc5233afaca54fbc9923727c51c8d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/datasets/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c.parquet",
+      "bytes": 50192,
+      "sha256": "8a4b1f09c07caa5f1d1fb28e38d2a60e7a17a083ce0c84c708e5f7adb44b26fc"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e/01_processed_features_targets.csv",
+      "bytes": 175486,
+      "sha256": "c108680d928010242b80080be1eeb524501e86b10fa47dae17fc991c0be744dd"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T103137Z-3188289fa77e/source_manifest.json",
+      "bytes": 1075,
+      "sha256": "26414f74f54808ae0ab006787c0c3018a5fa5b5c65b117170dc6ff66abedc9e1"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T140655Z-6a2bb71407a7/01_processed_features_targets.csv",
+      "bytes": 40256,
+      "sha256": "b191b268ecd36edf5eb65cf97c290b8548c8e22b5660e9e76e3b6cd9c9f30604"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T140655Z-6a2bb71407a7/source_manifest.json",
+      "bytes": 1075,
+      "sha256": "92d70671a0dcd154619ead3c1fa3046be22e7fd5d19e4cb10c04b69e526b1a47"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c/01_processed_features_targets.csv",
+      "bytes": 40903,
+      "sha256": "11fea5337a604f1a0ee25c8c7c8d624eb2ca581a411c9b1cd1b8d32ca61c14f5"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/processed/nextfarm-v10.1-customer_lan-20260908T141547Z-8a4b1f09c07c/source_manifest.json",
+      "bytes": 1075,
+      "sha256": "d2737f95c6e5fe0d690147d7172acdb0b9d3a45c3f467a28d00d4edcaa41876c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/alerts.csv",
+      "bytes": 893,
+      "sha256": "126c4052e6af469af3e195b8ba668110842ef579688791351820450a1e244097"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "baf710797fc30884de44b1f5a2aa4c155f6ed5220d58fbfc6689a86d77f797a2"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/device_status.csv",
+      "bytes": 12983253,
+      "sha256": "c8ef1bb83ef8f91bec55910264fbf653a20c832b0226287a2adfcb046b3aa152"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/farm_ai_profiles.csv",
+      "bytes": 427,
+      "sha256": "cf67b365edf007a63074b78b7352fc0d6645c97dba554f1c9093dec86764f25b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/farms.csv",
+      "bytes": 366,
+      "sha256": "27e6ae6021d38d2938b882eebeaa6d67cf8b03734eed11754ad044130787c645"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/irrigation_runs.csv",
+      "bytes": 1133,
+      "sha256": "8efa2ff9fc97a828ae951d5d68b26ae4acd5feb4658cc0cea1edf7e89d34befd"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/irrigation_schedules.csv",
+      "bytes": 215,
+      "sha256": "698597faa02ba043139f85a4186b56156a3ebb6a59fc11e2a0102eddc6ff4ea1"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/sensor_readings.csv",
+      "bytes": 57044326,
+      "sha256": "d368fb346207fb78fd3534edfe6a9dbb8d674c5b110a87342988085707380cba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/sensors.csv",
+      "bytes": 701,
+      "sha256": "f262a9fe5031b10016a9aec3888dc235e35f8c2ca36f9678c5bf8b9a5418d5e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/telemetry_ingest_events.csv",
+      "bytes": 15643046,
+      "sha256": "be471a35c922228d0b01474dda17cfcafc3e12f427797318ca35a7d06716e34f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/raw/zones.csv",
+      "bytes": 308,
+      "sha256": "bc5bd52d3da47f5db2799ae08bbdc1700733daea8721d9519cd7a2c27aac8500"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T103128Z/snapshot_manifest.json",
+      "bytes": 7495,
+      "sha256": "0c99bd747129e6730a22b1f7e48a333027560b777c2fe5bb2cf2c763735de591"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/alerts.csv",
+      "bytes": 893,
+      "sha256": "126c4052e6af469af3e195b8ba668110842ef579688791351820450a1e244097"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "c4ced25689df1c05b1e75f28cef3f3081572250563448c60ca7f8a4634033fdb"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/device_status.csv",
+      "bytes": 13136576,
+      "sha256": "3a2c9617531941cba4ca934fb5aa9d20a964a36e66301d718bafff5f93300a2b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/farm_ai_profiles.csv",
+      "bytes": 427,
+      "sha256": "cf67b365edf007a63074b78b7352fc0d6645c97dba554f1c9093dec86764f25b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/farms.csv",
+      "bytes": 366,
+      "sha256": "27e6ae6021d38d2938b882eebeaa6d67cf8b03734eed11754ad044130787c645"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/irrigation_runs.csv",
+      "bytes": 1133,
+      "sha256": "cb693f416fce4df590fd191c3f2af5e72136f2f0df1fd345b467cddaf038d213"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/irrigation_schedules.csv",
+      "bytes": 215,
+      "sha256": "698597faa02ba043139f85a4186b56156a3ebb6a59fc11e2a0102eddc6ff4ea1"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/sensor_readings.csv",
+      "bytes": 57695871,
+      "sha256": "8c087eb9bbd37deb66389a4633d25934d94e6b09bf366b372530eb7d1a3101dc"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/sensors.csv",
+      "bytes": 701,
+      "sha256": "f262a9fe5031b10016a9aec3888dc235e35f8c2ca36f9678c5bf8b9a5418d5e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/telemetry_ingest_events.csv",
+      "bytes": 15827705,
+      "sha256": "998866c58be9383811246e1173cc2215bfce33671e9005665e5c67c9583da4bd"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/raw/zones.csv",
+      "bytes": 308,
+      "sha256": "bc5bd52d3da47f5db2799ae08bbdc1700733daea8721d9519cd7a2c27aac8500"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T140644Z/snapshot_manifest.json",
+      "bytes": 7495,
+      "sha256": "0c664e6699eeafb3ca2d0a8e1cfa90351719f478432290ad00ed206dce6a1454"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/alerts.csv",
+      "bytes": 893,
+      "sha256": "126c4052e6af469af3e195b8ba668110842ef579688791351820450a1e244097"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "c4ced25689df1c05b1e75f28cef3f3081572250563448c60ca7f8a4634033fdb"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/device_status.csv",
+      "bytes": 13266235,
+      "sha256": "6c7e9f9715859a57d16f0b684dd3fbda8fa70fac1d20832dc1760d20fba5e90e"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/farm_ai_profiles.csv",
+      "bytes": 427,
+      "sha256": "cf67b365edf007a63074b78b7352fc0d6645c97dba554f1c9093dec86764f25b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/farms.csv",
+      "bytes": 366,
+      "sha256": "27e6ae6021d38d2938b882eebeaa6d67cf8b03734eed11754ad044130787c645"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/irrigation_runs.csv",
+      "bytes": 1133,
+      "sha256": "cb693f416fce4df590fd191c3f2af5e72136f2f0df1fd345b467cddaf038d213"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/irrigation_schedules.csv",
+      "bytes": 215,
+      "sha256": "698597faa02ba043139f85a4186b56156a3ebb6a59fc11e2a0102eddc6ff4ea1"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/sensor_readings.csv",
+      "bytes": 58246856,
+      "sha256": "45148d393ffe5e417fa84028ab29986db3272aa728b1193f2b83c072826afe42"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/sensors.csv",
+      "bytes": 701,
+      "sha256": "f262a9fe5031b10016a9aec3888dc235e35f8c2ca36f9678c5bf8b9a5418d5e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/telemetry_ingest_events.csv",
+      "bytes": 15983836,
+      "sha256": "92d8f48d29e0e2beb9df97ed37f49890dc9337eadcc5eaf40d31cf021da4d2d8"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/raw/zones.csv",
+      "bytes": 308,
+      "sha256": "bc5bd52d3da47f5db2799ae08bbdc1700733daea8721d9519cd7a2c27aac8500"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_lan/snapshots/runtime_20260908T141537Z/snapshot_manifest.json",
+      "bytes": 7495,
+      "sha256": "bdaaa23f7f0d095405b124c39b91c91d802ef8e683b1f5bac5d3603fb713d3a7"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/CURRENT_SNAPSHOT.txt",
+      "bytes": 25,
+      "sha256": "6e0f5d5aa19e5410586ff7ca164a518da60e178bddf395427f88151d5c468854"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade.json",
+      "bytes": 1828,
+      "sha256": "105bf8f1e6b78c68d2058efb71a74659ed611c3a84743fdb23c41f62ea413e08"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade.parquet",
+      "bytes": 102220,
+      "sha256": "d34e957dbadedfb71aa4cf469413c51fc850ff7efbcc653f2b2e6943bddba939"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T140713Z-47e150b2c95a.json",
+      "bytes": 1838,
+      "sha256": "f974c84bb0b5deab20c2859139d59aafeb207b981404b052718f035be411a5b4"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T140713Z-47e150b2c95a.parquet",
+      "bytes": 58747,
+      "sha256": "47e150b2c95a9492429af099fa9c150dd9f07e97c85c519ef70a3f217159445d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663.json",
+      "bytes": 1838,
+      "sha256": "6be21858b05aa50a032489bcbb168e148138caa95eb5b80e936a6c7229d03b32"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/datasets/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663.parquet",
+      "bytes": 59043,
+      "sha256": "68fbb7257663a19f2d66c45b97cb0a2468616125f8ab476b4fb848e239a0f5e3"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade/01_processed_features_targets.csv",
+      "bytes": 341601,
+      "sha256": "cf98a8f5e339a9d3ce5fc63369256559cdc63b106979ac80d4795dab23caa288"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T103153Z-d34e957dbade/source_manifest.json",
+      "bytes": 1086,
+      "sha256": "49d00c4d57bd00c593100bb778a06845416f4dea3294bd66f4e8f42000c69119"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T140713Z-47e150b2c95a/01_processed_features_targets.csv",
+      "bytes": 77081,
+      "sha256": "38cab9bcba90c85e4320b926af623c3fb1ef147086260926fd20d60a693c1a9d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T140713Z-47e150b2c95a/source_manifest.json",
+      "bytes": 1087,
+      "sha256": "76630fc7437ae6301d7c83f148f5f4c1e1c48ccb869da97c8d8facfc5941e91d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663/01_processed_features_targets.csv",
+      "bytes": 78313,
+      "sha256": "59674fa4d4e13c84f8d200a82b0ca4b6d9d5257f10515c77cafde2ae562f6733"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/processed/nextfarm-v10.1-customer_long-20260908T141605Z-68fbb7257663/source_manifest.json",
+      "bytes": 1087,
+      "sha256": "15613949fd6c65fa86b043aa736c827dabf3cb64adc32771d995e52697b8981b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/alerts.csv",
+      "bytes": 1934,
+      "sha256": "086bc7f834c68ed729140b295537b7cef0451a5c0b30ad301e175f9b5d11f86f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "b4b8c5c5ed8c7ed9795d90d6c721b12c9de05ecd9fa37520af8ced8d0b567961"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/device_status.csv",
+      "bytes": 21944347,
+      "sha256": "52e8f8a46e6b6f98ceddb48c3278d2c25c4a37b8165bfe55966c6f6a9ea97cc6"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/farm_ai_profiles.csv",
+      "bytes": 417,
+      "sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/farms.csv",
+      "bytes": 384,
+      "sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/irrigation_runs.csv",
+      "bytes": 2223,
+      "sha256": "a3887be8ad501fd82e4a75b8eb767ab27dcd5f3a0e1c2fbaca154d2962fcbbbb"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/irrigation_schedules.csv",
+      "bytes": 323,
+      "sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/sensor_readings.csv",
+      "bytes": 100177395,
+      "sha256": "984e3444e533b6d92f8336ee651f58d4f9cbc6ee93c99e7ee4ad1c6e36620785"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/sensors.csv",
+      "bytes": 1205,
+      "sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/telemetry_ingest_events.csv",
+      "bytes": 21214140,
+      "sha256": "4c735330f44ecd9cbb9153306e4a190dd70125dca4ef211b040a1b0a13536f56"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/raw/zones.csv",
+      "bytes": 409,
+      "sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T103137Z/snapshot_manifest.json",
+      "bytes": 7515,
+      "sha256": "5dba1437c8c8f4eeaf6ff6b9902c11c8480b8753413b5f817faf92f305869f96"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/alerts.csv",
+      "bytes": 1934,
+      "sha256": "086bc7f834c68ed729140b295537b7cef0451a5c0b30ad301e175f9b5d11f86f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "5074f417db44db16cc649eed68d49be9448862cf18a6ddaa0fcccdd09eb982fe"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/device_status.csv",
+      "bytes": 22203985,
+      "sha256": "37561bb14c242c8f8323475ccb94e6a110b875d0a5f1491c59ab24ddecd965ec"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/farm_ai_profiles.csv",
+      "bytes": 417,
+      "sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/farms.csv",
+      "bytes": 384,
+      "sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/irrigation_runs.csv",
+      "bytes": 2223,
+      "sha256": "549a80769fb09e3d8317c85d0eb5548d86879afcccf612bd9fb0bc3b63e250f0"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/irrigation_schedules.csv",
+      "bytes": 323,
+      "sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/sensor_readings.csv",
+      "bytes": 101324976,
+      "sha256": "774d03c321d3871571d77381f88f54b6e16dc58261afbc1131b3f49af7648e9f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/sensors.csv",
+      "bytes": 1205,
+      "sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/telemetry_ingest_events.csv",
+      "bytes": 21465299,
+      "sha256": "fb4d6076ea70331a32d99af339dbe570cc96c0bcd69795e9eb8d3953af92494b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/raw/zones.csv",
+      "bytes": 409,
+      "sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T140655Z/snapshot_manifest.json",
+      "bytes": 7515,
+      "sha256": "2bc08fb05cc7349b1208a7f3e3af650410600b0f32589760aec6948e6642ee54"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/alerts.csv",
+      "bytes": 1934,
+      "sha256": "086bc7f834c68ed729140b295537b7cef0451a5c0b30ad301e175f9b5d11f86f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "5074f417db44db16cc649eed68d49be9448862cf18a6ddaa0fcccdd09eb982fe"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/device_status.csv",
+      "bytes": 22423891,
+      "sha256": "4ea0574d024cb42435d3e5d409624ebc0de37262fc6721fa6d1ef104a62c8665"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/farm_ai_profiles.csv",
+      "bytes": 417,
+      "sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/farms.csv",
+      "bytes": 384,
+      "sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/irrigation_runs.csv",
+      "bytes": 2223,
+      "sha256": "549a80769fb09e3d8317c85d0eb5548d86879afcccf612bd9fb0bc3b63e250f0"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/irrigation_schedules.csv",
+      "bytes": 323,
+      "sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/sensor_readings.csv",
+      "bytes": 102295968,
+      "sha256": "b5afffc08cd67846d81229f1488ee3304b2eae351ed3484c4fa8023683088e5b"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/sensors.csv",
+      "bytes": 1205,
+      "sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/telemetry_ingest_events.csv",
+      "bytes": 21677810,
+      "sha256": "943c0901934f2034daaabf773458e1d789da207b72141973f5996ab2f30f28a1"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/raw/zones.csv",
+      "bytes": 409,
+      "sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_long/snapshots/runtime_20260908T141547Z/snapshot_manifest.json",
+      "bytes": 7515,
+      "sha256": "25f02c4fee3ce2c224bf3ef278918712904391626f7270f6c66a384381d46ccd"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/CURRENT_SNAPSHOT.txt",
+      "bytes": 25,
+      "sha256": "28e23153efb2cd18abcaba47a6c11f568370a5a59c680ca8269e16ea3287a77f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f.json",
+      "bytes": 1837,
+      "sha256": "54ca5d4141fc304c8878b1139b8c7a4d4487def6cd6b73b744fde605b2ff9de9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f.parquet",
+      "bytes": 49791,
+      "sha256": "1d378fc2ea3f1efc7e164a410e7a99741073683d544c455c10daaf14cba116da"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T140724Z-308053a0b090.json",
+      "bytes": 1837,
+      "sha256": "6dbd124f1f78e7f79ee9dd2173d14b56b8c23800409d790a65786f437fd3c2bb"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T140724Z-308053a0b090.parquet",
+      "bytes": 50024,
+      "sha256": "308053a0b090a2483aa272bac672763beefb83c2f653289a9e4686f662502fd2"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c.json",
+      "bytes": 1837,
+      "sha256": "dafa974c47bb2616124b8df055a2ea268603f2d8680c27dd378d5487253feb92"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/datasets/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c.parquet",
+      "bytes": 50205,
+      "sha256": "67656e20d30c05d76d9a1a74afc3d936828d8ab4617e7d2a71d550002263ae57"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f/01_processed_features_targets.csv",
+      "bytes": 39682,
+      "sha256": "1dc583b91562d1d96eb2abab1f77831388503fdc38ef29f15d58eb3f0339dcf9"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T103204Z-1d378fc2ea3f/source_manifest.json",
+      "bytes": 1083,
+      "sha256": "b722cd26bd40f06cb4e121e1d13c4977cc887b60dc434bc91bf44ab7c9ee2a34"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T140724Z-308053a0b090/01_processed_features_targets.csv",
+      "bytes": 40461,
+      "sha256": "94ca1d6f8f4d1a57cf54dc428f81adf71ac7e1b37cfc0abdb9cf5dee3278d59d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T140724Z-308053a0b090/source_manifest.json",
+      "bytes": 1083,
+      "sha256": "8db575024b7646a8fbd059c3205239647166c1260c707ec1d390ac62dcff21aa"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c/01_processed_features_targets.csv",
+      "bytes": 41076,
+      "sha256": "480b407a54f4756550b1a086d6e591a0bc3d60a469c61ed47093d1341f62986e"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/processed/nextfarm-v10.1-customer_minh-20260908T141618Z-67656e20d30c/source_manifest.json",
+      "bytes": 1083,
+      "sha256": "ca649fe5cb27617cc53e7079d19614ed683e2025b34015a6afe221becc3c02f0"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/alerts.csv",
+      "bytes": 1322,
+      "sha256": "75371921db686292d58f1d44c89d1649bd6010e672e81bebbdb33f31bcb6a5ae"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "d2f9f8409556e266ddab72be7b5155362ae0ee16c6c955c388d95344169e7110"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/device_status.csv",
+      "bytes": 17445386,
+      "sha256": "03f886bda0fb2a637235ed74847d6e3e85a4d92ddb25a33ef920da196eb251b6"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/farm_ai_profiles.csv",
+      "bytes": 443,
+      "sha256": "c2adc5d3b3d75551bc3b23c41642dda47636d7224cd21202659f64ee584c1add"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/farms.csv",
+      "bytes": 358,
+      "sha256": "ee230ca916a88cb8ceeea947361bd735fff7540bcf8a4a10426d3cf1c6f1527a"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/irrigation_runs.csv",
+      "bytes": 1166,
+      "sha256": "3906058d59878ce245ed878747fedcee931a982b65778e82b5ed2636c7c2f51c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/irrigation_schedules.csv",
+      "bytes": 217,
+      "sha256": "0f6a6041e294611de0a2797a841006694af965801b017e9f2a544ad143c8d526"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/sensor_readings.csv",
+      "bytes": 67022965,
+      "sha256": "6d97390112bac4e0b868053f1a254bc0fecc80f1d0e6c2a45ad7a066ca547195"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/sensors.csv",
+      "bytes": 851,
+      "sha256": "8e028ede417ee6955d063cc37786ca1287286bd617298c62e85e46b2aa2b3902"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/telemetry_ingest_events.csv",
+      "bytes": 15964609,
+      "sha256": "439baf778862f1ff8ebae558457b9f078497e306a5fa4fcef00428cf62238aa0"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/raw/zones.csv",
+      "bytes": 310,
+      "sha256": "37d6cc3e54b7ae40024919c7eede8a5bfacfe18e1773327515a330b273620c3c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T103153Z/snapshot_manifest.json",
+      "bytes": 7510,
+      "sha256": "c044c0800d7e2a2e68ebd8916a76da590defe236603bd8eb11be82b947e6ebd0"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/alerts.csv",
+      "bytes": 1322,
+      "sha256": "75371921db686292d58f1d44c89d1649bd6010e672e81bebbdb33f31bcb6a5ae"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "97ed9c1bf5e6d62a9344b0583f3c8df63b54bd5459415619ba889131c9c91a6f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/device_status.csv",
+      "bytes": 17652035,
+      "sha256": "ad1050ccf35f54b69ee4bcb83251cfaad1bda5502455c64085d18835848f1d2c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/farm_ai_profiles.csv",
+      "bytes": 443,
+      "sha256": "c2adc5d3b3d75551bc3b23c41642dda47636d7224cd21202659f64ee584c1add"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/farms.csv",
+      "bytes": 358,
+      "sha256": "ee230ca916a88cb8ceeea947361bd735fff7540bcf8a4a10426d3cf1c6f1527a"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/irrigation_runs.csv",
+      "bytes": 1166,
+      "sha256": "1de2c9db608692804ecca11779bdc7b478d83dc3e4a008244c8630d8a8f2646c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/irrigation_schedules.csv",
+      "bytes": 217,
+      "sha256": "0f6a6041e294611de0a2797a841006694af965801b017e9f2a544ad143c8d526"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/sensor_readings.csv",
+      "bytes": 67793334,
+      "sha256": "db134e4faf923f524934adeb6f423ef18c044074dece79ab529714c285db03a7"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/sensors.csv",
+      "bytes": 851,
+      "sha256": "8e028ede417ee6955d063cc37786ca1287286bd617298c62e85e46b2aa2b3902"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/telemetry_ingest_events.csv",
+      "bytes": 16154069,
+      "sha256": "41b77340bc0fa0bfb77b49c865648d7c97c04df492cf3329b7600394575fa44d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/raw/zones.csv",
+      "bytes": 310,
+      "sha256": "37d6cc3e54b7ae40024919c7eede8a5bfacfe18e1773327515a330b273620c3c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T140713Z/snapshot_manifest.json",
+      "bytes": 7510,
+      "sha256": "094cfa1058dd274f6104bdd6803438b9d168401f97af72b15d2e5f36617583c5"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/alerts.csv",
+      "bytes": 1322,
+      "sha256": "75371921db686292d58f1d44c89d1649bd6010e672e81bebbdb33f31bcb6a5ae"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/control_commands.csv",
+      "bytes": 186,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/customer.csv",
+      "bytes": 194,
+      "sha256": "97ed9c1bf5e6d62a9344b0583f3c8df63b54bd5459415619ba889131c9c91a6f"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/device_status.csv",
+      "bytes": 17826059,
+      "sha256": "f07e5932e07fbc726daa78928ceeabc117a09f5b0f23fb2b03ee92983e7ccaca"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/farm_ai_profiles.csv",
+      "bytes": 443,
+      "sha256": "c2adc5d3b3d75551bc3b23c41642dda47636d7224cd21202659f64ee584c1add"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/farms.csv",
+      "bytes": 358,
+      "sha256": "ee230ca916a88cb8ceeea947361bd735fff7540bcf8a4a10426d3cf1c6f1527a"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/irrigation_runs.csv",
+      "bytes": 1166,
+      "sha256": "1de2c9db608692804ecca11779bdc7b478d83dc3e4a008244c8630d8a8f2646c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/irrigation_schedules.csv",
+      "bytes": 217,
+      "sha256": "0f6a6041e294611de0a2797a841006694af965801b017e9f2a544ad143c8d526"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/sensor_readings.csv",
+      "bytes": 68440405,
+      "sha256": "1d47746a6410c966244a9660ce9f4b6a458f70099b9f5b6f8123fa4f30af79fe"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/sensors.csv",
+      "bytes": 851,
+      "sha256": "8e028ede417ee6955d063cc37786ca1287286bd617298c62e85e46b2aa2b3902"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/telemetry_ingest_events.csv",
+      "bytes": 16313230,
+      "sha256": "90e33709cdc920fb672ad0e50a4a9e7bd17dfa3b08dddffbccdbe98b70ef264d"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/raw/zones.csv",
+      "bytes": 310,
+      "sha256": "37d6cc3e54b7ae40024919c7eede8a5bfacfe18e1773327515a330b273620c3c"
+    },
+    {
+      "path": "model-artifacts/data/customers/customer_minh/snapshots/runtime_20260908T141605Z/snapshot_manifest.json",
+      "bytes": 7510,
+      "sha256": "4a394497fb2adc830960281b226272f5d8748aaa00961f506aa13c4e44d42e37"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/00_dataset_summary.csv",
+      "bytes": 420,
+      "sha256": "00ad03bc745acab4854d24843b0deda71f63f95c17d1f681e7302923bae9aed9"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/01_processed_features_targets.csv",
+      "bytes": 561205,
+      "sha256": "cf0ee2761910e7f20b6abfd0b0f5510a1505aa9d57e1b297a0e51d63712c8f74"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/02_train.csv",
+      "bytes": 444992,
+      "sha256": "05db52530c923a0e428cc86fa0593da65f372b89634a187c5c4edee79d6b03df"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/03_validation.csv",
+      "bytes": 78802,
+      "sha256": "600d1e2da7a25b5931fcb5490e3c304f1924431d562b98667525cfb43f9fe9fd"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/04_test.csv",
+      "bytes": 32975,
+      "sha256": "5eb09c3f2e14eec578e4d16e7fbf6c8d37563be07710e0ac2f2b656243a3dc02"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/05_feature_catalog.csv",
+      "bytes": 1674,
+      "sha256": "8fb8ac0ea4da493c421e517a49ff84138262ab05cf625b0f223b147e90eab1e4"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/06_target_catalog.csv",
+      "bytes": 1320,
+      "sha256": "eddbdf13790e7d64debd868b60e7cef1d704558736a4578b6a9c9cf50bf9e0c7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/07_model_metrics.csv",
+      "bytes": 4976,
+      "sha256": "f4611f71a08de1488aacc53f2d523ce8e863d858d00b4ac2e9b8276ca4de23bb"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/08_candidate_validation.csv",
+      "bytes": 6206,
+      "sha256": "2f24ac04ec5b0d6eeee45c9c8ca53791196d9c91800140d0afd95a9ca1f9e63c"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/09_generalization_holdout.csv",
+      "bytes": 9783,
+      "sha256": "3621ac6b8b7851b82a067f6164f4f8d8af5457e67b26311b0a1ffae1ef455681"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/10_class_distribution.csv",
+      "bytes": 1855,
+      "sha256": "735c1b07ce2373f45a1792940a3b1eeed0f0fee1666f58cd9785c48b032ff0f6"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/11_regression_target_summary.csv",
+      "bytes": 1462,
+      "sha256": "f04324bd93d263d7ce195cac95e00db51e9fb0896871cf1a4ba1b3f3a7888a67"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/12_feature_importance.csv",
+      "bytes": 5424,
+      "sha256": "40a5376ee9131ce9e38c50ec2a285e30339599e2839d942637e15fb599a1d38c"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/13_model_inventory.csv",
+      "bytes": 6164,
+      "sha256": "8e6a6a14104588cf079fea2391647c91e544200d82a93fd9f80686ffe2b70747"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/14_data_provenance.csv",
+      "bytes": 454,
+      "sha256": "d2333034258668c74bbbd26c1a4fa657fbb7da7e16f43c36402ff5f694de7fdb"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/evidence_manifest.json",
+      "bytes": 8217,
+      "sha256": "32971cc470c2122253dc3751fad274be23471abe78b9f9e35e6e0befb79ca06c"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/anomaly_multisensor.csv",
+      "bytes": 5252,
+      "sha256": "43a5aeb9f4cf39df9dc03cc6dddbafa689c85dbb3c6f73ecc927ba4490a7c5a8"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/device_health.csv",
+      "bytes": 5235,
+      "sha256": "da57b6f64537e3684178a256c5f5dad92c1de92abb8dd2bf06c694ddbe016bc6"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/ec_forecast.csv",
+      "bytes": 8958,
+      "sha256": "50c1b7433d6f453849af521979b6cedebf5595f416b3b978c13b55138c610aaf"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/farm_health.csv",
+      "bytes": 5257,
+      "sha256": "5ff3cf6e5289791943712e247d7a7fed0c2d8b875551ea5cdb2a87b9c5d63bb2"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/flow_fault.csv",
+      "bytes": 5231,
+      "sha256": "4674cb9809253d1ca7cd93b9be8ce4b4fc4af65282a632c77c68d3b250ee02fa"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/irrigation_failure.csv",
+      "bytes": 5231,
+      "sha256": "ccd774ca14cfaf6a88b565acc50b634b592e625906f4b2a9564d6fb485b614f7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/irrigation_need.csv",
+      "bytes": 5235,
+      "sha256": "7f2c6e1629fcc7c0b6e39c1146b8d61ad07dac15936d6447f23b0563054160aa"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/moisture_forecast.csv",
+      "bytes": 8689,
+      "sha256": "83aee501132c99baadf0d648e768cf03dff875c862b9dd6d7a0f024607ecfe06"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/ph_forecast.csv",
+      "bytes": 8859,
+      "sha256": "f38c847d7b5b6aa7c73074a3cd16ec2a11c1c2755ea61a7e94d2d923aabcc26a"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/predictions/temperature_forecast.csv",
+      "bytes": 8840,
+      "sha256": "e7f527c90a677ba2060ff64ddb6e1157c1e327931ecee175bb382107ed23bef6"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/00_dataset_summary.csv",
+      "bytes": 419,
+      "sha256": "9d754e3787ded9a132936ea834f94dad68c616be44365b03048f251deb4cc867"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/01_processed_features_targets.csv",
+      "bytes": 157796,
+      "sha256": "d9d3661fb58e1c7c98ea944f560c0c42155dcc51b5255979b0cdae67febaa94e"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/02_train.csv",
+      "bytes": 110983,
+      "sha256": "f5008ac5a73df19cd9726c9e3a8f7d9ec02f33d4f5e6771504d8581e1e98b835"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/03_validation.csv",
+      "bytes": 22461,
+      "sha256": "7c7ebf1c5af30532d25170294297baf4a546514c881461f2e276cd9d39fdf7c3"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/04_test.csv",
+      "bytes": 24354,
+      "sha256": "c21e686b3b6498a0c9ee345be5c0a4bf42208cf65d51accd3f96673d1e5fbc81"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/05_feature_catalog.csv",
+      "bytes": 1674,
+      "sha256": "8fb8ac0ea4da493c421e517a49ff84138262ab05cf625b0f223b147e90eab1e4"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/06_target_catalog.csv",
+      "bytes": 1320,
+      "sha256": "eddbdf13790e7d64debd868b60e7cef1d704558736a4578b6a9c9cf50bf9e0c7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/07_model_metrics.csv",
+      "bytes": 3806,
+      "sha256": "8425f3219c82168d0bd6818f0196832f915f63e4c6541cfc6a0f8dd1c477a55f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/08_candidate_validation.csv",
+      "bytes": 6438,
+      "sha256": "1a79efd9334adcd0fe02f7e0d8085287545da1431f8d7fee54d3e41ecb2e56e7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/09_generalization_holdout.csv",
+      "bytes": 10393,
+      "sha256": "6e0e4cd34408ebced107cfdf45fe386e6dbe7e71e0752d1388f46b2e6b240742"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/10_class_distribution.csv",
+      "bytes": 1975,
+      "sha256": "b545ba46ae3d385a4866cebb5fc55275533312018ac654e645f2f3ac45aefb4a"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/11_regression_target_summary.csv",
+      "bytes": 1468,
+      "sha256": "ab2a5663dddb71e074b7496eb80ca6f747614d0c0fd4b62ebbc48def7502d377"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/12_feature_importance.csv",
+      "bytes": 5504,
+      "sha256": "f6d9e7ded90563eef4745be004877a3dbfd0c937b4412d60bcccc0541376388f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/13_model_inventory.csv",
+      "bytes": 6149,
+      "sha256": "0f0bf1a6fc3dceeb12acd002818391644c11bb5e7889196f388759c8f973aa16"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/14_data_provenance.csv",
+      "bytes": 454,
+      "sha256": "a3513123fefa59f754985b16b85df03672bd90b7894f3722a3b079cdc2a6e0fb"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/evidence_manifest.json",
+      "bytes": 8218,
+      "sha256": "04c5f5afa80d12feece52a3d35fa89866a5290e5f4f6f4f2dd0af73e1c0eccc4"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/anomaly_multisensor.csv",
+      "bytes": 4119,
+      "sha256": "d04ee97dfdd0201ab3316666e9ae0b3b77dddeeacc20eacaf4146a09ecbf9bbc"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/device_health.csv",
+      "bytes": 4119,
+      "sha256": "315d61de85c664ff3fea18b057c42ac44d615d6ce528b85ea93d49a2913b2a2f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/ec_forecast.csv",
+      "bytes": 6930,
+      "sha256": "ababefdbe2268720eecd7444da446a7fd0f954a32f41f6c65013df4916a5bf43"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/farm_health.csv",
+      "bytes": 4121,
+      "sha256": "73cef923106c047339a3809fa6a40d7df15b104f2a01cfd81058d4d378a1c399"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/flow_fault.csv",
+      "bytes": 4123,
+      "sha256": "79cdd2195271fcc3c95f1057a3b88c2b29fe7a84e5a9e709bcaf488531b12e96"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/irrigation_failure.csv",
+      "bytes": 4123,
+      "sha256": "15da1f7cc052e2156c89610b6e3b333fb3249d8486e214a25ffa30b8d0969eb7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/irrigation_need.csv",
+      "bytes": 4119,
+      "sha256": "d2dba9510d8d3c89ebf6c2a0a9c6c2a9f19d8dd6fd6c4b4b60d6b4253d4c1fe3"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/moisture_forecast.csv",
+      "bytes": 6744,
+      "sha256": "c40caca83b297f5b584439ab7720f350a19dd567bc04e278033d6da2c8026c0a"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/ph_forecast.csv",
+      "bytes": 6939,
+      "sha256": "59c571dac1099791396d70222a28e54f22be0b0ec1fafd1bd1e3dcf49300a471"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/predictions/temperature_forecast.csv",
+      "bytes": 6788,
+      "sha256": "7bb2df3874ad9bd0d696e0fc154f4a3e02882cc0253d50704fd1fc4c929beff6"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/00_dataset_summary.csv",
+      "bytes": 419,
+      "sha256": "1e53e893653957e87acb2fc9a06b237e167fbf293e0174d5942239a31b88c15c"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/01_processed_features_targets.csv",
+      "bytes": 160310,
+      "sha256": "589f236b95f21f2af411cd1020ddd05cd21450d279756e3ed277f7dc232debd9"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/02_train.csv",
+      "bytes": 110983,
+      "sha256": "f5008ac5a73df19cd9726c9e3a8f7d9ec02f33d4f5e6771504d8581e1e98b835"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/03_validation.csv",
+      "bytes": 22461,
+      "sha256": "7c7ebf1c5af30532d25170294297baf4a546514c881461f2e276cd9d39fdf7c3"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/04_test.csv",
+      "bytes": 26848,
+      "sha256": "f1172e6019b255e13ffe98446b431f72cbb9a6eb3a58b0912e52378b09216b7c"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/05_feature_catalog.csv",
+      "bytes": 1674,
+      "sha256": "8fb8ac0ea4da493c421e517a49ff84138262ab05cf625b0f223b147e90eab1e4"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/06_target_catalog.csv",
+      "bytes": 1320,
+      "sha256": "eddbdf13790e7d64debd868b60e7cef1d704558736a4578b6a9c9cf50bf9e0c7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/07_model_metrics.csv",
+      "bytes": 3685,
+      "sha256": "b01fa0aa1ab90a44620da24820ee974941292d729491bd1a1ca5caea8663c435"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/08_candidate_validation.csv",
+      "bytes": 6438,
+      "sha256": "1a79efd9334adcd0fe02f7e0d8085287545da1431f8d7fee54d3e41ecb2e56e7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/09_generalization_holdout.csv",
+      "bytes": 10926,
+      "sha256": "851b19d576fa206a36b8af167b16208358fbd7df4f52dd70fb434335098edbc7"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/10_class_distribution.csv",
+      "bytes": 2075,
+      "sha256": "3b03c68555a930f9fb0393fd0551faeb5c9e0f8b67da6964d3db305cce1e54cd"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/11_regression_target_summary.csv",
+      "bytes": 1460,
+      "sha256": "87fde02b8023c2fc501a05ca925c46260cd8b3f5f6b80aee5aabd2aee2c6a98d"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/12_feature_importance.csv",
+      "bytes": 5504,
+      "sha256": "f6d9e7ded90563eef4745be004877a3dbfd0c937b4412d60bcccc0541376388f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/13_model_inventory.csv",
+      "bytes": 6144,
+      "sha256": "9817a1a6bfc728bd7b36aba49ab231eab019dd32140df0eae9bec4766b346c1f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/14_data_provenance.csv",
+      "bytes": 454,
+      "sha256": "64dd54683e5c3478da762e34884f7680f580848502cab0e396129b24d24f914f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/evidence_manifest.json",
+      "bytes": 8218,
+      "sha256": "48896ef0d742c910a7b93adc53cd92c24bc129d5f6b37d2d9507578d944fe007"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/anomaly_multisensor.csv",
+      "bytes": 4522,
+      "sha256": "1c3699a7c82e67f60e844583bdb8f4e3a62d293d01e8bdfefd535f184f62e874"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/device_health.csv",
+      "bytes": 4522,
+      "sha256": "34e10bb5069d83e743374f644560014896fe457bcb1fad095b4011c0f7025de0"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/ec_forecast.csv",
+      "bytes": 7617,
+      "sha256": "0020d1210099c7a98fdd8c00b937d195f092a40046d4ae28b55e14f1e9b90f5d"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/farm_health.csv",
+      "bytes": 4527,
+      "sha256": "c023cd3784bb082adc69f8a8bdbc513c712fda96f1aa6b4e55c2f69847b99189"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/flow_fault.csv",
+      "bytes": 4527,
+      "sha256": "24aa9416729b3348493314609a2b2fef6d38dc8ea73a57afad4122df30edb5c1"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/irrigation_failure.csv",
+      "bytes": 4527,
+      "sha256": "b62466f313c691ad682f94ed1d84003d2453773e9c5d9cc3424803a7de596fcf"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/irrigation_need.csv",
+      "bytes": 4524,
+      "sha256": "caabe5cced9a91b0201a815adb40056e69ad3364e3f3052bad132c4e03d0ac38"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/moisture_forecast.csv",
+      "bytes": 7393,
+      "sha256": "bf1cd3985e2d9b7fbdd1d570965853fd0294bd9d3ce63b2e1fde2a91f305842b"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/ph_forecast.csv",
+      "bytes": 7587,
+      "sha256": "23e0695bdbe7b100bb4f734ffcc3ee98c0b76a2b05378729f2eb9e6a2adae11f"
+    },
+    {
+      "path": "model-artifacts/data/shared/processed/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/predictions/temperature_forecast.csv",
+      "bytes": 7461,
+      "sha256": "5f298eac6470734109c229f06e74818164cfb55d16e51704bad4c694549b9741"
+    },
+    {
+      "path": "model-artifacts/data/training_policy.json",
+      "bytes": 1371,
+      "sha256": "a2250766ba67628849e435fa05e8817b25f45a664b65580895d212719a8b9d8b"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260907T230324Z-53133cf1c97a.json",
+      "bytes": 1278,
+      "sha256": "082947274da957310974fe71ae97cceeae5b63d990d72ee1a0ee17c7668c79dc"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260907T230324Z-53133cf1c97a.parquet",
+      "bytes": 293849,
+      "sha256": "53133cf1c97a83470372d87f9e71aa4905fe51d3ca1e9adf04a848462e6b5d43"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260908T000756Z-761eb45a2c54.json",
+      "bytes": 1266,
+      "sha256": "cf14f4eaf30ff042cb93d14f25fd98c80ab49a08b87f017a8f84ab743fb6f66c"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260908T000756Z-761eb45a2c54.parquet",
+      "bytes": 292946,
+      "sha256": "761eb45a2c54891092e607f58b0a1f7325ba580e638f7166154b6133c0e6b681"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260908T083107Z-b42a1541cd68.json",
+      "bytes": 1278,
+      "sha256": "59976e70e0c3dce9439df913d0ac123550f862fa8ed889c11fd939750fc2463d"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-blend-20260908T083107Z-b42a1541cd68.parquet",
+      "bytes": 298446,
+      "sha256": "b42a1541cd6888b9db1047363524b8c7a5fe7aac241fbf0dc61b49420fd47b65"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-reference-1d2fed14387999b3.json",
+      "bytes": 1233,
+      "sha256": "62a9257014999badb17111a199fdccb02d7d6c3af5d7de63aea85a7b3a958dcc"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-reference-1d2fed14387999b3.parquet",
+      "bytes": 2271856,
+      "sha256": "1d2fed14387999b32addfee0e68eb8db25714698426fae90f9bfcf673d397249"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260907T230323Z-b3b5852c36bf.json",
+      "bytes": 1240,
+      "sha256": "1ffa9ea0165e7912d048e79885e42261f8c4e4e42e68e94a2713f692cedef4cb"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260907T230323Z-b3b5852c36bf.parquet",
+      "bytes": 190201,
+      "sha256": "b3b5852c36bf7f0923ab80f188cb29acd2f36bbedcca8cc114289d849e6d58b1"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260908T000756Z-1921ea699353.json",
+      "bytes": 1240,
+      "sha256": "743e09dd83fc6fe08a220f8706f6a27aa118c8535e5843badc5ef44bbd7f357a"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260908T000756Z-1921ea699353.parquet",
+      "bytes": 192932,
+      "sha256": "1921ea6993533c4da7800d5c662a086e31b8abdddbe7723f17c73f79b15bdd72"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260908T083107Z-0b919aabf11a.json",
+      "bytes": 1240,
+      "sha256": "def18c20ff07e1a600fa406555bc39eb3380154604596625bd095af28455d2fe"
+    },
+    {
+      "path": "model-artifacts/datasets/nextfarm-v9-runtime-20260908T083107Z-0b919aabf11a.parquet",
+      "bytes": 197081,
+      "sha256": "0b919aabf11a69f65e955b445724b216bf7e9fbf1ff309d42c141fc2bbfac82c"
+    },
+    {
+      "path": "model-artifacts/reports/LATEST_TRAINING_REPORT.md",
+      "bytes": 7648,
+      "sha256": "e14ff533d5b41f588c129dcec5fac066fd65f3bf1dc392aaa750496cc30565e4"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T083303Z-cbd0f593ec9b/TRAINING_REPORT.md",
+      "bytes": 9235,
+      "sha256": "86fe64b443f4c63e2abf2f969b03c954b7be4b300be4530134139ff241885bc0"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T091208Z-f578f93a2ff3/TRAINING_REPORT.md",
+      "bytes": 8818,
+      "sha256": "77d04829fd9e9f79b116ffd694d39cad5b363557549ff8fdfe4b0783adddd05b"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T092101Z-5b51323a2556/TRAINING_REPORT.md",
+      "bytes": 8817,
+      "sha256": "2e81153d30b088583e09104c323990819900e6213d1d1b3510792a5d782aa0ad"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T092954Z-b9d8241e75f5/TRAINING_REPORT.md",
+      "bytes": 8818,
+      "sha256": "a6a39346291731b4a7c837b63b40b45763038423c901b626afb01ac8dfecaa05"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T093853Z-841885552218/TRAINING_REPORT.md",
+      "bytes": 8818,
+      "sha256": "fbbf6e8c8df2fb08d112976048af78132d51241ef851e386f8deccecb7cf6b21"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T094752Z-c2b8bf56cd2d/TRAINING_REPORT.md",
+      "bytes": 8816,
+      "sha256": "385d5b69a8fc9a74d3c1ff587025674043b5b99332303c7cd9d0c830a0b9b538"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T095649Z-609de1bf0a5b/TRAINING_REPORT.md",
+      "bytes": 8816,
+      "sha256": "0fc0cf2b653dab38f2b8b8b95c56c439f8e27918aae2a45976e726be39c10fab"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T100538Z-5a4751aee74f/TRAINING_REPORT.md",
+      "bytes": 8815,
+      "sha256": "0e313d691e4c112c7db75c21cf637faaad2e2cb9b57aabea16771186be7d27ae"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T101426Z-0e33b324f8c0/TRAINING_REPORT.md",
+      "bytes": 8817,
+      "sha256": "ff2b72afc401bee2bf4b7f50a0827ee905f893a5992a5ba1001387775e929604"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T102314Z-3fb2a33a8eaf/TRAINING_REPORT.md",
+      "bytes": 8875,
+      "sha256": "83e1c4543debebc291bde0bb7ca8df0dbec694c49ca0474762728ed7ee3603a3"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/TRAINING_REPORT.md",
+      "bytes": 8878,
+      "sha256": "52f1391f72b106558ffe1f2a43b7028de149ad6e6a0eed4c2c1da0abf1bff32b"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/TRAINING_REPORT.md",
+      "bytes": 7794,
+      "sha256": "7c7b57bff5e82dbafa269c53ab161450cffd2ae57b7f1fa62b7d65daae725fc3"
+    },
+    {
+      "path": "model-artifacts/reports/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/TRAINING_REPORT.md",
+      "bytes": 7648,
+      "sha256": "e14ff533d5b41f588c129dcec5fac066fd65f3bf1dc392aaa750496cc30565e4"
+    },
+    {
+      "path": "model-artifacts/shared/active_models.json",
+      "bytes": 2422,
+      "sha256": "0f2296351b6c303880c7636e5a72b48bb7a3738a95b3fdc2668eaf2737e2e53e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/evaluation.png",
+      "bytes": 27125,
+      "sha256": "eaee9c64a36f606aab6756042ced88f06afc64b5232c59c511c4c8f466b55451"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/feature_importance.png",
+      "bytes": 58469,
+      "sha256": "13b15d04494610fc84aedb8b1aa2eabfa5344b7bde2b0935dcd46bb33795a227"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/model.joblib",
+      "bytes": 89809,
+      "sha256": "2088aea1ae3fbef2435de64fb70b5699b612f0c8a6ed1b717b6d5cefd96a5757"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/per_farm_evaluation.png",
+      "bytes": 34058,
+      "sha256": "488fbf004c1b1d58be94c66aca0fa2d5bab60250ae99b18ca57541ad38ffe902"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/anomaly_multisensor/v2.1.0/report.json",
+      "bytes": 12757,
+      "sha256": "067d730c4d99c3b6cce76e4ea1e4443f971502beb0d7600598e51644d9001f05"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/evaluation.png",
+      "bytes": 24911,
+      "sha256": "e21545091fae649d9b7f1c4c0887cd13f8a17ee6be191b08eb52253159699165"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/feature_importance.png",
+      "bytes": 56326,
+      "sha256": "72f6a55b31aa2b4d289248387a67dde48f9638b356710f143bbac754896b05dc"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/model.joblib",
+      "bytes": 90293,
+      "sha256": "de0cb9ad3571094a0ef6444ad4f2a7ebf10ec65899d8dfb9a9f2888dbf22b0b1"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 28920,
+      "sha256": "0ff47cfdb854b98a84522edad6cc8bd4ed77d51be9cf338725392b2c23f65534"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/device_health/v2.1.0/report.json",
+      "bytes": 12721,
+      "sha256": "95bda1c1ac3afe4b594344e77058321ed3217b276a60f837332d014eb717d057"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/evaluation.png",
+      "bytes": 90307,
+      "sha256": "ed5b6ae81b747a70474099203103317fefcba3644b1f72506181e19921cc4142"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/feature_importance.png",
+      "bytes": 57834,
+      "sha256": "84a9effc065580ed37f60959a75feab8b5ceb57fb0f8a6a44554dafa1503b3da"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/model.joblib",
+      "bytes": 4168146,
+      "sha256": "55b772c69bd78e5acbb233df0fe03e687c848fd1f817cbc05c83550b2f4af1f5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 32141,
+      "sha256": "2e673567a4a832db0ffb7536ac8ebc8247f593ef5e508e7df2437719ec13395d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ec_forecast/v2.1.0/report.json",
+      "bytes": 6166,
+      "sha256": "4474327396ba5397549bc3699720d500df90537bd40f97343aec5ce72bbede3f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/evaluation.png",
+      "bytes": 27998,
+      "sha256": "b69eeee431f6fc05bbb11f18359c7875587b05ffa177e1a95acf8e193aa746a4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/feature_importance.png",
+      "bytes": 58520,
+      "sha256": "42eb0646753dad929a3e23ab1c6472772fac8bd7ddb6cb9b9493f19cebe2417f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/model.joblib",
+      "bytes": 90051,
+      "sha256": "f723536f8177235e30cff7dc0b4d3ef3c11913f02f94be85e348716b790e4368"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 31505,
+      "sha256": "863371f25342cb8b4c21b5e9ecda414728c1259e9668dad1296386dc7021503a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/farm_health/v2.1.0/report.json",
+      "bytes": 13448,
+      "sha256": "8fe9fd0f6f605ba6682a8348cc33b5a6dd3621a3a058e2b2e64cb9c598186028"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/evaluation.png",
+      "bytes": 26648,
+      "sha256": "611954477179bc89f049e74a4a528f7a358328a0340e04532338a46c1b13c856"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/feature_importance.png",
+      "bytes": 57383,
+      "sha256": "c93db73effb5093cb269537ea9e52dd9f34eebf9c9d4bd79dd00c26d5622123a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/model.joblib",
+      "bytes": 104358,
+      "sha256": "a378296780b2fe024b3e57dd932cf876755e3e9822f5f16a20ec42cdc549059a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/per_farm_evaluation.png",
+      "bytes": 30330,
+      "sha256": "48aeb3ecf08633c36813ff23eb1df2069fe50f441b01012a8a69f0a9ec4e24a1"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/flow_fault/v2.1.0/report.json",
+      "bytes": 14849,
+      "sha256": "a742d9e4b8077bc60303ac3baf6af07fd84493edfd8f28b53731dab8186e2e33"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/evaluation.png",
+      "bytes": 24460,
+      "sha256": "88541e32d98e780d0cb7d651cd69a2fb637f8d71d5042bc7d324dbd733196e4f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/feature_importance.png",
+      "bytes": 57326,
+      "sha256": "195bd2d435d9d1fa68c16e5471cd7418afff8470ade348ca63607359af2dc546"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/model.joblib",
+      "bytes": 60618,
+      "sha256": "8c8f8db301712bd009acd7e5c86952f3a1eb0f53a8837bedad5c4eab7b20a550"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/per_farm_evaluation.png",
+      "bytes": 29336,
+      "sha256": "73103243c2bfa03c1b462ee8f4fcc42880fa83f22429c3423e77395f0ff521cd"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_failure/v2.1.0/report.json",
+      "bytes": 12066,
+      "sha256": "3e170fde6111b7bde17dd6039494e5c3eff32cc40ed04fb1359ab1847046862d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/evaluation.png",
+      "bytes": 23584,
+      "sha256": "a6520ce03d78c9055abe66523089c83267e753a0daef924b4405e1f2a9ca27e8"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/feature_importance.png",
+      "bytes": 55665,
+      "sha256": "010c9d8877c5812ea4b9098081482fe69b2ba20076d678ea327f9c7c60c65436"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/model.joblib",
+      "bytes": 140846,
+      "sha256": "d39efd0ffae887bce98ad069efead5fab0a9ba55fad472586261f099ca1f9abd"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/per_farm_evaluation.png",
+      "bytes": 27108,
+      "sha256": "e823e1143c35b97876ed3bd48eb3161c7b0db31f36771b9791ac57f0acf5f8ff"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/irrigation_need/v2.1.0/report.json",
+      "bytes": 13211,
+      "sha256": "8aa4ed91d6a85bf90ed531b69deefd39cbf27cf8d19251c35114e478480edca4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/evaluation.png",
+      "bytes": 60898,
+      "sha256": "7507a06a8bacdc7164da1a26b225dd87b3b56c01d3e89a30ab37605e5fb44f4c"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/feature_importance.png",
+      "bytes": 58650,
+      "sha256": "8039c2dbbc42034b596c2438508e5be9aaea33bfd65f22fad79f5f87b7621e68"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/model.joblib",
+      "bytes": 4159829,
+      "sha256": "0ae2a287308a55956d7bed625247d06d00818c23319907f9c855d86afd8f3c76"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 32784,
+      "sha256": "4fbb1dcbd5d05706ce25d76ab6751aeb85939265d47b4855480547995df2af4c"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/moisture_forecast/v2.1.0/report.json",
+      "bytes": 6244,
+      "sha256": "927858f998bcae7b0865e4b23300f98db6e8af3f241a0fd275a6b1806bf3757e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/evaluation.png",
+      "bytes": 63816,
+      "sha256": "2f74b3ff8fee7840409cedd27b09886454833811d4d1cdfb1b88d2c0c0cffb7e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/feature_importance.png",
+      "bytes": 56232,
+      "sha256": "0b3bef80d4d77ed3b818ef6410cc5de05fafead7a25799513ae915ffaeb34283"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/model.joblib",
+      "bytes": 4156485,
+      "sha256": "c171660b3b8860ede7439b820d1034c04366ca89e0ee5889b0831dc497f965e1"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 27324,
+      "sha256": "ebf2d03813ffbe9ff1e67982677079ce6c26282809dd0d4b87a02d77c95c2013"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/ph_forecast/v2.1.0/report.json",
+      "bytes": 6172,
+      "sha256": "a565fe3e5227897258e879936ac7e6d5070e162a5dbc5b47440f5f22933a2a15"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/suite_report.json",
+      "bytes": 129902,
+      "sha256": "ae53d8242fe9d32fa5f17621c5482a37d10c2bbf5abc20c497e55aba7ed05e70"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/suite_summary.png",
+      "bytes": 76358,
+      "sha256": "ea51edaf6d21d3e4e27f556fa8d75ab70e0ca4ed3523172ffe7ee18b4847ee39"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/evaluation.png",
+      "bytes": 70971,
+      "sha256": "732262247ca6a37705bd34068ed7cc9081676dba8db096e7a63d4d484c0adddc"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/feature_importance.png",
+      "bytes": 55445,
+      "sha256": "f2d8b4192b94a3dca17abaa4254893f05402597ceab117881c4904dccc41133b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/model.joblib",
+      "bytes": 4150853,
+      "sha256": "cfc405111e5649dffd8f05bf294905ed467ab0050be128b5404158b70f9471d8"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 32003,
+      "sha256": "d31feb2b2ac84c40c82731b5a54d9df0482c1d0ccb8cf3eb5dd475f71131071b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/temperature_forecast/v2.1.0/report.json",
+      "bytes": 6184,
+      "sha256": "5d7be4789c44e03bbd7c4ccdaec18dbd78eb7a4fab1b1558f48b1424d852b0fb"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/shared/training_dataset.parquet",
+      "bytes": 142619,
+      "sha256": "d870813ce2b8e1b33a9f81985c4e506bc5aac8d597d5a10e26fadff9496ac94e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e/suite_report.json",
+      "bytes": 129902,
+      "sha256": "ae53d8242fe9d32fa5f17621c5482a37d10c2bbf5abc20c497e55aba7ed05e70"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/anomaly_multisensor/v2.1.0/evaluation.png",
+      "bytes": 30862,
+      "sha256": "d42cd9a877208517b4f477dcd7b24ee99e87e367a329927fc790190faf4195d3"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/anomaly_multisensor/v2.1.0/feature_importance.png",
+      "bytes": 61815,
+      "sha256": "aea41a31e84d37cab7463dcc90e532a389113a0553d97853a85bce8e47fe17d2"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/anomaly_multisensor/v2.1.0/model.joblib",
+      "bytes": 146748,
+      "sha256": "c5c9dbf4843d074e2322f569745538a0614b561398c05d8d34b6760293841b2a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/anomaly_multisensor/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44489,
+      "sha256": "877d360be09da67150c695bba18e1bde486ae879264209df777e81bd926971b7"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/anomaly_multisensor/v2.1.0/report.json",
+      "bytes": 14265,
+      "sha256": "c12772942d76661a4b28421f40f7fd845f9cb005d012a1a6d63a6103e9f79979"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/device_health/v2.1.0/evaluation.png",
+      "bytes": 25882,
+      "sha256": "8e6cf795e52a9c90d57cf59209d99217a3c15ab4beee4754b64b5f29179f7cb9"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/device_health/v2.1.0/feature_importance.png",
+      "bytes": 60665,
+      "sha256": "8defb03856b929413e00a298bdcf234ee3f28ea597de6b10a0aa914e450eb8c5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/device_health/v2.1.0/model.joblib",
+      "bytes": 100606,
+      "sha256": "2ca1d97fe603637f27ed7beebe1ce5eb4abc32c10b8d8ff9678df8f4a163e3a5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/device_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 43970,
+      "sha256": "b5a4d633ca9d2ec6f7e26308587fa25da6cd740d2ef02a6c05909a82843b0219"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/device_health/v2.1.0/report.json",
+      "bytes": 14681,
+      "sha256": "b9c82b588c796775934158d3f1cb43d539dd6bf8434749cdc96f1124302501bd"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ec_forecast/v2.1.0/evaluation.png",
+      "bytes": 153292,
+      "sha256": "dc5f74f3cb2ffc45c0c5e4c085ecfaa36380b6207d0772d26da8777520676100"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ec_forecast/v2.1.0/feature_importance.png",
+      "bytes": 55295,
+      "sha256": "f2549c8a58175ebd1530f6926d25a8380f6746c8e8f456b9bc92bad3b9ba1c3f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ec_forecast/v2.1.0/model.joblib",
+      "bytes": 1092670,
+      "sha256": "a09620f3cfdfe11c2f0badb2271c384a864760ec7f4ea0a8d416d0cbc9b33773"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ec_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 41591,
+      "sha256": "6753003f1e02d32a395b8643ad78946bf8ad76b5030d80fcafd2aa2c6a8a6c85"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ec_forecast/v2.1.0/report.json",
+      "bytes": 6282,
+      "sha256": "26b23c2e47670fee61242e709dcfc68e39a2d9248a1b417494579f93653fa20d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/farm_health/v2.1.0/evaluation.png",
+      "bytes": 29460,
+      "sha256": "88918f747862abdfe07290bd86c8dfb1d59108dde555a3ee585ccb116107f6cf"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/farm_health/v2.1.0/feature_importance.png",
+      "bytes": 59926,
+      "sha256": "5d6984fae9ff867122ae32320fca258cf877e9257fd81fa0f6a17150f9181d36"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/farm_health/v2.1.0/model.joblib",
+      "bytes": 388442,
+      "sha256": "71b7ab0ae620b8f6b49384cc01d47395535dace309a16c9d8a38e9e6c2efe133"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/farm_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 45154,
+      "sha256": "74d8c7939247b7eb545cfb0fb20a9029a89ff9edce6b692954435e80ca8feb5f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/farm_health/v2.1.0/report.json",
+      "bytes": 17084,
+      "sha256": "926e4a9db153bd3336f41250a13ff446f393ab6d53266d69513150b33cad1095"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/flow_fault/v2.1.0/evaluation.png",
+      "bytes": 27624,
+      "sha256": "02ebfe98763e3dbbed4258a8e7501ec3f91f3ed7e4eaf5f8015a760af119db1f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/flow_fault/v2.1.0/feature_importance.png",
+      "bytes": 55307,
+      "sha256": "a7dd60c6a5755a800ba7c699d40f8aa3a3de31d62f3e0d1ecfbdcd273f71f999"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/flow_fault/v2.1.0/model.joblib",
+      "bytes": 93316,
+      "sha256": "8a2858170aa55b19474ca30e36f2f4ac83e5b032a046908315c27c6616e2148f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/flow_fault/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44285,
+      "sha256": "c5dccbc56ae279e883c1c5577d9440ab5b98a880e26bf14339744500762b386f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/flow_fault/v2.1.0/report.json",
+      "bytes": 17592,
+      "sha256": "722a2704885e79b70611bda34f90a02bdacc54da434d188bee9bfebc3d74c789"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_failure/v2.1.0/evaluation.png",
+      "bytes": 25566,
+      "sha256": "ac0d87520d36fdc09d9f8bf00e4dc52eee0be07a370ca30a5d5f3b578924bec4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_failure/v2.1.0/feature_importance.png",
+      "bytes": 57326,
+      "sha256": "195bd2d435d9d1fa68c16e5471cd7418afff8470ade348ca63607359af2dc546"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_failure/v2.1.0/model.joblib",
+      "bytes": 60380,
+      "sha256": "dc24aac9a9627b25e04d2efe725f6ef7a840568b5cf98d955c339f510253479e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_failure/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42635,
+      "sha256": "06693b3205cecc5d7d477e32e0e5297438a1b25a69d246b474868ec4b1b0e7f4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_failure/v2.1.0/report.json",
+      "bytes": 14099,
+      "sha256": "46f1c0c20447d54e4655aa41d826697d232d7cc4a59a74d158257946a085c8d4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_need/v2.1.0/evaluation.png",
+      "bytes": 24660,
+      "sha256": "b31c2dea16a5bf4dd4cd270a081c579012dfeaa02442cc20d214271cc9a2d2e6"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_need/v2.1.0/feature_importance.png",
+      "bytes": 52797,
+      "sha256": "1c868154873f59bbf6ee1da87ccde40210f77ae2585575a93e9cb4b14445084c"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_need/v2.1.0/model.joblib",
+      "bytes": 169562,
+      "sha256": "371f86db8d1045960c0210022dffe470c72c51d3b9a4767ef6cf0960ec54908e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_need/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42342,
+      "sha256": "dcefd120be5dbaa3ed3348deead3f185aec727acc2ee3ab1f0178e467e27a406"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/irrigation_need/v2.1.0/report.json",
+      "bytes": 12629,
+      "sha256": "74b9d6c028bef77c9c29038a7a441d41d1a3b0ed40c2a31df4e6c5c9bd63ca3d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/moisture_forecast/v2.1.0/evaluation.png",
+      "bytes": 149740,
+      "sha256": "f6cfb401cbbec1847c5117a03776da7749c7ae33c4130c2015d9839e2429ea94"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/moisture_forecast/v2.1.0/feature_importance.png",
+      "bytes": 58714,
+      "sha256": "a0423947f9811f46d811abcd5f9360e6ea49615960389e6378e40191397faed9"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/moisture_forecast/v2.1.0/model.joblib",
+      "bytes": 1698802,
+      "sha256": "ba5dc33ada56839d40a3e2d5d814fdd37fa4ee5c9aee7ecd2cbb830cc5c916d4"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/moisture_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44277,
+      "sha256": "ca074ca87857f0d932b109a565bffeb483e5e86ed104b4ffeb26166e1715d04b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/moisture_forecast/v2.1.0/report.json",
+      "bytes": 6366,
+      "sha256": "9abeee2bb70944b2947f34c1df0f0087a1559f0af56464474a9c24065d4354e8"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ph_forecast/v2.1.0/evaluation.png",
+      "bytes": 151639,
+      "sha256": "318cf2af4422753dcff8d464e16e89f1bfb0da06068f32411de2f08f0a0aea29"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ph_forecast/v2.1.0/feature_importance.png",
+      "bytes": 57072,
+      "sha256": "df63c9f201dc94409dfe9e21fce4254735512ada81fc1c0d62d1ccdf46e0931a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ph_forecast/v2.1.0/model.joblib",
+      "bytes": 1679327,
+      "sha256": "8fa328ead17f9a57120e60f70a2be9e0248ad1aaab3603430ee4d7110e178d98"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ph_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42793,
+      "sha256": "4ca490e32a33b042452cdd2f9660c7d23e98efcf688e29ee95034b4a6372a38d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/ph_forecast/v2.1.0/report.json",
+      "bytes": 6292,
+      "sha256": "772ddaef64d4e5b41a8d16667addc097b218487e0dcfdf58af12ec52575ffa0d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/suite_report.json",
+      "bytes": 147562,
+      "sha256": "6767aa8f45fa0384bc46bd4fd3ac7652a86cfcfb0cbd3db0300a829fc78eac72"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/suite_summary.png",
+      "bytes": 77699,
+      "sha256": "7b218350d202fd1bbb64515d47436d11f648cb29a488726ba6ef35e41167233b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/temperature_forecast/v2.1.0/evaluation.png",
+      "bytes": 151018,
+      "sha256": "49f49dd3d10438bc9ffac4aea664e17af69f9a77c7dff3e302e3b4fb3fc9db51"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/temperature_forecast/v2.1.0/feature_importance.png",
+      "bytes": 53986,
+      "sha256": "25dbe7686ebbd3f27d9d8bc369d7c50da112fca773111f2d600f320de14cb9cc"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/temperature_forecast/v2.1.0/model.joblib",
+      "bytes": 1693622,
+      "sha256": "bc4efd8cf239cc16bf2bf6c18bbf913ed8e60bce4358c80a6fd86d652d1681b0"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/temperature_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42679,
+      "sha256": "17827717fccd54de9e6038d6cb08cecbac6d8dcd5e7f398b3a24467662381224"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/temperature_forecast/v2.1.0/report.json",
+      "bytes": 6356,
+      "sha256": "64fde5dff347738a334f383b1c336c281b6833124f5488557dff8bab3afee52b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/shared/training_dataset.parquet",
+      "bytes": 80271,
+      "sha256": "f2dd0b962a35ce90e6d16f8ef8530ef8bc5005e0ddad1aa4a7288c919b7d7c05"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T140724Z-f58d3d3500bc/suite_report.json",
+      "bytes": 147562,
+      "sha256": "6767aa8f45fa0384bc46bd4fd3ac7652a86cfcfb0cbd3db0300a829fc78eac72"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/anomaly_multisensor/v2.1.0/evaluation.png",
+      "bytes": 30903,
+      "sha256": "4468270d6a25839247a8991b4dbcb5709fe7b297c46610660f5eed360aab9a14"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/anomaly_multisensor/v2.1.0/feature_importance.png",
+      "bytes": 61815,
+      "sha256": "aea41a31e84d37cab7463dcc90e532a389113a0553d97853a85bce8e47fe17d2"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/anomaly_multisensor/v2.1.0/model.joblib",
+      "bytes": 146682,
+      "sha256": "5c782f905bb81451c00099b6533bb29ca28cc1f6fd42823d4a848fbbdcb09026"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/anomaly_multisensor/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44489,
+      "sha256": "877d360be09da67150c695bba18e1bde486ae879264209df777e81bd926971b7"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/anomaly_multisensor/v2.1.0/report.json",
+      "bytes": 14881,
+      "sha256": "6682ff7636b5e4357b7ebc34cddd0aa1142370c4b4fdcf222bbf0ad036000d3b"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/device_health/v2.1.0/evaluation.png",
+      "bytes": 26704,
+      "sha256": "4c431e59f163d893a409cd758b7599550bf3ab8f7e0d86fcef461c6ac9d03597"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/device_health/v2.1.0/feature_importance.png",
+      "bytes": 60665,
+      "sha256": "8defb03856b929413e00a298bdcf234ee3f28ea597de6b10a0aa914e450eb8c5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/device_health/v2.1.0/model.joblib",
+      "bytes": 100606,
+      "sha256": "fe75680bea9101fb3906cce89943a3ad8515f19ea5a1d7e99972841e12339547"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/device_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 43970,
+      "sha256": "b5a4d633ca9d2ec6f7e26308587fa25da6cd740d2ef02a6c05909a82843b0219"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/device_health/v2.1.0/report.json",
+      "bytes": 14685,
+      "sha256": "4f21ac526619d51f02c2280252374d80f4e4b0fab4b0772f80b4a9af51624e99"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ec_forecast/v2.1.0/evaluation.png",
+      "bytes": 159719,
+      "sha256": "ca6903acddea1e23e7e90c58d2e27d5fd78e1af01f9d9c3dd1030c00541da51d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ec_forecast/v2.1.0/feature_importance.png",
+      "bytes": 55295,
+      "sha256": "f2549c8a58175ebd1530f6926d25a8380f6746c8e8f456b9bc92bad3b9ba1c3f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ec_forecast/v2.1.0/model.joblib",
+      "bytes": 1092671,
+      "sha256": "f7b5ebb163034b848403392b3fe73af46e5e264cba0ca2dddaa1436117c91b8d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ec_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 41612,
+      "sha256": "dd7bd5cab6839ac13d4a13975b4ad2d9ec87a23adade47649c586cdcd55c6c28"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ec_forecast/v2.1.0/report.json",
+      "bytes": 6280,
+      "sha256": "5b8f8121ad552c5f55f6e37e68b1e11b9c65da980358070754128947430fbe8a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/farm_health/v2.1.0/evaluation.png",
+      "bytes": 30963,
+      "sha256": "f912ca8bd03d4dafbea3663947b0f9833d97010ab3f3a24d97239ec4bb50c3d2"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/farm_health/v2.1.0/feature_importance.png",
+      "bytes": 59926,
+      "sha256": "5d6984fae9ff867122ae32320fca258cf877e9257fd81fa0f6a17150f9181d36"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/farm_health/v2.1.0/model.joblib",
+      "bytes": 388442,
+      "sha256": "1bedd06d01cb7b4bd89893c08b5718a13628451b993963e5687adfea63782bec"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/farm_health/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44546,
+      "sha256": "ce27a41b55a282230febfb6a2b2d97ebf863aa452ba1548da42a40edfa7627a5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/farm_health/v2.1.0/report.json",
+      "bytes": 18016,
+      "sha256": "2ed72f296926f6797a97c92f7285e0d5f82ffb1eabf08b65e29b4aad82b0977d"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/flow_fault/v2.1.0/evaluation.png",
+      "bytes": 28515,
+      "sha256": "9c005e8154219056187bacf9e65e32e4adaff21085e45ea20f76e4db404f81cd"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/flow_fault/v2.1.0/feature_importance.png",
+      "bytes": 55307,
+      "sha256": "a7dd60c6a5755a800ba7c699d40f8aa3a3de31d62f3e0d1ecfbdcd273f71f999"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/flow_fault/v2.1.0/model.joblib",
+      "bytes": 93316,
+      "sha256": "b3ea99fcf527f426d62c100096834b95025cae9de4c7ac78b362d20820912b79"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/flow_fault/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44311,
+      "sha256": "514da978bf0908ff6151c4538905228914b56c22b664ee4cf4ccdc4155bde2d6"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/flow_fault/v2.1.0/report.json",
+      "bytes": 17594,
+      "sha256": "902b5cdadc0a0fa67519dcfa9682a7b5c97750d8390c358dd7e3c9d9d6886f61"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_failure/v2.1.0/evaluation.png",
+      "bytes": 25502,
+      "sha256": "58e8dd30bff6798e72d59a8e4cf5a86a6e2bd0e208e05cc5cc1e51c4735c9cc6"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_failure/v2.1.0/feature_importance.png",
+      "bytes": 57326,
+      "sha256": "195bd2d435d9d1fa68c16e5471cd7418afff8470ade348ca63607359af2dc546"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_failure/v2.1.0/model.joblib",
+      "bytes": 60380,
+      "sha256": "95c3778ee44cba5e3814cb47e590e28585d758154dff76571a4a3a3c8e574ec5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_failure/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42639,
+      "sha256": "2d9fb23c69db315124c17c6ad1950f285f8dcbbecc9f7cf59554ae855e0920a5"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_failure/v2.1.0/report.json",
+      "bytes": 14193,
+      "sha256": "7b4a2f3704f4a9893ca6a0d36d8f06aef6937434008100e27b8efe44020ae39e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_need/v2.1.0/evaluation.png",
+      "bytes": 25538,
+      "sha256": "7eb2d903ed5b3ef39c46c6883655d1101bed0bf046dee8611519cc803a496346"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_need/v2.1.0/feature_importance.png",
+      "bytes": 52797,
+      "sha256": "1c868154873f59bbf6ee1da87ccde40210f77ae2585575a93e9cb4b14445084c"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_need/v2.1.0/model.joblib",
+      "bytes": 169479,
+      "sha256": "4376b24d9446305e4d9aa493963935ca5b32d95dc2bb792f8ee1c9d822f4217c"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_need/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42356,
+      "sha256": "546fc8645e6324e0cf5556171663781c5ceb770bc20a472c8503434050f891c0"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/irrigation_need/v2.1.0/report.json",
+      "bytes": 14383,
+      "sha256": "5d0b5963070c8f19c51e7aa02ebeae1f1c9fb662e9d09f83e9cd7bd454d57de1"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/moisture_forecast/v2.1.0/evaluation.png",
+      "bytes": 155136,
+      "sha256": "6ff2e1d9da09140cdbdbe26b1dbcb3031ca1dc65446c42bf534c6326b4aa5b31"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/moisture_forecast/v2.1.0/feature_importance.png",
+      "bytes": 58714,
+      "sha256": "a0423947f9811f46d811abcd5f9360e6ea49615960389e6378e40191397faed9"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/moisture_forecast/v2.1.0/model.joblib",
+      "bytes": 1698802,
+      "sha256": "8db820c9b3fea3d3e8d2266fb9acd4d1e97ba59a2a3784ca9ebeab39e97a9317"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/moisture_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44139,
+      "sha256": "a1bab430482303c745c7b2a25c6718674e7796a669b86bd39bd1534901128a7f"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/moisture_forecast/v2.1.0/report.json",
+      "bytes": 6360,
+      "sha256": "1ae5c00da482c75fbaee530f9327674a5e53ab91e5532121ffaf935ba6630527"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ph_forecast/v2.1.0/evaluation.png",
+      "bytes": 156899,
+      "sha256": "4f1ffd561e53316e279293ad0d59f68a061bcfbaa20a3350822d53dca0cee10e"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ph_forecast/v2.1.0/feature_importance.png",
+      "bytes": 57072,
+      "sha256": "df63c9f201dc94409dfe9e21fce4254735512ada81fc1c0d62d1ccdf46e0931a"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ph_forecast/v2.1.0/model.joblib",
+      "bytes": 1679327,
+      "sha256": "01ba1f3aa122c405b0f76a6092bcfc854fa14b839cbf4179f0f02953b0183dc6"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ph_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 44870,
+      "sha256": "52a51aab9ffc55e7a3f3f13fc4b29811b2b95410fd4c8935f49dc4731a99c3d3"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/ph_forecast/v2.1.0/report.json",
+      "bytes": 6291,
+      "sha256": "9fa6fa389467354cb9a90f5e1baba35297d1a26deb2403e1981f88c95fe2e9d8"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/suite_report.json",
+      "bytes": 151705,
+      "sha256": "ef2a360f76ef7f3a59c72fe2bb3ea15b5ae0d377a72ecd7df652d2cbd705a483"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/suite_summary.png",
+      "bytes": 78398,
+      "sha256": "cc9aa1422cddfdaafab2b636dfcb8a17c5b08aeab3cb483a93a94b1a7de2b906"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/temperature_forecast/v2.1.0/evaluation.png",
+      "bytes": 153004,
+      "sha256": "68cc1bcff92b3a5132640db07418da4e4627973cafc199cfb0b5f334d3bca855"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/temperature_forecast/v2.1.0/feature_importance.png",
+      "bytes": 53986,
+      "sha256": "25dbe7686ebbd3f27d9d8bc369d7c50da112fca773111f2d600f320de14cb9cc"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/temperature_forecast/v2.1.0/model.joblib",
+      "bytes": 1693622,
+      "sha256": "2caea4e54e22c2c53c9cf502603b05814a069e769935471174dd0278e915f1b6"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/temperature_forecast/v2.1.0/per_farm_evaluation.png",
+      "bytes": 42679,
+      "sha256": "17827717fccd54de9e6038d6cb08cecbac6d8dcd5e7f398b3a24467662381224"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/temperature_forecast/v2.1.0/report.json",
+      "bytes": 6354,
+      "sha256": "e96f4a42bd8dab80bd202cea86d995a9c089e72c1b4238d9b0a968859d42c645"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/shared/training_dataset.parquet",
+      "bytes": 81002,
+      "sha256": "2878c48936db9396515c94fd2005e4d58ea60e54fdb9c6a8fbb93bb28d2a10b8"
+    },
+    {
+      "path": "model-artifacts/shared/candidates/nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2/suite_report.json",
+      "bytes": 151705,
+      "sha256": "ef2a360f76ef7f3a59c72fe2bb3ea15b5ae0d377a72ecd7df652d2cbd705a483"
+    },
+    {
+      "path": "model-artifacts/shared/latest_training_report.json",
+      "bytes": 151705,
+      "sha256": "ef2a360f76ef7f3a59c72fe2bb3ea15b5ae0d377a72ecd7df652d2cbd705a483"
+    },
+    {
+      "path": "model-artifacts/shared_models_report.json",
+      "bytes": 151705,
+      "sha256": "ef2a360f76ef7f3a59c72fe2bb3ea15b5ae0d377a72ecd7df652d2cbd705a483"
+    },
+    {
+      "path": "PACKAGING_MANIFEST.json",
+      "bytes": 1349,
+      "sha256": "d422bd19929b43c5832692762757d468ae710994309af97e192dcc24f78b9cfa"
+    },
+    {
+      "path": "PACKAGING_MANIFEST.md",
+      "bytes": 786,
+      "sha256": "9c6c721987410b73f9c363bf4681de3fc354b62dda28194741eded3ffa533e76"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8910,
+      "sha256": "54aa951317dd804bdf77051e3bdf6776e946494e95dc3e3d703e1d9c3e23e751"
+    },
+    {
+      "path": "RELEASE-NOTES-V10.1.md",
+      "bytes": 1300,
+      "sha256": "230662769c6b3c4daeb27c2d74e73cd7fdc472e1b8c587cddd002a5c3f394a2c"
+    },
+    {
+      "path": "research-data/ATTRIBUTION.md",
+      "bytes": 2477,
+      "sha256": "37ca86f2084fae801fd21a5caedd2ff968b6b286c8fe5d8cf89b441afc95b3d9"
+    },
+    {
+      "path": "research-data/calibration/v9_profiles.json",
+      "bytes": 4113,
+      "sha256": "bc89cd9ae632be421f9c0b613759563a6bb9c302c0ec81a4d23ee50e722c81bc"
+    },
+    {
+      "path": "research-data/README.md",
+      "bytes": 703,
+      "sha256": "f9f6cc6b2f52161f16ee15d5d8dab4b9b7fa2eb45b51bfba8978f6541947af80"
+    },
+    {
+      "path": "research-data/reference/normalized_reference.parquet",
+      "bytes": 2390159,
+      "sha256": "87c760de8a0c6d22246369fd13e8f29f950a6322113eb38d6824daa4046f417e"
+    },
+    {
+      "path": "research-data/reference/README.md",
+      "bytes": 586,
+      "sha256": "53c0ec8d31b8e5b152b0f8cfd8e5cbe4cdf232ff5715767e3b048e510cd811de"
+    },
+    {
+      "path": "research-data/reference/reference_bootstrap_training.parquet",
+      "bytes": 2271856,
+      "sha256": "1d2fed14387999b32addfee0e68eb8db25714698426fae90f9bfcf673d397249"
+    },
+    {
+      "path": "research-data/reference/reference_calibration.json",
+      "bytes": 6348,
+      "sha256": "2d93b790896770a896fbfd7068d54a7fe16592b9832368e792edd047298bd4bf"
+    },
+    {
+      "path": "research-data/reference/reference_lock.json",
+      "bytes": 4424,
+      "sha256": "f4991767239fffce005c4dde4c0668ce5b00ba96bd4f4d04c913518fa830659b"
+    },
+    {
+      "path": "research-data/source_manifest.json",
+      "bytes": 3592,
+      "sha256": "9f273e42ac731ec7bc0d91b7434568f903e7263ace4a83c6d3de0863178e599a"
+    },
+    {
+      "path": "scripts/backup_v10.ps1",
+      "bytes": 2641,
+      "sha256": "944c929669eef83dbceee03b9aa5302491f626c95652d9fea18a8c8283997641"
+    },
+    {
+      "path": "scripts/build_clear_reports.py",
+      "bytes": 37386,
+      "sha256": "8404d144c21c95fc4d19116e48e265b0971dc882ce50c7b6c67cfd8fc3b82307"
+    },
+    {
+      "path": "scripts/build_v10_1_manifest.cmd",
+      "bytes": 324,
+      "sha256": "565a95cb4443644a8a4f5e1289f3150e9ed37c3e55b9d1450b3bb1a9baa371e0"
+    },
+    {
+      "path": "scripts/build_v10_1_manifest.py",
+      "bytes": 2801,
+      "sha256": "6121ca65a77d63643526f6c8c59d26dca4f967a8f6e839fe73f5cdcce5723ee3"
+    },
+    {
+      "path": "scripts/calibrate_v9_research_data.py",
+      "bytes": 99,
+      "sha256": "9ca3d0fec8035d2668f0e65a8b919f84d0c810880df14c8836fbf80706ff3725"
+    },
+    {
+      "path": "scripts/check_models.cmd",
+      "bytes": 147,
+      "sha256": "e0c090fc299e0671982617c159de765cf8c04ccd5b8548c3057ed711c500ee42"
+    },
+    {
+      "path": "scripts/check_models.ps1",
+      "bytes": 1180,
+      "sha256": "c4d9b9e44a15adaf024aeb885a1207ce119d76180841ad08ec2cdd86832cbbe8"
+    },
+    {
+      "path": "scripts/check_v10_completion.ps1",
+      "bytes": 3213,
+      "sha256": "5e4642603d2d9af5cbb6c7dd271c9f4c0b440a78c0b849ec5ed2234e8e688da8"
+    },
+    {
+      "path": "scripts/check_v10_runtime.ps1",
+      "bytes": 18319,
+      "sha256": "56c3b7e90ac58a9767cbb21e0d866d46f1f79187933f90546e53b7ef1bd3d3e8"
+    },
+    {
+      "path": "scripts/check_v10_static.py",
+      "bytes": 9329,
+      "sha256": "ca2198c62b8051a836c427410d03bd30885a811e564e9858642fc86fa16fdfc1"
+    },
+    {
+      "path": "scripts/check_v10_unit_tests.ps1",
+      "bytes": 3161,
+      "sha256": "3e1121f64bf0f917904587a7335ba90e98e82660aea9e911623c93032a873dbb"
+    },
+    {
+      "path": "scripts/check_v9.cmd",
+      "bytes": 1649,
+      "sha256": "1b9fdae1eb06012c829a7065004a58a24c7d55aa2fd6e7564818d537fd56f3de"
+    },
+    {
+      "path": "scripts/check_v9_runtime.py",
+      "bytes": 3883,
+      "sha256": "7fb754fbb49bd9625959fd184aff1cc98a3b626e22ce5cb8465e4a49f90f847d"
+    },
+    {
+      "path": "scripts/cleanup_generated_artifacts.py",
+      "bytes": 4112,
+      "sha256": "72dbd80afddd98b2234f85cf0553721d278b490f3b179420d0f882e5d23c6c55"
+    },
+    {
+      "path": "scripts/diagnose_v9.cmd",
+      "bytes": 526,
+      "sha256": "1970d07d505353a6645c799e3e2ceb4d70a938b8d98040f98bec51a439424271"
+    },
+    {
+      "path": "scripts/download_research_data.py",
+      "bytes": 99,
+      "sha256": "9ca3d0fec8035d2668f0e65a8b919f84d0c810880df14c8836fbf80706ff3725"
+    },
+    {
+      "path": "scripts/export_train_runtime_ml.cmd",
+      "bytes": 158,
+      "sha256": "0f80a7e465d57924e06c8d88e0e060fbf66619df2071adccd91f517671130983"
+    },
+    {
+      "path": "scripts/export_train_runtime_ml.ps1",
+      "bytes": 2609,
+      "sha256": "2ce2fcd4b078b5617d6289d16251b4eaabe73c587e9f0edb8922a097857a1a9a"
+    },
+    {
+      "path": "scripts/generate_v10_1_benchmark.py",
+      "bytes": 21070,
+      "sha256": "5b3bb687d51b9523d3fda376c3ace2c881c2e8cca9f85cd3e1bcdd65a2ede73f"
+    },
+    {
+      "path": "scripts/generate_v10_1_operational_data.py",
+      "bytes": 13431,
+      "sha256": "ca90c73824c58fc569e68bce3b41592c8fdc02491083610788b66bc44398e6c2"
+    },
+    {
+      "path": "scripts/manual_feedback_probe.py",
+      "bytes": 8960,
+      "sha256": "412ca14c1c18907c2fb4adc4a35fa53b9b7bf555e212e44273eadd622eccadd7"
+    },
+    {
+      "path": "scripts/normalize_v10_1_parquet.py",
+      "bytes": 1965,
+      "sha256": "cd1412d7ede75c6ffbe4d01dfbd5e97f561fff5cc6351d435dc046312242a7d0"
+    },
+    {
+      "path": "scripts/offline_truth_guard_evaluation.py",
+      "bytes": 3989,
+      "sha256": "3a1a9a72bebaba84b577228bfd14107750b00d0abde1fae3034bc19abe94c77e"
+    },
+    {
+      "path": "scripts/offline_v9_research_check.py",
+      "bytes": 12305,
+      "sha256": "0174b5a88641421b99c06c2d9bf78b2f954507d0216a95b2d56eb567b4d3fb32"
+    },
+    {
+      "path": "scripts/open_studios.cmd",
+      "bytes": 241,
+      "sha256": "5720e87adbd2517df2906e8b4d048dd7873dddd30ed2216b41d0f5d68949681c"
+    },
+    {
+      "path": "scripts/parquet_writer.py",
+      "bytes": 7764,
+      "sha256": "97c388c1dd0b0d41721cebe1153472aa427ea2a0d244bf8c1298cd8aa1127d1c"
+    },
+    {
+      "path": "scripts/prepare_v9_reference_data.py",
+      "bytes": 38338,
+      "sha256": "96fd5f7250804ce03286e2524722496f2bcb074c478a6d48d3ed40052ad3fa01"
+    },
+    {
+      "path": "scripts/prepare_v9_research_data.cmd",
+      "bytes": 356,
+      "sha256": "512e921316e427c8e2496c6119ba68cd64b0c616240a5776fcbe52ed4a84a54c"
+    },
+    {
+      "path": "scripts/repair_realtime.cmd",
+      "bytes": 1002,
+      "sha256": "ba6754197f4da2692ecb97685e2f42a07598f3699cc9a93899bfe76dd43126e9"
+    },
+    {
+      "path": "scripts/restore_v10.ps1",
+      "bytes": 2702,
+      "sha256": "78249630cbb5c518f41da8cd479b4ffcca6728ff1a7b7bd4d8dc1701940e9ddb"
+    },
+    {
+      "path": "scripts/run_v10_1_acceptance.py",
+      "bytes": 24771,
+      "sha256": "5eb73b72d607bb5320caa49faccc04e6da5186daf10ab7fa5cdc86e13d0cfaee"
+    },
+    {
+      "path": "scripts/setup_v10_env.cmd",
+      "bytes": 347,
+      "sha256": "19235fd6d621d3cf2367feac20c22d063bca49e7b8deba8a8613a537d105810f"
+    },
+    {
+      "path": "scripts/setup_v10_env.py",
+      "bytes": 5391,
+      "sha256": "19560cf924034649df595fac652cf36bb54c704fbb67b4ca062d8ca0dc8ecb63"
+    },
+    {
+      "path": "scripts/setup_v10_production.cmd",
+      "bytes": 252,
+      "sha256": "e7a7b64ed7626fe3f93a8c317c4dc1c79d8dcaa4bc86ee16ddb68c31247cc3c0"
+    },
+    {
+      "path": "scripts/setup_v10_production.ps1",
+      "bytes": 3005,
+      "sha256": "ea4167a447d2a752d350069df9f297f2a5f9c15763e501d6fe1b2907119b8a67"
+    },
+    {
+      "path": "scripts/setup_v9_env.cmd",
+      "bytes": 230,
+      "sha256": "91c28745d2cd5fd723a2c05a53514cbaf30ee30898f99cf55f6d3202edb1b138"
+    },
+    {
+      "path": "scripts/setup_v9_env.py",
+      "bytes": 2008,
+      "sha256": "5a7b460cd4e28e658ce2f71c0193f8c52caf629e5966f491bc542c0594465f4b"
+    },
+    {
+      "path": "scripts/start_v10.cmd",
+      "bytes": 1259,
+      "sha256": "2e214e1e48b480c3ad12daef95d004d8c254becb43fa6a4a0ef1dd4b9567c2a7"
+    },
+    {
+      "path": "scripts/start_v9.cmd",
+      "bytes": 1817,
+      "sha256": "eb20674afabf93d9eca16b7c5cc56c37e47f8283a9e72ff265e2f924a7f4043b"
+    },
+    {
+      "path": "scripts/sync_knowledge_sources.py",
+      "bytes": 2511,
+      "sha256": "e20062bf2218cada81ee642c6e93df25d4eacd4ad5d86f6fb218e43b92d5a5ce"
+    },
+    {
+      "path": "scripts/sync_v10_model_summary.cmd",
+      "bytes": 335,
+      "sha256": "53fd07251fb48d8b3638f57ff05a225febaca7e3aec80a958964e3a474212ad3"
+    },
+    {
+      "path": "scripts/sync_v10_model_summary.py",
+      "bytes": 3511,
+      "sha256": "4d5051542d7b777437a63ebc94c18cdde1ecd4f4e75e86291894cf80904be191"
+    },
+    {
+      "path": "scripts/test_demo_sections_4_7.ps1",
+      "bytes": 12332,
+      "sha256": "94cd67d07a62ecfd7a2bbc42ce316bd51e0d5d18615d2de26de775acad10b937"
+    },
+    {
+      "path": "scripts/train_models.cmd",
+      "bytes": 147,
+      "sha256": "b413fd1e2747ed556e0f42c22e510c7bc16a7b24d28491ed9f128651ae89a1bd"
+    },
+    {
+      "path": "scripts/train_models.ps1",
+      "bytes": 1013,
+      "sha256": "61af4452872de09385fa146f0770dbb93858d6604a594c5f4a531fea1c7ba8e3"
+    },
+    {
+      "path": "scripts/train_shared_from_customer_csv.py",
+      "bytes": 10588,
+      "sha256": "d5a319543fdb994f4580f63e66eb2257d404807a5d4b9a988301ad38405d3d2f"
+    },
+    {
+      "path": "scripts/validate_v9_simulation.py",
+      "bytes": 4588,
+      "sha256": "b787845817c67c25c2f9fad420fb5852e4f9f07f3d425e4cdb150cc0434c3d80"
+    },
+    {
+      "path": "scripts/verify_shared_ml_evidence.py",
+      "bytes": 9119,
+      "sha256": "e53ace755229f68a03b04ed7318814d6d7b6f4a2094c8ce66c08df902e7c3f92"
+    },
+    {
+      "path": "scripts/wait_v9_bootstrap.py",
+      "bytes": 1697,
+      "sha256": "c2f1ce3df35830f10c84bb1490efd2835ecb6cebb4833f8c2c74c5c95fd3ade9"
+    },
+    {
+      "path": "services/ai-analytics-service/app/customer_ml_automation.py",
+      "bytes": 49105,
+      "sha256": "8051c016a61ae7e72803f1fdf1660850867fb005fe4b6114fb265f96e57cb392"
+    },
+    {
+      "path": "services/ai-analytics-service/app/dataset_builder.py",
+      "bytes": 34323,
+      "sha256": "90fca0e93149370b1d95c64c7c4cf3f9bce7b224eacf9307df69d507051ed14e"
+    },
+    {
+      "path": "services/ai-analytics-service/app/main.py",
+      "bytes": 92887,
+      "sha256": "353b4fde1c6575450e8ff351ee2dec8ab4e5082ae7eb264fa672adfec25897c3"
+    },
+    {
+      "path": "services/ai-analytics-service/app/ml_pipeline.py",
+      "bytes": 57974,
+      "sha256": "5fdeac659f6cd43a0ab18c65b906d82422d902625449d06d3343a928bb524528"
+    },
+    {
+      "path": "services/ai-analytics-service/app/runtime_export.py",
+      "bytes": 19677,
+      "sha256": "d447dee23d84aed8582525cb80fc19135816ff53491ca5f9772c77ec549a425b"
+    },
+    {
+      "path": "services/ai-analytics-service/artifact_smoke_test.py",
+      "bytes": 2105,
+      "sha256": "c4c874bdec6cab9e7b8c8fe86ae07144e724fe0efad0a03376e1903cbac7568f"
+    },
+    {
+      "path": "services/ai-analytics-service/Dockerfile",
+      "bytes": 639,
+      "sha256": "052290e8a9e00f402e971e79a020422e6daee645d436a85774a2983e7784d193"
+    },
+    {
+      "path": "services/ai-analytics-service/offline_smoke_test.py",
+      "bytes": 1505,
+      "sha256": "9256137439b6a8ee7288882ef004b174a88ada1070935bed4acbe6a0ef10a132"
+    },
+    {
+      "path": "services/ai-analytics-service/requirements.txt",
+      "bytes": 239,
+      "sha256": "4db7787910d29f0a44b6fe6ca99dbaf39556022bb2a3c4850feee1e9f8a826e0"
+    },
+    {
+      "path": "services/ai-analytics-service/tests/conftest.py",
+      "bytes": 931,
+      "sha256": "61731fc471476c25b98fed0aae33951867af7114f413df5bdf458c6b9ae26a0b"
+    },
+    {
+      "path": "services/ai-analytics-service/tests/test_artifact_publish.py",
+      "bytes": 1401,
+      "sha256": "f7b9362159535281022bf76e04f042b222e481c656ca831c79456e701dedd568"
+    },
+    {
+      "path": "services/ai-analytics-service/tests/test_dataset_builder.py",
+      "bytes": 3943,
+      "sha256": "f0353298e7f596fa570b192baa6d51fba916e89bd0fc8be873ebd23ac20e392d"
+    },
+    {
+      "path": "services/ai-analytics-service/tests/test_history_retention.py",
+      "bytes": 2040,
+      "sha256": "d7a4ae4fb5dabd83960ecadaffc21d845bb950b659d4344f4f4a41bac5ad7757"
+    },
+    {
+      "path": "services/ai-analytics-service/tests/test_ml_pipeline.py",
+      "bytes": 3795,
+      "sha256": "f8b422999a3ca2e82aa95e28f799b3907e4a3ef07f8cfb080b53d90c03ef88e0"
+    },
+    {
+      "path": "services/chatbot-service/app/context_policy.py",
+      "bytes": 2537,
+      "sha256": "7737a9d631c48d365dc11c18cd62d6c802c007d3e62ce730d259a81fc1963bdf"
+    },
+    {
+      "path": "services/chatbot-service/app/main.py",
+      "bytes": 72672,
+      "sha256": "ccf0709b00f91f67ddb6489e4967aa44ed5bec86a8d218e65ef73cdbb4d8cf81"
+    },
+    {
+      "path": "services/chatbot-service/Dockerfile",
+      "bytes": 290,
+      "sha256": "fdf469ca5debbb621c6b47d8570a53e4a6aa38a243d0b4e8ec7bc16a90067ec6"
+    },
+    {
+      "path": "services/chatbot-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/chatbot-service/requirements.txt",
+      "bytes": 94,
+      "sha256": "8d762faf705537b47d32f9a7cc1ef9e3f03d4a74cc40d18195c2e06559e70a04"
+    },
+    {
+      "path": "services/chatbot-service/tests/test_context_policy.py",
+      "bytes": 4948,
+      "sha256": "a12860c713442fee0f39e4e492f70caff42d64b9218e4cf702a6774a41d7167e"
+    },
+    {
+      "path": "services/crop-router-service/app/logic.py",
+      "bytes": 1167,
+      "sha256": "fb158888a6c1f4c37793e2061d1130d5cf1302c2e2dcf3ba1df92bcfb07fcde5"
+    },
+    {
+      "path": "services/crop-router-service/app/main.py",
+      "bytes": 19486,
+      "sha256": "6c3e22ca421d5f9b2c0da7a72fee1411cef98faf6339ec6726aefc08b6d28d41"
+    },
+    {
+      "path": "services/crop-router-service/Dockerfile",
+      "bytes": 297,
+      "sha256": "90431c17e9b8c818f4661952e6a56358d6a1d92d36ab5fd07a7cf42f23492803"
+    },
+    {
+      "path": "services/crop-router-service/requirements.txt",
+      "bytes": 111,
+      "sha256": "1f8af3c8b612c70c7f26bb60a869588f55d90cd22c89a6d0e2f8c23a8816cbd6"
+    },
+    {
+      "path": "services/crop-router-service/tests/test_crop_router.py",
+      "bytes": 2841,
+      "sha256": "0d4fcd725f6f796823b51469a40fd5c6fc809b18eaf597dc6afafe767463af89"
+    },
+    {
+      "path": "services/data-simulator-service/app/calibrated_model.py",
+      "bytes": 18104,
+      "sha256": "6c3c488d7d01e1efd4082db3cff774ba1d4d75ce9df854cdd2a185d957636728"
+    },
+    {
+      "path": "services/data-simulator-service/app/main.py",
+      "bytes": 15633,
+      "sha256": "51925d9bf577e05a3f46a265a7b38b93ceb62e25825eacf7d1174fb3fc55b82f"
+    },
+    {
+      "path": "services/data-simulator-service/Dockerfile",
+      "bytes": 295,
+      "sha256": "b25e940cf121d8fade8fbb242b87a87314fe3655c0c2495acd79bf80bd279727"
+    },
+    {
+      "path": "services/data-simulator-service/requirements.txt",
+      "bytes": 96,
+      "sha256": "cbd46cb8edf54cdd5508ca6d17d65daf5bbde32427aed7a834255d099dbad59f"
+    },
+    {
+      "path": "services/data-simulator-service/tests/test_calibrated_model.py",
+      "bytes": 4040,
+      "sha256": "e24880c80d3f477fb78e7c9cdf3ef7e5e28ef8951872c4dcde8771a4e4b0ba0c"
+    },
+    {
+      "path": "services/farm-data-service/app/main.py",
+      "bytes": 61659,
+      "sha256": "a8c6243bbc869d4c7b6ff9386f341da415943b4e73d2426853e8ef507f7ba972"
+    },
+    {
+      "path": "services/farm-data-service/Dockerfile",
+      "bytes": 250,
+      "sha256": "aab47b30c1b6c4b1b10bb5a88edd984d35b687171454a629d6f302b9da0bf51c"
+    },
+    {
+      "path": "services/farm-data-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/farm-data-service/requirements.txt",
+      "bytes": 80,
+      "sha256": "90e27fe2cf505eac4139961be38538d48b96dfc881b7d2ea45906e7e660dcb59"
+    },
+    {
+      "path": "services/identity-service/app/main.py",
+      "bytes": 20366,
+      "sha256": "683de50dbc42a5f1fed58d0efa343df798b5455acdfbba9a05e1ad3371167966"
+    },
+    {
+      "path": "services/identity-service/Dockerfile",
+      "bytes": 248,
+      "sha256": "0a8104c693bda5ec48053946a0acc13adc669393d0f95ae9aff688bac79c3272"
+    },
+    {
+      "path": "services/identity-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/identity-service/requirements.txt",
+      "bytes": 114,
+      "sha256": "49cdc54c978efdd7ee3f1166038ad23e27001a5cc26fe7f1a5f7967ae2c02883"
+    },
+    {
+      "path": "services/identity-service/tests/conftest.py",
+      "bytes": 564,
+      "sha256": "d25444ba274e1a7a8c7e197d61e7bd094941f41722e6b1d58833751b68d0e210"
+    },
+    {
+      "path": "services/identity-service/tests/test_security.py",
+      "bytes": 2018,
+      "sha256": "21e0811ba54018cc06d8562c72daa6e8e2b7f560e5f65478728083e8a84076ee"
+    },
+    {
+      "path": "services/knowledge-service/app/main.py",
+      "bytes": 48912,
+      "sha256": "82f8f0fcb68b4782ff008180a2dd886639b92959182a74183295df22b2f1b7ae"
+    },
+    {
+      "path": "services/knowledge-service/Dockerfile",
+      "bytes": 250,
+      "sha256": "cc4f68ad9b64a9958087d61d88b4ed868727ce00d6f3f4ae74c5380b6df8b985"
+    },
+    {
+      "path": "services/knowledge-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/knowledge-service/requirements.txt",
+      "bytes": 155,
+      "sha256": "3fa489118fa1ba0ca5c09f174a29aa9d8e4d7709d4e601f0517cc22e2171319b"
+    },
+    {
+      "path": "services/knowledge-service/tests/conftest.py",
+      "bytes": 858,
+      "sha256": "5170e82f4516a3d967bc7559cc1728452631e452d3faa46896228740f3e5856d"
+    },
+    {
+      "path": "services/knowledge-service/tests/test_recommender_logic.py",
+      "bytes": 1358,
+      "sha256": "39701e923fce9d4fe768651b7ed34b0a56780c4a5b8e977196b4f567bd074bde"
+    },
+    {
+      "path": "services/llm-gateway-service/app/logic.py",
+      "bytes": 6760,
+      "sha256": "0e0117f79f8a59ce126dba8195b3d512c8c2357cdae99330658b7c26af35e022"
+    },
+    {
+      "path": "services/llm-gateway-service/app/main.py",
+      "bytes": 16316,
+      "sha256": "7bc2aab2aff490287d93ed4b128cefa9bb9e9db13d723a2957fbc0cdfb71509d"
+    },
+    {
+      "path": "services/llm-gateway-service/Dockerfile",
+      "bytes": 297,
+      "sha256": "b0b3641fc6dce1ac847402b50fdb3f1256df98b3c7c2878486b254d296d945fa"
+    },
+    {
+      "path": "services/llm-gateway-service/requirements.txt",
+      "bytes": 111,
+      "sha256": "d33f50f0f74f6d3fae44af32e82bfd1492ab02af15f0b3567b7027bd33a51143"
+    },
+    {
+      "path": "services/llm-gateway-service/tests/test_gateway.py",
+      "bytes": 3099,
+      "sha256": "450901575c1573cca817090083dd029b89c058f3b332a7f46462a72732c784a1"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/app/main.py",
+      "bytes": 16287,
+      "sha256": "ebfd371ae93ab313d7fc02ca4da823d7bdcd366b5c6d31806d898c7adfeacc3e"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/Dockerfile",
+      "bytes": 270,
+      "sha256": "fd73f42f49975ed16eb8df3467e1ff5d7c36adfd19e5ee4fa87b2dc2c69b3a95"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/telemetry-ingestion-service/requirements.txt",
+      "bytes": 83,
+      "sha256": "68ec49905027f406e3719fb7483d01507fd0252a64da94e993fd7674c0901bf2"
+    },
+    {
+      "path": "services/ticket-service/app/main.py",
+      "bytes": 23383,
+      "sha256": "6d8f517dcac5fc39fa85ec7f2f878a6a725d3e363b0366fac61efe1f83b2aff7"
+    },
+    {
+      "path": "services/ticket-service/Dockerfile",
+      "bytes": 244,
+      "sha256": "2fd508e2dcecd9ab0a71138d2375ede3372990c5a4cda7434eaaab5a6f8c76e1"
+    },
+    {
+      "path": "services/ticket-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/ticket-service/requirements.txt",
+      "bytes": 80,
+      "sha256": "90e27fe2cf505eac4139961be38538d48b96dfc881b7d2ea45906e7e660dcb59"
+    },
+    {
+      "path": "services/truth-guard-service/app/guard_logic.py",
+      "bytes": 9450,
+      "sha256": "0777d94768ca015013120b4c7f819440619e70a0f80ad4b25d7653e43a61337c"
+    },
+    {
+      "path": "services/truth-guard-service/app/main.py",
+      "bytes": 3801,
+      "sha256": "a3a2596a3e5a9744e54038b36d3fd67d622f1fbee91d40e018769941a614f5e2"
+    },
+    {
+      "path": "services/truth-guard-service/Dockerfile",
+      "bytes": 302,
+      "sha256": "19ee4ad32cf69ee9680bf83c3cb309329646737a957e05546307a9ff692679fc"
+    },
+    {
+      "path": "services/truth-guard-service/Dockerfile.dockerignore",
+      "bytes": 131,
+      "sha256": "75f2fc01d471899c44d76caedda28e0e194aa4aa789d45338d2d69f76d86a4f8"
+    },
+    {
+      "path": "services/truth-guard-service/requirements.txt",
+      "bytes": 112,
+      "sha256": "13587c4f7cce7a84b3d42607b6e0ca11a016ebe7ae84f56331ef395316ece7f3"
+    },
+    {
+      "path": "services/truth-guard-service/tests/test_guard.py",
+      "bytes": 3818,
+      "sha256": "2e997895950818ab97dec196f58377fa452bf0577c6289997a9f71332b6bc946"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 7,
+      "sha256": "0bc23630256f9d80581f933b0b538600a6c156033cfb644f0982d026d7116045"
+    }
+  ]
+}

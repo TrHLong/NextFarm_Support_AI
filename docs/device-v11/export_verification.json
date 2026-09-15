@@ -1,0 +1,92 @@
+{
+  "dataset_version": "device-20260910T012458Z-3f9c7ab697",
+  "customer_holdout_disjoint": true,
+  "train_label_purge_verified": true,
+  "validation_label_purge_verified": true,
+  "export_parity": [
+    {
+      "model": "moisture_forecast",
+      "rows_replayed": 2356,
+      "max_abs_difference": 7.105427357601002e-15,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "extra_trees"
+    },
+    {
+      "model": "temperature_forecast",
+      "rows_replayed": 2356,
+      "max_abs_difference": 7.105427357601002e-15,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "extra_trees"
+    },
+    {
+      "model": "ec_forecast",
+      "rows_replayed": 2310,
+      "max_abs_difference": 8.881784197001252e-16,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "extra_trees"
+    },
+    {
+      "model": "ph_forecast",
+      "rows_replayed": 2356,
+      "max_abs_difference": 8.881784197001252e-16,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "extra_trees"
+    },
+    {
+      "model": "flow_fault_forecast",
+      "rows_replayed": 2488,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting"
+    },
+    {
+      "model": "leak_forecast",
+      "rows_replayed": 2479,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting_detailed"
+    },
+    {
+      "model": "irrigation_failure_forecast",
+      "rows_replayed": 2461,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting_detailed"
+    },
+    {
+      "model": "sensor_fault_forecast",
+      "rows_replayed": 2478,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting"
+    },
+    {
+      "model": "power_loss_forecast",
+      "rows_replayed": 2552,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting_detailed"
+    },
+    {
+      "model": "mqtt_loss_forecast",
+      "rows_replayed": 2552,
+      "max_abs_difference": 0.0,
+      "sha256_verified": true,
+      "status": "READY",
+      "algorithm": "hist_gradient_boosting"
+    }
+  ],
+  "ready_count": 10,
+  "gate_changed": false,
+  "scope": "simulation_only",
+  "production_ready": false
+}

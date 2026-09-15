@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NextFarm Knowledge Studio</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<section id="loginView" class="login-shell">
+  <div class="login-side"><div class="brand-lockup"><span class="brand">NF</span><div><b>NextFarm</b><small>Knowledge Operations</small></div></div><div><p class="eyebrow light">KHO TRI THỨC CÓ KIỂM DUYỆT</p><h1>Biến tài liệu thành tri thức có nguồn, có người chịu trách nhiệm.</h1><p>Kỹ thuật viên nhập nguồn, đọc bản nháp, duyệt từng tài liệu và kiểm tra câu trả lời trước khi chatbot sử dụng.</p></div><div class="login-chips"><span>Draft first</span><span>Role-based</span><span>Citation</span><span>Truth Guard</span></div></div>
+  <form id="loginForm" class="login-card"><div class="mobile-brand"><span class="brand">NF</span><b>NextFarm Knowledge</b></div><p class="eyebrow">ĐĂNG NHẬP KỸ THUẬT VIÊN</p><h2>Knowledge Studio</h2><p class="muted">Chỉ tài khoản kỹ thuật viên mới được nhập và duyệt tài liệu.</p><label>Tài khoản<input id="username" autocomplete="username" placeholder="kythuat.01" required></label><label>Mật khẩu<input id="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required></label><button id="loginBtn"><span>Đăng nhập kỹ thuật viên</span></button><p id="loginError" class="error" role="alert"></p><div class="login-status"><i></i><span>Quyền technician được kiểm tra ở backend, không dựa vào giao diện.</span></div></form>
+</section>
+<div id="studioView" hidden>
+<header><div class="header-brand"><span class="brand">NF</span><div><strong>Knowledge Studio</strong><small>Nguồn → bản nháp → kiểm duyệt → citation → chatbot</small></div></div><div class="user-actions"><span id="userText"></span><a class="ghost-link" href="http://localhost:8080" target="_blank">SupportOps</a><button id="logout">Đăng xuất</button></div></header>
+<main>
+<section class="hero-bar"><div><p class="eyebrow light">KNOWLEDGE OPERATIONS</p><h2>Kiểm soát chất lượng tri thức trước khi AI sử dụng</h2><p>Mỗi tài liệu mới bắt đầu ở trạng thái bản nháp. Người duyệt đọc nội dung, nguồn và từng chunk trước khi phê duyệt.</p></div><div class="hero-badge"><i></i><span>Backend role: technician</span></div></section>
+<section class="stats" id="stats"></section>
+<section class="layout">
+  <aside class="panel library-panel"><div class="panel-head"><div><p class="eyebrow">THƯ VIỆN</p><h2>Nguồn và tài liệu</h2></div></div><div class="filters"><select id="approved"><option value="all">Tất cả tài liệu</option><option value="false">Bản nháp chờ duyệt</option><option value="true">Đã duyệt</option></select><button id="reload">Làm mới</button></div><div id="documents" class="documents"></div></aside>
+  <section class="workspace">
+    <div class="panel ingest"><div class="panel-head"><div><p class="eyebrow">NẠP NGUỒN MỚI</p><h2>Nhập tài liệu web thành bản nháp</h2><p>URL HTTPS phải thuộc allowlist; backend kiểm tra lại tên miền cuối sau redirect.</p></div></div><div class="ingest-form"><input id="url" placeholder="https://..."><input id="sourceName" placeholder="Tên nguồn"><select id="category"><option>NEXTFARM_PRODUCT</option><option>SENSOR_KNOWLEDGE</option><option>CROP_GUIDE</option><option>WEB_RESEARCH</option></select><button id="ingest">Tải & tạo bản nháp</button></div><pre id="ingestResult">Chưa có thao tác nhập nguồn.</pre></div>
+    <div class="panel detail"><div class="detail-head"><div><p class="eyebrow">KIỂM DUYỆT</p><h2>Chi tiết tài liệu</h2></div><button id="approveDoc" disabled>Duyệt tài liệu</button></div><div id="documentDetail"><div class="empty">Chọn một tài liệu bên trái để xem nguồn và từng mục trước khi duyệt.</div></div></div>
+    <div class="panel answer"><div class="panel-head"><div><p class="eyebrow">KIỂM TRA RAG</p><h2>Hỏi thử kho tri thức</h2><p>Hệ thống chỉ ghép câu trả lời từ các đoạn đã duyệt. Không đủ bằng chứng sẽ từ chối.</p></div></div><div class="ask"><input id="question" value="NextFarm lưu và hiển thị dữ liệu cảm biến như thế nào?"><button id="ask">Truy xuất</button></div><div id="guard" class="guard"></div><div id="answer"></div><div id="citations"></div></div>
+  </section>
+</section>
+</main></div><script src="app.js"></script></body></html>

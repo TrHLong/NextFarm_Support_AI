@@ -1,0 +1,199 @@
+{
+  "name": "temperature_forecast",
+  "title": "Nhiệt độ sau 30 phút",
+  "metric": "temperature",
+  "status": "EXPERIMENTAL",
+  "rows": {
+    "train": 456,
+    "validation": 52,
+    "test_unseen_customer": 65
+  },
+  "features": [
+    "value",
+    "lag1",
+    "lag3",
+    "lag6",
+    "mean3",
+    "slope3",
+    "history_missing",
+    "reading_age_minutes"
+  ],
+  "algorithm": "hgb_residual",
+  "validation_candidates": {
+    "ridge_residual_a1": {
+      "mae": 0.5153504216954023,
+      "rmse": 0.6110511130074524,
+      "r2": 0.8570992598512814
+    },
+    "ridge_residual_a10": {
+      "mae": 0.5121837418310702,
+      "rmse": 0.6074283247272843,
+      "r2": 0.8587886912368266
+    },
+    "extra_trees_residual": {
+      "mae": 0.5328864987805321,
+      "rmse": 0.6334563092518605,
+      "r2": 0.8464277555805025
+    },
+    "hgb_residual": {
+      "mae": 0.44447082046059183,
+      "rmse": 0.541681125354892,
+      "r2": 0.8877033488066973
+    }
+  },
+  "metrics": {
+    "train": {
+      "mae": 0.1495679595843839,
+      "rmse": 0.19159467243897635,
+      "r2": 0.989292770677363
+    },
+    "validation": {
+      "mae": 0.44447082046059183,
+      "rmse": 0.541681125354892,
+      "r2": 0.8877033488066973
+    },
+    "test_unseen_customer": {
+      "mae": 0.23320892671362517,
+      "rmse": 0.2895519915415139,
+      "r2": 0.2627103604109319
+    }
+  },
+  "acceptance": {
+    "train": {
+      "absolute_error_tolerance": 2.0,
+      "correct_within_tolerance": 456,
+      "predicted_rows": 456,
+      "total_labeled_rows": 492,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.926829268292683,
+      "success_on_all_labeled_rows": 0.926829268292683,
+      "numeric_gate_passed": true,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    },
+    "validation": {
+      "absolute_error_tolerance": 2.0,
+      "correct_within_tolerance": 52,
+      "predicted_rows": 52,
+      "total_labeled_rows": 70,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.7428571428571429,
+      "success_on_all_labeled_rows": 0.7428571428571429,
+      "numeric_gate_passed": false,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    },
+    "test_unseen_customer": {
+      "absolute_error_tolerance": 2.0,
+      "correct_within_tolerance": 65,
+      "predicted_rows": 65,
+      "total_labeled_rows": 68,
+      "hit_rate": 1.0,
+      "prediction_coverage": 0.9558823529411765,
+      "success_on_all_labeled_rows": 0.9558823529411765,
+      "numeric_gate_passed": true,
+      "field_acceptance": false,
+      "tolerances_approved": false
+    }
+  },
+  "baselines": {
+    "train": {
+      "persistence": {
+        "mae": 0.24255482456140354,
+        "rmse": 0.31308900631800046,
+        "r2": 0.9714079112439357
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 2.0,
+        "correct_within_tolerance": 456,
+        "predicted_rows": 456,
+        "total_labeled_rows": 492,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.926829268292683,
+        "success_on_all_labeled_rows": 0.926829268292683,
+        "numeric_gate_passed": true,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    },
+    "validation": {
+      "persistence": {
+        "mae": 0.4569807692307692,
+        "rmse": 0.5286030028437075,
+        "r2": 0.8930603764286225
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 2.0,
+        "correct_within_tolerance": 52,
+        "predicted_rows": 52,
+        "total_labeled_rows": 70,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.7428571428571429,
+        "success_on_all_labeled_rows": 0.7428571428571429,
+        "numeric_gate_passed": false,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    },
+    "test_unseen_customer": {
+      "persistence": {
+        "mae": 0.20953846153846134,
+        "rmse": 0.28588437684329104,
+        "r2": 0.28126985004745897
+      },
+      "persistence_acceptance": {
+        "absolute_error_tolerance": 2.0,
+        "correct_within_tolerance": 65,
+        "predicted_rows": 65,
+        "total_labeled_rows": 68,
+        "hit_rate": 1.0,
+        "prediction_coverage": 0.9558823529411765,
+        "success_on_all_labeled_rows": 0.9558823529411765,
+        "numeric_gate_passed": true,
+        "field_acceptance": false,
+        "tolerances_approved": false
+      }
+    }
+  },
+  "parameters": {
+    "memory": "None",
+    "steps": "[('simpleimputer', SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')), ('histgradientboostingregressor', HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "simpleimputer": "SimpleImputer(add_indicator=True, keep_empty_features=True, strategy='median')",
+    "histgradientboostingregressor": "HistGradientBoostingRegressor(early_stopping=False, l2_regularization=5,\n                              max_iter=120, max_leaf_nodes=7,\n                              min_samples_leaf=40, random_state=20260914)",
+    "simpleimputer__add_indicator": "True",
+    "simpleimputer__copy": "True",
+    "simpleimputer__fill_value": "None",
+    "simpleimputer__keep_empty_features": "True",
+    "simpleimputer__missing_values": "nan",
+    "simpleimputer__strategy": "median",
+    "histgradientboostingregressor__categorical_features": "from_dtype",
+    "histgradientboostingregressor__early_stopping": "False",
+    "histgradientboostingregressor__interaction_cst": "None",
+    "histgradientboostingregressor__l2_regularization": "5",
+    "histgradientboostingregressor__learning_rate": "0.1",
+    "histgradientboostingregressor__loss": "squared_error",
+    "histgradientboostingregressor__max_bins": "255",
+    "histgradientboostingregressor__max_depth": "None",
+    "histgradientboostingregressor__max_features": "1.0",
+    "histgradientboostingregressor__max_iter": "120",
+    "histgradientboostingregressor__max_leaf_nodes": "7",
+    "histgradientboostingregressor__min_samples_leaf": "40",
+    "histgradientboostingregressor__monotonic_cst": "None",
+    "histgradientboostingregressor__n_iter_no_change": "10",
+    "histgradientboostingregressor__quantile": "None",
+    "histgradientboostingregressor__random_state": "20260914",
+    "histgradientboostingregressor__scoring": "loss",
+    "histgradientboostingregressor__tol": "1e-07",
+    "histgradientboostingregressor__validation_fraction": "0.1",
+    "histgradientboostingregressor__verbose": "0",
+    "histgradientboostingregressor__warm_start": "False"
+  },
+  "beats_persistence_mae": false,
+  "deployment_ready": false,
+  "reason": "Known historical synthetic test; tolerance proposal needs review and future independent pilot validation.",
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\farmer-v13\\residual-20260914T154653Z\\temperature_forecast\\model.joblib",
+  "artifact_sha256": "9d081cc5103d668fa58bcca8b8fa68827bc4f4e42f9d3216c02bd2e4f9d3ca62",
+  "reload_max_difference": 0.0
+}

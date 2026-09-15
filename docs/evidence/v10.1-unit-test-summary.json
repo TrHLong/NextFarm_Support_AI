@@ -1,0 +1,44 @@
+﻿{
+    "version":  "10.1.1",
+    "executed_at":  "2026-09-08T14:21:11.6550383Z",
+    "passed":  true,
+    "suites":  [
+                   {
+                       "service":  "chatbot-service",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n25 passed, 1 warning in 0.27s"
+                   },
+                   {
+                       "service":  "crop-router-service",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n5 passed, 1 warning in 0.34s"
+                   },
+                   {
+                       "service":  "llm-gateway-service",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n13 passed, 1 warning in 0.34s"
+                   },
+                   {
+                       "service":  "truth-guard-service",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n12 passed, 1 warning in 0.33s"
+                   },
+                   {
+                       "service":  "ai-analytics-service",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n6 passed, 15 warnings in 8.64s"
+                   },
+                   {
+                       "service":  "ai-analytics-model-artifacts",
+                       "passed":  true,
+                       "exit_code":  0,
+                       "summary":  "10 latest candidate artifacts loaded and predicted successfully; active=2; dataset_version=nextfarm-v10.1-shared-customers-20260908T141618Z-b03f914d2db2"
+                   }
+               ],
+    "scope_note":  "Endpoint/unit tests for context policy, crop routing, multi-tool planning, Truth Guard and model artifacts; runtime flow is validated separately."
+}

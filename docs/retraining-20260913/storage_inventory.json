@@ -1,0 +1,306 @@
+{
+  "files": 2010,
+  "total_gib": 6.736777645535767,
+  "top_folders": [
+    {
+      "name": "model-artifacts",
+      "gib": 6.721849754452705
+    },
+    {
+      "name": "docs",
+      "gib": 0.004892376251518726
+    },
+    {
+      "name": "research-data",
+      "gib": 0.004362555220723152
+    },
+    {
+      "name": "data",
+      "gib": 0.0038234731182456017
+    },
+    {
+      "name": "services",
+      "gib": 0.0005777208134531975
+    },
+    {
+      "name": "scripts",
+      "gib": 0.00032595545053482056
+    },
+    {
+      "name": "nextfarm_device",
+      "gib": 0.00026496313512325287
+    },
+    {
+      "name": "apps",
+      "gib": 0.0001672934740781784
+    },
+    {
+      "name": "benchmarks",
+      "gib": 0.00014705583453178406
+    },
+    {
+      "name": "BUILD_MANIFEST.json",
+      "gib": 0.00014702603220939636
+    },
+    {
+      "name": "infra",
+      "gib": 0.00011541228741407394
+    },
+    {
+      "name": "tests_device",
+      "gib": 5.762558430433273e-05
+    },
+    {
+      "name": "docker-compose.yml",
+      "gib": 1.7161481082439423e-05
+    },
+    {
+      "name": "HUONG-DAN-TEST-V10.md",
+      "gib": 6.591901183128357e-06
+    },
+    {
+      "name": "CHANGELOG.md",
+      "gib": 5.966983735561371e-06
+    },
+    {
+      "name": "README.md",
+      "gib": 4.155561327934265e-06
+    },
+    {
+      "name": "docker-compose.production.yml",
+      "gib": 2.4205073714256287e-06
+    },
+    {
+      "name": ".env",
+      "gib": 2.4084001779556274e-06
+    },
+    {
+      "name": "config",
+      "gib": 2.2221356630325317e-06
+    },
+    {
+      "name": ".env.example",
+      "gib": 1.469627022743225e-06
+    },
+    {
+      "name": "PACKAGING_MANIFEST.json",
+      "gib": 1.2563541531562805e-06
+    },
+    {
+      "name": "RELEASE-NOTES-V10.1.md",
+      "gib": 1.210719347000122e-06
+    },
+    {
+      "name": "PACKAGING_MANIFEST.md",
+      "gib": 7.320195436477661e-07
+    },
+    {
+      "name": ".gitignore",
+      "gib": 4.675239324569702e-07
+    },
+    {
+      "name": ".dockerignore",
+      "gib": 1.9744038581848145e-07
+    },
+    {
+      "name": ".env.OMITTED.txt",
+      "gib": 1.6577541828155518e-07
+    },
+    {
+      "name": "VERSION",
+      "gib": 7.450580596923828e-09
+    }
+  ],
+  "extensions": [
+    {
+      "ext": ".csv",
+      "gib": 5.979504453018308
+    },
+    {
+      "ext": ".joblib",
+      "gib": 0.7166164088994265
+    },
+    {
+      "ext": ".png",
+      "gib": 0.015588552691042423
+    },
+    {
+      "ext": ".parquet",
+      "gib": 0.01404309831559658
+    },
+    {
+      "ext": ".json",
+      "gib": 0.00720249954611063
+    },
+    {
+      "ext": ".md",
+      "gib": 0.0017025358974933624
+    },
+    {
+      "ext": ".py",
+      "gib": 0.001063123345375061
+    },
+    {
+      "ext": ".pyc",
+      "gib": 0.0001929672434926033
+    },
+    {
+      "ext": ".jsonl",
+      "gib": 0.00014556199312210083
+    },
+    {
+      "ext": ".docx",
+      "gib": 0.00013432558625936508
+    },
+    {
+      "ext": ".html",
+      "gib": 0.00013042334467172623
+    },
+    {
+      "ext": ".sql",
+      "gib": 0.00010811630636453629
+    }
+  ],
+  "largest_files": [
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\sensor_readings.csv",
+      "mib": 275.602991104126
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T211146Z\\raw\\sensor_readings.csv",
+      "mib": 274.7229309082031
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T210258Z\\raw\\sensor_readings.csv",
+      "mib": 273.801233291626
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T191314Z\\raw\\sensor_readings.csv",
+      "mib": 262.3466987609863
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T163805Z\\raw\\sensor_readings.csv",
+      "mib": 246.11680221557617
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T151439Z\\raw\\sensor_readings.csv",
+      "mib": 237.46695709228516
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T212115Z\\raw\\sensor_readings.csv",
+      "mib": 184.39088821411133
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T211241Z\\raw\\sensor_readings.csv",
+      "mib": 183.80247116088867
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T210407Z\\raw\\sensor_readings.csv",
+      "mib": 183.20463943481445
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T191412Z\\raw\\sensor_readings.csv",
+      "mib": 175.52697372436523
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T163856Z\\raw\\sensor_readings.csv",
+      "mib": 164.664794921875
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260910T151528Z\\raw\\sensor_readings.csv",
+      "mib": 158.87947845458984
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211938Z\\raw\\sensor_readings.csv",
+      "mib": 156.94216632843018
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T211112Z\\raw\\sensor_readings.csv",
+      "mib": 156.4390058517456
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T210216Z\\raw\\sensor_readings.csv",
+      "mib": 155.90778064727783
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T191239Z\\raw\\sensor_readings.csv",
+      "mib": 149.38674068450928
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T163643Z\\raw\\sensor_readings.csv",
+      "mib": 140.14342212677002
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260910T151408Z\\raw\\sensor_readings.csv",
+      "mib": 135.22006702423096
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260908T172436Z\\raw\\sensor_readings.csv",
+      "mib": 117.21045684814453
+    },
+    {
+      "path": "model-artifacts\\device-v11\\runs\\device-20260910T012458Z-3f9c7ab697\\processed_features_targets.csv",
+      "mib": 108.29446506500244
+    },
+    {
+      "path": "model-artifacts\\device-v11-candidate-b\\runs\\device-20260910T012458Z-3f9c7ab697\\processed_features_targets.csv",
+      "mib": 108.29446506500244
+    },
+    {
+      "path": "model-artifacts\\device-v11\\runs\\device-20260909T135503Z-49318e5739\\processed_features_targets.csv",
+      "mib": 92.51854991912842
+    },
+    {
+      "path": "model-artifacts\\device-v11\\runs\\device-20260910T003838Z-d302fe7ffd\\processed_features_targets.csv",
+      "mib": 91.4638557434082
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_minh\\snapshots\\runtime_20260908T172504Z\\raw\\sensor_readings.csv",
+      "mib": 78.42684268951416
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_lan\\snapshots\\runtime_20260908T172415Z\\raw\\sensor_readings.csv",
+      "mib": 66.73503971099854
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\device_status.csv",
+      "mib": 61.59305191040039
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T211146Z\\raw\\device_status.csv",
+      "mib": 61.39365482330322
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T210258Z\\raw\\device_status.csv",
+      "mib": 61.18631362915039
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\telemetry_ingest_events.csv",
+      "mib": 59.546048164367676
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T211146Z\\raw\\telemetry_ingest_events.csv",
+      "mib": 59.35373497009277
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T210258Z\\raw\\telemetry_ingest_events.csv",
+      "mib": 59.15293884277344
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T191314Z\\raw\\device_status.csv",
+      "mib": 58.60050678253174
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T191314Z\\raw\\telemetry_ingest_events.csv",
+      "mib": 56.653472900390625
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T163805Z\\raw\\device_status.csv",
+      "mib": 54.93668460845947
+    },
+    {
+      "path": "model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T163805Z\\raw\\telemetry_ingest_events.csv",
+      "mib": 53.11259174346924
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+services:
+  postgres:
+    build: {context: ., dockerfile: infra/postgres/Dockerfile}
+    image: nextfarm-postgres:16-v10
+    environment:
+      POSTGRES_DB: nextfarm_support
+      POSTGRES_USER: nextfarm
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}
+      TZ: Asia/Ho_Chi_Minh
+    ports: ["${NEXTFARM_POSTGRES_BIND:-127.0.0.1:15432}:5432"]
+    volumes:
+      - nextfarm_pg:/var/lib/postgresql/data
+      - ./infra/database/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./infra/database/02_seed_demo.sql:/docker-entrypoint-initdb.d/02_seed_demo.sql:ro
+      - ./infra/database/03_v10_ops_migration.sql:/docker-entrypoint-initdb.d/03_v10_ops_migration.sql:ro
+      - ./infra/database/04_v10_ai_encyclopedia.sql:/docker-entrypoint-initdb.d/04_v10_ai_encyclopedia.sql:ro
+      - ./infra/database/05_v10_demo_runtime_seed.sql:/docker-entrypoint-initdb.d/05_v10_demo_runtime_seed.sql:ro
+      - ./infra/database/06_v10_1_acceptance.sql:/docker-entrypoint-initdb.d/06_v10_1_acceptance.sql:ro
+      - ./infra/database/07_v10_1_customer_ml_evidence.sql:/docker-entrypoint-initdb.d/07_v10_1_customer_ml_evidence.sql:ro
+    healthcheck:
+      # pg_isready alone can succeed while docker-entrypoint-initdb.d is still running.
+      test:
+        - CMD-SHELL
+        - >-
+          PGPASSWORD="$$POSTGRES_PASSWORD" psql -h 127.0.0.1 -U "$$POSTGRES_USER" -d "$$POSTGRES_DB" -tAc "SELECT count(*) >= 4 AND to_regclass('research_db.reference_datasets') IS NOT NULL AND EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='farm_db' AND table_name='sensor_readings' AND column_name='data_origin') FROM user_db.users WHERE status='active'" 2>/dev/null | grep -q t
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 10s
+    restart: unless-stopped
+
+  # docker-entrypoint-initdb.d chỉ chạy khi volume trống. Service migration này
+  # bảo đảm volume V10 đã tồn tại cũng nhận migration và dữ liệu demo mới nhất.
+  db-migrate:
+    image: nextfarm-postgres:16-v10
+    environment:
+      POSTGRES_DB: nextfarm_support
+      POSTGRES_USER: nextfarm
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}
+    volumes:
+      - ./infra/database/03_v10_ops_migration.sql:/migrations/03_v10_ops_migration.sql:ro
+      - ./infra/database/04_v10_ai_encyclopedia.sql:/migrations/04_v10_ai_encyclopedia.sql:ro
+      - ./infra/database/05_v10_demo_runtime_seed.sql:/migrations/05_v10_demo_runtime_seed.sql:ro
+      - ./infra/database/06_v10_1_acceptance.sql:/migrations/06_v10_1_acceptance.sql:ro
+      - ./infra/database/07_v10_1_customer_ml_evidence.sql:/migrations/07_v10_1_customer_ml_evidence.sql:ro
+    command:
+      - sh
+      - -c
+      - >-
+        PGPASSWORD="$${POSTGRES_PASSWORD}" psql -v ON_ERROR_STOP=1
+        -h postgres -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+        -f /migrations/03_v10_ops_migration.sql &&
+        PGPASSWORD="$${POSTGRES_PASSWORD}" psql -v ON_ERROR_STOP=1
+        -h postgres -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+        -f /migrations/04_v10_ai_encyclopedia.sql &&
+        PGPASSWORD="$${POSTGRES_PASSWORD}" psql -v ON_ERROR_STOP=1
+        -h postgres -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+        -f /migrations/05_v10_demo_runtime_seed.sql &&
+        PGPASSWORD="$${POSTGRES_PASSWORD}" psql -v ON_ERROR_STOP=1
+        -h postgres -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+        -f /migrations/06_v10_1_acceptance.sql &&
+        PGPASSWORD="$${POSTGRES_PASSWORD}" psql -v ON_ERROR_STOP=1
+        -h postgres -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+        -f /migrations/07_v10_1_customer_ml_evidence.sql
+    depends_on:
+      postgres: {condition: service_healthy}
+    restart: "no"
+
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    restart: unless-stopped
+    ports: ["${NEXTFARM_MQTT_BIND:-127.0.0.1:11883}:1883"]
+    volumes:
+      - ./infra/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  identity-service:
+    build: {context: ., dockerfile: services/identity-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      TOKEN_SECRET: ${TOKEN_SECRET:?Run scripts/setup_v10_env.cmd first}
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+      EXPOSE_DEMO_ACCOUNTS: "false"
+      TECHNICIAN_BOOTSTRAP_PASSWORD: ${NEXTFARM_TECH_PASSWORD:?Run scripts/setup_v10_env.cmd first}
+      FARMER_BOOTSTRAP_PASSWORD: ${NEXTFARM_FARMER_PASSWORD:?Run scripts/setup_v10_env.cmd first}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_IDENTITY_BIND:-127.0.0.1:18100}:8000"]
+
+  farm-data-service:
+    build: {context: ., dockerfile: services/farm-data-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      SENSOR_FRESH_MINUTES: "30"
+      DEVICE_FRESH_SECONDS: "30"
+      IDENTITY_URL: http://identity-service:8000
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_FARM_DATA_BIND:-127.0.0.1:18300}:8000"]
+
+  knowledge-service:
+    build: {context: ., dockerfile: services/knowledge-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      ENABLE_WEB_INGEST: "true"
+      IDENTITY_URL: http://identity-service:8000
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+      RAG_SIMILARITY_THRESHOLD: "0.18"
+      RAG_THRESHOLD_VERSION: v10.1-validation-set
+    depends_on: {postgres: {condition: service_healthy}}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_KNOWLEDGE_BIND:-127.0.0.1:18200}:8000"]
+
+  ticket-service:
+    profiles: ["retired-ticket"]
+    build: {context: ., dockerfile: services/ticket-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      IDENTITY_URL: http://identity-service:8000
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+      identity-service: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_TICKET_BIND:-127.0.0.1:18500}:8000"]
+
+  telemetry-ingestion-service:
+    build: {context: ., dockerfile: services/telemetry-ingestion-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      MQTT_HOST: mosquitto
+      MQTT_PORT: "1883"
+      MQTT_TOPIC: nextfarm/device/+/+
+      INGEST_API_KEY: ${NEXTFARM_INGEST_KEY:?Run scripts/setup_v10_env.cmd first}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request,sys; d=json.load(urllib.request.urlopen('http://localhost:8000/health',timeout=3)); sys.exit(0 if d.get('status')=='ok' and d.get('connected') else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+      mosquitto: {condition: service_started}
+    ports: ["${NEXTFARM_TELEMETRY_BIND:-127.0.0.1:18800}:8000"]
+
+  data-simulator-service:
+    build: {context: ., dockerfile: services/data-simulator-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      MQTT_HOST: mosquitto
+      MQTT_PORT: "1883"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request,sys; d=json.load(urllib.request.urlopen('http://localhost:8000/health',timeout=3)); sys.exit(0 if d.get('status')=='ok' and d.get('connected') and int(d.get('published') or 0)>0 else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+      start_period: 15s
+    depends_on:
+      postgres: {condition: service_healthy}
+      mosquitto: {condition: service_started}
+      telemetry-ingestion-service: {condition: service_healthy}
+    ports: ["${NEXTFARM_SIMULATOR_BIND:-127.0.0.1:18400}:8000"]
+
+  ai-analytics-service:
+    build: {context: ., dockerfile: services/ai-analytics-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      MPLBACKEND: Agg
+      MODEL_ARTIFACT_DIR: /models
+      DEVICE_AUTO_TRAIN: "true"
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      IDENTITY_URL: http://identity-service:8000
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 15s
+    ports: ["${NEXTFARM_ANALYTICS_BIND:-127.0.0.1:18600}:8000"]
+    volumes:
+      - ./model-artifacts:/models
+      - ./data:/data
+
+  truth-guard-service:
+    build: {context: ., dockerfile: services/truth-guard-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      TRUTH_GUARD_MIN_CONFIDENCE: "0.55"
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+    depends_on: {postgres: {condition: service_healthy}}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_TRUTH_GUARD_BIND:-127.0.0.1:18700}:8000"]
+
+  crop-router-service:
+    volumes:
+      - ./model-artifacts:/models:ro
+    build: {context: ., dockerfile: services/crop-router-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      IDENTITY_URL: http://identity-service:8000
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+      SENSOR_FRESH_MINUTES: "30"
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-http://localhost:8080,http://localhost:8081,http://localhost:8082,http://localhost:8084}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+      identity-service: {condition: service_healthy}
+      ai-analytics-service: {condition: service_started}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_CROP_ROUTER_BIND:-127.0.0.1:18900}:8000"]
+
+  llm-gateway-service:
+    build: {context: ., dockerfile: services/llm-gateway-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      LLM_PROVIDER: deterministic
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.6-luna}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-20}
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-http://localhost:8080,http://localhost:8081,http://localhost:8082,http://localhost:8084}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_LLM_GATEWAY_BIND:-127.0.0.1:18950}:8000"]
+
+  chatbot-service:
+    build: {context: ., dockerfile: services/chatbot-service/Dockerfile}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
+      IDENTITY_URL: http://identity-service:8000
+      FARM_DATA_URL: http://farm-data-service:8000
+      KNOWLEDGE_URL: http://knowledge-service:8000
+      ANALYTICS_URL: http://ai-analytics-service:8000
+      TRUTH_GUARD_URL: http://truth-guard-service:8000
+      CROP_ROUTER_URL: http://crop-router-service:8000
+      LLM_GATEWAY_URL: http://llm-gateway-service:8000
+      LLM_ENABLE_VERBALIZER: "false"
+      INTERNAL_SERVICE_KEY: ${INTERNAL_SERVICE_KEY:?Run scripts/setup_v10_env.cmd first}
+    depends_on:
+      postgres: {condition: service_healthy}
+      db-migrate: {condition: service_completed_successfully}
+      identity-service: {condition: service_healthy}
+      farm-data-service: {condition: service_healthy}
+      knowledge-service: {condition: service_healthy}
+      ai-analytics-service: {condition: service_healthy}
+      truth-guard-service: {condition: service_healthy}
+      crop-router-service: {condition: service_healthy}
+      llm-gateway-service: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 10s
+    ports: ["${NEXTFARM_CHATBOT_BIND:-127.0.0.1:18000}:8000"]
+
+  frontend:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ./apps/device-web:/usr/share/nginx/html:ro
+      - ./infra/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./infra/nginx-global.conf:/etc/nginx/conf.d/00-nextfarm-global.conf:ro
+    ports: ["${NEXTFARM_HTTP_BIND:-127.0.0.1:18080}:80"]
+    depends_on:
+      identity-service: {condition: service_healthy}
+      farm-data-service: {condition: service_healthy}
+      ai-analytics-service: {condition: service_healthy}
+      chatbot-service: {condition: service_healthy}
+      knowledge-service: {condition: service_healthy}
+      truth-guard-service: {condition: service_healthy}
+      crop-router-service: {condition: service_healthy}
+      llm-gateway-service: {condition: service_healthy}
+      data-simulator-service: {condition: service_healthy}
+
+  data-studio:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ./apps/device-data-studio:/usr/share/nginx/html:ro
+      - ./infra/data-studio-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["${NEXTFARM_DATA_STUDIO_BIND:-127.0.0.1:18081}:80"]
+    depends_on:
+      identity-service: {condition: service_healthy}
+      farm-data-service: {condition: service_healthy}
+
+  knowledge-studio:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ./apps/knowledge-studio:/usr/share/nginx/html:ro
+      - ./infra/knowledge-studio-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["${NEXTFARM_KNOWLEDGE_STUDIO_BIND:-127.0.0.1:18082}:80"]
+    depends_on:
+      identity-service: {condition: service_healthy}
+      knowledge-service: {condition: service_healthy}
+      truth-guard-service: {condition: service_healthy}
+
+  ai-encyclopedia:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ./apps/device-ai-encyclopedia:/usr/share/nginx/html:ro
+      - ./infra/ai-encyclopedia-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["${NEXTFARM_AI_ENCYCLOPEDIA_BIND:-127.0.0.1:18084}:80"]
+    depends_on:
+      identity-service: {condition: service_healthy}
+      crop-router-service: {condition: service_healthy}
+      llm-gateway-service: {condition: service_healthy}
+
+  # Công cụ xem PostgreSQL theo yêu cầu, không chạy mặc định và chỉ bind localhost.
+  # Mở bằng: docker compose --profile db-tools up -d adminer
+  adminer:
+    image: adminer:4.8.1-standalone
+    profiles: ["db-tools"]
+    restart: "no"
+    ports: ["127.0.0.1:8083:8080"]
+    depends_on:
+      postgres: {condition: service_healthy}
+
+volumes:
+  nextfarm_pg:
+    name: ${NEXTFARM_PG_VOLUME_NAME:-nextfarm_v10_fresh_pg}

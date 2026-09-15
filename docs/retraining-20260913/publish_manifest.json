@@ -1,0 +1,52 @@
+[
+  {
+    "path": "nextfarm_device/data_quality.py",
+    "before_sha256": "7919306f4dbc6757f5482c782ab11778a982d717c1bfaff7904423fc16ea1840",
+    "after_sha256": "7919306f4dbc6757f5482c782ab11778a982d717c1bfaff7904423fc16ea1840"
+  },
+  {
+    "path": "nextfarm_device/collection.py",
+    "before_sha256": "75a7faf573647bf12d665ffb5831e592fce8c60945e6a890896a3d3198b70e45",
+    "after_sha256": "75a7faf573647bf12d665ffb5831e592fce8c60945e6a890896a3d3198b70e45"
+  },
+  {
+    "path": "nextfarm_device/runtime_training.py",
+    "before_sha256": "5d219a17d30a9af3d726b6f59814b31f056a17b24af11a4c66446b137841c256",
+    "after_sha256": "5d219a17d30a9af3d726b6f59814b31f056a17b24af11a4c66446b137841c256"
+  },
+  {
+    "path": "nextfarm_device/historical_training.py",
+    "before_sha256": "674346ab6e4dea7e84b2a9cb4422ff562fbdf354a2dd709993dc24f408b826e5",
+    "after_sha256": "674346ab6e4dea7e84b2a9cb4422ff562fbdf354a2dd709993dc24f408b826e5"
+  },
+  {
+    "path": "nextfarm_device/benchmark_training.py",
+    "before_sha256": "cc4ee98b8ab81a01d59f91d0250bee5f8e4e8117c531d12c86eea5a1833973d2",
+    "after_sha256": "cc4ee98b8ab81a01d59f91d0250bee5f8e4e8117c531d12c86eea5a1833973d2"
+  },
+  {
+    "path": "tests_device/test_data_quality.py",
+    "before_sha256": "9785c9eb7daf51c93e95867be9cd947991d636c18e0a5580776f8182b8bf1ba8",
+    "after_sha256": "9785c9eb7daf51c93e95867be9cd947991d636c18e0a5580776f8182b8bf1ba8"
+  },
+  {
+    "path": "tests_device/test_historical_training.py",
+    "before_sha256": "92816dde0fd8af1d9378a1d8fa9781b19bd2b16a651d97c27f23a869d552153f",
+    "after_sha256": "92816dde0fd8af1d9378a1d8fa9781b19bd2b16a651d97c27f23a869d552153f"
+  },
+  {
+    "path": "tests_device/test_benchmark_labels.py",
+    "before_sha256": "d7596ea12de10d1e73b2ef9399f52b908b31967e3a17a4aaab105f5e0b262c40",
+    "after_sha256": "d7596ea12de10d1e73b2ef9399f52b908b31967e3a17a4aaab105f5e0b262c40"
+  },
+  {
+    "path": "scripts/report_retraining.py",
+    "before_sha256": "4d287bd1bb2b5fbbfa8077b6337e50d333a653939661a964e64057cefcd64a93",
+    "after_sha256": "8d4617a0c87ba6fe67e92e074199009aedc308d010ee32b3b63c0f7bafc7b098"
+  },
+  {
+    "path": "README.md",
+    "before_sha256": "6adb85a849f3711b4a36f5dc1ee6109b985c141c5654417ba56b039ca2db5620",
+    "after_sha256": "977bbb3b8c879651114f797970851c9176823db81c23e55f033ac1586ad306ed"
+  }
+]

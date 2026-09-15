@@ -1,0 +1,7 @@
+{
+  "seed": 20260911,
+  "recorded_at": "2026-09-10T01:24:52.7678977Z",
+  "unchanged_gate": true,
+  "design": "Valid current regression measurement; own-signal autoregression; causal slope; classifier capacity and class-weight candidates chosen only on validation",
+  "field_validation": false
+}

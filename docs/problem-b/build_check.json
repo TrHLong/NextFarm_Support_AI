@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-09-12T21:36:04.425785+00:00",
+  "compose_configuration": "previously validated with docker compose config --quiet; YAML unchanged since validation",
+  "docker_build": "BLOCKED",
+  "errors": [
+    "Access is denied: C:/Users/Long/.docker/config.json",
+    "Access is denied: C:/Users/Long/.docker/buildx/instances",
+    "Docker Engine pipe not found"
+  ],
+  "permissions_requested_and_granted_but_access_still_denied": true,
+  "runtime_services_reachable": false,
+  "new_collection_state_file_exists": false,
+  "action_required": "Open Docker Desktop in your Windows session, wait for Engine running, then run scripts/start_v11.cmd in the project directory."
+}

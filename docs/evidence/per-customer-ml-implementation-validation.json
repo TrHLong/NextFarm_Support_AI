@@ -1,0 +1,71 @@
+{
+  "source_updated": true,
+  "migration_applied": true,
+  "per_customer_training_executed": true,
+  "per_customer_evidence_verified": true,
+  "python_compile": "passed",
+  "docker_compose_config": "passed",
+  "chatbot_guard_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "processed_data_gate": {
+    "minimum_rows": 200,
+    "minimum_usable_zones": 2
+  },
+  "runtime_http_probe_before_rebuild": "docs/evidence/chatbot-grounding-probe-latest.json",
+  "docker_rebuild_completed_in_this_session": false,
+  "docker_rebuild_note": "Windows Docker named pipe is blocked in the Codex shell sandbox; run docker compose up -d --build once to load the updated service images.",
+  "files": [
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docker-compose.yml",
+      "sha256": "96f61da0e8e9bcf06bbbdc107c0a4c5801545b5cb1e27b00bc2f5d72311dea30",
+      "bytes": 19655
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\infra\\database\\07_v10_1_customer_ml_evidence.sql",
+      "sha256": "4e475607602e8c097c587165210319b0ccebb1046a14516dbbe048db31639b93",
+      "bytes": 5607
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\runtime_export.py",
+      "sha256": "d447dee23d84aed8582525cb80fc19135816ff53491ca5f9772c77ec549a425b",
+      "bytes": 19677
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\dataset_builder.py",
+      "sha256": "3b711b293504c1f7a124a00a680a369b69ccde41de932ecfe945e14a9b7da635",
+      "bytes": 34028
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\ml_pipeline.py",
+      "sha256": "47583a6efa8df6ccd362eb71f49cd63da99971c4922e0418172bc6bf6cdad89f",
+      "bytes": 57433
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\customer_ml_automation.py",
+      "sha256": "cf31afa7695f97066185d21b71e9aa75e52396990a064360543fcae54bd781b8",
+      "bytes": 21884
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\ai-analytics-service\\app\\main.py",
+      "sha256": "fe98d325fac404583eb4e2ec9d20f31b7d848976484d851fe10059eed17f5511",
+      "bytes": 88106
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\chatbot-service\\app\\main.py",
+      "sha256": "cd960f3e9cceb44d30e052a188b89619588fd855699530743ded83442bf576ac",
+      "bytes": 66619
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\services\\chatbot-service\\tests\\test_context_policy.py",
+      "sha256": "be271841ad6691e13db15365955ff89e23444fc43d8ecea07c0f958cbee69a9b",
+      "bytes": 3113
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\docs\\HUONG-DAN-ML-THEO-KHACH-HANG.md",
+      "sha256": "a226961f1117e92b42185160d5a5e17620a985de6b41420fd8f4f72c8925022d",
+      "bytes": 15258
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "customer_id": "customer_long",
+  "manifest_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\snapshot_manifest.json",
+  "manifest_sha256": "1e566c91bba95144e577de463fcae4dd1421b7d2d0e1b6cf3bf42c6b4fcb25fc",
+  "snapshot_id": "runtime_20260910T212011Z",
+  "exported_at": "2026-09-10T21:20:11.140781+00:00",
+  "files": [
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\customer.csv",
+      "rows": 1,
+      "sha256": "8f45dc75e87eb84cfdd8c5351ab5fd298d1d37fdcc5f5ee4c77e0711e2d69eb1",
+      "columns": [
+        "customer_id",
+        "customer_name",
+        "customer_type",
+        "status",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\farms.csv",
+      "rows": 1,
+      "sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "owner_user_id",
+        "farm_name",
+        "crop_name",
+        "region",
+        "address",
+        "area_ha",
+        "latitude",
+        "longitude",
+        "cultivation_type",
+        "soil_texture",
+        "drainage",
+        "created_at"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\zones.csv",
+      "rows": 3,
+      "sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "zone_code",
+        "zone_name",
+        "crop_name",
+        "area_ha",
+        "moisture_min",
+        "moisture_max",
+        "ec_min",
+        "ec_max",
+        "ph_min",
+        "ph_max"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\farm_ai_profiles.csv",
+      "rows": 1,
+      "sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "crop_code",
+        "crop_variety",
+        "growth_stage",
+        "cultivation_type",
+        "climate_region",
+        "soil_type",
+        "target_moisture_min",
+        "target_moisture_max",
+        "target_ec_min",
+        "target_ec_max",
+        "target_ph_min",
+        "target_ph_max",
+        "active_model_scope",
+        "active_model_version",
+        "updated_at"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\sensors.csv",
+      "rows": 12,
+      "sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "device_id",
+        "sensor_id",
+        "sensor_name",
+        "metric_type",
+        "unit",
+        "active"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\sensor_readings.csv",
+      "rows": 941568,
+      "sha256": "2e87cbfe637a23055dc261a7dfdd8c3c5990feb989fa2d8f3bb7cb384f78b0fe",
+      "columns": [
+        "customer_id",
+        "owner_user_id",
+        "farm_id",
+        "zone_id",
+        "zone_code",
+        "device_id",
+        "sensor_id",
+        "reading_id",
+        "metric_type",
+        "value",
+        "unit",
+        "quality",
+        "observed_at",
+        "received_at",
+        "created_at",
+        "data_origin",
+        "source_dataset",
+        "simulation_profile_version"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\device_status.csv",
+      "rows": 388000,
+      "sha256": "c8ec7014dd20f82c7bb637b255aebe55ddc12eef9eefccbb74e8503182eb3b6a",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "device_id",
+        "port_id",
+        "status_id",
+        "online",
+        "running",
+        "last_seen_at",
+        "observed_at",
+        "created_at"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\irrigation_schedules.csv",
+      "rows": 2,
+      "sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "port_id",
+        "schedule_id",
+        "schedule_name",
+        "start_time",
+        "duration_minutes",
+        "days_of_week",
+        "enabled"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\irrigation_runs.csv",
+      "rows": 14,
+      "sha256": "a2b98b554a3c8b5ff5124c9bfdb12973188a52b75ea6197b21b08e1f1839f65c",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "port_id",
+        "run_id",
+        "started_at",
+        "ended_at",
+        "duration_minutes",
+        "water_liters",
+        "result",
+        "source"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\telemetry_ingest_events.csv",
+      "rows": 310400,
+      "sha256": "4d539bbbf0dd0c7549b5fb4a55cb992e457561754c89ab11c1dc7effa061c791",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "event_id",
+        "packet_id",
+        "mqtt_topic",
+        "message_type",
+        "sent_at",
+        "received_at",
+        "inserted_readings",
+        "insert_latency_ms",
+        "status",
+        "error_message"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\alerts.csv",
+      "rows": 10,
+      "sha256": "239f9de57dc72011c9665b19c71a6c1fabc209a9c7f3c7babc14b8b6ab5c56c9",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "device_id",
+        "alert_id",
+        "alert_type",
+        "severity",
+        "title",
+        "message",
+        "status",
+        "detected_at",
+        "resolved_at"
+      ]
+    },
+    {
+      "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\customers\\customer_long\\snapshots\\runtime_20260910T212011Z\\raw\\control_commands.csv",
+      "rows": 0,
+      "sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+      "columns": [
+        "customer_id",
+        "farm_id",
+        "zone_id",
+        "device_id",
+        "port_id",
+        "command_id",
+        "requested_by",
+        "command_type",
+        "parameters",
+        "status",
+        "confirmation_required",
+        "requested_at",
+        "confirmed_at",
+        "executed_at",
+        "result",
+        "error_message"
+      ]
+    }
+  ],
+  "cleaning_version": "historical_customer_experiment_v1",
+  "input_rows": 941568,
+  "rejected_rows": 0,
+  "duplicate_reading_ids": 0,
+  "reason_counts": {
+    "wrong_customer": 0,
+    "missing_identity": 0,
+    "invalid_timestamp": 0,
+    "future_clock": 0,
+    "unknown_metric": 0,
+    "duplicate_reading_id": 0,
+    "invalid_or_missing_numeric": 0,
+    "invalid_range": 0,
+    "invalid_unit": 0,
+    "untrusted_quality": 7135,
+    "not_available_at_boundary": 10449
+  },
+  "missing_input": {
+    "customer_id": 0,
+    "farm_id": 0,
+    "zone_id": 0,
+    "device_id": 0,
+    "sensor_id": 0,
+    "metric_type": 0,
+    "owner_user_id": 0,
+    "reading_id": 0,
+    "value": 0,
+    "unit": 0,
+    "quality": 0,
+    "observed_at": 0,
+    "received_at": 0,
+    "data_origin": 0
+  },
+  "origins": {
+    "simulated_device_calibrated_v9": 941568
+  },
+  "metrics": {
+    "soil_moisture": 235392,
+    "ec": 156928,
+    "air_humidity": 156928,
+    "ph": 156928,
+    "temperature": 156928,
+    "flow_rate": 78464
+  },
+  "units": {
+    "%": 235392,
+    "mS/cm": 156928,
+    "%RH": 156928,
+    "pH": 156928,
+    "°C": 156928,
+    "L/phút": 78464
+  },
+  "quality": {
+    "good": 934433,
+    "suspect": 7135
+  },
+  "policy": "Fixed units/ranges; missing values stay NaN. Last observation available by each 10-minute boundary. No future fill.",
+  "observed_min": "2026-09-04 11:23:00+00:00",
+  "observed_max": "2026-09-10 21:20:10.387729+00:00",
+  "span_hours": 153.95288548027776,
+  "boundary_rows_before_grid": 3312,
+  "grid_rows": 5916,
+  "empty_grid_rows": 2604,
+  "missing_value_after": 2632,
+  "series_count": 12,
+  "retained_rows_note": "Reduction is causal 10-minute sampling, not arbitrary row deletion; original raw CSV preserved.",
+  "cleaned_csv": {
+    "path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer\\historical-20260913T144927Z\\customer_long\\sensor_readings_10min.csv",
+    "sha256": "5b84657378c3970fcd45b0591a796a8306c9272275c7f0de9aec0b80b520c01a",
+    "rows": 5916
+  }
+}

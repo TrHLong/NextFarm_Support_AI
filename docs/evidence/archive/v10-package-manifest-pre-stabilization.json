@@ -1,0 +1,21 @@
+{
+  "validation_scope": "pre-stabilization package baseline; counts and tests are historical",
+  "product": "NextFarm AI Support Crop-aware AI Encyclopedia",
+  "version": "10.0.0",
+  "file_count": 206,
+  "uncompressed_bytes": 55164267,
+  "llm_gateway": true,
+  "crop_router": true,
+  "ai_encyclopedia_ui": true,
+  "crop_keys": 34,
+  "ai_capabilities": 32,
+  "trained_model_artifacts_v2_1": 10,
+  "per_farmer_model_directories": 0,
+  "raw_external_reference_bundled": false,
+  "root_env_bundled": false,
+  "unit_tests_passed": 16,
+  "static_validation": "26 PASS / 0 FAIL",
+  "docker_e2e_in_packaging_environment": false,
+  "docker_e2e_note": "Docker CLI/daemon is not available in the packaging environment; run scripts/check_v10_completion.ps1 after Docker Desktop starts on the target Windows host.",
+  "model_quality_note": "Packaged reference-trained V2.1 suite currently has 3 approved and 7 experimental quality-gate statuses; experimental status is preserved intentionally."
+}

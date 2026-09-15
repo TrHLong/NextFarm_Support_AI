@@ -1,0 +1,52 @@
+{
+  "validation_scope": "legacy_v9_completion_reference",
+  "superseded_for_v10_by": "v10-runtime-validation-latest.json",
+  "date": "2026-08-15",
+  "project_version": "9.0.1",
+  "completion_pack": "data-governance-chat-persistence-integration-foundation",
+  "docker_server": "29.4.3",
+  "test_isolation": {
+    "compose_project": "nextfarm_v10_completion_test",
+    "postgres_volume": "nextfarm_v10_completion_test_pg",
+    "touched_existing_v9_volume": false
+  },
+  "static_validation": {
+    "offline_contracts": "47/47",
+    "python_syntax": "passed",
+    "web_javascript_syntax": "passed",
+    "data_studio_javascript_syntax": "passed",
+    "powershell_backup_restore_syntax": "passed",
+    "compose_demo_config": "passed",
+    "compose_production_config": "passed"
+  },
+  "runtime_validation": {
+    "fresh_schema_tables": 54,
+    "migration_exit_code": 0,
+    "migration_second_run_exit_code": 0,
+    "nextfarm_api_first_ingest": "accepted",
+    "nextfarm_api_retry": "duplicate",
+    "cross_farm_sensor_payload": 422,
+    "cross_farm_user_query": 403,
+    "farmer_snapshot_attempt": 403,
+    "technician_snapshot_saved": true,
+    "chat_saved_to_postgresql": true,
+    "chat_messages_after_service_restart": 2,
+    "chat_messages_after_same_client_id_retry": 2,
+    "external_identity_resolved_to_same_user": true,
+    "daily_report_rows_for_7_days": 49,
+    "data_studio_http_status": 200,
+    "data_studio_contains_data_operations_center": true,
+    "backup_catalog_verified": true,
+    "restore_database_table_count": 54,
+    "restored_chat_message_count": 2,
+    "temporary_backup_removed_after_test": true
+  },
+  "not_validated_in_this_run": [
+    "full AI analytics image and ten-model retraining",
+    "research-calibrated simulator runtime",
+    "production TLS/reverse-proxy deployment",
+    "real NextFarm hardware/API payloads",
+    "load/SLA and agricultural expert acceptance"
+  ],
+  "production_ready": false
+}

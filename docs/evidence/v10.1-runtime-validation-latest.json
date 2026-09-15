@@ -1,0 +1,238 @@
+﻿{
+    "version":  "10.1.1",
+    "validation_scope":  "v10.1_ten_acceptance_flows_acl_multi_tool_freshness",
+    "started_at":  "2026-09-08T14:21:12.0228791Z",
+    "passed":  true,
+    "checks":  [
+                   {
+                       "name":  "identity",
+                       "url":  "http://127.0.0.1:18100/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "knowledge",
+                       "url":  "http://127.0.0.1:18200/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "farm_data",
+                       "url":  "http://127.0.0.1:18300/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "simulator",
+                       "url":  "http://127.0.0.1:18400/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "tickets",
+                       "url":  "http://127.0.0.1:18500/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "analytics",
+                       "url":  "http://127.0.0.1:18600/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "truth_guard",
+                       "url":  "http://127.0.0.1:18700/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "telemetry",
+                       "url":  "http://127.0.0.1:18800/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "crop_router",
+                       "url":  "http://127.0.0.1:18900/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "llm_gateway",
+                       "url":  "http://127.0.0.1:18950/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "chatbot",
+                       "url":  "http://127.0.0.1:18000/health",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "chat_ui",
+                       "url":  "http://127.0.0.1:18080",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "data_studio_ui",
+                       "url":  "http://127.0.0.1:18081",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "knowledge_studio_ui",
+                       "url":  "http://127.0.0.1:18082",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "ai_encyclopedia_ui",
+                       "url":  "http://127.0.0.1:18084",
+                       "status":  200,
+                       "passed":  true
+                   },
+                   {
+                       "name":  "farmer_login",
+                       "passed":  true,
+                       "user_id":  "farmer_long"
+                   },
+                   {
+                       "name":  "tenant_cross_farm_denied",
+                       "passed":  true,
+                       "status":  403
+                   },
+                   {
+                       "name":  "crop_router_me",
+                       "passed":  true,
+                       "crop_count":  1,
+                       "farm_id":  "farm_long",
+                       "crop_key":  "tomato"
+                   },
+                   {
+                       "name":  "crop_capability_readiness",
+                       "passed":  true,
+                       "capability_count":  32,
+                       "ready":  2,
+                       "experimental":  5,
+                       "blocked":  25,
+                       "origin_kind":  "demo",
+                       "production_candidate":  false,
+                       "production_ready":  false
+                   },
+                   {
+                       "name":  "llm_internal_key_required",
+                       "passed":  true,
+                       "status":  401
+                   },
+                   {
+                       "name":  "truth_guard_internal_key_required",
+                       "passed":  true,
+                       "status":  401
+                   },
+                   {
+                       "name":  "encyclopedia_does_not_proxy_llm_plan",
+                       "passed":  true,
+                       "status":  405
+                   },
+                   {
+                       "name":  "llm_tool_plan",
+                       "passed":  true,
+                       "provider":  "deterministic",
+                       "tool_name":  "get_latest_metric"
+                   },
+                   {
+                       "name":  "multi_source_iot_knowledge",
+                       "passed":  true,
+                       "tools":  [
+                                     "get_latest_metric",
+                                     "search_knowledge"
+                                 ]
+                   },
+                   {
+                       "name":  "vietnamese_no_accent_routing",
+                       "passed":  true,
+                       "tool":  "get_latest_metric",
+                       "zone":  "B"
+                   },
+                   {
+                       "name":  "latest_sensor_freshness_contract",
+                       "passed":  true,
+                       "fresh":  true,
+                       "quality":  "good",
+                       "age_seconds":  0.6
+                   },
+                   {
+                       "name":  "chat_valid_metric_published",
+                       "passed":  true,
+                       "intent":  "read_metric",
+                       "tool":  "get_latest_metric"
+                   },
+                   {
+                       "name":  "chat_multi_source_published",
+                       "passed":  true,
+                       "tool":  "get_latest_metric+search_knowledge",
+                       "source_count":  10
+                   },
+                   {
+                       "name":  "numeric_advice_fail_closed_published",
+                       "passed":  true,
+                       "missing_fields":  [
+                                              "mÃ¹a vá»¥",
+                                              "loáº¡i/Äáº·c Äiá»m Äáº¥t",
+                                              "giai Äoáº¡n sinh trÆ°á»ng"
+                                          ]
+                   },
+                   {
+                       "name":  "ambiguous_zone_rejected",
+                       "passed":  true,
+                       "status":  409
+                   },
+                   {
+                       "name":  "farm_data_cross_farm_denied",
+                       "passed":  true,
+                       "status":  403
+                   },
+                   {
+                       "name":  "port_status",
+                       "passed":  true,
+                       "fresh":  true,
+                       "online":  true
+                   },
+                   {
+                       "name":  "chat_device_status_published",
+                       "passed":  true,
+                       "intent":  "device_offline"
+                   },
+                   {
+                       "name":  "irrigation_history",
+                       "passed":  true,
+                       "rows":  7
+                   },
+                   {
+                       "name":  "chat_irrigation_history_published",
+                       "passed":  true,
+                       "tool":  "get_irrigation_history"
+                   },
+                   {
+                       "name":  "control_read_only",
+                       "passed":  true,
+                       "intent":  "control_out_of_scope"
+                   },
+                   {
+                       "name":  "unsupported_agronomy_fail_closed",
+                       "passed":  true,
+                       "intent":  "knowledge_answer"
+                   },
+                   {
+                       "name":  "truth_guard_grounding",
+                       "passed":  true,
+                       "source_count":  0
+                   }
+               ],
+    "failure":  null,
+    "production_ready":  false,
+    "completed_at":  "2026-09-08T14:21:13.8150055Z"
+}

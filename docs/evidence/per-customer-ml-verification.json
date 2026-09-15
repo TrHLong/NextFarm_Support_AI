@@ -1,0 +1,855 @@
+{
+  "verified": true,
+  "customer_count": 3,
+  "checks": [
+    {
+      "customer_id": "customer_lan",
+      "snapshot_id": "runtime_20260907T220612Z",
+      "contains_other_customers": false,
+      "raw_file_checks": [
+        {
+          "name": "customer",
+          "manifest_rows": 1,
+          "manifest_sha256": "13870d9ac6a39c2503e5fd74d9b621d5aee888fd2b3f94ee4891eff7f3a55505",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farms",
+          "manifest_rows": 1,
+          "manifest_sha256": "27e6ae6021d38d2938b882eebeaa6d67cf8b03734eed11754ad044130787c645",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "zones",
+          "manifest_rows": 2,
+          "manifest_sha256": "bc5bd52d3da47f5db2799ae08bbdc1700733daea8721d9519cd7a2c27aac8500",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 2,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "manifest_rows": 1,
+          "manifest_sha256": "cf67b365edf007a63074b78b7352fc0d6645c97dba554f1c9093dec86764f25b",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensors",
+          "manifest_rows": 7,
+          "manifest_sha256": "f262a9fe5031b10016a9aec3888dc235e35f8c2ca36f9678c5bf8b9a5418d5e9",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 7,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensor_readings",
+          "manifest_rows": 127078,
+          "manifest_sha256": "48317d24eb4ec8bff2238cd5097a4a3005fef3e0cc8971aa49d73ed5a8dbfcbb",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 127078,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "device_status",
+          "manifest_rows": 51870,
+          "manifest_sha256": "0574fb4769592eee96f473c92ae0bd5666a3d4d2dc28710811f0e57ab2da0d52",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 51870,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "manifest_rows": 1,
+          "manifest_sha256": "698597faa02ba043139f85a4186b56156a3ebb6a59fc11e2a0102eddc6ff4ea1",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_runs",
+          "manifest_rows": 7,
+          "manifest_sha256": "ec417f22fb215145cbeec42580d6477135325df37628010fb0571cd6ea6ef44e",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 7,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "manifest_rows": 51870,
+          "manifest_sha256": "0a40dec19f1b381e827ee775e9440143e452272a03ddef136e4bec3bfcbe75bf",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 51870,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "alerts",
+          "manifest_rows": 4,
+          "manifest_sha256": "88187acb5c814298f3a0cb085135cacb6a318c47154053a83fbeb0fd36ad53ab",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 4,
+          "customer_values": [
+            "customer_lan"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "control_commands",
+          "manifest_rows": 0,
+          "manifest_sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 0,
+          "customer_values": [],
+          "only_expected_customer": true,
+          "valid": true
+        }
+      ],
+      "evidence_file_checks": [
+        {
+          "relative_path": "00_dataset_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "01_processed_features_targets.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "02_train.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "03_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "04_test.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "05_feature_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "06_target_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "07_model_metrics.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "08_candidate_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "09_generalization_holdout.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "10_class_distribution.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "11_regression_target_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "12_feature_importance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "13_model_inventory.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "14_data_provenance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/anomaly_multisensor.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/device_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ec_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/farm_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/flow_fault.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_failure.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_need.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/moisture_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ph_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/temperature_forecast.csv",
+          "sha256_matches": true
+        }
+      ],
+      "temporal_split": {
+        "train": {
+          "row_count": 200,
+          "minimum": "2026-09-04T11:15:00+00:00",
+          "maximum": "2026-09-06T13:00:00+00:00"
+        },
+        "validation": {
+          "row_count": 43,
+          "minimum": "2026-09-06T13:15:00+00:00",
+          "maximum": "2026-09-06T23:45:00+00:00"
+        },
+        "test": {
+          "row_count": 44,
+          "minimum": "2026-09-07T00:00:00+00:00",
+          "maximum": "2026-09-07T10:45:00+00:00"
+        },
+        "ordered_without_overlap": true
+      },
+      "active_model_count": 0,
+      "missing_active_artifacts": []
+    },
+    {
+      "customer_id": "customer_long",
+      "snapshot_id": "runtime_20260907T220635Z",
+      "contains_other_customers": false,
+      "raw_file_checks": [
+        {
+          "name": "customer",
+          "manifest_rows": 1,
+          "manifest_sha256": "077c2ed71153c0670943c1227208d6242adaacb2862613279acbc6c07060bd34",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farms",
+          "manifest_rows": 1,
+          "manifest_sha256": "31c41b8f1554586c899d77128fb60307659f3cafb9f4091f38dec0733e4fb4e2",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "zones",
+          "manifest_rows": 3,
+          "manifest_sha256": "1d38f66a6d2d804f8de72eaf6e7c4329e2e3b70d8b68efcb218fc1b52f62c721",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 3,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "manifest_rows": 1,
+          "manifest_sha256": "b9a60a727ee69217cd17009d90d9daf7441a5a25c86525ca0ce1d623bcffc1ba",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensors",
+          "manifest_rows": 12,
+          "manifest_sha256": "0cb15e0ae99cb2fc09fd08451cbad11b67e998fe3c3433b9fc35c98a8238a570",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 12,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensor_readings",
+          "manifest_rows": 217980,
+          "manifest_sha256": "b03de3299dd90154c37dcb6d87153268eda5b54e916a03248110b94dc56391d9",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 217980,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "device_status",
+          "manifest_rows": 86505,
+          "manifest_sha256": "e06d032c853df8f8b8aae201b84bbdc640196e148268b7c38aad6600e1cef57e",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 86505,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "manifest_rows": 2,
+          "manifest_sha256": "f02c7234d3f2057377e4ee6d3158c23b1b5e9b4f0bab34a8fa126de02f03e2e9",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 2,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_runs",
+          "manifest_rows": 14,
+          "manifest_sha256": "884c7ed83459276ef6bdd9da10a2a6a1b26591c816cfa91057ba3a96ac93b987",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 14,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "manifest_rows": 69204,
+          "manifest_sha256": "07f7e03e65ff05eb3ae431b7bcc13c86743529af43ffc7f20478a6b3eda53dc8",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 69204,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "alerts",
+          "manifest_rows": 3,
+          "manifest_sha256": "89dd3587ad6a484e88281f90eb990c5c2bfec90e396053ded5542e2651058394",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 3,
+          "customer_values": [
+            "customer_long"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "control_commands",
+          "manifest_rows": 0,
+          "manifest_sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 0,
+          "customer_values": [],
+          "only_expected_customer": true,
+          "valid": true
+        }
+      ],
+      "evidence_file_checks": [
+        {
+          "relative_path": "00_dataset_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "01_processed_features_targets.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "02_train.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "03_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "04_test.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "05_feature_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "06_target_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "07_model_metrics.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "08_candidate_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "09_generalization_holdout.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "10_class_distribution.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "11_regression_target_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "12_feature_importance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "13_model_inventory.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "14_data_provenance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/anomaly_multisensor.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/device_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ec_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/farm_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/flow_fault.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_failure.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_need.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/moisture_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ph_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/temperature_forecast.csv",
+          "sha256_matches": true
+        }
+      ],
+      "temporal_split": {
+        "train": {
+          "row_count": 400,
+          "minimum": "2026-09-04T11:15:00+00:00",
+          "maximum": "2026-09-06T13:00:00+00:00"
+        },
+        "validation": {
+          "row_count": 86,
+          "minimum": "2026-09-06T13:15:00+00:00",
+          "maximum": "2026-09-06T23:45:00+00:00"
+        },
+        "test": {
+          "row_count": 88,
+          "minimum": "2026-09-07T00:00:00+00:00",
+          "maximum": "2026-09-07T10:45:00+00:00"
+        },
+        "ordered_without_overlap": true
+      },
+      "active_model_count": 6,
+      "missing_active_artifacts": []
+    },
+    {
+      "customer_id": "customer_minh",
+      "snapshot_id": "runtime_20260907T220710Z",
+      "contains_other_customers": false,
+      "raw_file_checks": [
+        {
+          "name": "customer",
+          "manifest_rows": 1,
+          "manifest_sha256": "5f91e0535a616ad36fe854af7a5e8f0fca2635475968aa16226618734a46c8fc",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farms",
+          "manifest_rows": 1,
+          "manifest_sha256": "ee230ca916a88cb8ceeea947361bd735fff7540bcf8a4a10426d3cf1c6f1527a",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "zones",
+          "manifest_rows": 2,
+          "manifest_sha256": "37d6cc3e54b7ae40024919c7eede8a5bfacfe18e1773327515a330b273620c3c",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 2,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "farm_ai_profiles",
+          "manifest_rows": 1,
+          "manifest_sha256": "c2adc5d3b3d75551bc3b23c41642dda47636d7224cd21202659f64ee584c1add",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensors",
+          "manifest_rows": 8,
+          "manifest_sha256": "8e028ede417ee6955d063cc37786ca1287286bd617298c62e85e46b2aa2b3902",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 8,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "sensor_readings",
+          "manifest_rows": 145464,
+          "manifest_sha256": "4cab16f4d7dd66504880b25b648a427b86f70bbcf5e0a54f057b99ceaa5a452a",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 145464,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "device_status",
+          "manifest_rows": 69276,
+          "manifest_sha256": "5fedede610e8d23062e8b684afa7b6f51e12cccc6e22ea97aceb5812e2265cc4",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 69276,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_schedules",
+          "manifest_rows": 1,
+          "manifest_sha256": "0f6a6041e294611de0a2797a841006694af965801b017e9f2a544ad143c8d526",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 1,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "irrigation_runs",
+          "manifest_rows": 7,
+          "manifest_sha256": "68222123c9d8a8fe494d2865ec79624417686fb53151580a0c2d8762ee60b449",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 7,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "telemetry_ingest_events",
+          "manifest_rows": 51957,
+          "manifest_sha256": "b6f8fca86353e6b2e79b7deb1a5dfd8e26962424d8ec84c3d99122cb30c4645b",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 51957,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "alerts",
+          "manifest_rows": 3,
+          "manifest_sha256": "05d6a87e3854d722431a49b3b287613d80f3c0dcb9f52593a41667db8084dc6e",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 3,
+          "customer_values": [
+            "customer_minh"
+          ],
+          "only_expected_customer": true,
+          "valid": true
+        },
+        {
+          "name": "control_commands",
+          "manifest_rows": 0,
+          "manifest_sha256": "b6e27c08ec42ca44390355669fbe77bf3ba219f0c0b2f5c5ba1c1515732b43ba",
+          "sha256_matches": true,
+          "identity_column": "customer_id",
+          "row_count": 0,
+          "customer_values": [],
+          "only_expected_customer": true,
+          "valid": true
+        }
+      ],
+      "evidence_file_checks": [
+        {
+          "relative_path": "00_dataset_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "01_processed_features_targets.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "02_train.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "03_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "04_test.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "05_feature_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "06_target_catalog.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "07_model_metrics.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "08_candidate_validation.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "09_generalization_holdout.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "10_class_distribution.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "11_regression_target_summary.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "12_feature_importance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "13_model_inventory.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "14_data_provenance.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/anomaly_multisensor.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/device_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ec_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/farm_health.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/flow_fault.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_failure.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/irrigation_need.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/moisture_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/ph_forecast.csv",
+          "sha256_matches": true
+        },
+        {
+          "relative_path": "predictions/temperature_forecast.csv",
+          "sha256_matches": true
+        }
+      ],
+      "temporal_split": {
+        "train": {
+          "row_count": 28,
+          "minimum": "2026-09-07T11:15:00+00:00",
+          "maximum": "2026-09-07T18:00:00+00:00"
+        },
+        "validation": {
+          "row_count": 6,
+          "minimum": "2026-09-07T18:15:00+00:00",
+          "maximum": "2026-09-07T19:30:00+00:00"
+        },
+        "test": {
+          "row_count": 6,
+          "minimum": "2026-09-07T19:45:00+00:00",
+          "maximum": "2026-09-07T21:30:00+00:00"
+        },
+        "ordered_without_overlap": true
+      },
+      "active_model_count": 0,
+      "missing_active_artifacts": []
+    }
+  ]
+}
