@@ -69,6 +69,9 @@ Nếu chỉ muốn tạo cấu hình local trước:
 scripts\setup_v10_env.cmd
 ```
 
+Script này dùng PowerShell có sẵn trên Windows để tạo secret, không bắt buộc
+phải cài Python. Có thể chạy lại nhiều lần; các secret hiện có được giữ nguyên.
+
 File `.env` chứa secret local và không được commit. Repository đã cung cấp `.env.example` để tham khảo.
 
 ## Các địa chỉ sau khi chạy

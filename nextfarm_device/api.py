@@ -9,6 +9,7 @@ from fastapi.responses import Response
 from pydantic import BaseModel,Field
 from psycopg.types.json import Jsonb
 import httpx
+from . import VERSION as PACKAGE_VERSION
 from .contracts import GROUPS,catalog,ACTIVE_SPECS,METRICS,FORECAST_HORIZONS_BY_METRIC,FORECAST_TIERS
 from . import store
 from .answers import route,render_tool,connectivity,norm
@@ -57,11 +58,11 @@ def app_base(name):
         yield
         stop.set()
         if worker:worker.join(timeout=5)
-    app=FastAPI(title='NextFarm '+name,version='12.0.0',lifespan=lifespan)
+    app=FastAPI(title='NextFarm '+name,version=PACKAGE_VERSION,lifespan=lifespan)
     @app.get('/health')
     def health():
         with store.connect() as db:db.execute('SELECT 1')
-        return {'status':'ok','version':'12.0.0','service':name,'scope':'one_device','ticket_workflow':False,'collection_contract':'problem_b_v12','chat_contract':'farmer_v14'}
+        return {'status':'ok','version':PACKAGE_VERSION,'service':name,'scope':'one_device','ticket_workflow':False,'collection_contract':'problem_b_v12','chat_contract':'farmer_v13'}
     return app
 
 def data_app():

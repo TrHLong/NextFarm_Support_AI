@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime,timezone,timedelta
 import paho.mqtt.client as mqtt
 from fastapi import FastAPI,Header,HTTPException
-from . import store
+from . import store,VERSION as PACKAGE_VERSION
 from .answers import connectivity
 from .collection import VERSION
 
@@ -57,7 +57,7 @@ def ingestion_app():
         client.disconnect();client.loop_stop()
     app=FastAPI(lifespan=life)
     @app.get('/health')
-    def health():return {'status':'ok' if state['connected'] else 'waiting_mqtt','version':'12.0.0',**state}
+    def health():return {'status':'ok' if state['connected'] else 'waiting_mqtt','version':PACKAGE_VERSION,**state}
     return app
 
 def simulator_app():
@@ -144,7 +144,7 @@ def simulator_app():
         store.initialize_schema();thread=threading.Thread(target=worker,daemon=True);thread.start();yield;stop.set();thread.join(timeout=8)
     app=FastAPI(lifespan=life)
     @app.get('/health')
-    def health():return {'status':'ok' if state['running'] else 'starting','version':'12.0.0',**state}
+    def health():return {'status':'ok' if state['running'] else 'starting','version':PACKAGE_VERSION,**state}
     @app.post('/scenarios/{device_id}/{scenario}')
     def scenario(device_id:str,scenario:str,x_internal_service_key:str|None=Header(default=None)):
         import hmac

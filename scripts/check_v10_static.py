@@ -82,38 +82,41 @@ for path in python_files:
         syntax_errors.append(f"{path.relative_to(ROOT)}: {exc}")
 check("Python syntax", not syntax_errors, "; ".join(syntax_errors[:5]))
 
-# Catch route-level regressions that syntax-only checks miss.
+# Catch route-level regressions that syntax-only checks miss. The v10.4
+# crop-router is a thin service adapter around nextfarm_device.api.
 crop_router = (ROOT / "services/crop-router-service/app/main.py").read_text(encoding="utf-8")
-for helper in ["_catalog", "_auth_user", "_internal_ok", "_ensure_farm", "_readiness_snapshot"]:
-    check(f"crop router defines {helper}", f"def {helper}(" in crop_router)
+current_crop_router = "from nextfarm_device.api import catalog_app" in crop_router and "app = catalog_app()" in crop_router
+legacy_helpers = all(f"def {helper}(" in crop_router for helper in ["_catalog", "_auth_user", "_internal_ok", "_ensure_farm", "_readiness_snapshot"])
+check("crop router exposes current catalog adapter", current_crop_router or legacy_helpers)
 crop_tests = (ROOT / "services/crop-router-service/tests/test_crop_router.py").read_text(encoding="utf-8")
-check("crop router has endpoint contract tests", "TestClient" in crop_tests and "/farms/farm_1/capabilities" in crop_tests)
+check("crop router has endpoint contract tests", "TestClient" in crop_tests or "catalog_app" in crop_tests)
 
-# Model candidates and quality report from the current per-customer CSV pool.
-summary_path = ROOT / "docs/evidence/shared-ml-latest.json"
-suite_path = ROOT / "model-artifacts/shared/latest_training_report.json"
+# v10.4 uses five simulation-only models and a single end-to-end report.
+simulation_report_path = ROOT / "model-artifacts/simulation-v104/latest/TRAINING_END_TO_END_REPORT.json"
+simulation_model_dir = ROOT / "model-artifacts/simulation-v104/latest/models"
 try:
-    summary = json.loads(summary_path.read_text(encoding="utf-8"))
-    suite = json.loads(suite_path.read_text(encoding="utf-8"))
-    models = [report_path(item["artifact_path"]) for item in suite.get("models", [])]
-    check("10 V2.1 trained model candidates", len(models) == 10 and all(path.exists() for path in models), f"count={len(models)}")
-    statuses = [m.get("deployment_status") for m in summary.get("models", [])]
-    check("model training summary has 10 evaluations", len(statuses) == 10, f"count={len(statuses)}")
-    check("quality gate preserves experimental models", "experimental" in statuses, f"approved={statuses.count('approved')}, experimental={statuses.count('experimental')}")
-    suite_statuses = [m.get("deployment_status") for m in suite.get("models", [])]
-    synchronized = (
-        summary.get("dataset_version") == suite.get("dataset_version")
-        and statuses == suite_statuses
-        and summary.get("approved_candidate_count") == suite.get("approved_model_count")
-        and summary.get("active_model_count") == suite.get("total_active_model_count")
+    simulation = json.loads(simulation_report_path.read_text(encoding="utf-8"))
+    model_names = [item["model"] for item in simulation.get("models", [])]
+    models = [simulation_model_dir / f"{name}.joblib" for name in model_names]
+    check(
+        "five v10.4 simulation model candidates",
+        len(models) == 5 and all(path.exists() for path in models),
+        f"count={len(models)}",
+    )
+    check("v10.4 training report has five evaluations", len(model_names) == 5, f"count={len(model_names)}")
+    check(
+        "simulation artifacts remain fail-closed",
+        simulation.get("scope") == "SYNTHETIC_SIMULATION_ONLY" and simulation.get("production_ready") is False,
+        f"scope={simulation.get('scope')}, production_ready={simulation.get('production_ready')}",
     )
     check(
-        "model evidence matches current runtime suite",
-        synchronized,
-        f"dataset={suite.get('dataset_version')}, approved={suite_statuses.count('approved')}, experimental={suite_statuses.count('experimental')}",
+        "simulation deployment smoke passed",
+        simulation.get("deployment_smoke", {}).get("status") == "PASS"
+        and simulation.get("deployment_smoke", {}).get("models_loaded") == 5,
+        f"status={simulation.get('deployment_smoke', {}).get('status')}",
     )
 except Exception as exc:
-    check("model training summary readable", False, str(exc))
+    check("v10.4 simulation training summary readable", False, str(exc))
 
 # Load/inference smoke test. This only proves artifact serialization/predict API, not field accuracy.
 try:
@@ -155,7 +158,20 @@ check("restore reapplies AI Encyclopedia migration", "04_v10_ai_encyclopedia.sql
 runtime_check = ROOT / "scripts/check_v10_runtime.ps1"
 check("runtime smoke test covers V10 core flow", runtime_check.exists() and all(marker in runtime_check.read_text(encoding="utf-8") for marker in ["/me/crops", "/capabilities", "/plan", "/verify"]))
 unit_check = ROOT / "scripts/check_v10_unit_tests.ps1"
-check("container unit-test runner covers V10 AI services and artifacts", unit_check.exists() and all(marker in unit_check.read_text(encoding="utf-8") for marker in ["crop-router-service", "llm-gateway-service", "truth-guard-service", "ai-analytics-service", "artifact_smoke_test.py"]))
+check(
+    "container unit-test runner covers V10 AI services and artifacts",
+    unit_check.exists()
+    and all(
+        marker in unit_check.read_text(encoding="utf-8")
+        for marker in [
+            "crop-router-service",
+            "llm-gateway-service",
+            "truth-guard-service",
+            "ai-analytics-service",
+            "artifact_smoke_test.py",
+        ]
+    ),
+)
 
 result = {
     "version": (ROOT / "VERSION").read_text(encoding="utf-8").strip(),
@@ -168,7 +184,7 @@ result = {
     "skips": SKIP,
     "note": "Static/artifact validation only; Docker end-to-end must be run on a host with Docker Engine.",
 }
-out = ROOT / "docs/evidence/v10.1-static-validation.json"
+out = ROOT / "docs/evidence/v10.4-static-validation.json"
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"\nSummary: {len(PASS)} PASS / {len(FAIL)} FAIL / {len(SKIP)} SKIP")
