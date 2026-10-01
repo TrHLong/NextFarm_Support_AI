@@ -58,7 +58,7 @@ Mở Command Prompt hoặc PowerShell:
 
 ```powershell
 cd /d "D:\2026-2027\THUCTAP\NextFarm_Support_AI"
-scripts\start_v11.cmd
+scripts\start_v11.cmd  (Nếu cần hãy chỉnh sửa start_v11.cmd cho phù hợp với dòng máy ) 
 ```
 
 `start_v10.cmd` là alias tương thích và chuyển tiếp sang `start_v11.cmd`.
