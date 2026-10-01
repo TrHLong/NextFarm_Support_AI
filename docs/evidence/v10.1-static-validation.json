@@ -1,9 +1,9 @@
 {
-  "version": "10.1.1",
-  "passed": true,
-  "pass_count": 43,
-  "fail_count": 0,
-  "skip_count": 1,
+  "version": "11.0.0",
+  "passed": false,
+  "pass_count": 37,
+  "fail_count": 7,
+  "skip_count": 0,
   "passes": [
     "exists infra/database/04_v10_ai_encyclopedia.sql",
     "exists services/crop-router-service/app/main.py",
@@ -22,16 +22,11 @@
     "farm crop inventory uses non-null zone key",
     "capability implementation is explicitly gated",
     "Python syntax",
-    "crop router defines _catalog",
-    "crop router defines _auth_user",
-    "crop router defines _internal_ok",
-    "crop router defines _ensure_farm",
-    "crop router defines _readiness_snapshot",
     "crop router has endpoint contract tests",
     "10 V2.1 trained model candidates: count=10",
     "model training summary has 10 evaluations: count=10",
-    "quality gate preserves experimental models: approved=0, experimental=10",
-    "model evidence matches current runtime suite: dataset=nextfarm-v10.1-shared-customers-20260908T103204Z-e46562d1807e, approved=0, experimental=10",
+    "quality gate preserves experimental models: approved=2, experimental=8",
+    "all packaged models load and predict: count=10",
     "compose contains crop-router-service",
     "compose contains llm-gateway-service",
     "compose contains ai-encyclopedia",
@@ -46,12 +41,17 @@
     "production setup creates Mosquitto password file",
     "restore includes V10 services",
     "restore reapplies AI Encyclopedia migration",
-    "runtime smoke test covers V10 core flow",
+    "runtime smoke test covers V10 core flow"
+  ],
+  "failures": [
+    "crop router defines _catalog",
+    "crop router defines _auth_user",
+    "crop router defines _internal_ok",
+    "crop router defines _ensure_farm",
+    "crop router defines _readiness_snapshot",
+    "model evidence matches current runtime suite: dataset=nextfarm-v10.1-shared-customers-20260910T212157Z-117d830d5467, approved=0, experimental=10",
     "container unit-test runner covers V10 AI services and artifacts"
   ],
-  "failures": [],
-  "skips": [
-    "all packaged models load and predict: cài requirements của ai-analytics-service hoặc chạy Docker runtime check"
-  ],
+  "skips": [],
   "note": "Static/artifact validation only; Docker end-to-end must be run on a host with Docker Engine."
 }

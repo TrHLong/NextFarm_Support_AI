@@ -1,0 +1,20 @@
+{
+  "dataset_status": "PIPELINE_TEST_ONLY",
+  "seed": 20260925,
+  "timezone": "Asia/Ho_Chi_Minh",
+  "farmers": 3,
+  "days": 3,
+  "tables": {
+    "farmer": 3,
+    "farm": 3,
+    "zone": 6,
+    "device": 3,
+    "sensor_reading": 2592,
+    "device_state": 1296,
+    "irrigation_schedule": 9,
+    "irrigation_event": 18,
+    "fertilizer_event": 18,
+    "command_log": 18,
+    "alert": 4
+  }
+}

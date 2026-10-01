@@ -130,6 +130,29 @@ def test_multiple_metrics_reuse_one_scoped_api_read(farmer_chat):
     assert response.status_code==200 and len(farmer_chat[2])==1
     values=response.json()['trace']['results'];assert values[0]['facts']['ec']['value']==1.8 and values[1]['facts']['ph']['value']==6.5
 
+def test_irrigation_summary_is_not_rendered_twice_and_source_is_not_repeated(farmer_chat):
+    response=farmer_chat[0]('Hôm nay Khu A đã tưới mấy lần và hết bao nhiêu nước?')
+    body=response.json();results=[r for r in body['trace']['results'] if r['request']['tool']=='irrigation']
+    assert len(results)==1
+    assert body['answer'].count('Khu A ghi nhận')==1
+    assert '\n\nNguồn: dữ liệu mô phỏng' not in body['answer']
+    assert body['source']=='synthetic_test_fixture_only'
+
+def test_irrigation_time_list_and_generic_fertilizer_total_are_answered_directly(farmer_chat):
+    listed=farmer_chat[0]('Cho tôi danh sách thời gian của những lần tưới nước hôm nay').json()
+    first=listed['trace']['results'][0]
+    assert first['request']['operation']=='list' and first['facts']['runs']
+    assert 'ca tưới đã kết thúc' in listed['answer'] and 'Tổng hợp:' in listed['answer']
+    fertilizer=farmer_chat[0]('Hôm nay lượng phân sử dụng là bao nhiêu').json()
+    result=fertilizer['trace']['results'][0]
+    assert result['request']['tool']=='irrigation' and result['facts']['fertilizer_ml']==35
+
+def test_compound_command_audit_is_one_answer_and_discloses_missing_zone_tag(farmer_chat):
+    body=farmer_chat[0]('Ai vừa gửi lệnh điều khiển cho Khu A và kết quả ra sao?').json()
+    results=[r for r in body['trace']['results'] if r['request']['tool']=='commands']
+    assert len(results)==1 and results[0]['facts']['command_count']==3
+    assert 'chưa gắn mã khu' in body['answer']
+
 def test_invalid_latest_measurement_is_not_replaced_by_old_good_value(farmer_chat):
     farmer_chat[1]['sensor_readings'][2]['soil_moisture']=999
     response=farmer_chat[0]('Độ ẩm khu A hiện tại?');assert facts(response,'sensor')['soil_moisture']['value'] is None
@@ -149,7 +172,10 @@ def test_wrong_owner_or_incomplete_backend_never_yields_normal_total(option,valu
 def test_future_horizon_does_not_fall_back_to_current_reading(farmer_chat):
     response=farmer_chat[0]('Độ ẩm ngày mai bao nhiêu?');body=response.json()
     assert body['trace']['results'][0]['status']=='forecast_unavailable'
-    assert all(r.url.path.endswith('/predict') for r in farmer_chat[2])
+    assert any(r.url.path.endswith('/predict') for r in farmer_chat[2])
+    assert any(r.url.path.endswith('/data') for r in farmer_chat[2])
+    assert 'không phải giá trị tương lai' in body['answer']
+    assert body['trace']['results'][0]['facts']['requested_horizons']==[1440]
 
 def test_two_outage_causes_use_independent_observer(farmer_chat):
     obs=farmer_chat[1]['connection_observer'][0];obs.update(power_confirmed=False,mqtt_connected=False)

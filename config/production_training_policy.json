@@ -1,0 +1,17 @@
+{
+  "version": "production_safe_v10.2",
+  "production_allowed_origins": ["real_device", "field_device", "verified_import"],
+  "forbidden_production_origins": ["synthetic", "simulation", "pipeline_test", "demo", "generated"],
+  "split": "chronological_70_15_15_horizon_purged",
+  "test_policy": "test is evaluated once after validation selection; no test refit or hyperparameter selection",
+  "missing_policy": "do not mean-fill raw telemetry; preserve gaps and missing indicators; preprocessing is fitted on train only",
+  "outlier_policy": "remove physically invalid or explicitly bad-quality records; retain valid anomalous observations",
+  "model_1_horizons_minutes": [60, 180, 360, 720],
+  "min_history_days": 30,
+  "recommended_history_days": 60,
+  "min_real_rows": 10000,
+  "max_duplicate_fraction": 0.01,
+  "max_invalid_fraction": 0.03,
+  "min_moisture_coverage": 0.90,
+  "min_baseline_mae_gain": 0.05
+}

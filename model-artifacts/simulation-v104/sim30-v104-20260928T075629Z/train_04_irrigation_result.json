@@ -1,0 +1,157 @@
+{
+  "model": "smart_irrigation_scheduler",
+  "objective": "Ước lượng số phút tưới đề xuất theo policy mô phỏng từ thiếu hụt độ ẩm, nhiệt độ, độ ẩm không khí và lịch sử cảm biến.",
+  "algorithm_rationale": "Bài toán là hồi quy phi tuyến dạng bảng; Extra Trees/Random Forest học tốt ngưỡng và tương tác mà không cần scaling, còn HistGradientBoosting kiểm tra khả năng boosting. MAE Validation là tiêu chí chọn vì đơn vị phút dễ diễn giải trực tiếp. Kết quả cực cao phải được hiểu là khả năng học policy simulator, không phải chứng minh tối ưu tưới ngoài thực địa.",
+  "task": "regression",
+  "target": "target_irrigation_minutes",
+  "features": [
+    "soil_moisture",
+    "temperature",
+    "air_humidity",
+    "ec",
+    "ph",
+    "flow_rate",
+    "moisture_lag_10m",
+    "moisture_lag_30m",
+    "moisture_lag_60m",
+    "moisture_lag_180m",
+    "moisture_mean_1h",
+    "moisture_std_1h",
+    "moisture_slope_1h",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "selected_algorithm": "RandomForestRegressor",
+  "candidate_validation": [
+    {
+      "candidate": "ExtraTreesRegressor",
+      "validation_metrics": {
+        "mae": 0.02947686770779783,
+        "rmse": 0.07709849782313719,
+        "r2": 0.9993194418020912,
+        "median_absolute_error": 0.005102566695045496,
+        "p90_absolute_error": 0.07900184973573453
+      }
+    },
+    {
+      "candidate": "RandomForestRegressor",
+      "validation_metrics": {
+        "mae": 0.015351940107299842,
+        "rmse": 0.04658380972149146,
+        "r2": 0.9997515474586749,
+        "median_absolute_error": 0.001323330535024425,
+        "p90_absolute_error": 0.03855138042943411
+      }
+    }
+  ],
+  "test_metrics": {
+    "mae": 0.09989067063284021,
+    "rmse": 0.257408876753231,
+    "r2": 0.993834968898087,
+    "median_absolute_error": 0.0025151627848329916,
+    "p90_absolute_error": 0.44153708812350984
+  },
+  "rows": {
+    "train": 25677,
+    "validation": 5527,
+    "test": 1842
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/smart_irrigation_scheduler.joblib",
+  "sha256": "327e0f754648f73663d4eb3e887db85993c478e3263ed69486dc2300333c824b",
+  "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/smart_irrigation_scheduler_test_predictions.csv",
+  "charts": {
+    "actual_pred": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_actual_pred.png",
+    "residuals": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_residuals.png",
+    "sequence": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_sequence.png",
+    "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_feature_importance.png"
+  },
+  "feature_importance": [
+    {
+      "feature": "soil_moisture",
+      "importance": 0.7344737684010351
+    },
+    {
+      "feature": "moisture_lag_10m",
+      "importance": 0.15690490546339134
+    },
+    {
+      "feature": "temperature",
+      "importance": 0.07284979550719728
+    },
+    {
+      "feature": "moisture_mean_1h",
+      "importance": 0.028714847122011573
+    },
+    {
+      "feature": "air_humidity",
+      "importance": 0.006519007091619047
+    },
+    {
+      "feature": "moisture_lag_30m",
+      "importance": 0.00018028782101103935
+    },
+    {
+      "feature": "hour_cos",
+      "importance": 0.00012019295822962707
+    },
+    {
+      "feature": "hour_sin",
+      "importance": 0.00010615662684725281
+    },
+    {
+      "feature": "moisture_slope_1h",
+      "importance": 4.681212556337802e-05
+    },
+    {
+      "feature": "moisture_lag_180m",
+      "importance": 2.028259604385814e-05
+    },
+    {
+      "feature": "moisture_std_1h",
+      "importance": 1.6931675581500394e-05
+    },
+    {
+      "feature": "moisture_lag_60m",
+      "importance": 1.4748214260166592e-05
+    },
+    {
+      "feature": "ph",
+      "importance": 1.3947498840978553e-05
+    },
+    {
+      "feature": "ec",
+      "importance": 9.695744525163209e-06
+    },
+    {
+      "feature": "flow_rate",
+      "importance": 8.334880525168028e-06
+    }
+  ]
+}

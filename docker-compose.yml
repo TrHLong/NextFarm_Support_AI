@@ -200,7 +200,9 @@ services:
       DATABASE_URL: postgresql://nextfarm:${POSTGRES_PASSWORD:?Run scripts/setup_v10_env.cmd first}@postgres:5432/nextfarm_support
       MPLBACKEND: Agg
       MODEL_ARTIFACT_DIR: /models
-      DEVICE_AUTO_TRAIN: "true"
+      # Training is an explicit technician action. The farmer runtime must not
+      # consume CPU/RAM by rebuilding experimental models automatically.
+      DEVICE_AUTO_TRAIN: ${DEVICE_AUTO_TRAIN:-false}
       OMP_NUM_THREADS: "2"
       OPENBLAS_NUM_THREADS: "2"
       IDENTITY_URL: http://identity-service:8000

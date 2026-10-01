@@ -67,10 +67,31 @@ def sensor_answer(data,metric,message,profile,now=None):
     if value_match:text+=f' Với giá trị bạn nhập {compare:g} {unit} (chưa xác minh bằng cảm biến):'
     bounds=profile.get('thresholds',{}).get(metric)
     if bounds:
-        lo,hi=bounds;label='thấp hơn' if compare<lo else 'cao hơn' if compare>hi else 'trong'
-        text+=f' Giá trị ở {label} ngưỡng đã cấu hình {lo}–{hi} {unit} cho tủ này.'
-        if not profile.get('agronomy_approved',False):text+=' Ngưỡng chưa được chuyên gia xác nhận theo cây, đất và giai đoạn sinh trưởng; chưa kết luận mức này phù hợp cho cây hay đề xuất tưới.'
-    else:text+=' Tủ chưa có ngưỡng được cấu hình cho chỉ số này, nên chưa xếp cao/thấp.'
+        lo,hi=bounds;level='low' if compare<lo else 'high' if compare>hi else 'good'
+        label={'low':'thấp hơn','high':'cao hơn','good':'trong'}[level]
+        text+=f' Giá trị ở {label} ngưỡng đã cấu hình {lo}–{hi} {unit} cho vườn này.'
+        crop=profile.get('crop') or 'cây trồng'
+        effects={
+          'temperature':{
+            'low':f'Nhiệt độ thấp kéo dài có thể làm {crop} sinh trưởng chậm hơn.',
+            'good':f'Theo ngưỡng đang cài đặt, mức này thuận lợi để {crop} duy trì hoạt động sinh lý bình thường.',
+            'high':f'Nhiệt độ cao kéo dài có thể làm {crop} thoát hơi nước mạnh và tăng nguy cơ stress nhiệt.'},
+          'soil_moisture':{
+            'low':f'Đất đang khô hơn mức cài đặt; {crop} có thể khó hút đủ nước nếu tình trạng kéo dài.',
+            'good':f'Theo ngưỡng đang cài đặt, độ ẩm này thuận lợi để vùng rễ {crop} duy trì nước ổn định.',
+            'high':f'Đất ẩm hơn mức cài đặt; nếu kéo dài, vùng rễ {crop} có thể thiếu thoáng khí.'},
+          'ec':{
+            'low':'EC thấp hơn mức cài đặt có thể phản ánh nồng độ dinh dưỡng còn thấp.',
+            'good':'Theo ngưỡng đang cài đặt, EC hiện tại nằm trong khoảng dinh dưỡng tham chiếu của vườn.',
+            'high':'EC cao hơn mức cài đặt có thể làm cây khó hút nước do nồng độ muối cao.'},
+          'ph':{
+            'low':'pH thấp hơn mức cài đặt có thể ảnh hưởng khả năng hấp thu một số dinh dưỡng.',
+            'good':'Theo ngưỡng đang cài đặt, pH hiện tại thuận lợi hơn cho việc hấp thu dinh dưỡng.',
+            'high':'pH cao hơn mức cài đặt có thể làm một số dinh dưỡng khó được cây hấp thu.'}}
+        if metric in effects:text+=' '+effects[metric][level]
+        if not profile.get('agronomy_approved',False):text+=' Đây là đánh giá theo ngưỡng cấu hình tham chiếu; chưa thay thế tư vấn chuyên gia theo giống cây và giai đoạn sinh trưởng.'
+    else:text+=' Vườn chưa có ngưỡng được cấu hình cho chỉ số này, nên chưa xếp cao/thấp.'
+    text+=' Số đo cảm biến có sai số; đánh giá cao/thấp dựa trên khoảng ngưỡng và nên đối chiếu nhiều điểm đo liên tiếp, không kết luận tuyệt đối từ một lần đo.'
     return text
 
 def render_tool(tool,data,plan,message,profile,observer=None,now=None):
@@ -92,7 +113,12 @@ def render_tool(tool,data,plan,message,profile,observer=None,now=None):
         vals=[float(x[metric]) for x in rows if metric and x.get(metric) is not None and x.get('quality') not in ['bad','suspect']]
         if not vals:return 'Chưa có chuỗi số đo đạt chất lượng trong khoảng đã chọn.'
         name,unit=METRICS[metric]
-        return f'{name.capitalize()}: {len(vals)} điểm hợp lệ, trung bình {sum(vals)/len(vals):.3f} {unit}, thấp nhất {min(vals):.3f}, cao nhất {max(vals):.3f}; thay đổi đầu-cuối {vals[-1]-vals[0]:+.3f} {unit}. Khoảng {when(rows[0].get("observed_at"))} đến {when(last.get("observed_at"))}. Đây là mô tả chuỗi đã đo.'
+        if plan.get('operation') in ['max','min']:
+            value=max(vals) if plan['operation']=='max' else min(vals)
+            label='cao nhất' if plan['operation']=='max' else 'thấp nhất'
+            row=next(x for x in rows if x.get(metric) is not None and float(x[metric])==value)
+            return f'{name.capitalize()} {label} {value:.3f} {unit} lúc {when(row.get("observed_at"))}. Kết quả chỉ phản ánh các bản ghi hợp lệ trong khoảng được hỏi; cảm biến có sai số.'
+        return f'{name.capitalize()}: {len(vals)} điểm hợp lệ, trung bình {sum(vals)/len(vals):.3f} {unit}, thấp nhất {min(vals):.3f}, cao nhất {max(vals):.3f}; thay đổi đầu-cuối {vals[-1]-vals[0]:+.3f} {unit}. Khoảng {when(rows[0].get("observed_at"))} đến {when(last.get("observed_at"))}. Đây là mô tả chuỗi đã đo; cảm biến có sai số và không kết luận tuyệt đối từ một điểm đo.'
     if tool=='connection':return connectivity(last,observer,now)['text']
     if tool=='operation':
         connection=connectivity(last,observer,now)
@@ -109,10 +135,19 @@ def render_tool(tool,data,plan,message,profile,observer=None,now=None):
             prefix=f'Ngõ ra số {port} được cấu hình là {role_vi}'
             if plan.get('requested_role')=='van' and 'van' not in role_vi:prefix+='; số này không được cấu hình là van'
             running=output.get('running');return prefix+f'; trạng thái {"chưa rõ" if running is None else "đang chạy/mở" if running else "đang dừng/đóng"}, lúc {when(last.get("observed_at"))}.'
+        outputs=last.get('outputs',[])
+        if plan.get('operation')=='count_open' or contains(norm(message),['bao nhieu van','may van']):
+            valves=[x for x in outputs if x.get('role') in ['zone_valve','fertilizer_valve'] and x.get('running') is True]
+            names=', '.join(f'van {x.get("port")}' for x in valves) or 'không có van nào'
+            return f'Hiện tại có {len(valves)} van đang mở: {names}, theo trạng thái lúc {when(last.get("observed_at"))}.'
         reasons=fertilizer_reasons(last)
         state=lambda k:'chưa rõ' if last.get(k) is None else 'đang chạy/mở' if last[k] else 'đang dừng/đóng'
         result=f'Bơm nước {state("pump_running")}; van vùng {state("valve_running")}; bơm phân {state("fertilizer_running")}, lúc {when(last.get("observed_at"))}.'
-        if reasons:result+=' Bơm phân chưa được phép chạy vì: '+ '; '.join(reasons)+'. Sau dừng khẩn không tự chạy lại; không bỏ qua khóa an toàn.'
+        explain_fertilizer=plan.get('operation')=='reason' or contains(norm(message),['cham phan','bon phan','bom phan','chua bon','khong bon'])
+        if reasons and explain_fertilizer:
+            result+=' Bơm phân chưa được phép chạy vì: '+ '; '.join(reasons)+'. Hãy kiểm tra lịch có gọi đúng khu, định lượng và khóa an toàn; sau dừng khẩn hệ thống không tự chạy lại.'
+        elif explain_fertilizer and last.get('fertilizer_running') is not True:
+            result+=' Các điều kiện có trong bản ghi đều đã thỏa nhưng chưa thấy bơm phân chạy; hãy đối chiếu nhật ký lệnh và trạng thái cổng ra, không tự bỏ qua khóa an toàn.'
         return result
     if tool=='schedules':return 'Chưa có lịch tưới trong cấu hình tủ.' if not rows else 'Lịch đang lưu tại tủ: '+'; '.join(f'{x.get("name", "Lịch")}, {x.get("start_time", "mỗi "+str(x.get("every_hours","?"))+" giờ")}, {x.get("duration_minutes","?")} phút' for x in rows)+'. Lịch tại bo có thể tiếp tục khi mất mạng; cần nhật ký để xác nhận đã chạy.'
     if tool=='irrigation':
@@ -121,6 +156,19 @@ def render_tool(tool,data,plan,message,profile,observer=None,now=None):
         water=sum(float(x['water_liters']) for x in rows if valid(x,'water_liters'));fert=sum(float(x['fertilizer_ml']) for x in rows if valid(x,'fertilizer_ml'))
         unknown=sum(not valid(x,'water_liters') or not valid(x,'fertilizer_ml') for x in rows)
         period_vi={'today':'hôm nay','yesterday':'hôm qua','week':'tuần này','last_week':'tuần trước','month':'tháng này','last_month':'tháng trước'}.get(plan['period'],plan['period'])
+        fields=plan.get('requested_fields',[])
+        if plan.get('operation')=='list':
+            lines=[]
+            for idx,x in enumerate(rows,1):
+                parts=[]
+                if not fields or 'start_time' in fields: parts.append('bắt đầu '+when(x.get('started_at')))
+                if not fields or 'end_time' in fields: parts.append('kết thúc '+when(x.get('ended_at')))
+                if not fields or 'water_liters' in fields: parts.append(f'nước {float(x.get("water_liters")):.2f} L' if valid(x,'water_liters') else 'nước chưa đo hợp lệ')
+                if not fields or 'fertilizer_ml' in fields: parts.append(f'phân {float(x.get("fertilizer_ml")):.2f} mL' if valid(x,'fertilizer_ml') else 'phân chưa đo hợp lệ')
+                if 'duration_minutes' in fields:
+                    parts.append(f'thời lượng {((dt(x["ended_at"])-dt(x["started_at"])).total_seconds()/60):.1f} phút' if x.get('started_at') and x.get('ended_at') else 'thời lượng chưa đủ mốc')
+                lines.append(f'{idx}. '+'; '.join(parts))
+            return f'Các ca tưới {period_vi} ({len(rows)} ca):\n'+'\n'.join(lines)
         result=f'Trong kỳ {period_vi} ghi nhận {len(rows)} ca tưới; cộng phần có số đo hợp lệ: nước {water:.2f} L; phân {fert:.2f} mL. Dữ liệu cuối lúc {when(last.get("observed_at",last.get("ended_at")))}.'
         if unknown:result+=f' Có {unknown} ca thiếu số đo/đếm không hợp lệ; các tổng trên chưa đầy đủ, không xem thiếu là 0.'
         channels={str(x.get('fertilizer_channel','chưa rõ')) for x in rows}

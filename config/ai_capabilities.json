@@ -1,0 +1,50 @@
+{
+  "version": "2026-09-28-cleanup-1",
+  "runtime_policy": {
+    "device_auto_train": false,
+    "farmer_forecast_serving": false,
+    "synthetic_data_status": "PIPELINE_TEST_ONLY"
+  },
+  "production": [
+    "sensor_query",
+    "device_state_query",
+    "irrigation_schedule_query",
+    "irrigation_history_query",
+    "fertilizer_query",
+    "command_log_query",
+    "alert_query",
+    "farm_profile_query",
+    "authorization",
+    "temporal_resolution",
+    "data_quality_rules"
+  ],
+  "experimental_blocked": [
+    {
+      "name": "moisture_forecast",
+      "status": "BLOCKED_INSUFFICIENT_REAL_DATA",
+      "horizons_minutes": [30, 60, 120]
+    },
+    {
+      "name": "flow_fault_forecast",
+      "status": "BLOCKED_INSUFFICIENT_REAL_INCIDENTS",
+      "horizons_minutes": [30, 60]
+    },
+    {
+      "name": "sensor_fault_forecast",
+      "status": "BLOCKED_INSUFFICIENT_REAL_ANOMALIES",
+      "baseline": "rule + rolling median/MAD"
+    }
+  ],
+  "removed_from_active_runtime": [
+    "temperature_forecast",
+    "ec_forecast",
+    "ph_forecast",
+    "leak_forecast",
+    "irrigation_failure_forecast",
+    "irrigation_need",
+    "device_health",
+    "farm_health",
+    "power_loss_forecast",
+    "mqtt_loss_forecast"
+  ]
+}

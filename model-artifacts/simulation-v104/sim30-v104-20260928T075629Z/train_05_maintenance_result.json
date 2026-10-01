@@ -1,0 +1,168 @@
+{
+  "model": "predictive_maintenance",
+  "objective": "Dự đoán nguy cơ sensor fault, mất nguồn hoặc mất MQTT trong 60 phút tới từ telemetry sức khỏe thiết bị.",
+  "algorithm_rationale": "Predictive maintenance có tín hiệu phi tuyến và tương tác mạnh giữa voltage, RSSI, packet loss, command failure, current và online state. Extra Trees/Random Forest phù hợp vì robust trên dữ liệu bảng, không cần scaling và giải thích được feature importance; HistGradientBoosting được benchmark làm đối chứng. Macro-F1 là tiêu chí chọn để không bỏ qua lớp sự cố hiếm.",
+  "task": "classification",
+  "target": "target_maintenance_60m",
+  "features": [
+    "flow_rate",
+    "supply_voltage",
+    "rssi",
+    "pressure",
+    "pump_current",
+    "sensor_bus_errors",
+    "packet_loss_rate",
+    "command_failure_rate",
+    "pump_running",
+    "valve_running",
+    "online"
+  ],
+  "selected_algorithm": "RandomForestClassifier",
+  "candidate_validation": [
+    {
+      "candidate": "ExtraTreesClassifier",
+      "validation_metrics": {
+        "accuracy": 0.9909535009951149,
+        "precision_macro": 0.9337505461904652,
+        "recall_macro": 0.985692488942967,
+        "f1_macro": 0.9580442661458599,
+        "roc_auc": 0.9991135059968712
+      }
+    },
+    {
+      "candidate": "RandomForestClassifier",
+      "validation_metrics": {
+        "accuracy": 0.9934865207164827,
+        "precision_macro": 0.9562794649709462,
+        "recall_macro": 0.9822672228981981,
+        "f1_macro": 0.9688644275944432,
+        "roc_auc": 0.9990668314760094
+      }
+    }
+  ],
+  "test_metrics": {
+    "accuracy": 0.993485342019544,
+    "precision_macro": 0.965319660351071,
+    "recall_macro": 0.965319660351071,
+    "f1_macro": 0.965319660351071,
+    "roc_auc": 0.9991715879779843
+  },
+  "classification_report": {
+    "NORMAL": {
+      "precision": 0.9965733866362079,
+      "recall": 0.9965733866362079,
+      "f1-score": 0.9965733866362079,
+      "support": 1751.0
+    },
+    "MAINTENANCE_RISK": {
+      "precision": 0.9340659340659341,
+      "recall": 0.9340659340659341,
+      "f1-score": 0.9340659340659341,
+      "support": 91.0
+    },
+    "accuracy": 0.993485342019544,
+    "macro avg": {
+      "precision": 0.965319660351071,
+      "recall": 0.965319660351071,
+      "f1-score": 0.965319660351071,
+      "support": 1842.0
+    },
+    "weighted avg": {
+      "precision": 0.993485342019544,
+      "recall": 0.993485342019544,
+      "f1-score": 0.993485342019544,
+      "support": 1842.0
+    }
+  },
+  "class_distribution": {
+    "0": 1751,
+    "1": 91
+  },
+  "rows": {
+    "train": 25677,
+    "validation": 5527,
+    "test": 1842
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/predictive_maintenance.joblib",
+  "sha256": "8f4a1437c99dcffe219d0efa120c478469a97f8221cad9194b5be94d964c9178",
+  "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/predictive_maintenance_test_predictions.csv",
+  "charts": {
+    "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_confusion.png",
+    "roc": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_roc.png",
+    "pr": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_pr.png",
+    "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_feature_importance.png"
+  },
+  "feature_importance": [
+    {
+      "feature": "sensor_bus_errors",
+      "importance": 0.9455052460202129
+    },
+    {
+      "feature": "supply_voltage",
+      "importance": 0.010767052996632992
+    },
+    {
+      "feature": "pressure",
+      "importance": 0.009533650496879627
+    },
+    {
+      "feature": "rssi",
+      "importance": 0.008985733958762128
+    },
+    {
+      "feature": "packet_loss_rate",
+      "importance": 0.00798659372891371
+    },
+    {
+      "feature": "pump_current",
+      "importance": 0.006964835958964964
+    },
+    {
+      "feature": "flow_rate",
+      "importance": 0.0049155477511229366
+    },
+    {
+      "feature": "command_failure_rate",
+      "importance": 0.004892457098027406
+    },
+    {
+      "feature": "pump_running",
+      "importance": 0.00023159339900749918
+    },
+    {
+      "feature": "valve_running",
+      "importance": 0.00021728859147594426
+    },
+    {
+      "feature": "online",
+      "importance": 0.0
+    }
+  ]
+}

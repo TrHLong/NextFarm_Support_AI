@@ -1,0 +1,1684 @@
+{
+  "dataset_version": "device-20260928T051924Z-2615461321",
+  "created_at": "2026-09-28T05:19:25.568961+00:00",
+  "source_manifest": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\manifest.json",
+  "origin": "synthetic_device_spec_v11",
+  "scope": "simulation_only",
+  "production_ready": false,
+  "field_validation": false,
+  "synthetic_customers": 12,
+  "real_customers": 0,
+  "raw_files": [
+    {
+      "path": "customers\\synthetic_customer_000\\sensor_readings.csv",
+      "rows": 949,
+      "sha256": "8ad7c10a29ab8c40a0beeb6edfe166acf1ff972b6dc8952d8216e9b7cfb69510"
+    },
+    {
+      "path": "customers\\synthetic_customer_000\\device_status.csv",
+      "rows": 949,
+      "sha256": "145695b707a7a0505acd7a4b0c3a206ed3f9a676eb579e290852adffc600fbc7"
+    },
+    {
+      "path": "customers\\synthetic_customer_000\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "1ceb2634f08787eec31281227ff8c613fffc87489b2acd005860917069f4f0e7"
+    },
+    {
+      "path": "customers\\synthetic_customer_000\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "736576d442aff47f82692122481228cd2284d9c5fe42232f64f7ccd23919f748"
+    },
+    {
+      "path": "customers\\synthetic_customer_000\\control_commands.csv",
+      "rows": 28,
+      "sha256": "b7de4775a61517f85dc7c0bbd78e43e29376501e06b40eca9d5a9777475addc8"
+    },
+    {
+      "path": "customers\\synthetic_customer_000\\incidents.csv",
+      "rows": 30,
+      "sha256": "a8c1503098bd33a5d61270b7037779041b2452a6542a0d3a970db1236685b751"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\sensor_readings.csv",
+      "rows": 949,
+      "sha256": "939a089d025f57e601b7bc4bb57de039eb774fcc0f6c628ff80ca9d13360676d"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\device_status.csv",
+      "rows": 949,
+      "sha256": "90d3ee5c79004491f46aed57e30756161de0fb7a86c5b83c9ee461503adce6f1"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "16cb9febed056f6cf39c89566a0112516859d7f9561847b701fe28cad80e64f7"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "6916d52b762e28f99eb076a3e4a64154ed885cff65d8fbe5a270f9c991d6e129"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\control_commands.csv",
+      "rows": 28,
+      "sha256": "9b2204e0b710372ef84b5843ba80a6db078e4e31cad0201035c9bb34120e5f59"
+    },
+    {
+      "path": "customers\\synthetic_customer_001\\incidents.csv",
+      "rows": 32,
+      "sha256": "a84af305ad69bdae2e84dcde35775141f50807683685242a6143bebb0c26fd14"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\sensor_readings.csv",
+      "rows": 949,
+      "sha256": "c0978879f52438fb6cb44292923a2e784eed0cf20a2894421ec897f425237301"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\device_status.csv",
+      "rows": 949,
+      "sha256": "627f97304c1c3c2eb511511b3f269be72dcef765fae91916d3d9a2d788b7eb99"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "67d0769976f3a464d391956283f0eb0eacabf4de19a4fc5f0c9ca91fca86720c"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "83405e2fba7607c5367dda001048c47e9905449f80e305c23f5af33801764ca8"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\control_commands.csv",
+      "rows": 28,
+      "sha256": "bb1174a3fe4eee2c1a95b01607a25eda962b4bc6e1e248b8a63657962285ab35"
+    },
+    {
+      "path": "customers\\synthetic_customer_002\\incidents.csv",
+      "rows": 34,
+      "sha256": "538ebc1752027f6fa0c6fab26e90e53a05550db1e555165ae192f6fc218dcc32"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\sensor_readings.csv",
+      "rows": 951,
+      "sha256": "078513b902018dc1c9855c24f6a3397fdd89e4386c2b2a8413f73b9924590d6e"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\device_status.csv",
+      "rows": 951,
+      "sha256": "84074f6e227e5ddb35b0aef3554bfc222121b5ddb24adbe5c7c16d94c601fdec"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "e6089071afe0ac5f03edefaada293c8edbed1edd590263c085eac31e4e5d649b"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "c0b4126c4652cdf95e5701ee591e20d927a1af38262ef69ac2049902c7f6f7fb"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\control_commands.csv",
+      "rows": 28,
+      "sha256": "e56ef7d704b39bfe23257fbb713494e286c0325d164d8ff1b03a3531d8c0bf83"
+    },
+    {
+      "path": "customers\\synthetic_customer_003\\incidents.csv",
+      "rows": 30,
+      "sha256": "12f038ad8418e7c3cbd953935513ec1ce6f0509fbbee122a1bde01ec3fd4318c"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\sensor_readings.csv",
+      "rows": 953,
+      "sha256": "cb33eb1f3a37dfc9f534369cef460ef5afc0dd716ebf2fd0da39b0c17f946580"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\device_status.csv",
+      "rows": 953,
+      "sha256": "bf0f3ba8924f3fb4781dbc0125b68727b0b642faef00bf9530d19db7a6792117"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "405ea1452f6978db7bf12115938d0cee19684313f98e75938bf23ee24e60b7ca"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "a32c45dfa9de90bf0f71d71117e20e66bf1265c788df5e538e6fc0c63c22b6b0"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\control_commands.csv",
+      "rows": 28,
+      "sha256": "5f70db83c5ce552c597b6706a994bb9a059bb9bb94ed3dc034e14c2294351a22"
+    },
+    {
+      "path": "customers\\synthetic_customer_004\\incidents.csv",
+      "rows": 33,
+      "sha256": "5ce91ab30d5fb42e192ce048ea536988f58bdc871288209ea15bedff62550dc1"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\sensor_readings.csv",
+      "rows": 951,
+      "sha256": "6582a0bc7c9fb8b5ba197c307471fc47e6458f57d180b6c17fe0c712290656b9"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\device_status.csv",
+      "rows": 951,
+      "sha256": "7a3e1453be88a7435fdcca25d2d657b4338f3547cf10ac95b1329e300f466df1"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "90d13f4368dc34d714d91bb3d0dd03e73144537f6230ea58f481f9d9b721414f"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "962af92e21234f653c13bc3853372ebe2230e685a1fd6525f484df1b86a95f8b"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\control_commands.csv",
+      "rows": 28,
+      "sha256": "fb032b0594f65f66a9857d31109ad4b2e3c2ba19e95d65a1887f4d37336023b1"
+    },
+    {
+      "path": "customers\\synthetic_customer_005\\incidents.csv",
+      "rows": 31,
+      "sha256": "7133a8e5dacd11e51c367e5bd634ed9e4a00ff3e96a21524b7578eba9aaca204"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\sensor_readings.csv",
+      "rows": 949,
+      "sha256": "3751bd700937f9b027b4549b71a164e1e1b18b37abfc1cb12a394468e7903a45"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\device_status.csv",
+      "rows": 949,
+      "sha256": "0adf78b03d38ce9a21e784716830cd54bc05bfcc0e799b8e9e1f26d0b44d7ca9"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "5f5ab73db1bd6be939c328601133fe3a813e4a7c60cebf4146577a278cb4caa7"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "7771de88d24ee09bd56d3d90db969a5f430f698b8dbd6ec7b39b1454f913efc3"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\control_commands.csv",
+      "rows": 28,
+      "sha256": "f94433e5a60becae9145a6ae7e197e7b804d3fcf360583665787f61118d52516"
+    },
+    {
+      "path": "customers\\synthetic_customer_006\\incidents.csv",
+      "rows": 30,
+      "sha256": "a1ac4b59e2df7bea022b6415be235b690dbe0f2d1d909f1de16fafd771ffd8b1"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\sensor_readings.csv",
+      "rows": 956,
+      "sha256": "ec99b29bdbcc939959755b8f96bab069d4d804031c4edcdfaca57630ba11cf86"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\device_status.csv",
+      "rows": 956,
+      "sha256": "743e496b603f5cacfa5bb6b9a9d122873f182451559b5a26945958555e38d722"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "8f2f9264db3905be443fb9866266c7fc62862e74172274409cb6925e0a74e69b"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "6a6f50a9c9778a5dbca0f1c19f9b65adf3a3fd570b530bfb07c0c8d6b19efbbf"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\control_commands.csv",
+      "rows": 28,
+      "sha256": "4d404f6786f539e1f0f253f2e44780e254beb9dbbad1bf0c43de4d95a7587ae4"
+    },
+    {
+      "path": "customers\\synthetic_customer_007\\incidents.csv",
+      "rows": 31,
+      "sha256": "d2cf401734c445232274ea6f58cd66dcc5b4dcfc7d19052dbd91ba8fe8cafb98"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\sensor_readings.csv",
+      "rows": 949,
+      "sha256": "e4b6bdfa018e0d57f1ca31931aca48e9755c3b27d16ae6cd7ce391e40012c75f"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\device_status.csv",
+      "rows": 949,
+      "sha256": "9384fc46704b0f7685c28875a7fe08860fcf0a9c52a3661e54f4742d392587c1"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "aec9003a04068472e46737c44fb8f00f8a2c5b93c81b50b46218d2470213bf62"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "df5337e9bdea0c56bf8d0a3e4a8d943b8e6bff684370d2924b56d299e0c4a841"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\control_commands.csv",
+      "rows": 28,
+      "sha256": "a6350d103202c29007daea4d0d477b9f374c2ba69d0adc3c0f2878ff534d4f7f"
+    },
+    {
+      "path": "customers\\synthetic_customer_008\\incidents.csv",
+      "rows": 34,
+      "sha256": "93ebd3894c778b4d4a624c330305814580de4147add3107092b80a911c137193"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\sensor_readings.csv",
+      "rows": 952,
+      "sha256": "baa7210809b9a23a2acfbdb64cd76b440ef7e881d9cdd1891ac1a0d36445d03c"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\device_status.csv",
+      "rows": 952,
+      "sha256": "e46c0694c5e2271aa4478df5093ac2e695fde0c3e84465f11686a922d77d0b73"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "7e175137d7d5c6c78568b65c7af8522f75153ed83e97182ecfa88f9939edab40"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "39caa57b3b12f16c2f3234e8127f23f9d487781657f76379bd4eb6d383ad57b3"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\control_commands.csv",
+      "rows": 28,
+      "sha256": "df3804faa2a10f3d49a965ea56e8e984c4b85e7d23e8bd484a57a132a7fc6426"
+    },
+    {
+      "path": "customers\\synthetic_customer_009\\incidents.csv",
+      "rows": 32,
+      "sha256": "2a6a2ee88f2888dd7972f82f8efddf41a09246b0e8e16d78c293767a5714fe6e"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\sensor_readings.csv",
+      "rows": 948,
+      "sha256": "c1970896051c0ba341a0e0f3d832bd98e56920cec4630c2fe0e744c62cf5845d"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\device_status.csv",
+      "rows": 948,
+      "sha256": "4a804e5ece439b880adf04bb1a137d99880a193920e886fec0b37c777c17ecf7"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "3bf75cc87f780b16ba6a91c4e5e82a5b2ea4f345a834275261cc116abc628aba"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "ee5aa03318a339bec4e9128681ceb88e0f6591355a69fa3193f4453613c74d72"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\control_commands.csv",
+      "rows": 28,
+      "sha256": "70ad2f52d04e0ddf6b6e5bd06590e455923bef714d8381ef101f3c70d2530d63"
+    },
+    {
+      "path": "customers\\synthetic_customer_010\\incidents.csv",
+      "rows": 31,
+      "sha256": "7eb8ed04c0b6cfe527bb7f27eac9d81bc733d0eedba1d4e5611a5341c7cf1cf7"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\sensor_readings.csv",
+      "rows": 957,
+      "sha256": "7ef411cab84cf515fefd399e82d55a174dda6620b69a0207e327f93a552c16e1"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\device_status.csv",
+      "rows": 957,
+      "sha256": "6e27ee5399abc65065541a628ab568f24e72c62b7943bf3fb9ae86ee4a9c9326"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\incident_ground_truth.csv",
+      "rows": 1008,
+      "sha256": "681de9a63cc9ef9fbc5147cc9391bb0043586faaccd61445f6e6e93a56d8f51b"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\irrigation_runs.csv",
+      "rows": 28,
+      "sha256": "13d939f6934c0f95871152b7e213db3010e786a8ca48cba3c825883d3644e99c"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\control_commands.csv",
+      "rows": 28,
+      "sha256": "9182c5f6b02dfd5f14ec81f5bf074aba5b7ee4f3258caccf1b73fd2257c4780c"
+    },
+    {
+      "path": "customers\\synthetic_customer_011\\incidents.csv",
+      "rows": 34,
+      "sha256": "ba75a5daff299f88d54151e926fd92205c0d2373b8dd73b273241d20075397fe"
+    }
+  ],
+  "processed_rows": 11413,
+  "unique_timestamps": 1008,
+  "duration_days": 7,
+  "split_counts": {
+    "train": 5927,
+    "excluded_or_purged": 3839,
+    "validation": 1208,
+    "test_unseen_customer": 439
+  },
+  "training_customers": [
+    "synthetic_customer_000",
+    "synthetic_customer_001",
+    "synthetic_customer_002",
+    "synthetic_customer_003",
+    "synthetic_customer_004",
+    "synthetic_customer_005",
+    "synthetic_customer_006",
+    "synthetic_customer_007",
+    "synthetic_customer_008"
+  ],
+  "held_out_customers": [
+    "synthetic_customer_009",
+    "synthetic_customer_010",
+    "synthetic_customer_011"
+  ],
+  "train_label_end_before": "2026-09-06T21:40:00+00:00",
+  "validation_label_end_before": "2026-09-07T22:50:00+00:00",
+  "split_policy": "Chronological development train 70%, validation 15%; final 15% of 3 completely unseen customers. Purge 60 min.",
+  "candidate_selection": "validation only; no refit/calibration after selection; exact evaluated artifact is exported",
+  "cleaning": "UTC ISO8601 parse, sorted timestamps, duplicate removal, numeric coercion; bad/suspect sensor measurements masked; missing values retained until train-only imputer. Regression target matching +/-60 seconds; classification uses actual future event timestamps.",
+  "gate_policy": {
+    "min_class_samples": {
+      "train": 50,
+      "validation": 10,
+      "test_per_site": 5
+    },
+    "min_f1": 0.65,
+    "min_recall": 0.5,
+    "min_site_f1": 0.55,
+    "min_baseline_f1_gain": 0.02,
+    "regression_min_mae_gain": 0.03,
+    "all_heldout_sites_positive_gain": true
+  },
+  "features": [
+    "soil_moisture",
+    "soil_moisture_lag1",
+    "soil_moisture_lag3",
+    "soil_moisture_lag6",
+    "soil_moisture_missing",
+    "soil_moisture_mean3",
+    "soil_moisture_slope3",
+    "temperature",
+    "temperature_lag1",
+    "temperature_lag3",
+    "temperature_lag6",
+    "temperature_missing",
+    "temperature_mean3",
+    "temperature_slope3",
+    "ec",
+    "ec_lag1",
+    "ec_lag3",
+    "ec_lag6",
+    "ec_missing",
+    "ec_mean3",
+    "ec_slope3",
+    "ph",
+    "ph_lag1",
+    "ph_lag3",
+    "ph_lag6",
+    "ph_missing",
+    "ph_mean3",
+    "ph_slope3",
+    "air_humidity",
+    "air_humidity_lag1",
+    "air_humidity_lag3",
+    "air_humidity_lag6",
+    "air_humidity_missing",
+    "air_humidity_mean3",
+    "air_humidity_slope3",
+    "flow_rate",
+    "flow_rate_lag1",
+    "flow_rate_lag3",
+    "flow_rate_lag6",
+    "flow_rate_missing",
+    "flow_rate_mean3",
+    "flow_rate_slope3",
+    "pressure",
+    "pressure_lag1",
+    "pressure_lag3",
+    "pressure_lag6",
+    "pressure_missing",
+    "pressure_mean3",
+    "pressure_slope3",
+    "pump_current",
+    "pump_current_lag1",
+    "pump_current_lag3",
+    "pump_current_lag6",
+    "pump_current_missing",
+    "pump_current_mean3",
+    "pump_current_slope3",
+    "sensor_bus_errors",
+    "sensor_bus_errors_lag1",
+    "sensor_bus_errors_lag3",
+    "sensor_bus_errors_lag6",
+    "sensor_bus_errors_missing",
+    "sensor_bus_errors_mean3",
+    "sensor_bus_errors_slope3",
+    "supply_voltage",
+    "supply_voltage_lag1",
+    "supply_voltage_lag3",
+    "supply_voltage_lag6",
+    "supply_voltage_missing",
+    "supply_voltage_mean3",
+    "supply_voltage_slope3",
+    "rssi",
+    "rssi_lag1",
+    "rssi_lag3",
+    "rssi_lag6",
+    "rssi_missing",
+    "rssi_mean3",
+    "rssi_slope3",
+    "packet_loss_rate",
+    "packet_loss_rate_lag1",
+    "packet_loss_rate_lag3",
+    "packet_loss_rate_lag6",
+    "packet_loss_rate_missing",
+    "packet_loss_rate_mean3",
+    "packet_loss_rate_slope3",
+    "command_failure_rate",
+    "command_failure_rate_lag1",
+    "command_failure_rate_lag3",
+    "command_failure_rate_lag6",
+    "command_failure_rate_missing",
+    "command_failure_rate_mean3",
+    "command_failure_rate_slope3",
+    "history_gap_minutes",
+    "pump_running",
+    "valve_running",
+    "fertilizer_running"
+  ],
+  "forbidden_features": [
+    "customer_id",
+    "device_id",
+    "ground_truth_origin",
+    "mqtt_state",
+    "online",
+    "power_state",
+    "profile_type",
+    "scenario"
+  ],
+  "input_csvs": [
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_000\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_001\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_002\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_003\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_004\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_005\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_006\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_007\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_008\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_009\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_010\\sensor_readings.csv",
+    "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\data\\device-v11-7day\\customers\\synthetic_customer_011\\sensor_readings.csv"
+  ],
+  "models": [
+    {
+      "name": "moisture_forecast",
+      "title": "Độ ẩm đất sau 30 phút",
+      "task": "regression",
+      "target": "soil_moisture_future",
+      "horizon_minutes": 30,
+      "class_coverage": {},
+      "train_rows": 5483,
+      "validation_rows": 1134,
+      "test_rows": 403,
+      "features": [
+        "soil_moisture",
+        "soil_moisture_lag1",
+        "soil_moisture_lag3",
+        "soil_moisture_lag6",
+        "soil_moisture_missing",
+        "soil_moisture_mean3",
+        "soil_moisture_slope3",
+        "history_gap_minutes"
+      ],
+      "scope": "simulation_only",
+      "algorithm": "extra_trees",
+      "validation_candidates": {
+        "hist_gradient_boosting": {
+          "mae": 0.19112004318945078,
+          "rmse": 0.247894787221441,
+          "r2": 0.9984104106984809
+        },
+        "extra_trees": {
+          "mae": 0.18908517445192147,
+          "rmse": 0.24562913635336475,
+          "r2": 0.9984393342313662
+        },
+        "ridge_autoregression": {
+          "mae": 0.23142336212129794,
+          "rmse": 0.29396256510858476,
+          "r2": 0.9977647083334464
+        }
+      },
+      "test_metrics": {
+        "mae": 0.19049694803568512,
+        "rmse": 0.2411665723986239,
+        "r2": 0.9984750828477449
+      },
+      "per_customer": {
+        "synthetic_customer_009": {
+          "model": {
+            "mae": 0.19503325213773934,
+            "rmse": 0.2429364964279292,
+            "r2": 0.9981377844572075
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.6818285285841303,
+              "rmse": 0.7661801113463859,
+              "r2": 0.9814772200269452
+            },
+            "moving_average": {
+              "mae": 0.903330021758741,
+              "rmse": 1.0132458986114965,
+              "r2": 0.9676052876254392
+            },
+            "linear_trend": {
+              "mae": 0.5410865558700052,
+              "rmse": 1.7573423236817038,
+              "r2": 0.9025555392385767
+            }
+          }
+        },
+        "synthetic_customer_010": {
+          "model": {
+            "mae": 0.18483974012244986,
+            "rmse": 0.23734602043662578,
+            "r2": 0.9983050071694791
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.6567851030736029,
+              "rmse": 0.7419495662389733,
+              "r2": 0.9834364765295714
+            },
+            "moving_average": {
+              "mae": 0.8852425005610592,
+              "rmse": 1.0018839125211016,
+              "r2": 0.9697977872081007
+            },
+            "linear_trend": {
+              "mae": 0.2841137686573332,
+              "rmse": 0.41788001784073386,
+              "r2": 0.994745793152871
+            }
+          }
+        },
+        "synthetic_customer_011": {
+          "model": {
+            "mae": 0.1915828213662602,
+            "rmse": 0.24320618957719198,
+            "r2": 0.9982232999938185
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.64643571773146,
+              "rmse": 0.7457116329917003,
+              "r2": 0.9832965303231589
+            },
+            "moving_average": {
+              "mae": 0.8672788787120743,
+              "rmse": 0.9955899696317192,
+              "r2": 0.9702267748311434
+            },
+            "linear_trend": {
+              "mae": 0.3766750751685117,
+              "rmse": 0.7461387754744179,
+              "r2": 0.9832773893990208
+            }
+          }
+        }
+      },
+      "macro_metric": 0.19048527120881645,
+      "macro_metric_name": "mae",
+      "baseline_macro": {
+        "persistence": 0.6616831164630644,
+        "moving_average": 0.8852838003439581,
+        "linear_trend": 0.40062513323195
+      },
+      "baseline_gain": 0.5245299023750185,
+      "status": "READY",
+      "gate_reasons": [],
+      "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\moisture_forecast_predictions.csv",
+      "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\moisture_forecast.joblib",
+      "artifact_sha256": "e8d7a28b2d4cde0cd5aeb84578e753d9c3dd1fd0ffcefdeddf913f4971ba8a39"
+    },
+    {
+      "name": "temperature_forecast",
+      "title": "Nhiệt độ sau 30 phút",
+      "task": "regression",
+      "target": "temperature_future",
+      "horizon_minutes": 30,
+      "class_coverage": {},
+      "train_rows": 5483,
+      "validation_rows": 1134,
+      "test_rows": 403,
+      "features": [
+        "temperature",
+        "temperature_lag1",
+        "temperature_lag3",
+        "temperature_lag6",
+        "temperature_missing",
+        "temperature_mean3",
+        "temperature_slope3",
+        "history_gap_minutes"
+      ],
+      "scope": "simulation_only",
+      "algorithm": "extra_trees",
+      "validation_candidates": {
+        "hist_gradient_boosting": {
+          "mae": 0.13012205868622226,
+          "rmse": 0.16626135529624791,
+          "r2": 0.9979261672305563
+        },
+        "extra_trees": {
+          "mae": 0.125357065564712,
+          "rmse": 0.16112983154415986,
+          "r2": 0.9980522060793118
+        },
+        "ridge_autoregression": {
+          "mae": 0.16303122300413225,
+          "rmse": 0.20601755050772505,
+          "r2": 0.9968158058630487
+        }
+      },
+      "test_metrics": {
+        "mae": 0.13200324890581872,
+        "rmse": 0.18018633950658308,
+        "r2": 0.997392769676482
+      },
+      "per_customer": {
+        "synthetic_customer_009": {
+          "model": {
+            "mae": 0.12495705312609469,
+            "rmse": 0.16498854689357795,
+            "r2": 0.9977162986698838
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.42745130803637577,
+              "rmse": 0.4791413597145859,
+              "r2": 0.9807398780939462
+            },
+            "moving_average": {
+              "mae": 0.5654070707975568,
+              "rmse": 0.6327747756726655,
+              "r2": 0.9664084513164264
+            },
+            "linear_trend": {
+              "mae": 0.26890100220111535,
+              "rmse": 0.693694748884338,
+              "r2": 0.9596290914200631
+            }
+          }
+        },
+        "synthetic_customer_010": {
+          "model": {
+            "mae": 0.12563389010262782,
+            "rmse": 0.16930311713180515,
+            "r2": 0.9976349324090911
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.4377279574580872,
+              "rmse": 0.48880068352365924,
+              "r2": 0.9802858862753847
+            },
+            "moving_average": {
+              "mae": 0.5842485511669369,
+              "rmse": 0.6439774831503297,
+              "r2": 0.9657819691704296
+            },
+            "linear_trend": {
+              "mae": 0.19340922996222346,
+              "rmse": 0.24026943390808375,
+              "r2": 0.9952366696861792
+            }
+          }
+        },
+        "synthetic_customer_011": {
+          "model": {
+            "mae": 0.14593601425126118,
+            "rmse": 0.2046289187921885,
+            "r2": 0.9966793263913464
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.4283825977662478,
+              "rmse": 0.477469820857881,
+              "r2": 0.9819205995333402
+            },
+            "moving_average": {
+              "mae": 0.5608244981788171,
+              "rmse": 0.6214812615987947,
+              "r2": 0.9693699116965848
+            },
+            "linear_trend": {
+              "mae": 0.23007106235312036,
+              "rmse": 0.3638370373336855,
+              "r2": 0.989502014109257
+            }
+          }
+        }
+      },
+      "macro_metric": 0.13217565249332788,
+      "macro_metric_name": "mae",
+      "baseline_macro": {
+        "persistence": 0.4311872877535703,
+        "moving_average": 0.5701600400477703,
+        "linear_trend": 0.23079376483881972
+      },
+      "baseline_gain": 0.4272997254252693,
+      "status": "READY",
+      "gate_reasons": [],
+      "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\temperature_forecast_predictions.csv",
+      "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\temperature_forecast.joblib",
+      "artifact_sha256": "0f1c2493baee304acb27424e0ab923eeda6f4bb401ae9ef6880386a13cb4f695"
+    },
+    {
+      "name": "ec_forecast",
+      "title": "EC sau 30 phút",
+      "task": "regression",
+      "target": "ec_future",
+      "horizon_minutes": 30,
+      "class_coverage": {},
+      "train_rows": 5324,
+      "validation_rows": 1098,
+      "test_rows": 389,
+      "features": [
+        "ec",
+        "ec_lag1",
+        "ec_lag3",
+        "ec_lag6",
+        "ec_missing",
+        "ec_mean3",
+        "ec_slope3",
+        "history_gap_minutes"
+      ],
+      "scope": "simulation_only",
+      "algorithm": "extra_trees",
+      "validation_candidates": {
+        "hist_gradient_boosting": {
+          "mae": 0.006459669596279059,
+          "rmse": 0.008187281393977525,
+          "r2": 0.9990893896881442
+        },
+        "extra_trees": {
+          "mae": 0.0064156201918805595,
+          "rmse": 0.00821877949639716,
+          "r2": 0.9990823696117296
+        },
+        "ridge_autoregression": {
+          "mae": 0.007689126068551912,
+          "rmse": 0.009440853770327324,
+          "r2": 0.9987891909137034
+        }
+      },
+      "test_metrics": {
+        "mae": 0.008713763703033329,
+        "rmse": 0.010910938540042018,
+        "r2": 0.9991608769297987
+      },
+      "per_customer": {
+        "synthetic_customer_009": {
+          "model": {
+            "mae": 0.010354789467215157,
+            "rmse": 0.01259854811416519,
+            "r2": 0.9951984091795738
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.013347289824434028,
+              "rmse": 0.015377898627728285,
+              "r2": 0.9928461778774463
+            },
+            "moving_average": {
+              "mae": 0.017095453488956965,
+              "rmse": 0.019481350205706325,
+              "r2": 0.988518932850993
+            },
+            "linear_trend": {
+              "mae": 0.02687913247699402,
+              "rmse": 0.10724468803000968,
+              "r2": 0.6520669129102994
+            }
+          }
+        },
+        "synthetic_customer_010": {
+          "model": {
+            "mae": 0.0071669261976649795,
+            "rmse": 0.009009138440634432,
+            "r2": 0.9970308191871057
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.013194956018801092,
+              "rmse": 0.01518211798534738,
+              "r2": 0.9915679174725407
+            },
+            "moving_average": {
+              "mae": 0.01704194668910217,
+              "rmse": 0.01943478863744806,
+              "r2": 0.9861824906276868
+            },
+            "linear_trend": {
+              "mae": 0.009119888503494458,
+              "rmse": 0.012606148559919941,
+              "r2": 0.994186536288491
+            }
+          }
+        },
+        "synthetic_customer_011": {
+          "model": {
+            "mae": 0.008588797995569896,
+            "rmse": 0.010795230068504613,
+            "r2": 0.9963384176633271
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.012565218137773214,
+              "rmse": 0.014680102146337559,
+              "r2": 0.9932288387796725
+            },
+            "moving_average": {
+              "mae": 0.016052454871658087,
+              "rmse": 0.018620040144180932,
+              "r2": 0.9891065304095102
+            },
+            "linear_trend": {
+              "mae": 0.024708258000790476,
+              "rmse": 0.08172579858425741,
+              "r2": 0.7901430554305611
+            }
+          }
+        }
+      },
+      "macro_metric": 0.008703504553483345,
+      "macro_metric_name": "mae",
+      "baseline_macro": {
+        "persistence": 0.013035821327002777,
+        "moving_average": 0.016729951683239073,
+        "linear_trend": 0.020235759660426317
+      },
+      "baseline_gain": 0.3323393796864449,
+      "status": "READY",
+      "gate_reasons": [],
+      "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ec_forecast_predictions.csv",
+      "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ec_forecast.joblib",
+      "artifact_sha256": "0d74c21bb4fb352905df4dff2ede8391e21e0d8f085af18ec95d6daf9c17db8a"
+    },
+    {
+      "name": "ph_forecast",
+      "title": "pH sau 30 phút",
+      "task": "regression",
+      "target": "ph_future",
+      "horizon_minutes": 30,
+      "class_coverage": {},
+      "train_rows": 5483,
+      "validation_rows": 1134,
+      "test_rows": 403,
+      "features": [
+        "ph",
+        "ph_lag1",
+        "ph_lag3",
+        "ph_lag6",
+        "ph_missing",
+        "ph_mean3",
+        "ph_slope3",
+        "history_gap_minutes"
+      ],
+      "scope": "simulation_only",
+      "algorithm": "extra_trees",
+      "validation_candidates": {
+        "hist_gradient_boosting": {
+          "mae": 0.00642391220478294,
+          "rmse": 0.008222363483333557,
+          "r2": 0.99931057629936
+        },
+        "extra_trees": {
+          "mae": 0.006344437669624757,
+          "rmse": 0.008152710177230876,
+          "r2": 0.9993222073209924
+        },
+        "ridge_autoregression": {
+          "mae": 0.0073028290647613485,
+          "rmse": 0.009205661702196428,
+          "r2": 0.9991358226324439
+        }
+      },
+      "test_metrics": {
+        "mae": 0.007247397775858582,
+        "rmse": 0.009286276493972572,
+        "r2": 0.9948426970227627
+      },
+      "per_customer": {
+        "synthetic_customer_009": {
+          "model": {
+            "mae": 0.00680609204922712,
+            "rmse": 0.008646148698324472,
+            "r2": 0.9961249732153677
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.012909916766335123,
+              "rmse": 0.014868886657141245,
+              "r2": 0.9885399579842635
+            },
+            "moving_average": {
+              "mae": 0.016887314048305624,
+              "rmse": 0.018771209012166095,
+              "r2": 0.9817352471892702
+            },
+            "linear_trend": {
+              "mae": 0.009909125595875767,
+              "rmse": 0.012703423115549532,
+              "r2": 0.991634905818804
+            }
+          }
+        },
+        "synthetic_customer_010": {
+          "model": {
+            "mae": 0.007073159756003101,
+            "rmse": 0.009161116046359899,
+            "r2": 0.995016830200724
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.011345065342241676,
+              "rmse": 0.013048177325154476,
+              "r2": 0.9898909902107068
+            },
+            "moving_average": {
+              "mae": 0.014986578771604944,
+              "rmse": 0.017326422037772557,
+              "r2": 0.9821751167359399
+            },
+            "linear_trend": {
+              "mae": 0.008370227852231687,
+              "rmse": 0.011499550919230125,
+              "r2": 0.9921481737985313
+            }
+          }
+        },
+        "synthetic_customer_011": {
+          "model": {
+            "mae": 0.00788847424325553,
+            "rmse": 0.01003090807668026,
+            "r2": 0.9903083793411502
+          },
+          "baselines": {
+            "persistence": {
+              "mae": 0.012851399986161983,
+              "rmse": 0.014555194229094563,
+              "r2": 0.9795942803224005
+            },
+            "moving_average": {
+              "mae": 0.01679818794579095,
+              "rmse": 0.019034117753244307,
+              "r2": 0.9651035370860624
+            },
+            "linear_trend": {
+              "mae": 0.011969751472305492,
+              "rmse": 0.02639124765878098,
+              "r2": 0.9329134049093094
+            }
+          }
+        }
+      },
+      "macro_metric": 0.007255908682828584,
+      "macro_metric_name": "mae",
+      "baseline_macro": {
+        "persistence": 0.012368794031579594,
+        "moving_average": 0.016224026921900506,
+        "linear_trend": 0.010083034973470982
+      },
+      "baseline_gain": 0.28038445746550744,
+      "status": "READY",
+      "gate_reasons": [],
+      "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ph_forecast_predictions.csv",
+      "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+      "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ph_forecast.joblib",
+      "artifact_sha256": "ff7b41d05065b2a787048fdcc4bd2c1d7ebcfbdbcdbab864eccff65db1e2431b"
+    },
+    {
+      "name": "flow_fault_forecast",
+      "title": "Sự cố mất lưu lượng trong 60 phút",
+      "task": "classification",
+      "target": "no_flow_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5756
+        },
+        "validation": {
+          "0": 76,
+          "1": 1096
+        },
+        "synthetic_customer_009": {
+          "0": 26,
+          "1": 119
+        },
+        "synthetic_customer_010": {
+          "0": 115,
+          "1": 23
+        },
+        "synthetic_customer_011": {
+          "0": 95,
+          "1": 48
+        }
+      },
+      "train_rows": 5756,
+      "validation_rows": 1172,
+      "test_rows": 426,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train"
+      ]
+    },
+    {
+      "name": "leak_forecast",
+      "title": "Rò rỉ trong 60 phút",
+      "task": "classification",
+      "target": "leak_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5745
+        },
+        "validation": {
+          "0": 54,
+          "1": 1116
+        },
+        "synthetic_customer_009": {
+          "0": 141,
+          "1": 0
+        },
+        "synthetic_customer_010": {
+          "0": 37,
+          "1": 102
+        },
+        "synthetic_customer_011": {
+          "0": 115,
+          "1": 29
+        }
+      },
+      "train_rows": 5745,
+      "validation_rows": 1170,
+      "test_rows": 424,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train",
+        "Missing class coverage in synthetic_customer_009"
+      ]
+    },
+    {
+      "name": "irrigation_failure_forecast",
+      "title": "Ca tưới gián đoạn trong 60 phút",
+      "task": "classification",
+      "target": "irrigation_abort_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5775
+        },
+        "validation": {
+          "0": 65,
+          "1": 1107
+        },
+        "synthetic_customer_009": {
+          "0": 149,
+          "1": 0
+        },
+        "synthetic_customer_010": {
+          "0": 72,
+          "1": 68
+        },
+        "synthetic_customer_011": {
+          "0": 30,
+          "1": 111
+        }
+      },
+      "train_rows": 5775,
+      "validation_rows": 1172,
+      "test_rows": 430,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train",
+        "Missing class coverage in synthetic_customer_009"
+      ]
+    },
+    {
+      "name": "sensor_fault_forecast",
+      "title": "Sự cố cảm biến trong 60 phút",
+      "task": "classification",
+      "target": "sensor_fault_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5752
+        },
+        "validation": {
+          "0": 30,
+          "1": 1160
+        },
+        "synthetic_customer_009": {
+          "0": 57,
+          "1": 89
+        },
+        "synthetic_customer_010": {
+          "0": 144,
+          "1": 0
+        },
+        "synthetic_customer_011": {
+          "0": 83,
+          "1": 57
+        }
+      },
+      "train_rows": 5752,
+      "validation_rows": 1190,
+      "test_rows": 430,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train",
+        "Missing class coverage in synthetic_customer_010"
+      ]
+    },
+    {
+      "name": "power_loss_forecast",
+      "title": "Nguy cơ mất nguồn trong 60 phút",
+      "task": "classification",
+      "target": "power_loss_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5927
+        },
+        "validation": {
+          "0": 81,
+          "1": 1127
+        },
+        "synthetic_customer_009": {
+          "0": 149,
+          "1": 0
+        },
+        "synthetic_customer_010": {
+          "0": 141,
+          "1": 3
+        },
+        "synthetic_customer_011": {
+          "0": 117,
+          "1": 29
+        }
+      },
+      "train_rows": 5927,
+      "validation_rows": 1208,
+      "test_rows": 439,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train",
+        "Missing class coverage in synthetic_customer_009",
+        "Missing class coverage in synthetic_customer_010"
+      ]
+    },
+    {
+      "name": "mqtt_loss_forecast",
+      "title": "Nguy cơ gián đoạn MQTT trong 60 phút",
+      "task": "classification",
+      "target": "mqtt_loss_future",
+      "horizon_minutes": 60,
+      "class_coverage": {
+        "train": {
+          "0": 0,
+          "1": 5927
+        },
+        "validation": {
+          "0": 80,
+          "1": 1128
+        },
+        "synthetic_customer_009": {
+          "0": 28,
+          "1": 121
+        },
+        "synthetic_customer_010": {
+          "0": 20,
+          "1": 124
+        },
+        "synthetic_customer_011": {
+          "0": 117,
+          "1": 29
+        }
+      },
+      "train_rows": 5927,
+      "validation_rows": 1208,
+      "test_rows": 439,
+      "features": [
+        "flow_rate",
+        "flow_rate_lag1",
+        "flow_rate_lag3",
+        "flow_rate_lag6",
+        "flow_rate_missing",
+        "flow_rate_mean3",
+        "flow_rate_slope3",
+        "pressure",
+        "pressure_lag1",
+        "pressure_lag3",
+        "pressure_lag6",
+        "pressure_missing",
+        "pressure_mean3",
+        "pressure_slope3",
+        "pump_current",
+        "pump_current_lag1",
+        "pump_current_lag3",
+        "pump_current_lag6",
+        "pump_current_missing",
+        "pump_current_mean3",
+        "pump_current_slope3",
+        "sensor_bus_errors",
+        "sensor_bus_errors_lag1",
+        "sensor_bus_errors_lag3",
+        "sensor_bus_errors_lag6",
+        "sensor_bus_errors_missing",
+        "sensor_bus_errors_mean3",
+        "sensor_bus_errors_slope3",
+        "supply_voltage",
+        "supply_voltage_lag1",
+        "supply_voltage_lag3",
+        "supply_voltage_lag6",
+        "supply_voltage_missing",
+        "supply_voltage_mean3",
+        "supply_voltage_slope3",
+        "rssi",
+        "rssi_lag1",
+        "rssi_lag3",
+        "rssi_lag6",
+        "rssi_missing",
+        "rssi_mean3",
+        "rssi_slope3",
+        "packet_loss_rate",
+        "packet_loss_rate_lag1",
+        "packet_loss_rate_lag3",
+        "packet_loss_rate_lag6",
+        "packet_loss_rate_missing",
+        "packet_loss_rate_mean3",
+        "packet_loss_rate_slope3",
+        "command_failure_rate",
+        "command_failure_rate_lag1",
+        "command_failure_rate_lag3",
+        "command_failure_rate_lag6",
+        "command_failure_rate_missing",
+        "command_failure_rate_mean3",
+        "command_failure_rate_slope3",
+        "history_gap_minutes",
+        "pump_running",
+        "valve_running",
+        "fertilizer_running"
+      ],
+      "scope": "simulation_only",
+      "status": "BLOCKED",
+      "gate_reasons": [
+        "Missing class coverage in train"
+      ]
+    }
+  ],
+  "limitations": [
+    "Synthetic precursors and fault incidence are designed assumptions; no measured field fault ground truth.",
+    "Rows are autocorrelated. Row count is NOT independent sample count.",
+    "READY means this synthetic benchmark only; pilot requires real site-held-out data.",
+    "Some outages may occur without precursors; predictor cannot replace observed connectivity rules."
+  ],
+  "ready_count": 4,
+  "model_count": 10,
+  "deployment": {
+    "promoted": false,
+    "policy": "All 10 model gates must pass before automatic replacement",
+    "active_model_count": 0,
+    "active_dataset_version": null
+  }
+}

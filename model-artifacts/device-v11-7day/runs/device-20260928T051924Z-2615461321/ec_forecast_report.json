@@ -1,0 +1,133 @@
+{
+  "name": "ec_forecast",
+  "title": "EC sau 30 phút",
+  "task": "regression",
+  "target": "ec_future",
+  "horizon_minutes": 30,
+  "class_coverage": {},
+  "train_rows": 5324,
+  "validation_rows": 1098,
+  "test_rows": 389,
+  "features": [
+    "ec",
+    "ec_lag1",
+    "ec_lag3",
+    "ec_lag6",
+    "ec_missing",
+    "ec_mean3",
+    "ec_slope3",
+    "history_gap_minutes"
+  ],
+  "scope": "simulation_only",
+  "algorithm": "extra_trees",
+  "validation_candidates": {
+    "hist_gradient_boosting": {
+      "mae": 0.006459669596279059,
+      "rmse": 0.008187281393977525,
+      "r2": 0.9990893896881442
+    },
+    "extra_trees": {
+      "mae": 0.0064156201918805595,
+      "rmse": 0.00821877949639716,
+      "r2": 0.9990823696117296
+    },
+    "ridge_autoregression": {
+      "mae": 0.007689126068551912,
+      "rmse": 0.009440853770327324,
+      "r2": 0.9987891909137034
+    }
+  },
+  "test_metrics": {
+    "mae": 0.008713763703033329,
+    "rmse": 0.010910938540042018,
+    "r2": 0.9991608769297987
+  },
+  "per_customer": {
+    "synthetic_customer_009": {
+      "model": {
+        "mae": 0.010354789467215157,
+        "rmse": 0.01259854811416519,
+        "r2": 0.9951984091795738
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.013347289824434028,
+          "rmse": 0.015377898627728285,
+          "r2": 0.9928461778774463
+        },
+        "moving_average": {
+          "mae": 0.017095453488956965,
+          "rmse": 0.019481350205706325,
+          "r2": 0.988518932850993
+        },
+        "linear_trend": {
+          "mae": 0.02687913247699402,
+          "rmse": 0.10724468803000968,
+          "r2": 0.6520669129102994
+        }
+      }
+    },
+    "synthetic_customer_010": {
+      "model": {
+        "mae": 0.0071669261976649795,
+        "rmse": 0.009009138440634432,
+        "r2": 0.9970308191871057
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.013194956018801092,
+          "rmse": 0.01518211798534738,
+          "r2": 0.9915679174725407
+        },
+        "moving_average": {
+          "mae": 0.01704194668910217,
+          "rmse": 0.01943478863744806,
+          "r2": 0.9861824906276868
+        },
+        "linear_trend": {
+          "mae": 0.009119888503494458,
+          "rmse": 0.012606148559919941,
+          "r2": 0.994186536288491
+        }
+      }
+    },
+    "synthetic_customer_011": {
+      "model": {
+        "mae": 0.008588797995569896,
+        "rmse": 0.010795230068504613,
+        "r2": 0.9963384176633271
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.012565218137773214,
+          "rmse": 0.014680102146337559,
+          "r2": 0.9932288387796725
+        },
+        "moving_average": {
+          "mae": 0.016052454871658087,
+          "rmse": 0.018620040144180932,
+          "r2": 0.9891065304095102
+        },
+        "linear_trend": {
+          "mae": 0.024708258000790476,
+          "rmse": 0.08172579858425741,
+          "r2": 0.7901430554305611
+        }
+      }
+    }
+  },
+  "macro_metric": 0.008703504553483345,
+  "macro_metric_name": "mae",
+  "baseline_macro": {
+    "persistence": 0.013035821327002777,
+    "moving_average": 0.016729951683239073,
+    "linear_trend": 0.020235759660426317
+  },
+  "baseline_gain": 0.3323393796864449,
+  "status": "READY",
+  "gate_reasons": [],
+  "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ec_forecast_predictions.csv",
+  "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\ec_forecast.joblib",
+  "artifact_sha256": "0d74c21bb4fb352905df4dff2ede8391e21e0d8f085af18ec95d6daf9c17db8a"
+}

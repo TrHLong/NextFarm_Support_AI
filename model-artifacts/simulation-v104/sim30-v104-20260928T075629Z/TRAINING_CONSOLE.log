@@ -1,0 +1,98 @@
+=== TRAIN START train_01_soil_moisture ===
+=== TRAIN DONE soil_moisture_forecast | selected=ExtraTreesRegressor | test={'mae': 1.996922305230603, 'rmse': 2.5399476061727357, 'r2': 0.8220089250042595, 'median_absolute_error': 1.616517154163919, 'p90_absolute_error': 4.13684180118389} ===
+=== TRAIN START train_02_nutrient ===
+=== TRAIN DONE nutrient_recommendation | selected=RandomForestClassifier | test={'accuracy': 0.9435396308360477, 'precision_macro': 0.9603016005180868, 'recall_macro': 0.7395956838631998, 'f1_macro': 0.770935766684559} ===
+=== TRAIN START train_03_anomaly ===
+=== TRAIN DONE anomaly_detection | selected=RandomForestClassifier | test={'accuracy': 0.9761129207383279, 'precision_macro': 0.9316934804768869, 'recall_macro': 0.9468615138993812, 'f1_macro': 0.9391013984858003, 'roc_auc': 0.9934945573882805} ===
+=== TRAIN START train_04_irrigation ===
+=== TRAIN DONE smart_irrigation_scheduler | selected=RandomForestRegressor | test={'mae': 0.09989067063284021, 'rmse': 0.257408876753231, 'r2': 0.993834968898087, 'median_absolute_error': 0.0025151627848329916, 'p90_absolute_error': 0.44153708812350984} ===
+=== TRAIN START train_05_maintenance ===
+=== TRAIN DONE predictive_maintenance | selected=RandomForestClassifier | test={'accuracy': 0.993485342019544, 'precision_macro': 0.965319660351071, 'recall_macro': 0.965319660351071, 'f1_macro': 0.965319660351071, 'roc_auc': 0.9991715879779843} ===
+{
+  "run_id": "sim30-v104-20260928T075629Z",
+  "out": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z",
+  "report": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/BAO_CAO_TRAIN_MODEL_AI_VA_MO_PHONG_HOAN_TAT.docx",
+  "models": {
+    "soil_moisture_forecast": {
+      "mae": 1.996922305230603,
+      "rmse": 2.5399476061727357,
+      "r2": 0.8220089250042595,
+      "median_absolute_error": 1.616517154163919,
+      "p90_absolute_error": 4.13684180118389
+    },
+    "nutrient_recommendation": {
+      "accuracy": 0.9435396308360477,
+      "precision_macro": 0.9603016005180868,
+      "recall_macro": 0.7395956838631998,
+      "f1_macro": 0.770935766684559
+    },
+    "anomaly_detection": {
+      "accuracy": 0.9761129207383279,
+      "precision_macro": 0.9316934804768869,
+      "recall_macro": 0.9468615138993812,
+      "f1_macro": 0.9391013984858003,
+      "roc_auc": 0.9934945573882805
+    },
+    "smart_irrigation_scheduler": {
+      "mae": 0.09989067063284021,
+      "rmse": 0.257408876753231,
+      "r2": 0.993834968898087,
+      "median_absolute_error": 0.0025151627848329916,
+      "p90_absolute_error": 0.44153708812350984
+    },
+    "predictive_maintenance": {
+      "accuracy": 0.993485342019544,
+      "precision_macro": 0.965319660351071,
+      "recall_macro": 0.965319660351071,
+      "f1_macro": 0.965319660351071,
+      "roc_auc": 0.9991715879779843
+    }
+  },
+  "deployment": {
+    "status": "PASS",
+    "mode": "shadow",
+    "models_loaded": 5,
+    "shadow_log": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/logs/inference-shadow.jsonl",
+    "ab10_sample_entities": 1000,
+    "ab10_enabled_entities": 100,
+    "ab10_fraction": 0.1,
+    "models": [
+      {
+        "model": "soil_moisture_forecast",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 14.263
+      },
+      {
+        "model": "nutrient_recommendation",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 12.967
+      },
+      {
+        "model": "anomaly_detection",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.197
+      },
+      {
+        "model": "smart_irrigation_scheduler",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.279
+      },
+      {
+        "model": "predictive_maintenance",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.4
+      }
+    ]
+  },
+  "batch": {
+    "status": "PASS",
+    "models": 5,
+    "rows_inferred": 500,
+    "files": 5
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "model": "soil_moisture_forecast",
+  "objective": "Dự báo độ ẩm đất sau 6 giờ từ chuỗi cảm biến và trạng thái môi trường gần nhất.",
+  "algorithm_rationale": "Extra Trees/Random Forest/HistGradientBoosting được benchmark vì bài toán là hồi quy phi tuyến trên dữ liệu cảm biến dạng bảng với nhiều tương tác và lag. Extra Trees đặc biệt phù hợp giai đoạn mô phỏng vì không cần scaling, chịu được quan hệ phi tuyến và cho phép giải thích feature importance. Thuật toán cuối cùng chỉ được chọn theo MAE Validation, Test không dùng để chọn model.",
+  "task": "regression",
+  "target": "target_moisture_6h",
+  "features": [
+    "soil_moisture",
+    "temperature",
+    "air_humidity",
+    "ec",
+    "ph",
+    "flow_rate",
+    "moisture_lag_10m",
+    "moisture_lag_30m",
+    "moisture_lag_60m",
+    "moisture_lag_180m",
+    "moisture_mean_1h",
+    "moisture_std_1h",
+    "moisture_slope_1h",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "selected_algorithm": "ExtraTreesRegressor",
+  "candidate_validation": [
+    {
+      "candidate": "ExtraTreesRegressor",
+      "validation_metrics": {
+        "mae": 0.7785919503942841,
+        "rmse": 1.0176707983994246,
+        "r2": 0.9750790625649375,
+        "median_absolute_error": 0.6111186264292172,
+        "p90_absolute_error": 1.6709162865909735
+      }
+    },
+    {
+      "candidate": "RandomForestRegressor",
+      "validation_metrics": {
+        "mae": 0.815479984515673,
+        "rmse": 1.0708688439537508,
+        "r2": 0.9724055135580552,
+        "median_absolute_error": 0.6447090563286153,
+        "p90_absolute_error": 1.7318152340520643
+      }
+    }
+  ],
+  "test_metrics": {
+    "mae": 1.996922305230603,
+    "rmse": 2.5399476061727357,
+    "r2": 0.8220089250042595,
+    "median_absolute_error": 1.616517154163919,
+    "p90_absolute_error": 4.13684180118389
+  },
+  "rows": {
+    "train": 25677,
+    "validation": 5527,
+    "test": 1734
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/soil_moisture_forecast.joblib",
+  "sha256": "023783efee7678467feb49ebca62b2e236695e91a4b71ae8c582aea33e73ac3a",
+  "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/soil_moisture_forecast_test_predictions.csv",
+  "charts": {
+    "actual_pred": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_actual_pred.png",
+    "residuals": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_residuals.png",
+    "sequence": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_sequence.png",
+    "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_feature_importance.png"
+  },
+  "feature_importance": [
+    {
+      "feature": "moisture_slope_1h",
+      "importance": 0.3744102064889186
+    },
+    {
+      "feature": "moisture_lag_180m",
+      "importance": 0.19106098208540562
+    },
+    {
+      "feature": "soil_moisture",
+      "importance": 0.07717369419243372
+    },
+    {
+      "feature": "hour_sin",
+      "importance": 0.06137244109889569
+    },
+    {
+      "feature": "moisture_lag_10m",
+      "importance": 0.047514420829887515
+    },
+    {
+      "feature": "moisture_lag_60m",
+      "importance": 0.03973134899389571
+    },
+    {
+      "feature": "moisture_std_1h",
+      "importance": 0.0368253198153974
+    },
+    {
+      "feature": "moisture_mean_1h",
+      "importance": 0.03427571064701789
+    },
+    {
+      "feature": "hour_cos",
+      "importance": 0.03393221283895924
+    },
+    {
+      "feature": "moisture_lag_30m",
+      "importance": 0.03174927679563008
+    },
+    {
+      "feature": "temperature",
+      "importance": 0.03136483355157913
+    },
+    {
+      "feature": "ph",
+      "importance": 0.015398747580311315
+    },
+    {
+      "feature": "air_humidity",
+      "importance": 0.012883012157032608
+    },
+    {
+      "feature": "ec",
+      "importance": 0.009228066003376697
+    },
+    {
+      "feature": "flow_rate",
+      "importance": 0.0009913193626336079
+    }
+  ]
+}

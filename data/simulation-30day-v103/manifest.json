@@ -1,0 +1,376 @@
+{
+  "source": "synthetic_device_spec_v11",
+  "real_customer_count": 0,
+  "synthetic_customer_count": 12,
+  "days": 30,
+  "seed": 20260928,
+  "sensor_storage_seconds": 600,
+  "device_wire_seconds": 5,
+  "offline_training_status_seconds": 600,
+  "status_note": "Offline CSV samples the simulated 5-second state at 10-minute boundaries; NOT a count of every MQTT packet.",
+  "ground_truth": "Latent simulator incidents; not field-verified incidents. No label or scenario ID is a feature.",
+  "source_spec": "Chat-thiet-bi-NextFarm-v0.1.html 09/09/2026",
+  "assumptions": "Dynamics, precursor strength, failure rate and numerical ranges are declared simulator assumptions, not empirically calibrated.",
+  "files": [
+    {
+      "path": "customers/synthetic_customer_000/sensor_readings.csv",
+      "rows": 4075,
+      "sha256": "958f6f5f8fd09165e776d72cbffc79d57c7d4acb511cce3af4b521f3e87c0414"
+    },
+    {
+      "path": "customers/synthetic_customer_000/device_status.csv",
+      "rows": 4075,
+      "sha256": "19791ac17098c6e20335c7a7a21487aa8db20a3aa7ead89718e14623c75cbbab"
+    },
+    {
+      "path": "customers/synthetic_customer_000/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "bc7fe0ef714db451d780ba36f12cbcd7c6f6d876b26fa35d429fed84fbd79018"
+    },
+    {
+      "path": "customers/synthetic_customer_000/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "69f1174c19127152477383b47664177770aff7dc621ce3e7ffafe8b985563497"
+    },
+    {
+      "path": "customers/synthetic_customer_000/control_commands.csv",
+      "rows": 120,
+      "sha256": "5d590815639bae561955b3176b31ae11161c53c56489d1557e068e3032cb1827"
+    },
+    {
+      "path": "customers/synthetic_customer_000/incidents.csv",
+      "rows": 135,
+      "sha256": "44cbf73b8f8d68bffbb8627ef56e996a27885a08f603c9a65e480371b10ae2c7"
+    },
+    {
+      "path": "customers/synthetic_customer_001/sensor_readings.csv",
+      "rows": 4060,
+      "sha256": "be9b1e56d797bea966322797ee6bd9e70f93fa80366da0d88306459bdbc3ac8f"
+    },
+    {
+      "path": "customers/synthetic_customer_001/device_status.csv",
+      "rows": 4060,
+      "sha256": "b602b6e17fe91f49ceabf011dcbc3dce4769416e6f4209545ab2e05020396a31"
+    },
+    {
+      "path": "customers/synthetic_customer_001/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "6a9a9cfe5670a39518993fe182243c9acf8178547e5f9f9be9b8921e7aa9a96d"
+    },
+    {
+      "path": "customers/synthetic_customer_001/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "753571a04d9eab282ab4da6eed9333fe4af52d2c1d625d914334568a73e32513"
+    },
+    {
+      "path": "customers/synthetic_customer_001/control_commands.csv",
+      "rows": 120,
+      "sha256": "6c1788ebfe9c18683b960e422d149c8082560c598162309327c23f76475f26e6"
+    },
+    {
+      "path": "customers/synthetic_customer_001/incidents.csv",
+      "rows": 134,
+      "sha256": "2da3da335bf4d4e513c65f55b09001832c1557268676d773c618665ff8a16b80"
+    },
+    {
+      "path": "customers/synthetic_customer_002/sensor_readings.csv",
+      "rows": 4093,
+      "sha256": "7f2f7ac04b659e7db14553c4945c8b181c8fffc6cff0e1d8a90ce7ddb7292a09"
+    },
+    {
+      "path": "customers/synthetic_customer_002/device_status.csv",
+      "rows": 4093,
+      "sha256": "5c64c1c6ae4f34eacde9cb9c959a02cdce8770d9f41ac1c6e1b6608e6d5ce4bf"
+    },
+    {
+      "path": "customers/synthetic_customer_002/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "3653a410238fa728300d9287215c2aa4760d2c52d92e66dd89a3d3711a314c94"
+    },
+    {
+      "path": "customers/synthetic_customer_002/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "0a190d47e5dd38e62c0f2e38f38a0b60c9d3129d0872f348e4d3a5c5227eb9b0"
+    },
+    {
+      "path": "customers/synthetic_customer_002/control_commands.csv",
+      "rows": 120,
+      "sha256": "a684f9033f5906b5c8bd4fa6b1dfbbb78c558cb7ddbec3d3cb99ce42dbaaf8d6"
+    },
+    {
+      "path": "customers/synthetic_customer_002/incidents.csv",
+      "rows": 138,
+      "sha256": "cc9e388bed7faf5c74f0964a46e31dcd1aee348171a11b4e137531507df6d006"
+    },
+    {
+      "path": "customers/synthetic_customer_003/sensor_readings.csv",
+      "rows": 4070,
+      "sha256": "e38f2937757ac247ab60dc863b37524dae17cfcdfd229a90a9492b2c3e5eea59"
+    },
+    {
+      "path": "customers/synthetic_customer_003/device_status.csv",
+      "rows": 4070,
+      "sha256": "0e36840e84fcd0acb3200497cf0658edc596c54036ebf50c4aa55d97a75230e2"
+    },
+    {
+      "path": "customers/synthetic_customer_003/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "d0f7142af9b580f4aa2e4d76cd4f6c9cbe015150271f6438015f41e323a4251c"
+    },
+    {
+      "path": "customers/synthetic_customer_003/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "208a0ff4a3bc12111a30fe87d3433717b8066408cf0d6d812b604b4209d3dfe2"
+    },
+    {
+      "path": "customers/synthetic_customer_003/control_commands.csv",
+      "rows": 120,
+      "sha256": "4b0ad718870de8c20a630dc05f38d20ebf1d9364114fdb97f39ad23baded9702"
+    },
+    {
+      "path": "customers/synthetic_customer_003/incidents.csv",
+      "rows": 132,
+      "sha256": "860a871e0c78d2499fd766bb8a6ff314f0ae089f4495705980d57038b85d893e"
+    },
+    {
+      "path": "customers/synthetic_customer_004/sensor_readings.csv",
+      "rows": 4082,
+      "sha256": "d3654ba6b8cc80b377c918f078a76974380484004aa12b0b78b44bd2ce9b6e9d"
+    },
+    {
+      "path": "customers/synthetic_customer_004/device_status.csv",
+      "rows": 4082,
+      "sha256": "70987f016cfed55ea313c5a65234aa6bde9640c059a0c73acb9599e613a522a5"
+    },
+    {
+      "path": "customers/synthetic_customer_004/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "fb5c797c5a668c4ecb0154fbc3aa5391bc9193b56dcdd7451f09569d1407cf24"
+    },
+    {
+      "path": "customers/synthetic_customer_004/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "ca498571ff591c0317d8c20c54d1155c4f030d13e1b2f8e9aac079176e63db05"
+    },
+    {
+      "path": "customers/synthetic_customer_004/control_commands.csv",
+      "rows": 120,
+      "sha256": "35d97128c739102dbb8dafb4d3e876a79bb8eb3f5fc13dab3e31ad244f53530a"
+    },
+    {
+      "path": "customers/synthetic_customer_004/incidents.csv",
+      "rows": 135,
+      "sha256": "ff825816c0ef84f79984c51d95e8879c6f614b776582ca8e0bb83b68b085e649"
+    },
+    {
+      "path": "customers/synthetic_customer_005/sensor_readings.csv",
+      "rows": 4101,
+      "sha256": "9b3d5c31439867eed1b4bfa2c5389bc0aba716e11677b6ef368a24e3f05ecfee"
+    },
+    {
+      "path": "customers/synthetic_customer_005/device_status.csv",
+      "rows": 4101,
+      "sha256": "30f1aec67e2360d469702e6910ae9d2a0128792763148f198e15eff68e788540"
+    },
+    {
+      "path": "customers/synthetic_customer_005/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "dee47073a3c906c42506f63fc38be18fb224d0160db1cbd255fecbe104d74ac7"
+    },
+    {
+      "path": "customers/synthetic_customer_005/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "6b5476386aabd56836b2ea21d530b2aa1a1bd081a35ebd8b36adb899b71df801"
+    },
+    {
+      "path": "customers/synthetic_customer_005/control_commands.csv",
+      "rows": 120,
+      "sha256": "a39e3450dbd02e4df492de60461e6e58e95ec26e94f9f86b7a331d7ab74ee176"
+    },
+    {
+      "path": "customers/synthetic_customer_005/incidents.csv",
+      "rows": 135,
+      "sha256": "c98c4dae76686ef72ac3aa282f7e1ad78572ca9caf71f537f30849e41293ce38"
+    },
+    {
+      "path": "customers/synthetic_customer_006/sensor_readings.csv",
+      "rows": 4085,
+      "sha256": "651c90cf240036fcbedf9ae7022225f2ec9a0d5b6a13a908ac6679b0ef3eb85a"
+    },
+    {
+      "path": "customers/synthetic_customer_006/device_status.csv",
+      "rows": 4085,
+      "sha256": "ce1ec90b75dbcdb278139a163c6c3337597100f52a61ea2802982fe166c45f25"
+    },
+    {
+      "path": "customers/synthetic_customer_006/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "f6428a4638f75ebc02355b14422765fd28c6b03137b6868ab25a88b5c7ecacec"
+    },
+    {
+      "path": "customers/synthetic_customer_006/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "2f179b5c7815d6ff5eae6d81d294759ccb4b0e4daabb9542560303eb94be2d6d"
+    },
+    {
+      "path": "customers/synthetic_customer_006/control_commands.csv",
+      "rows": 120,
+      "sha256": "953e929d60ced8485e40d4e2249099d3e28a88243afc2576cdebeef9e7d72230"
+    },
+    {
+      "path": "customers/synthetic_customer_006/incidents.csv",
+      "rows": 134,
+      "sha256": "7512d25d7edec3fcd3fb00179ccc4f5de837be45c4cab3e41cfe984db65c58e1"
+    },
+    {
+      "path": "customers/synthetic_customer_007/sensor_readings.csv",
+      "rows": 4062,
+      "sha256": "35baed3ea32abd374b29812ff50a241d0622bd70a95dd6d0d4d9b9b60515451e"
+    },
+    {
+      "path": "customers/synthetic_customer_007/device_status.csv",
+      "rows": 4062,
+      "sha256": "ed67c1594b4e301c5a2ac347de996d4e18915b782679d143866ca0d2a37a6e88"
+    },
+    {
+      "path": "customers/synthetic_customer_007/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "1b96dff8b619d0157c4cba57a562f1248c7fdb96c9051c7a563ecac371055219"
+    },
+    {
+      "path": "customers/synthetic_customer_007/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "e00562a1e25bb9da6fc289ab166d6b18dbfc26407c14782d62690bfdd4fcc994"
+    },
+    {
+      "path": "customers/synthetic_customer_007/control_commands.csv",
+      "rows": 120,
+      "sha256": "febadb9349cf4389579c351d01e35efd3840a91f80d29ad07c7f9d88894b6545"
+    },
+    {
+      "path": "customers/synthetic_customer_007/incidents.csv",
+      "rows": 134,
+      "sha256": "72da5d653e7a9c8cfd3b1a2ed7b254aeb3455ef429d48e73522a914f65f1f708"
+    },
+    {
+      "path": "customers/synthetic_customer_008/sensor_readings.csv",
+      "rows": 4083,
+      "sha256": "2037a05e25d485fda00eaed64d9dce18297044878b06cea55b217ae38b1a31cc"
+    },
+    {
+      "path": "customers/synthetic_customer_008/device_status.csv",
+      "rows": 4083,
+      "sha256": "b0ef37fb08cbee70b603eda212bc2ec08c0c66b5fdc040c2f5e0333eb4ddf87b"
+    },
+    {
+      "path": "customers/synthetic_customer_008/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "8666cd7b8656908d50c197e54b00d8e689badc99716bb8db53ea9083f000e894"
+    },
+    {
+      "path": "customers/synthetic_customer_008/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "de4a038ef76b7699d60bc37ab6cd4fc2189442edc550518cedf48d9dd088e0a4"
+    },
+    {
+      "path": "customers/synthetic_customer_008/control_commands.csv",
+      "rows": 120,
+      "sha256": "c551f996fcd1eae350fdbd3c8990781f5c138f630904e7d29551633efc645e51"
+    },
+    {
+      "path": "customers/synthetic_customer_008/incidents.csv",
+      "rows": 138,
+      "sha256": "70f0f0e614f160a99fe686576f2ff708071681117809028ca1b95b7cfb44d546"
+    },
+    {
+      "path": "customers/synthetic_customer_009/sensor_readings.csv",
+      "rows": 4082,
+      "sha256": "f4395d9119f3db0bd300579b38c308e4cafbcb9cbf93ed6ce0c395fcb0830e45"
+    },
+    {
+      "path": "customers/synthetic_customer_009/device_status.csv",
+      "rows": 4082,
+      "sha256": "7805c05da203227bd5618f2f48c3de62de089be449b06699ebeb2bc80f7d1dcd"
+    },
+    {
+      "path": "customers/synthetic_customer_009/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "46980eb19cbff2ba12667bb2564e23fa15dfecd22b2b0f0d9f304651298f84e3"
+    },
+    {
+      "path": "customers/synthetic_customer_009/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "fdf453b24a0bb8ab5ad95ddee160f816f7792b6f33844e09ff082f8700745ab9"
+    },
+    {
+      "path": "customers/synthetic_customer_009/control_commands.csv",
+      "rows": 120,
+      "sha256": "d7e397bf3195a6732a776a36ec9619b5648ed9f691b35cc38938fb9f8c38e488"
+    },
+    {
+      "path": "customers/synthetic_customer_009/incidents.csv",
+      "rows": 141,
+      "sha256": "b7715c2f03e7b2df927657516ccc08233f24927a8a860c13d3ba736c7e999665"
+    },
+    {
+      "path": "customers/synthetic_customer_010/sensor_readings.csv",
+      "rows": 4059,
+      "sha256": "f503ddb6aeb3617dd8691347f96cc55acc916cc7f73ca44e088b2d26147d2b8d"
+    },
+    {
+      "path": "customers/synthetic_customer_010/device_status.csv",
+      "rows": 4059,
+      "sha256": "4727a40d0367a8aa15c64287f458e2a216e8dcd9974b7d53b320a03cee56de33"
+    },
+    {
+      "path": "customers/synthetic_customer_010/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "536a026fd598996a024d7fe7ea17ebc458021aeec0082bfc02943e6fe26226d1"
+    },
+    {
+      "path": "customers/synthetic_customer_010/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "7568e364d8a0b87b82d93fc24ab7305a6a459fb7441cd3ff52c52a5ecc63160a"
+    },
+    {
+      "path": "customers/synthetic_customer_010/control_commands.csv",
+      "rows": 120,
+      "sha256": "f37face65a205b949e968784311d51b529f57055de00804bbb9be11b561b2365"
+    },
+    {
+      "path": "customers/synthetic_customer_010/incidents.csv",
+      "rows": 138,
+      "sha256": "eee081daf0743908b9c87032a107d073d783703913311dcd583a55ff7af61bba"
+    },
+    {
+      "path": "customers/synthetic_customer_011/sensor_readings.csv",
+      "rows": 4074,
+      "sha256": "e4dc1ef910bcf2aa94e425bf4df7475534807733a1769b48062e5586b3bc9663"
+    },
+    {
+      "path": "customers/synthetic_customer_011/device_status.csv",
+      "rows": 4074,
+      "sha256": "08d3e6c79a2da0f09ad0e7a0380108291f0f958ee91c02687c88cf42c024310a"
+    },
+    {
+      "path": "customers/synthetic_customer_011/incident_ground_truth.csv",
+      "rows": 4320,
+      "sha256": "09aa67c6b8de042e81de3587b4ccd60ae39fd8b54f0b08fa4bf50a73ba4b73b9"
+    },
+    {
+      "path": "customers/synthetic_customer_011/irrigation_runs.csv",
+      "rows": 120,
+      "sha256": "68ecb75565f8e071363f85acce4c54cd6f039ce7137fc256bd8499ad3312524a"
+    },
+    {
+      "path": "customers/synthetic_customer_011/control_commands.csv",
+      "rows": 120,
+      "sha256": "c938431975fd917a7a7033185aae2d5b6bc334538d6f70df06faa3dec65e607c"
+    },
+    {
+      "path": "customers/synthetic_customer_011/incidents.csv",
+      "rows": 138,
+      "sha256": "584ff21cea30fdd7e8512ce76171d4edb4f23c369be5dff258a30366416c14a3"
+    }
+  ]
+}

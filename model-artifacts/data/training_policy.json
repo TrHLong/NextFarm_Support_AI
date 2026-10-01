@@ -1,0 +1,48 @@
+{
+  "architecture": "shared_base_models_with_customer_calibration",
+  "data_isolation": "immutable CSV snapshots are stored separately by customer_id",
+  "model_count": 10,
+  "group_policies": {
+    "sensor_readings": {
+      "minimum_rows": 20000,
+      "new_rows": 5000,
+      "required": true
+    },
+    "device_status": {
+      "minimum_rows": 5000,
+      "new_rows": 2000,
+      "required": true
+    },
+    "telemetry_ingest_events": {
+      "minimum_rows": 2000,
+      "new_rows": 1000,
+      "required": true
+    },
+    "irrigation_runs": {
+      "minimum_rows": 3,
+      "new_rows": 2,
+      "required": true
+    },
+    "alerts": {
+      "minimum_rows": 0,
+      "new_rows": 5,
+      "required": false
+    },
+    "control_commands": {
+      "minimum_rows": 0,
+      "new_rows": 5,
+      "required": false
+    }
+  },
+  "minimum_customers": 3,
+  "minimum_processed_rows_per_customer": 40,
+  "maximum_processed_rows_per_customer": 5000,
+  "customer_id_used_as_feature": false,
+  "generalization_test": "leave_one_customer_out",
+  "split_strategy": "chronological_70_15_15_on_unique_timestamps",
+  "candidate_selection": "validation_only",
+  "test_usage": "final_evaluation_only",
+  "activation": "approved candidates only; keep the previous approved artifact when a candidate fails",
+  "history_retention_latest_runs": 3,
+  "chat_messages_used_for_training": false
+}

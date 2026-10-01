@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import HistGradientBoostingRegressor,HistGradientBoostingClassifier
 from sklearn.inspection import permutation_importance
-from .contracts import SPECS
+from .contracts import ACTIVE_SPECS
 from .collection import VERSION
 from .data_quality import CLEANING_VERSION
 from .ml import prepare_features,scores,baselines,coverage,write_json
@@ -41,7 +41,7 @@ def seal_frame(snapshot):
         frame,features=prepare_features(s,d);frame=frame.copy();origin=s.set_index('observed_at').sort_index()
         truth=pd.read_csv(folder/'incident_ground_truth.csv')
         if not truth.empty:truth['observed_at']=pd.to_datetime(truth.observed_at,utc=True,format='ISO8601');truth=truth.sort_values('observed_at').drop_duplicates('observed_at')
-        for spec in SPECS:
+        for spec in ACTIVE_SPECS:
             frame[spec.target]=np.nan
             if spec.metric:
                 future=pd.merge_asof(pd.DataFrame({'at':frame.observed_at+pd.Timedelta(minutes=30)}),origin[[spec.metric]].reset_index().rename(columns={'observed_at':'at'}),on='at',direction='nearest',tolerance=pd.Timedelta(seconds=90))
@@ -75,13 +75,13 @@ def train_snapshot(snapshot,artifact_root):
     customers=sorted(frame.customer_id.unique()) if not frame.empty else []
     if len(customers)<3:
         report['reasons']=['Cần ít nhất 3 khách để dành riêng một khách test; không train riêng cho từng khách']
-        report['models']=[{'name':s.name,'title':s.title,'status':'BLOCKED','gate_reasons':report['reasons']} for s in SPECS]
+        report['models']=[{'name':s.name,'title':s.title,'status':'BLOCKED','gate_reasons':report['reasons']} for s in ACTIVE_SPECS]
         write_training_evidence(run,root,report);return report
     test_customer=customers[-1];development=customers[:-1]
     start=max(pd.Timestamp(g['window_start']) for g in manifest['gates'].values() if g['eligible']);end=min(pd.Timestamp(g['window_end']) for g in manifest['gates'].values() if g['eligible'])
     if end-start<pd.Timedelta(hours=71.5):
         report['reasons']=['Các cửa sổ 72 giờ theo khách chưa giao nhau đủ 71.5 giờ; chờ vòng thu tiếp theo']
-        report['models']=[{'name':s.name,'title':s.title,'status':'BLOCKED','gate_reasons':report['reasons']} for s in SPECS]
+        report['models']=[{'name':s.name,'title':s.title,'status':'BLOCKED','gate_reasons':report['reasons']} for s in ACTIVE_SPECS]
         write_training_evidence(run,root,report);return report
     train_cut=start+pd.Timedelta(hours=36);test_cut=start+pd.Timedelta(hours=48)
     frame['split']='excluded_or_purged'
@@ -91,7 +91,7 @@ def train_snapshot(snapshot,artifact_root):
     frame.to_csv(run/'features_and_splits.csv',index=False)
     report.update(held_out_customer=test_customer,development_customers=development,split_counts=frame.split.value_counts().to_dict(),train_cut=train_cut.isoformat(),test_cut=test_cut.isoformat(),window_end=end.isoformat(),features=features,
       preprocessing='Fixed cleaning first; causal lags; purge target end; imputer/scaler/variance filter fit train only',selection='Validation only; no refit after test',reasons=['Exploratory 72h benchmark only; no field pilot validation'])
-    for spec in SPECS:
+    for spec in ACTIVE_SPECS:
         fields=[x for x in features if x==spec.metric or x.startswith(spec.metric+'_') or x=='history_gap_minutes'] if spec.metric else [x for x in features if not any(x.startswith(k) for k in ['soil_moisture','temperature','ec','ph','air_humidity'])]
         parts={k:frame.loc[frame.split==k].dropna(subset=[spec.target]+([spec.metric] if spec.metric else [])) for k in ['train','validation','test_unseen_customer']}
         tr,va,te=parts.values();reasons=[];entry={'name':spec.name,'title':spec.title,'task':spec.task,'target':spec.target,'features':fields,'csv_manifest':str(snapshot/'manifest.json'),'processed_csv':str(run/'features_and_splits.csv'),

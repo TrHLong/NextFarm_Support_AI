@@ -1,0 +1,50 @@
+{
+  "customer_id": "synthetic_customer_007",
+  "device_id": "cabinet_007",
+  "synthetic": true,
+  "model": "ESP32-S3 8DI/8DO",
+  "profile_type": "open_field",
+  "firmware": "simulator-v11",
+  "sensor_seconds": 600,
+  "status_seconds": 5,
+  "thresholds": {
+    "soil_moisture": [
+      55,
+      75
+    ],
+    "temperature": [
+      18,
+      32
+    ],
+    "ec": [
+      1,
+      2.5
+    ],
+    "ph": [
+      5.5,
+      7
+    ]
+  },
+  "outputs": [
+    {
+      "port": 1,
+      "role": "water_pump"
+    },
+    {
+      "port": 2,
+      "role": "zone_valve"
+    },
+    {
+      "port": 3,
+      "role": "fertilizer_pump"
+    }
+  ],
+  "schedules": [
+    {
+      "name": "Tưới định kỳ mô phỏng",
+      "every_hours": 6,
+      "duration_minutes": 30,
+      "fertilizer_ml": 288
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "name": "moisture_forecast",
+  "title": "Độ ẩm đất sau 30 phút",
+  "task": "regression",
+  "target": "soil_moisture_future",
+  "horizon_minutes": 30,
+  "class_coverage": {},
+  "train_rows": 5483,
+  "validation_rows": 1134,
+  "test_rows": 403,
+  "features": [
+    "soil_moisture",
+    "soil_moisture_lag1",
+    "soil_moisture_lag3",
+    "soil_moisture_lag6",
+    "soil_moisture_missing",
+    "soil_moisture_mean3",
+    "soil_moisture_slope3",
+    "history_gap_minutes"
+  ],
+  "scope": "simulation_only",
+  "algorithm": "extra_trees",
+  "validation_candidates": {
+    "hist_gradient_boosting": {
+      "mae": 0.19112004318945078,
+      "rmse": 0.247894787221441,
+      "r2": 0.9984104106984809
+    },
+    "extra_trees": {
+      "mae": 0.18908517445192147,
+      "rmse": 0.24562913635336475,
+      "r2": 0.9984393342313662
+    },
+    "ridge_autoregression": {
+      "mae": 0.23142336212129794,
+      "rmse": 0.29396256510858476,
+      "r2": 0.9977647083334464
+    }
+  },
+  "test_metrics": {
+    "mae": 0.19049694803568512,
+    "rmse": 0.2411665723986239,
+    "r2": 0.9984750828477449
+  },
+  "per_customer": {
+    "synthetic_customer_009": {
+      "model": {
+        "mae": 0.19503325213773934,
+        "rmse": 0.2429364964279292,
+        "r2": 0.9981377844572075
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.6818285285841303,
+          "rmse": 0.7661801113463859,
+          "r2": 0.9814772200269452
+        },
+        "moving_average": {
+          "mae": 0.903330021758741,
+          "rmse": 1.0132458986114965,
+          "r2": 0.9676052876254392
+        },
+        "linear_trend": {
+          "mae": 0.5410865558700052,
+          "rmse": 1.7573423236817038,
+          "r2": 0.9025555392385767
+        }
+      }
+    },
+    "synthetic_customer_010": {
+      "model": {
+        "mae": 0.18483974012244986,
+        "rmse": 0.23734602043662578,
+        "r2": 0.9983050071694791
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.6567851030736029,
+          "rmse": 0.7419495662389733,
+          "r2": 0.9834364765295714
+        },
+        "moving_average": {
+          "mae": 0.8852425005610592,
+          "rmse": 1.0018839125211016,
+          "r2": 0.9697977872081007
+        },
+        "linear_trend": {
+          "mae": 0.2841137686573332,
+          "rmse": 0.41788001784073386,
+          "r2": 0.994745793152871
+        }
+      }
+    },
+    "synthetic_customer_011": {
+      "model": {
+        "mae": 0.1915828213662602,
+        "rmse": 0.24320618957719198,
+        "r2": 0.9982232999938185
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.64643571773146,
+          "rmse": 0.7457116329917003,
+          "r2": 0.9832965303231589
+        },
+        "moving_average": {
+          "mae": 0.8672788787120743,
+          "rmse": 0.9955899696317192,
+          "r2": 0.9702267748311434
+        },
+        "linear_trend": {
+          "mae": 0.3766750751685117,
+          "rmse": 0.7461387754744179,
+          "r2": 0.9832773893990208
+        }
+      }
+    }
+  },
+  "macro_metric": 0.19048527120881645,
+  "macro_metric_name": "mae",
+  "baseline_macro": {
+    "persistence": 0.6616831164630644,
+    "moving_average": 0.8852838003439581,
+    "linear_trend": 0.40062513323195
+  },
+  "baseline_gain": 0.5245299023750185,
+  "status": "READY",
+  "gate_reasons": [],
+  "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\moisture_forecast_predictions.csv",
+  "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\moisture_forecast.joblib",
+  "artifact_sha256": "e8d7a28b2d4cde0cd5aeb84578e753d9c3dd1fd0ffcefdeddf913f4971ba8a39"
+}

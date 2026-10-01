@@ -86,7 +86,7 @@ function enterApp() {
   $('#farmPicker').value=state.farmId||'';
   $('#farmPickerWrap').hidden=state.user.role==='technician';
   const items = state.user.role==='farmer'
-    ? [['overview','Tổng quan vườn'],['aiinsights','Gợi ý từ AI'],['chat','Chat hỗ trợ'],['tickets','Yêu cầu hỗ trợ'],['notifications','Cảnh báo'],['knowledge','Hướng dẫn']]
+    ? [['overview','Tổng quan vườn'],['sensor','Số đo cảm biến'],['device','Trạng thái thiết bị'],['schedules','Lịch tưới'],['irrigation','Lịch sử tưới'],['fertilizer','Châm phân'],['commands','Nhật ký lệnh'],['alerts','Cảnh báo'],['chat','Trò chuyện'],['tickets','Yêu cầu hỗ trợ'],['knowledge','Hướng dẫn']]
     : [['techdash','Trung tâm vận hành'],['queue','Ticket hỗ trợ'],['techknowledge','Kho tri thức'],['notify','Gửi cảnh báo']];
   $('#nav').innerHTML=items.map(([id,label])=>`<button class="nav-btn" data-page="${id}"><span>${label}</span></button>`).join('');
   document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>renderPage(b.dataset.page)));
@@ -102,6 +102,7 @@ async function renderPage(page) {
   if(state.user?.role==='farmer'&&!state.farmId){ showFarmSelection(); return; }
   try {
     if(page==='overview') await farmerOverview();
+    if(['sensor','device','schedules','irrigation','fertilizer','commands','alerts'].includes(page)) await farmerDataView(page);
     if(page==='aiinsights') await farmerAiInsights();
     if(page==='modellab') await farmerModelLab();
     if(page==='knowledge') await farmerKnowledge();
@@ -134,6 +135,25 @@ function realtimePipelineState(sim,telemetry,rows){
   if(!simOk) return {ok:false,label:'Simulator đang khởi động',title:'Đang khởi động nguồn dữ liệu',hint:sim?.last_error||`Trạng thái: ${sim?.startup_stage||'đang chuẩn bị'}. Hệ thống sẽ tự thử lại.`};
   if(!hasRows) return {ok:false,label:'Chưa nhận mẫu gần đây',title:'Đang chờ dữ liệu cảm biến',hint:'MQTT đã kết nối nhưng PostgreSQL chưa có mẫu gần đây cho vườn này. Hệ thống đang tự đồng bộ.'};
   return {ok:false,label:'Đang kiểm tra realtime',title:'Đang kiểm tra luồng dữ liệu',hint:'Vui lòng chờ vài giây.'};
+}
+
+const DATA_VIEW_META={sensor:['Số đo cảm biến','CẢM BIẾN THEO THỜI GIAN','sensor_readings'],device:['Trạng thái thiết bị','TRẠNG THÁI HIỆN TẠI','device_status'],schedules:['Lịch tưới','CẤU HÌNH TƯỚI','irrigation_schedules'],irrigation:['Lịch sử tưới','SỰ KIỆN ĐÃ GHI NHẬN','irrigation_runs'],fertilizer:['Châm phân','SỰ KIỆN PHÂN','fertilizer_events'],commands:['Nhật ký lệnh','AUDIT ĐIỀU KHIỂN','control_commands'],alerts:['Cảnh báo','THEO DÕI BẤT THƯỜNG','alerts']};
+async function farmerDataView(page){
+  const [title,eyebrow,group]=DATA_VIEW_META[page]; setPageMeta(title,eyebrow);
+  const farm=encodeURIComponent(state.farmId);
+  if(page==='sensor'){await farmerSensorView(farm);return;}
+  try{
+    const d=await api(`/api/farm/studio/data-groups?farm_id=${farm}`); const item=(d.items||[]).find(x=>x.data_group===group);
+    const label=item?.label||title, count=item?.row_count??0, latest=item?.newest_at;
+    $('#content').innerHTML=`<section class="data-view-shell"><div class="data-view-head"><div><p class="eyebrow">${esc(eyebrow)}</p><h3>${esc(label)}</h3><p class="muted">Dữ liệu được lấy trực tiếp từ API của vườn đang chọn.</p></div><div class="data-filters"><label>Khu<select id="dataZone"><option value="">Tất cả khu</option></select></label><label>Khoảng thời gian<select id="dataRange"><option>Hôm nay</option><option>Hôm qua</option><option>7 ngày</option></select></label></div></div><div class="data-summary-cards"><article><small>Số bản ghi</small><strong>${Number(count).toLocaleString('vi-VN')}</strong></article><article><small>Bản ghi mới nhất</small><strong>${latest?time(latest):'—'}</strong></article><article><small>Trạng thái</small><strong>${item?.status==='fresh'?'Mới nhất':item?.status==='stale'?'Dữ liệu chậm':'Chưa có dữ liệu'}</strong></article></div><section class="panel data-empty-panel"><div class="empty-icon">i</div><h3>${count?'Bảng chi tiết đang được tải theo phạm vi đã chọn':'Chưa có bản ghi trong khoảng thời gian này'}</h3><p>${count?'Màn hình chỉ hiển thị dữ liệu thuộc đúng vườn và khu đang chọn.':'Không tạo dữ liệu thay thế. Hãy thử đổi khoảng thời gian hoặc kiểm tra kết nối thiết bị.'}</p><button class="primary" id="askDataAi">Hỏi AI về ${esc(title.toLowerCase())}</button><p class="caption">Nếu API nghiệp vụ chưa cung cấp danh sách chi tiết cho nhóm này, đây là backend gap; frontend không giả lập kết quả.</p></section></section>`;
+    $('#askDataAi').addEventListener('click',()=>{state.chatMessages.push({role:'user',text:`Cho tôi dữ liệu ${title.toLowerCase()} của vườn đang chọn`});renderPage('chat');});
+  }catch(err){showError(err);}
+}
+async function farmerSensorView(farm){
+  const [grid,series]=await Promise.all([api(`/api/farm/studio/grid?farm_id=${farm}&minutes=1440&limit=200`),api(`/api/farm/studio/series?farm_id=${farm}&metric=temperature&hours=24&bucket_seconds=600`)]);
+  const rows=grid.items||[]; const cards=[['Nhiệt độ','temperature','°C',1],['Độ ẩm đất','soil_moisture','%',1],['Độ ẩm không khí','air_humidity','%',1],['EC','ec','mS/cm',2],['pH','ph','',2],['Lưu lượng','flow_rate','L/phút',1]];
+  $('#content').innerHTML=`<section class="data-view-shell"><div class="data-view-head"><div><p class="eyebrow">CẢM BIẾN THEO THỜI GIAN</p><h3>Số đo cảm biến</h3><p class="muted">Giá trị mới nhất và lịch sử đo thật của vườn đang chọn.</p></div><div class="data-filters"><label>Khu<select id="sensorZone"><option value="">Tất cả khu</option></select></label><label>Khoảng<select id="sensorRange"><option value="24">24 giờ</option><option value="6">6 giờ</option><option value="1">1 giờ</option><option value="72">3 ngày</option></select></label></div></div><div class="sensor-dashboard-cards">${cards.map(([label,key,unit,d])=>{const v=latestValue(rows,key);return `<article class="sensor-metric-card"><small>${label}</small><strong>${num(v,d)} ${unit}</strong><span>${v==null?'Chưa có dữ liệu':'Cập nhật '+time(rows.find(x=>x[key]!=null)?.observed_at)}</span></article>`}).join('')}</div><section class="panel"><div class="panel-head"><div><h3>Biểu đồ nhiệt độ</h3><p class="muted">Chọn chỉ số để xem đường đo theo thời gian; không nội suy điểm chưa có.</p></div><select id="sensorMetric"><option value="temperature">Nhiệt độ</option><option value="soil_moisture">Độ ẩm đất</option><option value="air_humidity">Độ ẩm không khí</option><option value="ec">EC</option><option value="ph">pH</option><option value="flow_rate">Lưu lượng</option></select></div><canvas id="sensorChart" class="trend-chart" width="1100" height="320"></canvas></section><section class="panel"><div class="panel-head"><div><h3>Dữ liệu gần đây</h3><p class="muted">Tối đa 20 dòng hiển thị trong bảng.</p></div><span class="badge info">${rows.length} mẫu</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Thời gian</th><th>Khu</th><th>Nhiệt độ</th><th>Ẩm đất</th><th>Ẩm KK</th><th>EC</th><th>pH</th><th>Lưu lượng</th><th>Chất lượng</th></tr></thead><tbody>${farmerRowsHtml(rows.slice(0,20))||'<tr><td colspan="9">Chưa có dữ liệu</td></tr>'}</tbody></table></div></section></section>`;
+  drawFarmerSeries(series.items||[],'temperature'); $('#sensorMetric').addEventListener('change',async e=>{const hours=$('#sensorRange').value;const d=await api(`/api/farm/studio/series?farm_id=${farm}&metric=${e.target.value}&hours=${hours}&bucket_seconds=600`);drawFarmerSeries(d.items||[],e.target.value);});
 }
 
 async function farmerOverview() {

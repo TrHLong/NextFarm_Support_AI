@@ -1,0 +1,80 @@
+{
+  "contract": "problem_b_v12",
+  "updated_at": "2026-09-28T04:42:05.585108+00:00",
+  "automatic": true,
+  "required_acquisition_hours": 72,
+  "status": "COLLECTING_72H",
+  "devices": {
+    "cabinet_lan": {
+      "contract": "problem_b_v12",
+      "required_hours": 72,
+      "eligible_sensor_rows": 177,
+      "eligible_status_rows": 344,
+      "elapsed_received_hours": 79.9908653075,
+      "eligible": false,
+      "reasons": [
+        "sensor: chỉ 158/432 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "status: chỉ 324/864 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "Dữ liệu cuối đã trễ hơn 30 phút"
+      ],
+      "first_received": "2026-09-24T19:20:48.398468+00:00",
+      "last_received": "2026-09-28T03:20:15.513575+00:00",
+      "window_start": "2026-09-25T03:20:15.513575+00:00",
+      "window_end": "2026-09-28T03:20:15.513575+00:00",
+      "sensor_coverage": 0.365741,
+      "sensor_expected_bins": 432,
+      "status_coverage": 0.375,
+      "status_expected_bins": 864
+    },
+    "cabinet_long": {
+      "contract": "problem_b_v12",
+      "required_hours": 72,
+      "eligible_sensor_rows": 177,
+      "eligible_status_rows": 344,
+      "elapsed_received_hours": 79.99086430361112,
+      "eligible": false,
+      "reasons": [
+        "sensor: chỉ 157/432 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "status: chỉ 324/864 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "Dữ liệu cuối đã trễ hơn 30 phút"
+      ],
+      "first_received": "2026-09-24T19:20:48.415053+00:00",
+      "last_received": "2026-09-28T03:20:15.526546+00:00",
+      "window_start": "2026-09-25T03:20:15.526546+00:00",
+      "window_end": "2026-09-28T03:20:15.526546+00:00",
+      "sensor_coverage": 0.363426,
+      "sensor_expected_bins": 432,
+      "status_coverage": 0.375,
+      "status_expected_bins": 864
+    },
+    "cabinet_minh": {
+      "contract": "problem_b_v12",
+      "required_hours": 72,
+      "eligible_sensor_rows": 177,
+      "eligible_status_rows": 345,
+      "elapsed_received_hours": 79.99086319472222,
+      "eligible": false,
+      "reasons": [
+        "sensor: chỉ 158/432 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "status: chỉ 325/864 khoảng có dữ liệu; yêu cầu phủ ít nhất 90% trước xử lý ML",
+        "Dữ liệu cuối đã trễ hơn 30 phút"
+      ],
+      "first_received": "2026-09-24T19:20:48.431673+00:00",
+      "last_received": "2026-09-28T03:20:15.539174+00:00",
+      "window_start": "2026-09-25T03:20:15.539174+00:00",
+      "window_end": "2026-09-28T03:20:15.539174+00:00",
+      "sensor_coverage": 0.365741,
+      "sensor_expected_bins": 432,
+      "status_coverage": 0.376157,
+      "status_expected_bins": 864
+    }
+  },
+  "training_from_chat": false,
+  "backfill_counted": false,
+  "last_snapshot": null,
+  "last_export_at": null,
+  "reasons": [
+    "Chưa tủ nào đạt đủ 72 giờ thu nhận và độ phủ; chưa xuất bộ CSV để train. Snapshot cũ chỉ là lịch sử kiểm thử."
+  ],
+  "source": "MQTT live simulator; not NextFarm field data"
+}

@@ -1,0 +1,155 @@
+{
+  "model": "nutrient_recommendation",
+  "objective": "Phân loại hành động châm dinh dưỡng mô phỏng thành REDUCE / KEEP / INCREASE dựa trên EC, pH và điều kiện cảm biến.",
+  "algorithm_rationale": "Random Forest và Extra Trees phù hợp cho luật dinh dưỡng phi tuyến, tương tác EC-pH và không yêu cầu chuẩn hóa. Logistic Regression được giữ làm baseline tuyến tính. Model cuối được chọn bằng Macro-F1 trên Validation để tránh Accuracy cao giả tạo khi lớp KEEP chiếm đa số. Đây là nhãn policy mô phỏng, không phải khuyến cáo nông học ngoài thực địa.",
+  "task": "classification",
+  "target": "target_nutrient_action",
+  "features": [
+    "ec",
+    "ph",
+    "soil_moisture",
+    "temperature",
+    "air_humidity",
+    "flow_rate",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "selected_algorithm": "RandomForestClassifier",
+  "candidate_validation": [
+    {
+      "candidate": "RandomForestClassifier",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      }
+    },
+    {
+      "candidate": "ExtraTreesClassifier",
+      "validation_metrics": {
+        "accuracy": 0.9831735118509137,
+        "precision_macro": 0.9535508803615724,
+        "recall_macro": 0.9842019265202353,
+        "f1_macro": 0.9684152216852041
+      }
+    }
+  ],
+  "test_metrics": {
+    "accuracy": 0.9435396308360477,
+    "precision_macro": 0.9603016005180868,
+    "recall_macro": 0.7395956838631998,
+    "f1_macro": 0.770935766684559
+  },
+  "classification_report": {
+    "REDUCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 611.0
+    },
+    "KEEP": {
+      "precision": 0.9142381348875936,
+      "recall": 0.9990900818926297,
+      "f1-score": 0.9547826086956521,
+      "support": 1099.0
+    },
+    "INCREASE": {
+      "precision": 0.9666666666666667,
+      "recall": 0.2196969696969697,
+      "f1-score": 0.35802469135802467,
+      "support": 132.0
+    },
+    "accuracy": 0.9435396308360477,
+    "macro avg": {
+      "precision": 0.9603016005180868,
+      "recall": 0.7395956838631998,
+      "f1-score": 0.770935766684559,
+      "support": 1842.0
+    },
+    "weighted avg": {
+      "precision": 0.9464428394361919,
+      "recall": 0.9435396308360477,
+      "f1-score": 0.9270170174895663,
+      "support": 1842.0
+    }
+  },
+  "class_distribution": {
+    "0": 611,
+    "1": 1099,
+    "2": 132
+  },
+  "rows": {
+    "train": 25677,
+    "validation": 5527,
+    "test": 1842
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/nutrient_recommendation.joblib",
+  "sha256": "54592da8764c9337a43203d0ac2a264cd162c5bab8a269146b7c15e67a32bcc3",
+  "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/nutrient_recommendation_test_predictions.csv",
+  "charts": {
+    "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/nutrient_recommendation_confusion.png",
+    "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/nutrient_recommendation_feature_importance.png"
+  },
+  "feature_importance": [
+    {
+      "feature": "ec",
+      "importance": 0.45721826477732186
+    },
+    {
+      "feature": "ph",
+      "importance": 0.4441696434693949
+    },
+    {
+      "feature": "soil_moisture",
+      "importance": 0.04775341076314121
+    },
+    {
+      "feature": "hour_sin",
+      "importance": 0.01671173436676958
+    },
+    {
+      "feature": "temperature",
+      "importance": 0.01500615536914391
+    },
+    {
+      "feature": "hour_cos",
+      "importance": 0.00945571329111608
+    },
+    {
+      "feature": "air_humidity",
+      "importance": 0.008373468606504335
+    },
+    {
+      "feature": "flow_rate",
+      "importance": 0.0008174057767936666
+    }
+  ]
+}

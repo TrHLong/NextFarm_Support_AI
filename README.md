@@ -1,66 +1,160 @@
-# NextFarm — Bài toán B / dữ liệu thiết bị
+# NextFarm AI Support v10.4
 
-> **Bản GitHub gọn:** đọc [GITHUB-PACKAGE.md](GITHUB-PACKAGE.md) để biết dữ liệu/model được giữ, phần raw lưu riêng và lệnh tái train trên máy clone. Báo cáo gốc giữ nguyên; gói này không phải backup toàn bộ 7 GB.
+Nền tảng hỗ trợ nông nghiệp NextFarm kết hợp dữ liệu IoT, truy vấn theo quyền, tri thức nông học, chatbot có kiểm soát bằng chứng và pipeline AI mô phỏng.
 
-Bản cập nhật 14/09/2026 tập trung chat dữ liệu của tủ được cấp quyền. Chat hiện dùng định tuyến quy tắc, API và mẫu có bằng chứng; không gọi ChatGPT/OpenAI/Gemini. Kỹ thuật viên chỉ duyệt tri thức và xem dữ liệu theo quyền; luồng ticket đã ngừng sử dụng.
+## Trạng thái phiên bản
 
-## Báo cáo hiện hành
+- Phiên bản đóng gói: `10.4`
+- Nguồn nâng cấp: `NextFarm-AI-Support-v10.1`
+- Phạm vi AI v10.4: `SYNTHETIC_SIMULATION_ONLY`
+- Chế độ mặc định: tư vấn và đọc dữ liệu; không tự động điều khiển thiết bị
+- `DEVICE_AUTO_TRAIN=false` là mặc định để tránh huấn luyện ngoài ý muốn trong runtime
 
-Đọc **[báo cáo nông dân V13 và đầy đủ 130 câu trả lời](docs/farmer-v13/BAO-CAO-NONG-DAN-V13.html)** hoặc [PDF 8 trang](docs/farmer-v13/BAO-CAO-NONG-DAN-V13.pdf). Có bảng nguồn dữ liệu, cải tiến huấn luyện, dung sai đề xuất, so sánh baseline, 25 đáp án đối chiếu và các bước tự kiểm tra. Báo cáo trước ngày 13/09 lưu tại [retraining-20260913](docs/retraining-20260913/BAO-CAO-TRAIN-LAI.html), không thay thế kết quả V13.
+Các kết quả mô phỏng và model artifact trong repository dùng cho đồ án, benchmark và shadow test. Chúng không thay thế nghiệm thu trên dữ liệu vận hành thực tế.
 
-- 243/243 kiểm thử code qua, gồm 130 câu mẫu định tuyến/công cụ và 25 đối chiếu số liệu; có 14 cảnh báo hiệu năng DataFrame. Bộ câu dùng để phát triển, không chứng minh hiểu mọi câu hỏi hay độ chính xác thực địa.
-- Mã V13 có `chat_contract=farmer_v13` trong health; cần build lại container. Lần kiểm tra 14/09 Docker Engine chưa kết nối được, chưa xác minh web sau build.
-- Đã train lại 4 dự báo từ CSV lịch sử bằng cách học mức thay đổi. Tỷ lệ trong dung sai đề xuất trên mọi mẫu có nhãn: 95,59%; tính cả từ chối vì thiếu đầu vào. Tập kiểm tra mô phỏng đã dùng ở lần trước; chưa phải test mù mới. Nhiệt độ và pH chưa thắng baseline MAE trên cùng dòng hợp lệ. Xem `model-artifacts/farmer-v13/latest_report.json`.
-- Sáu model sự cố được đối chiếu lại ngưỡng balanced accuracy/F1 macro/recall ≥80% từ benchmark mô phỏng 42 ngày đã train ngày 13/09; 6/6 qua trên bộ đó. Không gọi là kết quả từ CSV 3 khách hoặc kết quả fit mới của lượt V13.
-- Chưa có kết quả train/test từ bộ CSV vận hành đủ hợp đồng 72 giờ mới. 0 model được nghiệm thu để phát hành dự báo. Kết quả lịch sử không thay cho điều kiện thu 72 giờ.
-- Các chỉ số 10/10 trong `docs/device-v11` và `model-artifacts/device-v11` là thí nghiệm lịch sử, không dùng để nghiệm thu bản này.
-- 32 năng lực là truy vấn/kiểm tra, không phải 32 model ML. AVAILABLE chỉ nói nhóm dữ liệu khả dụng.
+## Tính năng chính
 
-## Khởi chạy
+- Web UI cho nông dân và kỹ thuật viên
+- Chat dữ liệu thiết bị theo quyền truy cập
+- Realtime Data Studio cho cảm biến, thiết bị và lịch tưới
+- Knowledge Studio cho nguồn tri thức, bản nháp và citation
+- AI Encyclopedia cho crop mapping và trạng thái capability
+- Telemetry ingestion qua MQTT
+- PostgreSQL với schema và dữ liệu demo
+- Truth Guard kiểm tra độ tin cậy câu trả lời
+- Crop router và LLM gateway deterministic
+- Năm pipeline AI mô phỏng:
+  - dự báo độ ẩm đất
+  - khuyến nghị dinh dưỡng
+  - phát hiện bất thường
+  - lập lịch tưới
+  - predictive maintenance
 
-Mở Docker Desktop, chờ Engine running, rồi chạy trong CMD tại thư mục dự án:
+## Kiến trúc thư mục
 
-```cmd
+| Thư mục | Nội dung |
+| --- | --- |
+| `apps/` | Các giao diện web |
+| `services/` | Các microservice FastAPI |
+| `infra/` | PostgreSQL, MQTT và Nginx |
+| `data/` | Dữ liệu mô phỏng và dữ liệu demo |
+| `model-artifacts/` | Kết quả training và inference mô phỏng |
+| `nextfarm_device/` | Logic runtime, kiểm tra dữ liệu và training |
+| `scripts/` | Script thiết lập, khởi chạy và kiểm thử |
+| `tests_device/` | Bộ kiểm thử hợp đồng và acceptance |
+| `docs/` | Báo cáo, hướng dẫn và evidence |
+
+## Yêu cầu
+
+- Windows 10/11
+- Docker Desktop đang chạy và Docker Engine ở trạng thái running
+- Docker Compose v2+
+- Ít nhất 8 GB RAM trống cho toàn bộ stack
+- Python 3 nếu muốn chạy các kiểm thử hoặc pipeline offline ngoài container
+
+## Khởi động
+
+Mở Command Prompt hoặc PowerShell:
+
+```powershell
+cd /d "D:\2026-2027\THUCTAP\NextFarm_Support_AI"
 scripts\start_v11.cmd
+```
+
+`start_v10.cmd` là alias tương thích và chuyển tiếp sang `start_v11.cmd`.
+
+Nếu chỉ muốn tạo cấu hình local trước:
+
+```powershell
+scripts\setup_v10_env.cmd
+```
+
+File `.env` chứa secret local và không được commit. Repository đã cung cấp `.env.example` để tham khảo.
+
+## Các địa chỉ sau khi chạy
+
+| Thành phần | URL |
+| --- | --- |
+| Web chính / Chat AI | http://127.0.0.1:18080 |
+| Data Studio | http://127.0.0.1:18081 |
+| Knowledge Studio | http://127.0.0.1:18082 |
+| AI Encyclopedia | http://127.0.0.1:18084 |
+| Identity API | http://127.0.0.1:18100 |
+| Farm Data API | http://127.0.0.1:18300 |
+| Chatbot API | http://127.0.0.1:18000 |
+
+Kiểm tra container:
+
+```powershell
 docker compose ps
+docker compose logs --tail 200
 ```
 
-Tên script giữ để tương thích; `start_v10.cmd` chuyển tiếp vào script này. Script kiểm tra Engine, build, nhập tài liệu công ty dạng draft rồi chạy kiểm thử. Web chính http://127.0.0.1:18080; dữ liệu 18081; Knowledge 18082; model 18084. `/api/farm/health` phải có `chat_contract=farmer_v13` mới xác nhận mã chat V13.
+## Tài khoản demo
 
-## Dữ liệu và huấn luyện tự động
+Tên người dùng demo được seed trong database:
 
-`nextfarm_device/collection_worker.py` chạy trong ML service. Cứ 5 phút kiểm tra hợp đồng thu dữ liệu mới. Mỗi tủ phải đủ ít nhất 72 giờ theo thời gian server nhận, độ phủ sensor và status ít nhất 90%, điểm cuối còn mới. Backfill hoặc lịch sử chưa có nhãn `problem_b_v12` không được tính. Thu mô phỏng theo thời gian thật vẫn là dữ liệu mô phỏng.
+- Farmer: `nongdan.long`, `nongdan.lan`, `nongdan.minh`
+- Technician: `kythuat.01`
 
-Khi đủ điều kiện, worker xuất CSV tối đa mỗi 24 giờ vào `model-artifacts/data/problem-b-runtime/capture-.../`. Làm sạch cố định, tạo đặc trưng quá khứ, chia theo thời gian và giữ riêng khách test; fit các phép biến đổi trên train rồi mới fit model. Thiếu nhãn/lớp/sự cố hoặc chưa đủ mẫu thì BLOCKED.
+Mật khẩu được sinh trong `.env` local. Không đưa mật khẩu lên GitHub hoặc chia sẻ trong issue/log.
 
-| Nơi xem | Nội dung |
-| --- | --- |
-| `model-artifacts/problem-b/collection_state.json` | Số giờ, độ phủ từng tủ, lý do chờ/chặn, snapshot gần nhất; chỉ xuất hiện khi worker chạy |
-| `model-artifacts/data/problem-b-runtime/capture-.../manifest.json` | Danh sách CSV, customer_id/device_id, số dòng, SHA256, nguồn và cửa sổ thu |
-| Cùng snapshot: `cleaning_report.json`, `raw/`, `cleaned/` | Dòng trước/sau xử lý và nguyên nhân loại/giữ trống |
-| `model-artifacts/problem-b/runs/capture-.../training_report.html` | Bảng kết quả train đọc trực tiếp; file chỉ có khi chạy thật với snapshot đủ điều kiện |
-| Cùng run: `*_report.json`, `*_test_predictions.csv`, `*_failure_cases.csv`, `features_and_splits.csv`, `training_code/` | Kết quả từng model, đối chiếu từng dự đoán, lỗi, cách chia và mã nguồn tái lập |
-| `docs/problem-b/unit-tests.xml`, `verification.json` | Kết quả kiểm thử phần mềm, tách khỏi kết quả model vận hành |
+## Smoke test thủ công
 
-Ba ngày là điều kiện khởi đầu, chưa đủ bảo đảm model tốt trên mọi khách/mùa hoặc dự báo được sự cố đột ngột. Bản này tự động xuất ứng viên thí nghiệm và báo lý do chưa đạt; chưa có phát hành dự báo đã được nghiệm thu thực địa. Chưa triển khai tích hợp Zalo OA thật hoặc load test 500 khách.
+1. Đăng nhập bằng tài khoản farmer.
+2. Hỏi độ ẩm đất hiện tại của một khu vực.
+3. Hỏi số lần tưới trong ngày.
+4. Hỏi thiết bị nào đang offline.
+5. Hỏi capability AI nào đang `READY`, `EXPERIMENTAL` hoặc `BLOCKED`.
+6. Hỏi kiến thức về pH hoặc cây trồng để kiểm tra citation.
+7. Thử yêu cầu mở van; runtime read-only phải từ chối.
+8. Hỏi một số liệu không tồn tại; hệ thống phải báo thiếu dữ liệu thay vì đoán.
 
-## Lần train trên dữ liệu đã có ngày 13/09
+## Kiểm thử tự động
 
-| Nơi xem | Nội dung |
-| --- | --- |
-| `model-artifacts/historical-customer/latest_report.json` | Trỏ tới run hoàn chỉnh từ ba khách: 4 forecast đã fit, 6 classifier chưa có nhãn sự cố độc lập trong nguồn này |
-| `model-artifacts/data/historical-customer/` | CSV sạch theo khách, nguồn/hash, thống kê làm sạch, lưới thời gian có chỗ trống, features và split |
-| `model-artifacts/benchmark-retrain/latest_report.json` | Trỏ tới run 10 model từ benchmark mô phỏng có nhãn; toàn bộ EXPERIMENTAL |
-| `model-artifacts/data/benchmark-retrain/` | Dữ liệu benchmark đã chuẩn hóa; nguồn gốc vẫn là mô phỏng |
-| `docs/retraining-20260913/storage_compression.json` | Nén 273 CSV: khoảng 5.45 GiB xuống 1.48 GiB trên đĩa; SHA-256 giữ nguyên |
+Khi Docker Engine đã hoạt động:
 
-Tái lập trong Python đã cài `services/ai-analytics-service/requirements.txt`, từ gốc dự án:
-
-```cmd
-python -m nextfarm_device.historical_training --project .
-python -m nextfarm_device.benchmark_training --project . --source model-artifacts/data/device-v11-validation-b-20260910
+```powershell
+docker compose ps -a
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\check_v10_unit_tests.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\check_v10_runtime.ps1
+python scripts\check_v10_static.py
 ```
 
-Mỗi lệnh tạo run mới và lưu mã nguồn cùng kết quả, không sửa registry đang phục vụ. Đây là tái lập thí nghiệm từ CSV có sẵn; pipeline thu vận hành vẫn do worker thực hiện tự động. Nén NTFS giữ nguyên dung lượng logic hiển thị ở mục Size; dung lượng thực giảm ở mục Size on disk.
+Kiểm tra offline:
 
-Dữ liệu của mỗi khách được lưu riêng để truy vết; huấn luyện bộ model dùng chung theo bài toán, không nhân 10 model cho mỗi người dùng. Mã khách/tủ không đi vào đặc trưng.
+```powershell
+python -m pytest tests_device -q
+```
+
+## Dừng hệ thống
+
+Giữ lại volume database:
+
+```powershell
+docker compose down
+```
+
+Chỉ dùng lệnh sau khi chủ động muốn xóa dữ liệu database demo:
+
+```powershell
+docker compose down -v
+```
+
+## Giới hạn an toàn
+
+- Dữ liệu v10.4 là dữ liệu mô phỏng, không phải telemetry production.
+- Model chưa được xem là nghiệm thu production chỉ vì benchmark mô phỏng đạt.
+- Chưa bật tích hợp Zalo OA thật.
+- Không commit `.env`, API key, token, password hoặc dữ liệu vận hành riêng tư.
+
+## Tài liệu
+
+- [Hướng dẫn test v10](HUONG-DAN-TEST-V10.md)
+- [Release notes v10.4](RELEASE-NOTES-V10.4.md)
+- [Báo cáo training và mô phỏng](docs/)
+- [Manifest đóng gói](PACKAGING_MANIFEST.md)
+
+## License
+
+Chưa khai báo license công khai. Vui lòng bổ sung license trước khi phát hành package cho bên thứ ba.

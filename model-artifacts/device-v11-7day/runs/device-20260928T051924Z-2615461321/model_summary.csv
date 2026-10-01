@@ -1,0 +1,11 @@
+name,title,status,algorithm,macro_metric_name,macro_metric,baseline_gain,train_rows,validation_rows,test_rows
+moisture_forecast,Độ ẩm đất sau 30 phút,READY,extra_trees,mae,0.19048527120881645,0.5245299023750185,5483,1134,403
+temperature_forecast,Nhiệt độ sau 30 phút,READY,extra_trees,mae,0.13217565249332788,0.4272997254252693,5483,1134,403
+ec_forecast,EC sau 30 phút,READY,extra_trees,mae,0.008703504553483345,0.3323393796864449,5324,1098,389
+ph_forecast,pH sau 30 phút,READY,extra_trees,mae,0.007255908682828584,0.28038445746550744,5483,1134,403
+flow_fault_forecast,Sự cố mất lưu lượng trong 60 phút,BLOCKED,,,,,5756,1172,426
+leak_forecast,Rò rỉ trong 60 phút,BLOCKED,,,,,5745,1170,424
+irrigation_failure_forecast,Ca tưới gián đoạn trong 60 phút,BLOCKED,,,,,5775,1172,430
+sensor_fault_forecast,Sự cố cảm biến trong 60 phút,BLOCKED,,,,,5752,1190,430
+power_loss_forecast,Nguy cơ mất nguồn trong 60 phút,BLOCKED,,,,,5927,1208,439
+mqtt_loss_forecast,Nguy cơ gián đoạn MQTT trong 60 phút,BLOCKED,,,,,5927,1208,439

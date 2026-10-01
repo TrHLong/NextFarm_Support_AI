@@ -1,0 +1,14 @@
+services:
+  ai-model-serving:
+    build:
+      context: .
+      dockerfile: services/ai-model-serving-service/Dockerfile
+    environment:
+      NEXTFARM_AI_MODE: shadow
+      NEXTFARM_MODEL_DIR: /app/models
+      NEXTFARM_INFERENCE_LOG_DIR: /app/logs
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs/ai-inference:/app/logs
+    restart: unless-stopped

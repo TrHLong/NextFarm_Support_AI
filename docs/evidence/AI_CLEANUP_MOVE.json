@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-09-27T18:34:56.878400+00:00",
+  "project_root": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1",
+  "archive_root": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928",
+  "applied": true,
+  "entries": [
+    {
+      "path": "model-artifacts/data/benchmark-retrain",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\benchmark-retrain",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\benchmark-retrain",
+      "bytes": 154249323,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/device-v11",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\device-v11",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\device-v11",
+      "bytes": 38284024,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/device-v11-corrected-20260910",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\device-v11-corrected-20260910",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\device-v11-corrected-20260910",
+      "bytes": 38300986,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/device-v11-validation-b-20260910",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\device-v11-validation-b-20260910",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\device-v11-validation-b-20260910",
+      "bytes": 38252730,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/historical-customer",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\historical-customer",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\historical-customer",
+      "bytes": 12164978,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/shared",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\shared",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\shared",
+      "bytes": 6880929,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/data/device-runtime",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\data\\device-runtime",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\data\\device-runtime",
+      "bytes": 12533324,
+      "action": "MOVE"
+    },
+    {
+      "path": "model-artifacts/shared_models_report.json",
+      "source": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\shared_models_report.json",
+      "destination": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1_ARCHIVE_20260928\\model-artifacts\\shared_models_report.json",
+      "bytes": 131471,
+      "action": "MOVE"
+    }
+  ],
+  "bytes_moved": 300797765,
+  "runtime_policy": {
+    "auto_training": false,
+    "farmer_ml_predictions": false,
+    "kept": [
+      "canonical query data",
+      "operational data",
+      "deterministic query/rule code",
+      "model training source and evaluation scripts"
+    ]
+  }
+}

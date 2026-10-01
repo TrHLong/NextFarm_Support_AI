@@ -1,0 +1,973 @@
+{
+  "version": "10.4-simulation",
+  "run_id": "sim30-v104-20260928T075629Z",
+  "created_at": "2026-09-28T07:56:45.207703+00:00",
+  "scope": "SYNTHETIC_SIMULATION_ONLY",
+  "production_ready": false,
+  "environment": {
+    "python": "3.13.5",
+    "sklearn": "1.8.0",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "dataset_audit": {
+    "rows_raw": 48926,
+    "rows_featured": 48926,
+    "customers": 12,
+    "devices": 12,
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "duration_days": 29.993055555555557,
+    "duplicate_key_rows": 0,
+    "missing_fraction": {
+      "soil_moisture": 0.0,
+      "temperature": 0.0,
+      "air_humidity": 0.0,
+      "ec": 0.011854637615991497,
+      "ph": 0.0,
+      "flow_rate": 0.0
+    },
+    "incident_positive_rows": {
+      "no_flow": 1411,
+      "leak": 1372,
+      "sensor_fault": 1442,
+      "power_loss": 0,
+      "mqtt_loss": 0
+    },
+    "origins": {
+      "SYNTHETIC_SIMULATION_ONLY": 48926
+    }
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "models": [
+    {
+      "model": "soil_moisture_forecast",
+      "objective": "Dự báo độ ẩm đất sau 6 giờ từ chuỗi cảm biến và trạng thái môi trường gần nhất.",
+      "algorithm_rationale": "Extra Trees và Random Forest được benchmark vì bài toán là hồi quy phi tuyến trên dữ liệu cảm biến dạng bảng với nhiều tương tác và lag. Extra Trees đặc biệt phù hợp giai đoạn mô phỏng vì không cần scaling, chịu được quan hệ phi tuyến và cho phép giải thích feature importance. Thuật toán cuối cùng chỉ được chọn theo MAE Validation, Test không dùng để chọn model.",
+      "task": "regression",
+      "target": "target_moisture_6h",
+      "features": [
+        "soil_moisture",
+        "temperature",
+        "air_humidity",
+        "ec",
+        "ph",
+        "flow_rate",
+        "moisture_lag_10m",
+        "moisture_lag_30m",
+        "moisture_lag_60m",
+        "moisture_lag_180m",
+        "moisture_mean_1h",
+        "moisture_std_1h",
+        "moisture_slope_1h",
+        "hour_sin",
+        "hour_cos"
+      ],
+      "selected_algorithm": "ExtraTreesRegressor",
+      "candidate_validation": [
+        {
+          "candidate": "ExtraTreesRegressor",
+          "validation_metrics": {
+            "mae": 0.7785919503942841,
+            "rmse": 1.0176707983994246,
+            "r2": 0.9750790625649375,
+            "median_absolute_error": 0.6111186264292172,
+            "p90_absolute_error": 1.6709162865909735
+          }
+        },
+        {
+          "candidate": "RandomForestRegressor",
+          "validation_metrics": {
+            "mae": 0.815479984515673,
+            "rmse": 1.0708688439537508,
+            "r2": 0.9724055135580552,
+            "median_absolute_error": 0.6447090563286153,
+            "p90_absolute_error": 1.7318152340520643
+          }
+        }
+      ],
+      "test_metrics": {
+        "mae": 1.996922305230603,
+        "rmse": 2.5399476061727357,
+        "r2": 0.8220089250042595,
+        "median_absolute_error": 1.616517154163919,
+        "p90_absolute_error": 4.13684180118389
+      },
+      "rows": {
+        "train": 25677,
+        "validation": 5527,
+        "test": 1734
+      },
+      "split": {
+        "start": "2026-08-10 00:10:00+00:00",
+        "end": "2026-09-09 00:00:00+00:00",
+        "train_end": "2026-08-31 00:03:00+00:00",
+        "validation_end": "2026-09-04 12:01:30+00:00",
+        "heldout_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ],
+        "train_customers": [
+          "synthetic_customer_000",
+          "synthetic_customer_001",
+          "synthetic_customer_002",
+          "synthetic_customer_003",
+          "synthetic_customer_004",
+          "synthetic_customer_005",
+          "synthetic_customer_006",
+          "synthetic_customer_007",
+          "synthetic_customer_008"
+        ],
+        "test_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ]
+      },
+      "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/soil_moisture_forecast.joblib",
+      "sha256": "023783efee7678467feb49ebca62b2e236695e91a4b71ae8c582aea33e73ac3a",
+      "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/soil_moisture_forecast_test_predictions.csv",
+      "charts": {
+        "actual_pred": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_actual_pred.png",
+        "residuals": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_residuals.png",
+        "sequence": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_sequence.png",
+        "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/soil_moisture_forecast_feature_importance.png"
+      },
+      "feature_importance": [
+        {
+          "feature": "moisture_slope_1h",
+          "importance": 0.3744102064889186
+        },
+        {
+          "feature": "moisture_lag_180m",
+          "importance": 0.19106098208540562
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.07717369419243372
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.06137244109889569
+        },
+        {
+          "feature": "moisture_lag_10m",
+          "importance": 0.047514420829887515
+        },
+        {
+          "feature": "moisture_lag_60m",
+          "importance": 0.03973134899389571
+        },
+        {
+          "feature": "moisture_std_1h",
+          "importance": 0.0368253198153974
+        },
+        {
+          "feature": "moisture_mean_1h",
+          "importance": 0.03427571064701789
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.03393221283895924
+        },
+        {
+          "feature": "moisture_lag_30m",
+          "importance": 0.03174927679563008
+        },
+        {
+          "feature": "temperature",
+          "importance": 0.03136483355157913
+        },
+        {
+          "feature": "ph",
+          "importance": 0.015398747580311315
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.012883012157032608
+        },
+        {
+          "feature": "ec",
+          "importance": 0.009228066003376697
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 0.0009913193626336079
+        }
+      ]
+    },
+    {
+      "model": "nutrient_recommendation",
+      "objective": "Phân loại hành động châm dinh dưỡng mô phỏng thành REDUCE / KEEP / INCREASE dựa trên EC, pH và điều kiện cảm biến.",
+      "algorithm_rationale": "Random Forest và Extra Trees được benchmark vì phù hợp cho luật dinh dưỡng phi tuyến, tương tác EC-pH và không yêu cầu chuẩn hóa. Model cuối được chọn bằng Macro-F1 trên Validation để tránh Accuracy cao giả tạo khi lớp KEEP chiếm đa số. Đây là nhãn policy mô phỏng, không phải khuyến cáo nông học ngoài thực địa.",
+      "task": "classification",
+      "target": "target_nutrient_action",
+      "features": [
+        "ec",
+        "ph",
+        "soil_moisture",
+        "temperature",
+        "air_humidity",
+        "flow_rate",
+        "hour_sin",
+        "hour_cos"
+      ],
+      "selected_algorithm": "RandomForestClassifier",
+      "candidate_validation": [
+        {
+          "candidate": "RandomForestClassifier",
+          "validation_metrics": {
+            "accuracy": 1.0,
+            "precision_macro": 1.0,
+            "recall_macro": 1.0,
+            "f1_macro": 1.0
+          }
+        },
+        {
+          "candidate": "ExtraTreesClassifier",
+          "validation_metrics": {
+            "accuracy": 0.9831735118509137,
+            "precision_macro": 0.9535508803615724,
+            "recall_macro": 0.9842019265202353,
+            "f1_macro": 0.9684152216852041
+          }
+        }
+      ],
+      "test_metrics": {
+        "accuracy": 0.9435396308360477,
+        "precision_macro": 0.9603016005180868,
+        "recall_macro": 0.7395956838631998,
+        "f1_macro": 0.770935766684559
+      },
+      "classification_report": {
+        "REDUCE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 611.0
+        },
+        "KEEP": {
+          "precision": 0.9142381348875936,
+          "recall": 0.9990900818926297,
+          "f1-score": 0.9547826086956521,
+          "support": 1099.0
+        },
+        "INCREASE": {
+          "precision": 0.9666666666666667,
+          "recall": 0.2196969696969697,
+          "f1-score": 0.35802469135802467,
+          "support": 132.0
+        },
+        "accuracy": 0.9435396308360477,
+        "macro avg": {
+          "precision": 0.9603016005180868,
+          "recall": 0.7395956838631998,
+          "f1-score": 0.770935766684559,
+          "support": 1842.0
+        },
+        "weighted avg": {
+          "precision": 0.9464428394361919,
+          "recall": 0.9435396308360477,
+          "f1-score": 0.9270170174895663,
+          "support": 1842.0
+        }
+      },
+      "class_distribution": {
+        "0": 611,
+        "1": 1099,
+        "2": 132
+      },
+      "rows": {
+        "train": 25677,
+        "validation": 5527,
+        "test": 1842
+      },
+      "split": {
+        "start": "2026-08-10 00:10:00+00:00",
+        "end": "2026-09-09 00:00:00+00:00",
+        "train_end": "2026-08-31 00:03:00+00:00",
+        "validation_end": "2026-09-04 12:01:30+00:00",
+        "heldout_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ],
+        "train_customers": [
+          "synthetic_customer_000",
+          "synthetic_customer_001",
+          "synthetic_customer_002",
+          "synthetic_customer_003",
+          "synthetic_customer_004",
+          "synthetic_customer_005",
+          "synthetic_customer_006",
+          "synthetic_customer_007",
+          "synthetic_customer_008"
+        ],
+        "test_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ]
+      },
+      "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/nutrient_recommendation.joblib",
+      "sha256": "54592da8764c9337a43203d0ac2a264cd162c5bab8a269146b7c15e67a32bcc3",
+      "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/nutrient_recommendation_test_predictions.csv",
+      "charts": {
+        "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/nutrient_recommendation_confusion.png",
+        "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/nutrient_recommendation_feature_importance.png"
+      },
+      "feature_importance": [
+        {
+          "feature": "ec",
+          "importance": 0.45721826477732186
+        },
+        {
+          "feature": "ph",
+          "importance": 0.4441696434693949
+        },
+        {
+          "feature": "soil_moisture",
+          "importance": 0.04775341076314121
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.01671173436676958
+        },
+        {
+          "feature": "temperature",
+          "importance": 0.01500615536914391
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.00945571329111608
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.008373468606504335
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 0.0008174057767936666
+        }
+      ]
+    },
+    {
+      "model": "anomaly_detection",
+      "objective": "Phát hiện/nghi ngờ sự cố no-flow hoặc leak trong 60 phút tới từ trạng thái van/bơm, lưu lượng và telemetry thiết bị.",
+      "algorithm_rationale": "Extra Trees và Random Forest được benchmark vì anomaly ở đây có ground-truth nhị phân và quan hệ điều kiện kiểu van-bơm-flow rất phi tuyến. Macro-F1 được dùng để chọn model nhằm cân bằng lớp bình thường và lớp sự cố; ROC-AUC chỉ là metric bổ sung.",
+      "task": "classification",
+      "target": "target_anomaly_60m",
+      "features": [
+        "flow_rate",
+        "supply_voltage",
+        "rssi",
+        "pressure",
+        "pump_current",
+        "sensor_bus_errors",
+        "packet_loss_rate",
+        "command_failure_rate",
+        "pump_running",
+        "valve_running",
+        "online"
+      ],
+      "selected_algorithm": "RandomForestClassifier",
+      "candidate_validation": [
+        {
+          "candidate": "ExtraTreesClassifier",
+          "validation_metrics": {
+            "accuracy": 0.9705084132440746,
+            "precision_macro": 0.8947333787750187,
+            "recall_macro": 0.9760413838589101,
+            "f1_macro": 0.9301135488725596,
+            "roc_auc": 0.9962408850203073
+          }
+        },
+        {
+          "candidate": "RandomForestClassifier",
+          "validation_metrics": {
+            "accuracy": 0.9770218925275919,
+            "precision_macro": 0.9336329992024086,
+            "recall_macro": 0.9484095234569323,
+            "f1_macro": 0.9408555495028879,
+            "roc_auc": 0.9956109950170987
+          }
+        }
+      ],
+      "test_metrics": {
+        "accuracy": 0.9761129207383279,
+        "precision_macro": 0.9316934804768869,
+        "recall_macro": 0.9468615138993812,
+        "f1_macro": 0.9391013984858003,
+        "roc_auc": 0.9934945573882805
+      },
+      "classification_report": {
+        "NORMAL": {
+          "precision": 0.9889908256880734,
+          "recall": 0.9841752891052952,
+          "f1-score": 0.9865771812080537,
+          "support": 1643.0
+        },
+        "ANOMALY": {
+          "precision": 0.8743961352657005,
+          "recall": 0.9095477386934674,
+          "f1-score": 0.8916256157635468,
+          "support": 199.0
+        },
+        "accuracy": 0.9761129207383279,
+        "macro avg": {
+          "precision": 0.9316934804768869,
+          "recall": 0.9468615138993812,
+          "f1-score": 0.9391013984858003,
+          "support": 1842.0
+        },
+        "weighted avg": {
+          "precision": 0.9766106175479798,
+          "recall": 0.9761129207383279,
+          "f1-score": 0.9763191130628546,
+          "support": 1842.0
+        }
+      },
+      "class_distribution": {
+        "0": 1643,
+        "1": 199
+      },
+      "rows": {
+        "train": 25677,
+        "validation": 5527,
+        "test": 1842
+      },
+      "split": {
+        "start": "2026-08-10 00:10:00+00:00",
+        "end": "2026-09-09 00:00:00+00:00",
+        "train_end": "2026-08-31 00:03:00+00:00",
+        "validation_end": "2026-09-04 12:01:30+00:00",
+        "heldout_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ],
+        "train_customers": [
+          "synthetic_customer_000",
+          "synthetic_customer_001",
+          "synthetic_customer_002",
+          "synthetic_customer_003",
+          "synthetic_customer_004",
+          "synthetic_customer_005",
+          "synthetic_customer_006",
+          "synthetic_customer_007",
+          "synthetic_customer_008"
+        ],
+        "test_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ]
+      },
+      "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/anomaly_detection.joblib",
+      "sha256": "a42f9805b6d7144327adc55cfb0eb4592d3ae07410bc867b8697086f2f72f6e1",
+      "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/anomaly_detection_test_predictions.csv",
+      "charts": {
+        "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_confusion.png",
+        "roc": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_roc.png",
+        "pr": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_pr.png",
+        "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_feature_importance.png"
+      },
+      "feature_importance": [
+        {
+          "feature": "pressure",
+          "importance": 0.8398714949793499
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 0.07099759165488705
+        },
+        {
+          "feature": "supply_voltage",
+          "importance": 0.016446232332766084
+        },
+        {
+          "feature": "rssi",
+          "importance": 0.014741078709094713
+        },
+        {
+          "feature": "pump_running",
+          "importance": 0.01305293946618585
+        },
+        {
+          "feature": "pump_current",
+          "importance": 0.012668146007751449
+        },
+        {
+          "feature": "packet_loss_rate",
+          "importance": 0.010227002381436479
+        },
+        {
+          "feature": "sensor_bus_errors",
+          "importance": 0.009343745450392248
+        },
+        {
+          "feature": "command_failure_rate",
+          "importance": 0.007836141341927647
+        },
+        {
+          "feature": "valve_running",
+          "importance": 0.004815627676208665
+        },
+        {
+          "feature": "online",
+          "importance": 0.0
+        }
+      ]
+    },
+    {
+      "model": "smart_irrigation_scheduler",
+      "objective": "Ước lượng số phút tưới đề xuất theo policy mô phỏng từ thiếu hụt độ ẩm, nhiệt độ, độ ẩm không khí và lịch sử cảm biến.",
+      "algorithm_rationale": "Bài toán là hồi quy phi tuyến dạng bảng; Extra Trees và Random Forest được benchmark vì học tốt ngưỡng và tương tác mà không cần scaling, MAE Validation là tiêu chí chọn vì đơn vị phút dễ diễn giải trực tiếp. Kết quả cực cao phải được hiểu là khả năng học policy simulator, không phải chứng minh tối ưu tưới ngoài thực địa.",
+      "task": "regression",
+      "target": "target_irrigation_minutes",
+      "features": [
+        "soil_moisture",
+        "temperature",
+        "air_humidity",
+        "ec",
+        "ph",
+        "flow_rate",
+        "moisture_lag_10m",
+        "moisture_lag_30m",
+        "moisture_lag_60m",
+        "moisture_lag_180m",
+        "moisture_mean_1h",
+        "moisture_std_1h",
+        "moisture_slope_1h",
+        "hour_sin",
+        "hour_cos"
+      ],
+      "selected_algorithm": "RandomForestRegressor",
+      "candidate_validation": [
+        {
+          "candidate": "ExtraTreesRegressor",
+          "validation_metrics": {
+            "mae": 0.02947686770779783,
+            "rmse": 0.07709849782313719,
+            "r2": 0.9993194418020912,
+            "median_absolute_error": 0.005102566695045496,
+            "p90_absolute_error": 0.07900184973573453
+          }
+        },
+        {
+          "candidate": "RandomForestRegressor",
+          "validation_metrics": {
+            "mae": 0.015351940107299842,
+            "rmse": 0.04658380972149146,
+            "r2": 0.9997515474586749,
+            "median_absolute_error": 0.001323330535024425,
+            "p90_absolute_error": 0.03855138042943411
+          }
+        }
+      ],
+      "test_metrics": {
+        "mae": 0.09989067063284021,
+        "rmse": 0.257408876753231,
+        "r2": 0.993834968898087,
+        "median_absolute_error": 0.0025151627848329916,
+        "p90_absolute_error": 0.44153708812350984
+      },
+      "rows": {
+        "train": 25677,
+        "validation": 5527,
+        "test": 1842
+      },
+      "split": {
+        "start": "2026-08-10 00:10:00+00:00",
+        "end": "2026-09-09 00:00:00+00:00",
+        "train_end": "2026-08-31 00:03:00+00:00",
+        "validation_end": "2026-09-04 12:01:30+00:00",
+        "heldout_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ],
+        "train_customers": [
+          "synthetic_customer_000",
+          "synthetic_customer_001",
+          "synthetic_customer_002",
+          "synthetic_customer_003",
+          "synthetic_customer_004",
+          "synthetic_customer_005",
+          "synthetic_customer_006",
+          "synthetic_customer_007",
+          "synthetic_customer_008"
+        ],
+        "test_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ]
+      },
+      "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/smart_irrigation_scheduler.joblib",
+      "sha256": "327e0f754648f73663d4eb3e887db85993c478e3263ed69486dc2300333c824b",
+      "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/smart_irrigation_scheduler_test_predictions.csv",
+      "charts": {
+        "actual_pred": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_actual_pred.png",
+        "residuals": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_residuals.png",
+        "sequence": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_sequence.png",
+        "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/smart_irrigation_scheduler_feature_importance.png"
+      },
+      "feature_importance": [
+        {
+          "feature": "soil_moisture",
+          "importance": 0.7344737684010351
+        },
+        {
+          "feature": "moisture_lag_10m",
+          "importance": 0.15690490546339134
+        },
+        {
+          "feature": "temperature",
+          "importance": 0.07284979550719728
+        },
+        {
+          "feature": "moisture_mean_1h",
+          "importance": 0.028714847122011573
+        },
+        {
+          "feature": "air_humidity",
+          "importance": 0.006519007091619047
+        },
+        {
+          "feature": "moisture_lag_30m",
+          "importance": 0.00018028782101103935
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.00012019295822962707
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.00010615662684725281
+        },
+        {
+          "feature": "moisture_slope_1h",
+          "importance": 4.681212556337802e-05
+        },
+        {
+          "feature": "moisture_lag_180m",
+          "importance": 2.028259604385814e-05
+        },
+        {
+          "feature": "moisture_std_1h",
+          "importance": 1.6931675581500394e-05
+        },
+        {
+          "feature": "moisture_lag_60m",
+          "importance": 1.4748214260166592e-05
+        },
+        {
+          "feature": "ph",
+          "importance": 1.3947498840978553e-05
+        },
+        {
+          "feature": "ec",
+          "importance": 9.695744525163209e-06
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 8.334880525168028e-06
+        }
+      ]
+    },
+    {
+      "model": "predictive_maintenance",
+      "objective": "Dự đoán nguy cơ sensor fault, mất nguồn hoặc mất MQTT trong 60 phút tới từ telemetry sức khỏe thiết bị.",
+      "algorithm_rationale": "Predictive maintenance có tín hiệu phi tuyến và tương tác mạnh giữa voltage, RSSI, packet loss, command failure, current và online state. Extra Trees và Random Forest được benchmark vì robust trên dữ liệu bảng, không cần scaling và giải thích được feature importance; Macro-F1 là tiêu chí chọn để không bỏ qua lớp sự cố hiếm.",
+      "task": "classification",
+      "target": "target_maintenance_60m",
+      "features": [
+        "flow_rate",
+        "supply_voltage",
+        "rssi",
+        "pressure",
+        "pump_current",
+        "sensor_bus_errors",
+        "packet_loss_rate",
+        "command_failure_rate",
+        "pump_running",
+        "valve_running",
+        "online"
+      ],
+      "selected_algorithm": "RandomForestClassifier",
+      "candidate_validation": [
+        {
+          "candidate": "ExtraTreesClassifier",
+          "validation_metrics": {
+            "accuracy": 0.9909535009951149,
+            "precision_macro": 0.9337505461904652,
+            "recall_macro": 0.985692488942967,
+            "f1_macro": 0.9580442661458599,
+            "roc_auc": 0.9991135059968712
+          }
+        },
+        {
+          "candidate": "RandomForestClassifier",
+          "validation_metrics": {
+            "accuracy": 0.9934865207164827,
+            "precision_macro": 0.9562794649709462,
+            "recall_macro": 0.9822672228981981,
+            "f1_macro": 0.9688644275944432,
+            "roc_auc": 0.9990668314760094
+          }
+        }
+      ],
+      "test_metrics": {
+        "accuracy": 0.993485342019544,
+        "precision_macro": 0.965319660351071,
+        "recall_macro": 0.965319660351071,
+        "f1_macro": 0.965319660351071,
+        "roc_auc": 0.9991715879779843
+      },
+      "classification_report": {
+        "NORMAL": {
+          "precision": 0.9965733866362079,
+          "recall": 0.9965733866362079,
+          "f1-score": 0.9965733866362079,
+          "support": 1751.0
+        },
+        "MAINTENANCE_RISK": {
+          "precision": 0.9340659340659341,
+          "recall": 0.9340659340659341,
+          "f1-score": 0.9340659340659341,
+          "support": 91.0
+        },
+        "accuracy": 0.993485342019544,
+        "macro avg": {
+          "precision": 0.965319660351071,
+          "recall": 0.965319660351071,
+          "f1-score": 0.965319660351071,
+          "support": 1842.0
+        },
+        "weighted avg": {
+          "precision": 0.993485342019544,
+          "recall": 0.993485342019544,
+          "f1-score": 0.993485342019544,
+          "support": 1842.0
+        }
+      },
+      "class_distribution": {
+        "0": 1751,
+        "1": 91
+      },
+      "rows": {
+        "train": 25677,
+        "validation": 5527,
+        "test": 1842
+      },
+      "split": {
+        "start": "2026-08-10 00:10:00+00:00",
+        "end": "2026-09-09 00:00:00+00:00",
+        "train_end": "2026-08-31 00:03:00+00:00",
+        "validation_end": "2026-09-04 12:01:30+00:00",
+        "heldout_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ],
+        "train_customers": [
+          "synthetic_customer_000",
+          "synthetic_customer_001",
+          "synthetic_customer_002",
+          "synthetic_customer_003",
+          "synthetic_customer_004",
+          "synthetic_customer_005",
+          "synthetic_customer_006",
+          "synthetic_customer_007",
+          "synthetic_customer_008"
+        ],
+        "test_customers": [
+          "synthetic_customer_009",
+          "synthetic_customer_010",
+          "synthetic_customer_011"
+        ]
+      },
+      "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/predictive_maintenance.joblib",
+      "sha256": "8f4a1437c99dcffe219d0efa120c478469a97f8221cad9194b5be94d964c9178",
+      "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/predictive_maintenance_test_predictions.csv",
+      "charts": {
+        "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_confusion.png",
+        "roc": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_roc.png",
+        "pr": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_pr.png",
+        "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/predictive_maintenance_feature_importance.png"
+      },
+      "feature_importance": [
+        {
+          "feature": "sensor_bus_errors",
+          "importance": 0.9455052460202129
+        },
+        {
+          "feature": "supply_voltage",
+          "importance": 0.010767052996632992
+        },
+        {
+          "feature": "pressure",
+          "importance": 0.009533650496879627
+        },
+        {
+          "feature": "rssi",
+          "importance": 0.008985733958762128
+        },
+        {
+          "feature": "packet_loss_rate",
+          "importance": 0.00798659372891371
+        },
+        {
+          "feature": "pump_current",
+          "importance": 0.006964835958964964
+        },
+        {
+          "feature": "flow_rate",
+          "importance": 0.0049155477511229366
+        },
+        {
+          "feature": "command_failure_rate",
+          "importance": 0.004892457098027406
+        },
+        {
+          "feature": "pump_running",
+          "importance": 0.00023159339900749918
+        },
+        {
+          "feature": "valve_running",
+          "importance": 0.00021728859147594426
+        },
+        {
+          "feature": "online",
+          "importance": 0.0
+        }
+      ]
+    }
+  ],
+  "deployment_smoke": {
+    "status": "PASS",
+    "mode": "shadow",
+    "models_loaded": 5,
+    "shadow_log": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/logs/inference-shadow.jsonl",
+    "ab10_sample_entities": 1000,
+    "ab10_enabled_entities": 100,
+    "ab10_fraction": 0.1,
+    "models": [
+      {
+        "model": "soil_moisture_forecast",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 14.263
+      },
+      {
+        "model": "nutrient_recommendation",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 12.967
+      },
+      {
+        "model": "anomaly_detection",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.197
+      },
+      {
+        "model": "smart_irrigation_scheduler",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.279
+      },
+      {
+        "model": "predictive_maintenance",
+        "status": "PASS",
+        "exposed": false,
+        "latency_ms": 13.4
+      }
+    ]
+  },
+  "batch_smoke": {
+    "status": "PASS",
+    "models": 5,
+    "rows_inferred": 500,
+    "files": 5
+  },
+  "monitoring": {
+    "records": 5,
+    "by_model": {
+      "anomaly_detection": {
+        "requests": 1,
+        "latency_ms_mean": 13.196791000154917,
+        "latency_ms_p95": 13.196791000154917,
+        "exposed_fraction": 0.0
+      },
+      "nutrient_recommendation": {
+        "requests": 1,
+        "latency_ms_mean": 12.966708000021754,
+        "latency_ms_p95": 12.966708000021754,
+        "exposed_fraction": 0.0
+      },
+      "predictive_maintenance": {
+        "requests": 1,
+        "latency_ms_mean": 13.400472999819613,
+        "latency_ms_p95": 13.400472999819613,
+        "exposed_fraction": 0.0
+      },
+      "smart_irrigation_scheduler": {
+        "requests": 1,
+        "latency_ms_mean": 13.279052999678242,
+        "latency_ms_p95": 13.279052999678242,
+        "exposed_fraction": 0.0
+      },
+      "soil_moisture_forecast": {
+        "requests": 1,
+        "latency_ms_mean": 14.263436000874208,
+        "latency_ms_p95": 14.263436000874208,
+        "exposed_fraction": 0.0
+      }
+    }
+  },
+  "retraining": {
+    "entrypoint": "scripts/retrain_v103.py (production readiness guard) + scripts/model_training_v104/train_all_and_report.py (simulation benchmark)",
+    "production_data_guard": "ENABLED",
+    "recommended_cycle": "3-6 tháng hoặc theo drift/data readiness",
+    "simulation_artifact_auto_promote": "DISABLED"
+  },
+  "training_files": [
+    "scripts/model_training_v104/train_01_soil_moisture.py",
+    "scripts/model_training_v104/train_02_nutrient.py",
+    "scripts/model_training_v104/train_03_anomaly.py",
+    "scripts/model_training_v104/train_04_irrigation.py",
+    "scripts/model_training_v104/train_05_maintenance.py",
+    "scripts/model_training_v104/common.py",
+    "scripts/model_training_v104/report.py",
+    "scripts/model_training_v104/train_all_and_report.py"
+  ]
+}

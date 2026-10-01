@@ -1,0 +1,133 @@
+{
+  "name": "temperature_forecast",
+  "title": "Nhiệt độ sau 30 phút",
+  "task": "regression",
+  "target": "temperature_future",
+  "horizon_minutes": 30,
+  "class_coverage": {},
+  "train_rows": 5483,
+  "validation_rows": 1134,
+  "test_rows": 403,
+  "features": [
+    "temperature",
+    "temperature_lag1",
+    "temperature_lag3",
+    "temperature_lag6",
+    "temperature_missing",
+    "temperature_mean3",
+    "temperature_slope3",
+    "history_gap_minutes"
+  ],
+  "scope": "simulation_only",
+  "algorithm": "extra_trees",
+  "validation_candidates": {
+    "hist_gradient_boosting": {
+      "mae": 0.13012205868622226,
+      "rmse": 0.16626135529624791,
+      "r2": 0.9979261672305563
+    },
+    "extra_trees": {
+      "mae": 0.125357065564712,
+      "rmse": 0.16112983154415986,
+      "r2": 0.9980522060793118
+    },
+    "ridge_autoregression": {
+      "mae": 0.16303122300413225,
+      "rmse": 0.20601755050772505,
+      "r2": 0.9968158058630487
+    }
+  },
+  "test_metrics": {
+    "mae": 0.13200324890581872,
+    "rmse": 0.18018633950658308,
+    "r2": 0.997392769676482
+  },
+  "per_customer": {
+    "synthetic_customer_009": {
+      "model": {
+        "mae": 0.12495705312609469,
+        "rmse": 0.16498854689357795,
+        "r2": 0.9977162986698838
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.42745130803637577,
+          "rmse": 0.4791413597145859,
+          "r2": 0.9807398780939462
+        },
+        "moving_average": {
+          "mae": 0.5654070707975568,
+          "rmse": 0.6327747756726655,
+          "r2": 0.9664084513164264
+        },
+        "linear_trend": {
+          "mae": 0.26890100220111535,
+          "rmse": 0.693694748884338,
+          "r2": 0.9596290914200631
+        }
+      }
+    },
+    "synthetic_customer_010": {
+      "model": {
+        "mae": 0.12563389010262782,
+        "rmse": 0.16930311713180515,
+        "r2": 0.9976349324090911
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.4377279574580872,
+          "rmse": 0.48880068352365924,
+          "r2": 0.9802858862753847
+        },
+        "moving_average": {
+          "mae": 0.5842485511669369,
+          "rmse": 0.6439774831503297,
+          "r2": 0.9657819691704296
+        },
+        "linear_trend": {
+          "mae": 0.19340922996222346,
+          "rmse": 0.24026943390808375,
+          "r2": 0.9952366696861792
+        }
+      }
+    },
+    "synthetic_customer_011": {
+      "model": {
+        "mae": 0.14593601425126118,
+        "rmse": 0.2046289187921885,
+        "r2": 0.9966793263913464
+      },
+      "baselines": {
+        "persistence": {
+          "mae": 0.4283825977662478,
+          "rmse": 0.477469820857881,
+          "r2": 0.9819205995333402
+        },
+        "moving_average": {
+          "mae": 0.5608244981788171,
+          "rmse": 0.6214812615987947,
+          "r2": 0.9693699116965848
+        },
+        "linear_trend": {
+          "mae": 0.23007106235312036,
+          "rmse": 0.3638370373336855,
+          "r2": 0.989502014109257
+        }
+      }
+    }
+  },
+  "macro_metric": 0.13217565249332788,
+  "macro_metric_name": "mae",
+  "baseline_macro": {
+    "persistence": 0.4311872877535703,
+    "moving_average": 0.5701600400477703,
+    "linear_trend": 0.23079376483881972
+  },
+  "baseline_gain": 0.4272997254252693,
+  "status": "READY",
+  "gate_reasons": [],
+  "prediction_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\temperature_forecast_predictions.csv",
+  "source_processed_csv": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\processed_features_targets.csv",
+  "artifact_path": "D:\\2026-2027\\THUCTAP\\NextFarm-AI-Support-v10.1\\model-artifacts\\device-v11-7day\\runs\\device-20260928T051924Z-2615461321\\temperature_forecast.joblib",
+  "artifact_sha256": "0f1c2493baee304acb27424e0ab923eeda6f4bb401ae9ef6880386a13cb4f695"
+}

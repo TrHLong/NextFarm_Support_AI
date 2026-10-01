@@ -1,0 +1,4 @@
+{"farmer_id": "farmer_001", "farm_id": "farm_001", "device_id": "device_001", "zone_id": "zone_a", "timestamp": "2026-09-21T10:00:00+07:00", "code": "sensor_stale", "severity": "warning", "status": "open"}
+{"farmer_id": "farmer_002", "farm_id": "farm_002", "device_id": "device_002", "zone_id": "zone_a", "timestamp": "2026-09-21T10:00:00+07:00", "code": "sensor_stale", "severity": "warning", "status": "open"}
+{"farmer_id": "farmer_003", "farm_id": "farm_003", "device_id": "device_003", "zone_id": "zone_a", "timestamp": "2026-09-21T10:00:00+07:00", "code": "sensor_stale", "severity": "warning", "status": "open"}
+{"farmer_id": "farmer_003", "farm_id": "farm_003", "device_id": "device_003", "zone_id": "zone_a", "timestamp": "2026-09-22T14:00:00+07:00", "code": "no_flow", "severity": "critical", "status": "open"}

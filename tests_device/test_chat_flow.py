@@ -37,7 +37,7 @@ def chat_client(monkeypatch):
 
 @pytest.mark.parametrize('question,expected,zone,period',[
  ('Độ ẩm đất khu A giờ bao nhiêu?','62.000','zone_a','latest'),
- ('Hôm qua tưới mấy lần, tổng bao nhiêu phút?','30.0 phút',None,'yesterday'),
+ ('Hôm qua tưới mấy lần, tổng bao nhiêu phút?','30.0 phút','zone_a','yesterday'),
  ('Van số 3 có đang chạy không?','không được cấu hình là van',None,'today'),
  ('Tuần này khu B có ngày nào không tưới không?','chưa cấu hình khu B','zone_b','week'),
 ])
@@ -45,7 +45,9 @@ def test_problem_b_question_reaches_scoped_api_and_keeps_evidence(chat_client,qu
     client,requests,saved=chat_client
     result=client.post('/chat',json={'device_id':'cabinet_long','message':question},headers={'Authorization':'Bearer fixture'})
     assert result.status_code==200;body=result.json()
-    assert expected in body['answer'] and 'dữ liệu mô phỏng' in body['answer']
+    assert expected in body['answer']
+    assert body['source']=='synthetic_fixture'
+    assert 'Nguồn: dữ liệu mô phỏng' not in body['answer']
     assert body['trace']['training_use_allowed'] is False and body['trace']['scope_verified'] is True
     assert requests[0].url.params.get('zone_id')==zone and requests[0].url.params['period']==period
     assert saved and saved[0][0]=='farmer_long'

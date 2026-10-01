@@ -1,0 +1,168 @@
+{
+  "model": "anomaly_detection",
+  "objective": "Phát hiện/nghi ngờ sự cố no-flow hoặc leak trong 60 phút tới từ trạng thái van/bơm, lưu lượng và telemetry thiết bị.",
+  "algorithm_rationale": "Extra Trees/Random Forest được ưu tiên vì anomaly ở đây có ground-truth nhị phân và quan hệ điều kiện kiểu van-bơm-flow rất phi tuyến. HistGradientBoosting là đối chứng boosting. Macro-F1 được dùng để chọn model nhằm cân bằng lớp bình thường và lớp sự cố; ROC-AUC chỉ là metric bổ sung.",
+  "task": "classification",
+  "target": "target_anomaly_60m",
+  "features": [
+    "flow_rate",
+    "supply_voltage",
+    "rssi",
+    "pressure",
+    "pump_current",
+    "sensor_bus_errors",
+    "packet_loss_rate",
+    "command_failure_rate",
+    "pump_running",
+    "valve_running",
+    "online"
+  ],
+  "selected_algorithm": "RandomForestClassifier",
+  "candidate_validation": [
+    {
+      "candidate": "ExtraTreesClassifier",
+      "validation_metrics": {
+        "accuracy": 0.9705084132440746,
+        "precision_macro": 0.8947333787750187,
+        "recall_macro": 0.9760413838589101,
+        "f1_macro": 0.9301135488725596,
+        "roc_auc": 0.9962408850203073
+      }
+    },
+    {
+      "candidate": "RandomForestClassifier",
+      "validation_metrics": {
+        "accuracy": 0.9770218925275919,
+        "precision_macro": 0.9336329992024086,
+        "recall_macro": 0.9484095234569323,
+        "f1_macro": 0.9408555495028879,
+        "roc_auc": 0.9956109950170987
+      }
+    }
+  ],
+  "test_metrics": {
+    "accuracy": 0.9761129207383279,
+    "precision_macro": 0.9316934804768869,
+    "recall_macro": 0.9468615138993812,
+    "f1_macro": 0.9391013984858003,
+    "roc_auc": 0.9934945573882805
+  },
+  "classification_report": {
+    "NORMAL": {
+      "precision": 0.9889908256880734,
+      "recall": 0.9841752891052952,
+      "f1-score": 0.9865771812080537,
+      "support": 1643.0
+    },
+    "ANOMALY": {
+      "precision": 0.8743961352657005,
+      "recall": 0.9095477386934674,
+      "f1-score": 0.8916256157635468,
+      "support": 199.0
+    },
+    "accuracy": 0.9761129207383279,
+    "macro avg": {
+      "precision": 0.9316934804768869,
+      "recall": 0.9468615138993812,
+      "f1-score": 0.9391013984858003,
+      "support": 1842.0
+    },
+    "weighted avg": {
+      "precision": 0.9766106175479798,
+      "recall": 0.9761129207383279,
+      "f1-score": 0.9763191130628546,
+      "support": 1842.0
+    }
+  },
+  "class_distribution": {
+    "0": 1643,
+    "1": 199
+  },
+  "rows": {
+    "train": 25677,
+    "validation": 5527,
+    "test": 1842
+  },
+  "split": {
+    "start": "2026-08-10 00:10:00+00:00",
+    "end": "2026-09-09 00:00:00+00:00",
+    "train_end": "2026-08-31 00:03:00+00:00",
+    "validation_end": "2026-09-04 12:01:30+00:00",
+    "heldout_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ],
+    "train_customers": [
+      "synthetic_customer_000",
+      "synthetic_customer_001",
+      "synthetic_customer_002",
+      "synthetic_customer_003",
+      "synthetic_customer_004",
+      "synthetic_customer_005",
+      "synthetic_customer_006",
+      "synthetic_customer_007",
+      "synthetic_customer_008"
+    ],
+    "test_customers": [
+      "synthetic_customer_009",
+      "synthetic_customer_010",
+      "synthetic_customer_011"
+    ]
+  },
+  "artifact": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/models/anomaly_detection.joblib",
+  "sha256": "a42f9805b6d7144327adc55cfb0eb4592d3ae07410bc867b8697086f2f72f6e1",
+  "predictions": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/predictions/anomaly_detection_test_predictions.csv",
+  "charts": {
+    "confusion": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_confusion.png",
+    "roc": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_roc.png",
+    "pr": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_pr.png",
+    "feature_importance": "/mnt/data/nextfarm_v103_work/NextFarm-AI-Support-v10.3/model-artifacts/simulation-v104/sim30-v104-20260928T075629Z/charts/anomaly_detection_feature_importance.png"
+  },
+  "feature_importance": [
+    {
+      "feature": "pressure",
+      "importance": 0.8398714949793499
+    },
+    {
+      "feature": "flow_rate",
+      "importance": 0.07099759165488705
+    },
+    {
+      "feature": "supply_voltage",
+      "importance": 0.016446232332766084
+    },
+    {
+      "feature": "rssi",
+      "importance": 0.014741078709094713
+    },
+    {
+      "feature": "pump_running",
+      "importance": 0.01305293946618585
+    },
+    {
+      "feature": "pump_current",
+      "importance": 0.012668146007751449
+    },
+    {
+      "feature": "packet_loss_rate",
+      "importance": 0.010227002381436479
+    },
+    {
+      "feature": "sensor_bus_errors",
+      "importance": 0.009343745450392248
+    },
+    {
+      "feature": "command_failure_rate",
+      "importance": 0.007836141341927647
+    },
+    {
+      "feature": "valve_running",
+      "importance": 0.004815627676208665
+    },
+    {
+      "feature": "online",
+      "importance": 0.0
+    }
+  ]
+}

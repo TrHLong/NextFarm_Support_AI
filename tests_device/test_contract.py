@@ -6,15 +6,15 @@ from nextfarm_device.contracts import catalog,SPECS,RULE_CAPS
 from nextfarm_device.ml import prepare_features,coverage
 from nextfarm_device.store import period_bounds
 
-def test_catalog_separates_10_trained_models_and_32_support_functions():
-    assert len(SPECS)==10 and len(RULE_CAPS)==32
-    items=catalog();assert len(items)==42
+def test_catalog_keeps_research_models_internal_and_groups_farmer_support_by_six_data_domains():
+    assert len(SPECS)==10 and len(RULE_CAPS)==6
+    items=catalog();assert len(items)==16
     assert all(x['status']==('BLOCKED' if x['kind']=='trained_model' else 'NO_DATA') for x in items)
 
 def test_scope_readiness_requires_real_group_presence():
     values={x['key']:x for x in catalog(available_groups=['device_status'])}
-    assert values['connection_status']['status']=='AVAILABLE'
-    assert values['sensor_history']['status']=='NO_DATA'
+    assert values['device_status']['status']=='AVAILABLE'
+    assert values['sensor_data']['status']=='NO_DATA'
 
 def test_silence_does_not_prove_power_loss():
     now=datetime.now(timezone.utc)

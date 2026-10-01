@@ -1,0 +1,35 @@
+{
+  "records": 5,
+  "by_model": {
+    "anomaly_detection": {
+      "requests": 1,
+      "latency_ms_mean": 13.196791000154917,
+      "latency_ms_p95": 13.196791000154917,
+      "exposed_fraction": 0.0
+    },
+    "nutrient_recommendation": {
+      "requests": 1,
+      "latency_ms_mean": 12.966708000021754,
+      "latency_ms_p95": 12.966708000021754,
+      "exposed_fraction": 0.0
+    },
+    "predictive_maintenance": {
+      "requests": 1,
+      "latency_ms_mean": 13.400472999819613,
+      "latency_ms_p95": 13.400472999819613,
+      "exposed_fraction": 0.0
+    },
+    "smart_irrigation_scheduler": {
+      "requests": 1,
+      "latency_ms_mean": 13.279052999678242,
+      "latency_ms_p95": 13.279052999678242,
+      "exposed_fraction": 0.0
+    },
+    "soil_moisture_forecast": {
+      "requests": 1,
+      "latency_ms_mean": 14.263436000874208,
+      "latency_ms_p95": 14.263436000874208,
+      "exposed_fraction": 0.0
+    }
+  }
+}
